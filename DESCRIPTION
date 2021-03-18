@@ -16,5 +16,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     ComitesBaciaSP (>= 0.0.0.9000)
-Remotes:  
+Remotes: 
     beatrizmilz/ComitesBaciaSP
+URL: https://github.com/beatrizmilz/RelatoriosTransparenciaAguaSP
+BugReports: https://github.com/beatrizmilz/RelatoriosTransparenciaAguaSP/issues
