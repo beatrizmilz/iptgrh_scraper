@@ -17,7 +17,6 @@ jobs:
         with:
           fetch-depth: 0
       - uses: r-lib/actions/setup-r@v1
-      - uses: r-lib/actions/setup-pandoc@v1
       - name: Install remotes and the local package
         run: |
           install.packages("remotes")
@@ -31,5 +30,5 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
-          git commit -m 'Executa script' || echo "No changes to commit"
+          git commit -m 'Download das páginas em HTML' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
