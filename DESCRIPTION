@@ -15,7 +15,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    ComitesBaciaSP (>= 0.0.0.9000)
+    ComitesBaciaSP (>= 0.0.0.9000),
+    glue,
+    lubridate,
+    magrittr
 Remotes: 
     beatrizmilz/ComitesBaciaSP
 URL: https://github.com/beatrizmilz/RelatoriosTransparenciaAguaSP
