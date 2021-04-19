@@ -1,0 +1,142 @@
+---
+title: "Title of the report"
+subtitle: "Subtitle of the report"
+author: "Author Name"
+date: "Abril, 2021"
+output:
+  pagedreport::paged_hazelnuts
+#knit: pagedown::chrome_print
+toc-title: "Sumário"
+params:
+  mes: 04
+  ano: 2021
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(magrittr, include.only = "%>%")
+# carregar funcoes
+source("../../R/ler-arquivos.R")
+source("../../R/listar-arquivos.R")
+```
+
+```{r}
+
+arquivo_atas <- glue::glue("dados_atas/atas-{params$mes}-{params$ano}.Rds")
+
+if(fs::file_exists(arquivo_atas) == FALSE){
+  listar_arquivos(
+  path = "../dados_html/",
+  mes_buscar = params$mes,
+  ano_buscar = params$ano,
+  pagina_buscar = "atas"
+) %>% 
+    ler_arquivos() %>% 
+    readr::write_rds(file = arquivo_atas)
+    
+}
+
+dados_atas <- readr::read_rds(arquivo_atas)
+
+```
+
+```{r}
+data_para_filtrar <- dados_atas %>%
+  dplyr::distinct(data_coleta_dados) %>% 
+  dplyr::arrange(data_coleta_dados) %>% 
+  dplyr::slice(1) %>% 
+  dplyr::pull(data_coleta_dados)
+  
+dados_atas_filtrados <- dados_atas %>% 
+  dplyr::filter(data_coleta_dados == data_para_filtrar)
+  
+```
+
+```{r}
+# dados_atas_filtrados %>% 
+#   dplyr::filter(numero_link == "ata_1") %>% 
+#   dplyr::group_by(n_ugrhi, comite) %>% 
+#   dplyr::count()
+```
+
+
+```{r, out.width="100%", fig.height=12}
+# remover camara tecnica - lembrete
+
+
+dados_atas_filtrados %>%
+  dplyr::filter(numero_link == "ata_1") %>% View()
+  
+  # janitor::get_dupes(n_ugrhi,
+  #          data_reuniao) %>% View()
+  #
+  # dplyr::distinct(n_ugrhi,
+  #          data_reuniao,
+  #          .keep_all = TRUE) %>%
+  #
+  dplyr::mutate(ano_reuniao = lubridate::year(data_reuniao)) %>%
+  dplyr::group_by(comite, n_ugrhi, ano_reuniao) %>%
+  
+  dplyr::count() %>%
+  # mutate(
+  #   ugrhi = case_when(
+  #     ugrhi == "05 - Piracicaba/Capivari/Jundiaí" ~ "05 - Piracicaba/ \n Capivari/Jundiaí",
+  #     ugrhi == "11 - Ribeira de Iguape/Litoral Sul" ~ "11 - Ribeira de Iguape \n /Litoral Sul",
+  #     TRUE ~ ugrhi
+  #   )
+  #
+  # ) %>%
+  ggplot2::ggplot() +
+  ggplot2::geom_col(ggplot2::aes(x = ano_reuniao, y = n), fill = "#7bc9aa") +
+  
+  #geom_vline(aes(xintercept = ano_inicio), color = "red", linetype = 'dashed') +
+  ggplot2::facet_wrap(~ comite, ncol = 3) +
+  ggplot2::theme_bw() +
+  ggplot2::labs(x = "Ano", y = "Número de atas disponibilizadas") +
+  ggplot2::theme(strip.background = ggplot2::element_rect(fill = "#a9d6c4")) +
+  ggplot2::scale_x_continuous(breaks = seq(1990, 2022, 10),
+                              limits = c(1990, 2022)) +
+  ggplot2::theme(text = ggplot2::element_text(size = 8)) 
+```
+## link dos arquivos
+
+```{r}
+dados_atas_filtrados  %>%
+      dplyr::mutate(
+        link_ata_tipo_arquivo = dplyr::case_when(
+          is.na(url_link) ~ "Ata não disponibilizada",
+          TRUE ~ stringr::str_extract(url_link, pattern = "(.doc|.docx|.pdf|.html|.htm|.jpg|.pd)$|drive.google")
+        ) ) %>% 
+  dplyr::mutate(
+    link_ata_tipo_arquivo_fct = dplyr::case_when(
+      link_ata_tipo_arquivo %in% c(".doc", ".docx") ~ ".doc | .docx",
+      link_ata_tipo_arquivo %in% c(".html", ".htm") ~ ".html | .htm",
+      link_ata_tipo_arquivo %in% c(".pd", "drive.google") ~ "Outros",
+      is.na(link_ata_tipo_arquivo) ~ "Ata não disponibilizada",
+      
+      TRUE ~ link_ata_tipo_arquivo
+    )
+  ) %>%
+  dplyr::group_by( comite, link_ata_tipo_arquivo_fct) %>%
+  dplyr::summarise(count = dplyr::n())   %>%
+  dplyr::ungroup() %>% 
+  dplyr::group_by(comite) %>% 
+  dplyr::mutate(total = sum(count),
+         porc = round(count / total, 3)) %>%
+  dplyr::select(-total) %>%
+  dplyr::arrange(comite, desc(count)) %>%
+  dplyr::select(-count) %>%
+  janitor::adorn_pct_formatting() %>%
+  
+  
+  dplyr::rename("Formato do arquivo" = link_ata_tipo_arquivo_fct,
+         
+         "Porcentagem de links" = porc,
+         "Comitê" = comite) %>%
+  knitr::kable()
+```
+
