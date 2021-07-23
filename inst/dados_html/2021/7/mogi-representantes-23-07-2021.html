@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="" />
+        <meta name="description" content="" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='' target="_blank">Cronograma de Atividades dos CBHs</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/processoeleitoralsociedadecivil20212023' >Processo eleitoral - Sociedade Civil 2021-2023</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >COFEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://drive.google.com/open?id=10TuAe_BeljONETBr5v_y8m2VYTbW6ev7' target="_blank">Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/representantes' >Representantes</a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/relatoriofinaldeempreendimentosfehidro' target="_blank">Relatório Final de Empreedimentos FEHIDRO</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestao' >Pacto Nacional pela Gestão das Águas - Progestão</a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/index.php?option=com_content&view=article&id=72%3Ahidrometeorologia&catid=43%3Ahidrometeorologia&Itemid=30' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-MOGI</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhmogi/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhmogi/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhmogi/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhmogi/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhmogi/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhmogi/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/collegiate/25/pageitems/25' >Estrutura do Comitê - Mesa Diretora e Membros</a></li>
+                                                                        <li><a href='/cbhmogi/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhmogi/representantes' >Representantes</a></li>
+                        </ul>
+
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="6" data-year="2021" data-unity="25" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="07" data-year="2021" data-unity="25" data-scope="global">Julho/2021</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="8" data-year="2021" data-unity="25" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day calendar-event" title="<h2>Reunião Conjunta CORHI_CTPLAN_CTAJI</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 02/07/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma_ Teams da Microsoft   <br />  <a href='/pageitems/340/events/10793'>Ver mais</a></div>">2</td><td class="calendar-day">3</td></tr><tr class="calendar-row"><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>Reunião Conjunta CORHI_CTPLAN_CTAJI</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 05/07/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma_ Teams da Microsoft   <br />  <a href='/pageitems/340/events/10799'>Ver mais</a></div>">5</td><td class="calendar-day">6</td><td class="calendar-day calendar-event" title="<h2>Alterada_Reunião CTAJI</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais - CRH  <br />  <b>Data do evento:</b> 07/07/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/338/events/9526'>Ver mais</a></div><h2>Antecipada_Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 07/07/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/340/events/9537'>Ver mais</a></div>">7</td><td class="calendar-day">8</td><td class="calendar-day calendar-event" title="<h2>Revolução Constitucionalista</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 09/07/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Estado de SP  <br />  <a href='/pageitems/451/events/9442'>Ver mais</a></div>">9</td><td class="calendar-day">10</td></tr><tr class="calendar-row"><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 13/07/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma_ Teams da Microsoft   <br />  <a href='/pageitems/451/events/9468'>Ver mais</a></div><h2>Adiada_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 13/07/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/339/events/9514'>Ver mais</a></div>">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião CTAJI</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais - CRH  <br />  <b>Data do evento:</b> 16/07/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma_ Teams da Microsoft   <br />  <a href='/pageitems/338/events/10801'>Ver mais</a></div>">16</td><td class="calendar-day">17</td></tr><tr class="calendar-row"><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 21/07/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Centro Tecnológico de Hidráulica - CTH_USP  <br />  <a href='/pageitems/341/events/9098'>Ver mais</a></div><h2>Reunião Extraordinária do CRH</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 21/07/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Microsoft Teams   <br />  <a href='/pageitems/451/events/10807'>Ver mais</a></div>">21</td><td class="calendar-day calendar-event" title="<h2>Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 22/07/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma MEET  <br />  <a href='/pageitems/341/events/10776'>Ver mais</a></div>">22</td><td class="calendar-day calendar-event" title="<h2>Reunião CTAJI</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais - CRH  <br />  <b>Data do evento:</b> 23/07/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/338/events/10811'>Ver mais</a></div>">23</td><td class="calendar-day">24</td></tr><tr class="calendar-row"><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 28/07/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> a confirmar  <br />  <a href='/pageitems/339/events/10775'>Ver mais</a></div>">28</td><td class="calendar-day calendar-event" title="<h2>Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas - CRH  <br />  <b>Data do evento:</b> 29/07/2021  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/502/events/9496'>Ver mais</a></div>">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td></tr><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="6" data-year="2021" data-unity="25" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="07" data-year="2021" data-unity="25" data-scope="scoped">Julho/2021</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="8" data-year="2021" data-unity="25" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td></tr><tr class="calendar-row"><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td></tr><tr class="calendar-row"><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> Conselho de Orientação do Fundo Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 13/07/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma_ Teams da Microsoft   <br />  <a href='/pageitems/337/events/9461'>Ver mais</a></div>">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td></tr><tr class="calendar-row"><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td></tr><tr class="calendar-row"><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td></tr><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br//perh20202023" class="banner">
+            <img src='/public/uploads/banners//16067331776314.jpg'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/crh/progestao" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/pageitems/450/news/10390" class="banner">
+            <img src='/public/uploads/banners//16036911443162.jpg'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/correnteza" class="banner">
+            <img src='/public/uploads/banners//1441994176798.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/public/uploads/documents//CRH/18691/12-1-publicacao-nitrato-2.pdf" class="banner">
+            <img src='/public/uploads/banners//1578075332312.jpg'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Representantes</h1>
+
+
+
+
+  <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Mesa Diretora    </b>
+  </h2>
+
+                                      <div class="block">
+        <h2 class="heading small-dotted-border">Prefeitura Municipal de Santa Cruz da Conceição</h2>
+        <div class="representative full">
+          <div>
+                      <h2>Titular</h2>
+            <br />
+                                <b>
+              Romulo Pippa                              (Presidente )
+                          </b>
+            <br />
+                        	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3589-5200</td></tr>						<tr><th>E-mail:</th><td>gabinete@portoferreira.sp.gov.<br/>br</td></tr>		<tr><th>E-mail alternativo:</th><td>chefegabinete@portoferreira.sp<br/>.gov.br</td></tr>		<tr><th>Endereço:</th><td>Pça. Cornélio Procópio</td></tr>		<tr><th>Número:</th><td>90</td></tr>				<tr><th>Cidade:</th><td>Porto Ferreria</td></tr>		<tr><th>Estado:</th><td>SP</td></tr>		<tr><th>CEP:</th><td>13.660-000</td></tr>	</table>
+
+                    </div>
+        </div>
+        <br clear="both" />
+      </div>
+                                                                          <div class="block">
+        <h2 class="heading small-dotted-border">SAAEJ - Serviço Autônomo de Água e Esgoto de Jaboticabal</h2>
+        <div class="representative full">
+          <div>
+                      <h2>Titular</h2>
+            <br />
+                                <b>
+              Aparecido Hojaij                              (Vice-Presidente)
+                          </b>
+            <br />
+            SAAEJ - Serviço Autônomo de Água e Esgoto de Jaboticabal            	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>aparecido@saaej.sp.gov.br</td></tr>				<tr><th>Endereço:</th><td>Rua Jornalista Cláudio Luiz Berchieri, 345</td></tr>						<tr><th>Cidade:</th><td>Jaboticabal</td></tr>		<tr><th>Estado:</th><td>SP</td></tr>		<tr><th>CEP:</th><td>14875290</td></tr>	</table>
+
+                    </div>
+        </div>
+        <br clear="both" />
+      </div>
+                                                                          <div class="block">
+        <h2 class="heading small-dotted-border">Departamento de Água e Energia Elétrica - DAEE</h2>
+        <div class="representative full">
+          <div>
+                      <h2>Titular</h2>
+            <br />
+                                <b>
+              Irene Sabatino P. Niccioli                               (Secretaria Executiva)
+                          </b>
+            <br />
+                        	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3623-3940</td></tr>						<tr><th>E-mail:</th><td>ispniccioli@gmail.com </td></tr>				<tr><th>Endereço:</th><td>Rua Olinda</td></tr>		<tr><th>Número:</th><td>150</td></tr>		<tr><th>Complemento:</th><td>Bairro Santa Terezinha</td></tr>		<tr><th>Cidade:</th><td>Ribeirão Preto</td></tr>		<tr><th>Estado:</th><td>SP</td></tr>		<tr><th>CEP:</th><td>14025-150 </td></tr>	</table>
+
+                    </div>
+        </div>
+        <br clear="both" />
+      </div>
+                                                                          <div class="block">
+        <h2 class="heading small-dotted-border">Departamento de Água e Energia Elétrica - DAEE</h2>
+        <div class="representative full">
+          <div>
+                      <h2>Titular</h2>
+            <br />
+                                <b>
+              Lucas Antônio Ribas Casagrande                               (Secretário Executivo Adjunto)
+                          </b>
+            <br />
+                        	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3623-3940</td></tr>						<tr><th>E-mail:</th><td>lcasagrande@sp.gov.br</td></tr>				<tr><th>Endereço:</th><td>Rua Olinda</td></tr>		<tr><th>Número:</th><td>150</td></tr>		<tr><th>Complemento:</th><td>Bairro Santa Terezinha</td></tr>		<tr><th>Cidade:</th><td>Ribeirão Preto</td></tr>		<tr><th>Estado:</th><td>SP</td></tr>		<tr><th>CEP:</th><td>14025-150</td></tr>	</table>
+
+                    </div>
+        </div>
+        <br clear="both" />
+      </div>
+                                        <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Estado    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Companhia de Tecnologia de Saneamento Ambiental - CETESB</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marcus Vinicius Lopes da Silva              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>mvlsilva@sp.gov.br</td></tr>				<tr><th>Endereço:</th><td>Rua Marechal Deodoro, 345, Centro</td></tr>						<tr><th>Cidade:</th><td>São João da Boa Vista</td></tr>		<tr><th>Estado:</th><td>SP</td></tr>			</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Davi Faleiros              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3203-9400</td></tr>						<tr><th>E-mail:</th><td>dfaleiros@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Coordenadoria de  Desenvolvimento Rural Sustentável-CDRS </h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Melissa Pin Lucheti Sampaio              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3524-3495</td></tr>						<tr><th>E-mail:</th><td>melissa.sampaio@cati.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Vera Lúcia Palla                </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3202-3746</td></tr>						<tr><th>E-mail:</th><td>edr.jaboticabal@cati.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Saúde GTVS 26</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Maria Cecília Castoldo Bacci              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>gvs-sjbv@saude.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Tabajara Benedito Souza Cezar Resende              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>tresende@cvs.saude.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria da Educação </h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Eduardo Donizeti Jerônimo               </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3638-0344</td></tr>						<tr><th>E-mail:</th><td>pcop.eduardo@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Matheus Camargo de Carvalho              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>matheuscarvalho@prof.educacao.<br/>sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Policia Militar Ambiental</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                1º Ten PM Ivo Fabiano Morais              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3638-1700</td></tr>						<tr><th>E-mail:</th><td>ivofm@policiamilitar.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                1º Cap PM Fábio da Nóbrega              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3638-1700</td></tr>						<tr><th>E-mail:</th><td>fabionobrega@policiamilitar.sp<br/>.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Companhia de Saneamento Básico do Estado de São Paulo - SABESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                José Márcio Carioca              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3634-7700</td></tr>						<tr><th>E-mail:</th><td>jcarioca@sabesp.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Isabel Cristina Correia              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3651-1098</td></tr>						<tr><th>E-mail:</th><td>icorreia@sabesp.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Infraestrutura e Meio Ambiente - SIMA</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                João Del Giudice Neto              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3841-1055</td></tr>						<tr><th>E-mail:</th><td>joaodel@ibot.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Ivan Soares da Mota              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3862-2787</td></tr>						<tr><th>E-mail:</th><td>ivanbigfield@gmail.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Logística e Transportes</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Danilo Luiz Dezan              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3526-8000</td></tr>						<tr><th>E-mail:</th><td>ddezan@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Elaine Zancopé Carnieri              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3524-8608</td></tr>						<tr><th>E-mail:</th><td>ecarnieri@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">SAA/APTA Agência Paulista de Tecnologia dos Agronegócios - Pirassununga</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Fábio Rosa Sussel              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3565-1200</td></tr>						<tr><th>E-mail:</th><td>fabio@pesca.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Marcello Vilar Boock              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3565-1200</td></tr>						<tr><th>E-mail:</th><td>nmarcondes@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Fundação Florestal</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Fabrício Pinheiro Cunha              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 8663-8456</td></tr>						<tr><th>E-mail:</th><td>fabriciopc@fflorestal.sp.gov.b<br/>r</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Simone Clélia de Freitas              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 9147-9539</td></tr>						<tr><th>E-mail:</th><td>simonefreitas@fflorestal.sp.go<br/>v.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Departamento de Água e Energia Elétrica - DAEE - Ribeirão Preto</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Irene Sabatini P Niccioli              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3623-3940</td></tr>						<tr><th>E-mail:</th><td>ispniccioli@gmail.com</td></tr>														<tr><th>CEP:</th><td>          </td></tr>	</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Lucas Ribas Casagrande              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3623-3940</td></tr>						<tr><th>E-mail:</th><td>icasagrande@sp.gov.br</td></tr>				<tr><th>Endereço:</th><td>umaré</td></tr>											</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Departamento de Água e Energia Elétrica - DAEE - Mogi Guaçú        </h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                José Roberto Carlos              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3861-7715</td></tr>						<tr><th>E-mail:</th><td>bpg-pgmg@daee.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Guilherme Jacobussi Lamounier)              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3861-3159</td></tr>						<tr><th>E-mail:</th><td>gjmounier@hotmail.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Turismo</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  </div>
+
+    <div style="width: 48%; float: right;">
+                                </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Desenvolvimento Regional -  Relacionamento Municípios</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Maciel dos Santos Rocha              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3204-4488</td></tr>						<tr><th>E-mail:</th><td>msrocha@planejamento.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Município    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Mogi-Guaçu/ Prefeitura Municipal de Engenheiro Coelho</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Walter Caveanha              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3818-6707</td></tr>						<tr><th>E-mail:</th><td>gabinete@mogiguacu.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Pedro Franco de Oliveira              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3857-8000</td></tr>						<tr><th>E-mail:</th><td>pedrofranco@pmec.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">/Prefeitura Municipal de Guariba/Prefeitura Municipal de Jaboticabal</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Francisco Dias Mançano Júnior              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3251-9422</td></tr>						<tr><th>E-mail:</th><td>guariba@guariba.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                José Carlos Hori              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3209-3322</td></tr>						<tr><th>E-mail:</th><td>gabinete@jaboticabal.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Itapira/ Prefeitura Municipal de Serra Negra</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                José Natalino Paganini              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3863-1441</td></tr>						<tr><th>E-mail:</th><td>gabinetedoprefeito@itapira.sp.<br/>gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Sidney Antônio Ferraresso              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3892-9600</td></tr>						<tr><th>E-mail:</th><td>gabinete@serranegra.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Espírito Santo do Pinhal/Prefeitura Municipal de Estiva Gerbi</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Sergio Bianchi              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3661-8333</td></tr>						<tr><th>E-mail:</th><td>gabinete@pinhal.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Cláudia Botelho de Oliveira Diegues              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3868-1111</td></tr>						<tr><th>E-mail:</th><td>gabinete@estivagerbi.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Sertãozinho/Prefeitura Municipal de Monte Alto</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                José Alberto Gimenez              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3946-3000</td></tr>						<tr><th>E-mail:</th><td>gabinete@sertaozinho.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                João Paulo Rodrigues              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3244-3113</td></tr>						<tr><th>E-mail:</th><td>gabinete@montealto.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Araras/Prefeitura Municipal de Leme</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Rubens Franco Júnior              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3547-3084</td></tr>						<tr><th>E-mail:</th><td>prefeito@araras.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Wagner Ricardo Antunes Filho              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3573-4000</td></tr>						<tr><th>E-mail:</th><td>prefeito@leme.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de São João da Boa Vista/Prefeitura Municipal de Santa Cruz das Palmeiras</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Vanderlei Borges de Carvalho              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3634-1094</td></tr>						<tr><th>E-mail:</th><td>prefeito@saojoao.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                José Crescentino Bussaglia              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3672-9292</td></tr>						<tr><th>E-mail:</th><td>gabinete@scpalmeiras.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Pradópolis/Prefeitura Municipal de Guatapará</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Sílvio Martins              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3981-9900</td></tr>						<tr><th>E-mail:</th><td>gabinete@pradopolis.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Jurcaci da Costa Silva              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3973-2020</td></tr>						<tr><th>E-mail:</th><td>licitacao1@guatapara.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Socorro/ Prefeitura Municipal de Águas de Lindóia</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                André Eduardo Bozola de Souza Pinto              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3855-9600</td></tr>						<tr><th>E-mail:</th><td>gabinete@socorro.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Gilberto Abdo Helou              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3924-9600</td></tr>						<tr><th>E-mail:</th><td>gabinete@aguasdelindoia.sp.gov<br/>.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Santa Cruz da Conceição/Prefeitura Municipal de Conchal</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Patrícia Capodifoglio Landgraf              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3567-9205</td></tr>						<tr><th>E-mail:</th><td>gabinete@santacruzdasconceicao<br/>.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                luís Vanderley Magnusson              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3866-8600</td></tr>						<tr><th>E-mail:</th><td>gabinete@santacruzdaconceicao.<br/>sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Porto Ferreira/ Prefeitura Municipal de  Cravinhos</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Rômulo Rippa              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>gabinete@portoferreira.sp.gov.<br/>br</td></tr>															</table>
+
+                      </div>
+                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Romulo Pippa              </b>
+                              <br />
+                Presidente                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3589-5200</td></tr>						<tr><th>E-mail:</th><td>gabinete@portoferreira.sp.gov.<br/>br</td></tr>		<tr><th>E-mail alternativo:</th><td>chefegabinete@portoferreira.sp<br/>.gov.br</td></tr>		<tr><th>Endereço:</th><td>Pça. Cornélio Procópio</td></tr>		<tr><th>Número:</th><td>90</td></tr>		<tr><th>Complemento:</th><td>Centro</td></tr>		<tr><th>Cidade:</th><td>Porto Ferreria</td></tr>		<tr><th>Estado:</th><td>SP</td></tr>		<tr><th>CEP:</th><td>13.660-000</td></tr>	</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                José Carlos Carrascosa dos Santos              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>secretariaadm@cravinhos.sp.gov<br/>.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de  Descalvado/ Prefeitura Municipal de Santa Lúcia</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Antônio Carlos Reschini              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3583-9300</td></tr>						<tr><th>E-mail:</th><td>prefeito@descalvado.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luíz Antônio Noli              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3396-9600</td></tr>						<tr><th>E-mail:</th><td>pmsl@uol.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Dumont/ Prefeitura Municipal de Pontal</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Alan Francisco Ferraccini              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3944-9100</td></tr>						<tr><th>E-mail:</th><td>gabinete@dumont.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                André Luís Carneiro              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3953-9999</td></tr>						<tr><th>E-mail:</th><td>gabinete@pontal.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Pitangueiras/Prefeitura Municipal de Taquaral Conchal</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marcos Soriano              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3952-9121</td></tr>						<tr><th>E-mail:</th><td>gabinete@pitangueiras.sp.gov.b<br/>r</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Laércio Vicente Scamaral              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3958-9200</td></tr>						<tr><th>E-mail:</th><td>pm@taquaral.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Sociedade Civil    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">FZEA-USP- FAC. de Zootecnia e Engenharia de alimentos da USP/UFSCAR - - CCA - Universidade Federal de São Carlos/ Centro de Ciências Agrárias - UIEP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Tamara Maria Gomes              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3565-6709</td></tr>						<tr><th>E-mail:</th><td>tamaragomes@usp.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Claudinei Fonseca Souza              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3543-2956</td></tr>						<tr><th>E-mail:</th><td>cfsouza@ufscar.br</td></tr>		<tr><th>E-mail alternativo:</th><td>adrianacs@ufuscar.br</td></tr>													</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">ETEC - CETEC Arnaldo Pereira Cheregatti (UIEP)/UNIFEOB- Centro Universitário da Fundação de Ensino Octávio Bastos</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Wilson Francisco Braga Martucci              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3652-7429</td></tr>						<tr><th>E-mail:</th><td>wilsonmartucci@yahoo.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Tiago Cavaleiro Barbosa              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3602-3511</td></tr>						<tr><th>E-mail:</th><td>tiago.barbosai@unifeob.edu.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Canoeiros - Associação dos Canoeiros de Rio Mogi Guaçu de Porto Ferreira/ANEV Associação Náutica Ecológica Vale do Mogi</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Sérgio Aparecido Antonini              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3589-3600</td></tr>						<tr><th>E-mail:</th><td>bujantonini@ig.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Fábio José Ferraz              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3583-2881</td></tr>						<tr><th>E-mail:</th><td>fjferraz@hotmail.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">ASSEMAE Asociação N. Serviços Municipais de Saneamento/ ABCON Associação B. de Concessionárias Serv. Pub. de Àgua e Esgoto</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Aparecido Hojaij              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3209-9900</td></tr>						<tr><th>E-mail:</th><td>aparecido@saaej.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Carlos Roberto Ferreira              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3804-9003</td></tr>						<tr><th>E-mail:</th><td>carlos@sesamm.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">GRUPO ECOLÓGICO GEA de Socorro/ APA de Araras</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Celi Alves da Silva              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3895-6064</td></tr>						<tr><th>E-mail:</th><td>geaceli@hotmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luiz Carlos Mion              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3541-3940</td></tr>						<tr><th>E-mail:</th><td>mion@mmambiental.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">CIESP - Diretoria Regional Ribeirão Preto. /CIESP - Diretoria Regional S. J. Boa Vista</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Paulo Cassim              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3986-9049</td></tr>						<tr><th>E-mail:</th><td>paulo.cassim@ipaper.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Bianca Gvozdenovic Medina Bricio               </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3861-8699</td></tr>						<tr><th>E-mail:</th><td>bianca.bricio@ipaper.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">ÙNICA União da Agroindústria Canavieira do Estado de São Paulo/SIFAESP - Sindicato da Indústria do Etanol no Estado de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Vitor Antenor Morilha              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3393-4949</td></tr>						<tr><th>E-mail:</th><td>vitor.morilha@usinasaomartinho<br/>.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Carina Pereira Spindola              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3946-3900</td></tr>						<tr><th>E-mail:</th><td>carina.spindola@biosev.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">FIESP - Federação das Indústrias no Estado S.P/ CIESP - Centro das Indústrias do Est. S. P. Regional de Sertãozinho</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Adriano Melo              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3721-1232</td></tr>						<tr><th>E-mail:</th><td>adriano.melo@fiesp.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                André Luiz Bolonha Ferreira              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3721-1232</td></tr>						<tr><th>E-mail:</th><td>andre@bolonhaemelo.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">ABAG/RP Associação Brasileira do Agronegocio da Região de Rib. Preto/ SIFAESP - Sindicato da Ind. da Fabricação do Álcool no ESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Roberto Lima Ferraz Rosa              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3623-2326</td></tr>						<tr><th>E-mail:</th><td>abagrp@abagrp.org.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Roberta Patelli Lago              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3422-9697</td></tr>						<tr><th>E-mail:</th><td>roberta.lago@usinamoreno.com.b<br/>r</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">SOCICANA - Associação dos Plantadores de Cana de Guariba/ Sindicato Rural de Mogi Mirim</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Elaine Aparecida Maduro              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3251-9250</td></tr>						<tr><th>E-mail:</th><td>eamcosta@coplana.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Cristina de Fátima Borgheti Mariano              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3862-0966</td></tr>						<tr><th>E-mail:</th><td>cristinaborgheti@yahoo.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">ANAMA - Assoc. Nac. dos Òrgãos Municipais de Meio Ambiente/ ABES-SP Associação Brasileira de Engª Sanitária e Ambiental , Seção S.P</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luciano Bonfim dos Santos              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3866-3322</td></tr>						<tr><th>E-mail:</th><td>ambientalconchal@conchal.sp.go<br/>v.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luís Eduardo Gregolin Grisotto               </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3622-2478</td></tr>						<tr><th>E-mail:</th><td>luisgrisotto@cobrape.com.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Assoc. PARCEL-CEA/ Associação Civil Eco Mantigueira</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Cássia de Freitas              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(13) 9778-7986</td></tr>						<tr><th>E-mail:</th><td>cassiacontinental@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Marcelo Francisco Percêgo              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>percego23@gmail.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Assoc. Eng. Arq. e Agrônomos de S. J. Boa Vista/ AEAT - Associação de Eng. Agrônomos, Técnicos e Tecnólogos de Aguaí</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Willian Feldberg Karp              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3633-2029</td></tr>						<tr><th>E-mail:</th><td>willinkarp@hotmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Yuri Augusto Nogueira              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3652-5031</td></tr>						<tr><th>E-mail:</th><td>yurinogueira96@gmail.com</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Facudade Municipal Prof. Franco Montoro/ UNIARARAS Fundação Hermínio Ometto</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Márcio Antônio Ferreira              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3891-2910</td></tr>						<tr><th>E-mail:</th><td>ferreira.marcioantonio@gmail.c<br/>om</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+                                <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Ricardo Luiz Bruno              </b>
+                              <br />
+                Representante                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3575-2182</td></tr>						<tr><th>E-mail:</th><td>ricardobruno@fho.edu.br</td></tr>															</table>
+
+                      </div>
+                  </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Convidados    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">AES TIETÊ</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  </div>
+
+    <div style="width: 48%; float: right;">
+                                </div>
+    <br clear="both" />
+  </div>
+            
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-MOGI - Comitê da Bacia Hidrográfica do Rio Mogi Guaçu</h2>
+                <li>
+					Rua Olinda, 150											 - Bairro Santa Terezinha																 - Ribeirão Preto 																 - 14025-250																 - São Paulo					                </li>
+                <li> Tel: (16) 3623.3940 | Fax:  | contato: comitemogi@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="http://www.youtube.com/user/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
