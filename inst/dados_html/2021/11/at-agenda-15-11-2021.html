@@ -1,0 +1,2795 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="" />
+        <meta name="description" content="" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/processoeleitoralsociedadecivil20212023' >Processo eleitoral - Sociedade Civil 2021-2023</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/index.php?option=com_content&view=article&id=72%3Ahidrometeorologia&catid=43%3Ahidrometeorologia&Itemid=30' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-AT</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhat/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhat/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhat/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhat/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhat/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhat/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhat/estrutura' >Estrutura</a></li>
+                                                                        <li class="last"><a href='/cbhat/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhat/ctea/apresentacaoerepresentantes' >CTEA</a></li>
+                                                            <li><a href='/cbhat/ctgi/apresentacaoerepresentantes' >CTGI</a></li>
+                                                            <li><a href='/cbhat/ctmh/apresentacaoerepresentantes' >CTMH</a></li>
+                                                            <li><a href='/cbhat/ctpaat/apresentacaoerepresentantes' >CTPA</a></li>
+                                                            <li><a href='/cbhat/sbchtc/representantes' >SBCHTC</a></li>
+                                                            <li><a href='/cbhat/subbillings/representantes' >SCBHBT</a></li>
+                                                            <li><a href='/cbhat/subcotiaguarapiranga/representantes' >SCBHCG</a></li>
+                                                            <li><a href='/cbhat/subjuquericantareira/representantes' >SCBHJC</a></li>
+                                                            <li class="last"><a href='/cbhat/subpinheirospirapora/representantes' >SCBHPP</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="10" data-year="2021" data-unity="5" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="11" data-year="2021" data-unity="5" data-scope="global">Novembro/2021</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="12" data-year="2021" data-unity="5" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 01/11/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/568/events/9508'>Ver mais</a></div><h2>Expediente suspenso</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 01/11/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Estado de SP  <br />  <a href='/pageitems/451/events/11097'>Ver mais</a></div>">1</td><td class="calendar-day calendar-event" title="<h2>Dia de Finados</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 02/11/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Estado de SP  <br />  <a href='/pageitems/451/events/9446'>Ver mais</a></div>">2</td><td class="calendar-day calendar-event" title="<h2>Reunião SE_CBH&#39;s</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 03/11/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma_ Teams da Microsoft   <br />  <a href='/pageitems/451/events/9465'>Ver mais</a></div><h2>Adiada_Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 03/11/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/340/events/9540'>Ver mais</a></div>">3</td><td class="calendar-day calendar-event" title="<h2>Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas - CRH  <br />  <b>Data do evento:</b> 04/11/2021  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/502/events/9499'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day calendar-event" title="<h2>Alterada_Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 08/11/2021  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/568/events/11107'>Ver mais</a></div><h2>XVIII Dialógo Interbacias</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 08/11/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/451/events/11108'>Ver mais</a></div>">8</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 09/11/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/339/events/9518'>Ver mais</a></div><h2>XVIII Dialógo Interbacias</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 09/11/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/451/events/11109'>Ver mais</a></div><h2>VII Encontro Estadual de Câmaras Técnicas de Educação Ambiental,</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 09/11/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/11120'>Ver mais</a></div>">9</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião CTAJI</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais - CRH  <br />  <b>Data do evento:</b> 10/11/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/338/events/9530'>Ver mais</a></div>">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day calendar-event" title="<h2>Proclamação da República</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 15/11/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Estado de SP  <br />  <a href='/pageitems/451/events/9447'>Ver mais</a></div>">15</td><td class="calendar-day">16</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião_CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 17/11/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/341/events/9102'>Ver mais</a></div>">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day calendar-event" title="<h2>Consciência Negra</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 20/11/2021  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Município de SP  <br />  <a href='/pageitems/451/events/9449'>Ver mais</a></div>">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day calendar-event" title="<h2>Reunião Conj CTAJI_CTPLAN_CORHi</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 23/11/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/11124'>Ver mais</a></div>">23</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 24/11/2021  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/341/events/11143'>Ver mais</a></div>">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="10" data-year="2021" data-unity="5" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="11" data-year="2021" data-unity="5" data-scope="scoped">Novembro/2021</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="12" data-year="2021" data-unity="5" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day calendar-event" title="<h2>3ª Reunião das Câmaras Técnicas do CBH/TB em 2021 (por videoconferência)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 04/11/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Por Videoconferência  <br />  <a href='/pageitems/315/events/11117'>Ver mais</a></div><h2>Reunião Conjunta dos Comitês das Bacias Hidrográficas dos Rios Turvo e Grande (CBH-TG) e Rio São José dos Dourados (CBH-SJD)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 04/11/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Reunião on-line / Videoconferência  <br />  <a href='/pageitems/318/events/11128'>Ver mais</a></div><h2>Reunião Conjunta dos Comitês das Bacias Hidrográficas dos Rios Turvo e Grande (CBH-TG) e Rio São José dos Dourados (CBH-SJD)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica Turvo / Grande  <br />  <b>Data do evento:</b> 04/11/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Reunião on-line / Videoconferência  <br />  <a href='/pageitems/317/events/11129'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião de 2021 do GT-Empreendimento do CBH/TB</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 19/11/2021  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Por Videoconferência  <br />  <a href='/pageitems/315/events/11138'>Ver mais</a></div>">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day calendar-event" title="<h2>7ª Reunião do GT-Estiagem (CT-PL)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 22/11/2021  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> por videoconferência  <br />  <a href='/pageitems/313/events/11118'>Ver mais</a></div>">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br//perh20202023" class="banner">
+            <img src='/public/uploads/banners//16067331776314.jpg'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/crh/progestao" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Agenda</h1>
+
+
+
+
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 21</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/11132"><h2>4ª Reunião Plenária Extraordinária do CBH-AT de 2021</h2></a>
+            <p>
+                4ª Reunião Plenária Extraordinária do CBH-AT de 2021                <a href="/collegiate/5/pageitems/328/events/11132">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 21</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/11011"><h2>3ª Reunião Plenária Ordinária do CBH-AT de 2021</h2></a>
+            <p>
+                3ª Reunião Plenária Ordinária do CBH-AT de 2021                <a href="/collegiate/5/pageitems/328/events/11011">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 21</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/10590"><h2>2ª Reunião Plenária Ordinária do CBH-AT de 2021</h2></a>
+            <p>
+                2ª Reunião Plenária do CBH-AT de 2021                <a href="/collegiate/5/pageitems/328/events/10590">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 21</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9578"><h2>Assembleia Geral e Eleições Setoriais da Sociedade Civil para o CBH-AT e Subcomitês, biênio 2021-2023</h2></a>
+            <p>
+                Assembleia Geral e Eleições Setoriais do Processo Eleitoral da Sociedade Civil - 2021-2023                <a href="/collegiate/5/pageitems/328/events/9578">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 21</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9471"><h2>1ª Reunião Plenária Ordinária do CBH-AT</h2></a>
+            <p>
+                1ª Reunião Plenária Ordinária de 2021 do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9471">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 20</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9425"><h2>5ª Reunião Plenária Extraordinária do CBH-AT de 2020</h2></a>
+            <p>
+                5ª Reunião Plenária do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9425">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 20</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9364"><h2>4ª Reunião Plenária Extreodinária do CBH-AT</h2></a>
+            <p>
+                4ª Reunião Plenária do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9364">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 20</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9288"><h2>1ª reunião do GT Eventos Extremos</h2></a>
+            <p>
+                                <a href="/collegiate/5/pageitems/328/events/9288">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 20</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9285"><h2>7ª reunião da CTEA</h2></a>
+            <p>
+                7ª reunião da CTEA                <a href="/collegiate/5/pageitems/328/events/9285">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 20</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9287"><h2>1ª reunião do GT Jurubatuba</h2></a>
+            <p>
+                1ª reunião do GT Jurubatuba                <a href="/collegiate/5/pageitems/328/events/9287">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 20</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9259"><h2>3ª Reunião Plenária Extraordinária do Comitê da Bacia Hidrográfica do Alto Tietê</h2></a>
+            <p>
+                3ª Reunião Plenária Extraordinária do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9259">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 20</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9282"><h2>20ª reunião das CTs</h2></a>
+            <p>
+                20ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9282">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 20</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9281"><h2>19ª reunião das CTs</h2></a>
+            <p>
+                19ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9281">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 20</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9286"><h2>17ª reunião da CTPA</h2></a>
+            <p>
+                17ª reunião da CTPA                <a href="/collegiate/5/pageitems/328/events/9286">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 20</span>
+            <span class="day">01</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9280"><h2>18ª reunião das CTs</h2></a>
+            <p>
+                18ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9280">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9283"><h2>8ª reunião da CTMH</h2></a>
+            <p>
+                8ª reunião da CTMH                <a href="/collegiate/5/pageitems/328/events/9283">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9279"><h2>17ª reunião conjunta das CTs</h2></a>
+            <p>
+                17ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9279">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9284"><h2>6ª reunião da CTEA</h2></a>
+            <p>
+                                <a href="/collegiate/5/pageitems/328/events/9284">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9277"><h2>16ª reunião das CTs</h2></a>
+            <p>
+                16ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9277">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9278"><h2>15ª reunião das CTs</h2></a>
+            <p>
+                15ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9278">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9229"><h2>1ª Reunião (instalação) do subcomitê Juqueri-Cantareira</h2></a>
+            <p>
+                1ª Reunião (instalação) do SCBH-JC                <a href="/collegiate/5/pageitems/328/events/9229">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9230"><h2>1ª Reunião (instalação) do Subcomitê Pinheiros-Pirapora</h2></a>
+            <p>
+                1ª Reunião do SCBH-PP                <a href="/collegiate/5/pageitems/328/events/9230">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9231"><h2>1ª Reunião (Instalação) do Subcomitê Cotia-Guarapiranga</h2></a>
+            <p>
+                1ª Reunião do SCBH CG                <a href="/collegiate/5/pageitems/328/events/9231">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9223"><h2>1ª Reunião (Instalação) do Subcomitê Billings Tamanduateí</h2></a>
+            <p>
+                1ª reunião do subcomitê BT                <a href="/collegiate/5/pageitems/328/events/9223">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9221"><h2>5ª Reunião da Câmara Técnica de Educação Ambiental</h2></a>
+            <p>
+                5ª Reunião da CTEA                <a href="/collegiate/5/pageitems/328/events/9221">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9222"><h2>7ª Reunião da Câmara Técnica de Monitoramento Hidrológico</h2></a>
+            <p>
+                7ª Reunião da CTMH                <a href="/collegiate/5/pageitems/328/events/9222">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9220"><h2>1ª Reunião (Instalação) do Subcomitê Alto Tietê Cabeceiras</h2></a>
+            <p>
+                1ª Reunião do Subcomitê AT-C                <a href="/collegiate/5/pageitems/328/events/9220">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9215"><h2>2ª Plenária Extraordinária de 2020</h2></a>
+            <p>
+                2ª Reunião Plenária Extraordinária de 2020                <a href="/collegiate/5/pageitems/328/events/9215">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9195"><h2>14ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                14ª reunião das CTs                <a href="/collegiate/5/pageitems/328/events/9195">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9173"><h2>13ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                13ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9173">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9198"><h2>16ª reunião da CTPA - continuação da 15ª Reunião da Câmara Técnica de Planejamento e Articulação conjunta com o Grupo de Trabalho Plano da Bacia</h2></a>
+            <p>
+                16ª reunião da CTPA conjunta com o GT Plano da Bacia                <a href="/collegiate/5/pageitems/328/events/9198">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9172"><h2>12ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                12ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9172">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9197"><h2>15ª reunião da CTPA conjunta com o GT Plano da Bacia</h2></a>
+            <p>
+                15ª reunião da CTPA conjunta com o GT Plano da Bacia                <a href="/collegiate/5/pageitems/328/events/9197">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9196"><h2>14ª reunião da CTPA conjunta com o GT Consultas Ambientais e subcomitê Cotia Guarapiranga</h2></a>
+            <p>
+                14ª reunião da CTPA conjunta com o GT Consultas Ambientais e subcomitê Cotia Guarapiranga                <a href="/collegiate/5/pageitems/328/events/9196">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9171"><h2>11ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                11ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9171">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9170"><h2>10ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                10ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9170">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9169"><h2>9ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                9ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9169">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9168"><h2>8ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                8ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9168">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9167"><h2>7ª Reunião Conjunta das Câmaras Técnicas</h2></a>
+            <p>
+                7ª Reunião Conjunta das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9167">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9166"><h2>6ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                6ª Reunião Conjunta das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9166">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9165"><h2>5ª Reunião Conjunta das Câmaras Técnicas</h2></a>
+            <p>
+                5ª Reunião Conjunta das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9165">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9164"><h2>4ª Reunião Conjunta das Câmaras Técnicas</h2></a>
+            <p>
+                4ª Reunião Conjunta das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9164">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9163"><h2>3ª Reunião Conjunta das Câmaras Técnicas</h2></a>
+            <p>
+                3ª Reunião Conjunta das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9163">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9162"><h2>2ª Reunião Conjunta das Câmaras Técnicas</h2></a>
+            <p>
+                2ª Reunião Conjunta das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9162">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 20</span>
+            <span class="day">21</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9161"><h2>1ª Reunião Conjunta das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                1ª Reunião Conjunta das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9161">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 20</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9160"><h2>Reunião da Diretoria do CBH-AT e Coordenadores das Câmaras Técnicas</h2></a>
+            <p>
+                Reunião da Diretoria do CBH-AT e Coordenadores das Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/9160">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 20</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9159"><h2>3ª Reunião da Câmara Técnica de Educação Ambiental</h2></a>
+            <p>
+                3ª Reunião da Câmara Técnica de Educação Ambiental                <a href="/collegiate/5/pageitems/328/events/9159">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 20</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9150"><h2>3ª Reunião da CTEA</h2></a>
+            <p>
+                                <a href="/collegiate/5/pageitems/328/events/9150">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 20</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9158"><h2>13ª Reunião da Câmara Técnica de Planejamento e Articulação conjunta com o Grupo de Trabalho Consultas Ambientais e os Subcomitês Juqueri-Cantareira e Pinheiros-Pirapora</h2></a>
+            <p>
+                13ª Reunião da Câmara Técnica de Planejamento e Articulação conjunta com o Grupo de Trabalho Consultas Ambientais e os Subcomitês Juqueri-Cantareira e Pinheiros-Pirapora                <a href="/collegiate/5/pageitems/328/events/9158">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 20</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9067"><h2>1ª Reunião Plenária do CBH-AT de 2020</h2></a>
+            <p>
+                1ª Reunião Plenária do CBH-AT de 2020                <a href="/collegiate/5/pageitems/328/events/9067">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 20</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9157"><h2>6ª Reunião da Câmara Técnica de Monitoramento Hidrológico</h2></a>
+            <p>
+                6ª Reunião da Câmara Técnica de Monitoramento Hidrológico                <a href="/collegiate/5/pageitems/328/events/9157">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 20</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9156"><h2>12ª Reunião da Câmara Técnica de Planejamento e Articulação em conjunto com o Grupo de Trabalho Consultas Ambientais e Subcomitê Pinheiros-Pirapora</h2></a>
+            <p>
+                12ª Reunião da Câmara Técnica de Planejamento e Articulação em conjunto com o Grupo de Trabalho Consultas Ambientais e Subcomitê Pinheiros-Pirapora                <a href="/collegiate/5/pageitems/328/events/9156">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 20</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9155"><h2>Continuação da 15ª Reunião da Câmara Técnica de Gestão de Investimentos</h2></a>
+            <p>
+                                <a href="/collegiate/5/pageitems/328/events/9155">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 20</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9154"><h2>15ª Reunião da Câmara Técnica de Gestão de Investimentos</h2></a>
+            <p>
+                15ª Reunião da Câmara Técnica de Gestão de Investimentos                <a href="/collegiate/5/pageitems/328/events/9154">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 20</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9153"><h2>11ª Reunião da Câmara Técnica de Planejamento e Articulação em conjunto com o Grupo de Trabalho Consultas Ambientais e Subcomitê Billings-Tamanduateí</h2></a>
+            <p>
+                11ª Reunião da Câmara Técnica de Planejamento e Articulação em conjunto com o Grupo de Trabalho Consultas Ambientais e Subcomitê Billings-Tamanduateí                <a href="/collegiate/5/pageitems/328/events/9153">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 20</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9152"><h2>14ª Reunião da Câmara Técnica de Gestão de Investimentos</h2></a>
+            <p>
+                14ª Reunião da Câmara Técnica de Gestão de Investimentos                <a href="/collegiate/5/pageitems/328/events/9152">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 20</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9151"><h2>9ª Reunião do Grupo de Trabalho Consultas Ambientais</h2></a>
+            <p>
+                                <a href="/collegiate/5/pageitems/328/events/9151">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 19</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9023"><h2>6ª Reunião Plenária do CBH-AT de 2019</h2></a>
+            <p>
+                6ª Reunião Plenária Extraordinária do CBH-AT                <a href="/collegiate/5/pageitems/328/events/9023">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 19</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/9011"><h2>5ª Reunião Plenária do CBH-AT de 2019</h2></a>
+            <p>
+                5ª Reunião Plenária do CBH-AT de 2019                <a href="/collegiate/5/pageitems/328/events/9011">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 19</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/8014"><h2>10ª Reunião da CTGI em conjunto às demais Câmaras Técnicas</h2></a>
+            <p>
+                10ª Reunião da CTGI em conjunto às demais Câmaras Técnicas                <a href="/collegiate/5/pageitems/328/events/8014">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 19</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/8013"><h2>9ª Reunião da CTGI</h2></a>
+            <p>
+                9ª Reunião da CTGI                <a href="/collegiate/5/pageitems/328/events/8013">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7989"><h2>4ª Reunião Plenária do CBH-AT de 2019</h2></a>
+            <p>
+                4ª Reunião Plenária do CBH-AT de 2019                <a href="/collegiate/5/pageitems/328/events/7989">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/8000"><h2>5ª Reunião da Câmara Técnica de Monitoramento Hidrológico </h2></a>
+            <p>
+                5ª Reunião da CTMH                <a href="/collegiate/5/pageitems/328/events/8000">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7998"><h2>8ª Reunião da Cêmara Técnica de Planejamento e Articulação</h2></a>
+            <p>
+                8ª Reunião da CTPA                <a href="/collegiate/5/pageitems/328/events/7998">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/8001"><h2>8ª Reunião da Câmara Técnica de Gestão de Investimentos conjunta com as demais Câmaras</h2></a>
+            <p>
+                8ª Reunião da CTGI conjunta                <a href="/collegiate/5/pageitems/328/events/8001">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7991"><h2>7ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                7ª Reunião da CTGI                <a href="/collegiate/5/pageitems/328/events/7991">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7992"><h2>4ª Reunião do Grupo de Trabalho Mananciais</h2></a>
+            <p>
+                4ª Reunião do GT-M                <a href="/collegiate/5/pageitems/328/events/7992">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7980"><h2>4ª Reunião do Grupo de Trabalho COnsultas Ambientais Conjunta com Subcomitês Cotia-Guarapiranga e Pinheiros Pirapora</h2></a>
+            <p>
+                4ª Reunião do GT-CA conjunta com SBHT-CG e SBHT-PP                <a href="/collegiate/5/pageitems/328/events/7980">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7987"><h2>Continuação da 6ª Reunião da Câmara Técnica Gestão de Investimentos</h2></a>
+            <p>
+                Continuação da 6ª Reunião da CTGI conjunta com as demais câmaras técnicas                <a href="/collegiate/5/pageitems/328/events/7987">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7985"><h2>6ª Reunião da Câmara Técnica de Gestão de Investimentos conjunta com as demais Câmaras</h2></a>
+            <p>
+                6ª Reunião da CTGI conjunta com as demais câmaras                <a href="/collegiate/5/pageitems/328/events/7985">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7979"><h2>7ª Reunião da Câmara de Técnica Planejamento e Articulação</h2></a>
+            <p>
+                7ª Reunião da CTPA                 <a href="/collegiate/5/pageitems/328/events/7979">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7974"><h2>6ª Reunião da CTPA Conjunta às demais Câmaras e Grupo de Trabalho Plano</h2></a>
+            <p>
+                6ª Reunião da CTPA conjunta às demais Câmaras e GT Plano                <a href="/collegiate/5/pageitems/328/events/7974">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7973"><h2>1ª Reunião do Grupo de Trabalho Subcomitês</h2></a>
+            <p>
+                1ª Reunião do GT Subcomitês                <a href="/collegiate/5/pageitems/328/events/7973">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 19</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7978"><h2>5ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                5ª Reunião da CTGI                <a href="/collegiate/5/pageitems/328/events/7978">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7971"><h2>2ª Reunião do GT Mananciais</h2></a>
+            <p>
+                2ª Reunião do GT Manciais                <a href="/collegiate/5/pageitems/328/events/7971">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7967"><h2>3ª Reunião Plenária do CBH-AT de 2019</h2></a>
+            <p>
+                3ª Reunião Plenária do CBH-AT de 2019                <a href="/collegiate/5/pageitems/328/events/7967">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7966"><h2>4ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                4ª Reunião da CTGI                <a href="/collegiate/5/pageitems/328/events/7966">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7965"><h2>2ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                2ª Reunião da CTEA                <a href="/collegiate/5/pageitems/328/events/7965">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7964"><h2>3ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                3ª Reunião da CTGI                <a href="/collegiate/5/pageitems/328/events/7964">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7962"><h2>3ª Reunião do Grupo de Trabalho Consultas Ambientais e SCBH-PP</h2></a>
+            <p>
+                3ª Reunião do Grupo de Trabalho Consultas Ambientais e SCBH-PP                <a href="/collegiate/5/pageitems/328/events/7962">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">01</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7961"><h2>1ª Reunião do Grupo de Trabalho Mananciais</h2></a>
+            <p>
+                1ª Reunião do Grupo de Trabalho Mananciais                <a href="/collegiate/5/pageitems/328/events/7961">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 19</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7963"><h2> 4ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                4ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/7963">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 19</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7960"><h2>2ª Reunião do GT Consultas Ambientais conjunta com os Subcomitês Cotia-Guarapiranga e Pinheiros Pirapora</h2></a>
+            <p>
+                2ª Reunião do GT Consultas Ambientais conjunta com os Subcomitês Cotia-Guarapiranga e Pinheiros Pirapora                <a href="/collegiate/5/pageitems/328/events/7960">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 19</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7959"><h2>4ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                4ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/7959">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7958"><h2>1ª Reunião do GT Consultas Ambientais</h2></a>
+            <p>
+                2ª Reunião do GT Consultas Ambientais                <a href="/collegiate/5/pageitems/328/events/7958">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7957"><h2>3ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                3ª Reunião da CTMH                <a href="/collegiate/5/pageitems/328/events/7957">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7956"><h2>3ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                3ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/7956">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7955"><h2>2ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                2ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/7955">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7953"><h2>1ª Reunião (recomposição) conjunta dos Grupos de Trabalho: Mananciais e Consultas Ambientais</h2></a>
+            <p>
+                1ª Reunião (recomposição) conjunta dos Grupos de Trabalho: Mananciais e Consultas Ambientais                <a href="/collegiate/5/pageitems/328/events/7953">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7954"><h2>2ª Reunião da CTPA conjunta dos Grupos de Trabalho: Mananciais e Consultas Ambientais</h2></a>
+            <p>
+                2ª Reunião da CTPA conjunta dos Grupos de Trabalho: Mananciais e Consultas Ambientais                <a href="/collegiate/5/pageitems/328/events/7954">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7952"><h2>Reunião de Coordenadores das Câmaras Técnicas do CBH-AT</h2></a>
+            <p>
+                Reunião de Coordenadores das Câmaras Técnicas do CBH-AT                <a href="/collegiate/5/pageitems/328/events/7952">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7951"><h2>1ª Reunião (instalação) da CTMH</h2></a>
+            <p>
+                1ª Reunião (instalação) da CTMH                <a href="/collegiate/5/pageitems/328/events/7951">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">06</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7950"><h2>1ª Reunião (Instalação) da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                1ª Reunião (Instalação) da CTEA                <a href="/collegiate/5/pageitems/328/events/7950">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7949"><h2>1ª Reunião (instalação) da CTPA</h2></a>
+            <p>
+                1ª Reunião (instalação) da CTPA                <a href="/collegiate/5/pageitems/328/events/7949">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 19</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7948"><h2>1ª Reunião (instalação) da CTGI</h2></a>
+            <p>
+                1ª Reunião (instalação) da CTGI                <a href="/collegiate/5/pageitems/328/events/7948">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 19</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7947"><h2>1ª Reunião do segmento da Sociedade Civil - Biênio 2019-2021</h2></a>
+            <p>
+                1ª Reunião do segmento da Sociedade Civil - Biênio 2019-2021                <a href="/collegiate/5/pageitems/328/events/7947">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 19</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/7999"><h2>8ª Reunião da Câmara Técnica de Gestão de Investimentos</h2></a>
+            <p>
+                                <a href="/collegiate/5/pageitems/328/events/7999">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 19</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6871"><h2>1ª Reunião Plenária Ordinária do CBH-AT - gestão 2019-2021</h2></a>
+            <p>
+                1ª Reunião Plenária Ordinária do CBH-AT - gestão 2019-2021                <a href="/collegiate/5/pageitems/328/events/6871">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 19</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6862"><h2>10ª Reunião Plenária Extraordinária do CBH-AT - gestão 2017-2019</h2></a>
+            <p>
+                10ª Reunião Plenária Extraordinária do CBH-AT - gestão 2017-2019                <a href="/collegiate/5/pageitems/328/events/6862">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6858"><h2>16ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                16ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6858">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6857"><h2>18ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                18ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6857">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6856"><h2>FEHIDRO 2019</h2></a>
+            <p>
+                Oficina de Esclarecimentos - FEHIDRO 2019                <a href="/collegiate/5/pageitems/328/events/6856">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6854"><h2>12ª Reunião do GT PBHAT</h2></a>
+            <p>
+                12ª Reunião do GT PBHAT                <a href="/collegiate/5/pageitems/328/events/6854">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6855"><h2>Assembléia Geral e Eleições Setoriais do CBH-AT e Subcomitês</h2></a>
+            <p>
+                Assembléia Geral e Eleições Setoriais do CBH-AT e Subcomitês                <a href="/collegiate/5/pageitems/328/events/6855">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6853"><h2>15ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                15ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6853">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 19</span>
+            <span class="day">12</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6852"><h2>Reunião do GT Consultas Ambientais conjunta com os Subcomitês Billings Tamanduateí e Cotia-Guarapiranga</h2></a>
+            <p>
+                Reunião do GT Consultas Ambientais conjunta com os Subcomitês Billings Tamanduateí e Cotia-Guarapiranga                <a href="/collegiate/5/pageitems/328/events/6852">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 18</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6798"><h2>9ª Reunião Plenária Extraordinária do CBH-AT</h2></a>
+            <p>
+                9ª Reunião Plenária Extraordinária do CBH-AT                <a href="/collegiate/5/pageitems/328/events/6798">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 18</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6804"><h2>15ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                15ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6804">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6808"><h2>17ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                17ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6808">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6807"><h2>16ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                16ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6807">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6802"><h2>14ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                14ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6802">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6806"><h2>15ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                15ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6806">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6809"><h2>14ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                14ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6809">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6803"><h2>3ª Reunião do Grupo de Trabalho Mananciais - GTM</h2></a>
+            <p>
+                3ª Reunião do Grupo de Trabalho Mananciais - GTM                <a href="/collegiate/5/pageitems/328/events/6803">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 18</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6801"><h2>13ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                13ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6801">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 18</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6805"><h2>13ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                13ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6805">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 18</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6760"><h2>12ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                12ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6760">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 18</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6759"><h2>2ª Reunião do Grupo de Trabalho Mananciais - GTM </h2></a>
+            <p>
+                2ª Reunião do Grupo de Trabalho Mananciais - GTM 
+                <a href="/collegiate/5/pageitems/328/events/6759">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 18</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6758"><h2>Processo Eleitoral do Segmento Sociedade Civil - 2019-2021</h2></a>
+            <p>
+                Processo Eleitoral do Segmento Sociedade Civil - 2019-2021                <a href="/collegiate/5/pageitems/328/events/6758">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 18</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6753"><h2>8ª Reunião Plenária Ordinária do CBH-AT</h2></a>
+            <p>
+                8ª Reunião Plenária Ordinária do CBH-AT                <a href="/collegiate/5/pageitems/328/events/6753">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 18</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6752"><h2>11ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                11ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6752">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 18</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6750"><h2>7ª Reunião do Grupo de Trabalho Consultas Ambientais conjunta com Subcomitê Alto Tietê Cabeceiras e Subcomitê Billings Tamanduateí</h2></a>
+            <p>
+                7ª Reunião do Grupo de Trabalho Consultas Ambientais conjunta com Subcomitê Alto Tietê Cabeceiras e Subcomitê Billings Tamanduateí                <a href="/collegiate/5/pageitems/328/events/6750">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 18</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6749"><h2>1ª Reunião Grupo de Trabalho Mananciais - GT Mananciais</h2></a>
+            <p>
+                1ª Reunião Grupo de Trabalho Mananciais - GT Mananciais                <a href="/collegiate/5/pageitems/328/events/6749">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 18</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6739"><h2>10ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH conjunta com GT Outorga</h2></a>
+            <p>
+                	10ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH conjunta com GT Outorga                <a href="/collegiate/5/pageitems/328/events/6739">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 18</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6734"><h2>10ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                10ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6734">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 18</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6725"><h2>Reunião conjunta das Câmaras Técnicas: Planejamento e Articulação - CTPA, Monitoramento Hidrológico - CTMH e Grupo de Acompanhamento Técnico - GAT.</h2></a>
+            <p>
+                Reunião conjunta das Câmaras Técnicas: Planejamento e Articulação - CTPA, Monitoramento Hidrológico - CTMH e Grupo de Acompanhamento Técnico - GAT.                <a href="/collegiate/5/pageitems/328/events/6725">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 18</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6726"><h2>Reunião conjunta das Câmaras Técnicas: Planejamento e Articulação - CTPA, Monitoramento Hidrológico - CTMH  e Grupo Técnico - Outorga do Sistema Cantareira - GT-OC.</h2></a>
+            <p>
+                	Reunião conjunta das Câmaras Técnicas: Planejamento e Articulação - CTPA, Monitoramento Hidrológico - CTMH e Grupo Técnico - Outorga do Sistema Cantareira - GT-OC.                <a href="/collegiate/5/pageitems/328/events/6726">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 18</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6718"><h2>7ª Reunião Plenária Extraordinária do Comitê da Bacia Hidrográfica do Alto Tietê - CBH-AT gestão 2017-2019</h2></a>
+            <p>
+                7ª Reunião Plenária Extraordinária do Comitê da Bacia Hidrográfica do Alto                 <a href="/collegiate/5/pageitems/328/events/6718">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 18</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6713"><h2>12ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                	12ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6713">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 18</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6709"><h2>11ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                11ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6709">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 18</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6705"><h2>9ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                	9ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6705">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 18</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6707"><h2>9ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                9ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/6707">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 18</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6706"><h2>14ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                14ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6706">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 18</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6800"><h2>13ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                13ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6800">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 18</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6700"><h2>8ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                8ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/6700">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 18</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6799"><h2>12ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                12ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6799">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 18</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6681"><h2>6ª Reunião Plenária Extraordinária do Comitê da Bacia Hidrográfica do Alto Tietê - CBH-AT gestão 2017-2019</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/6681">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 18</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6699"><h2>11ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                11ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6699">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 18</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6703"><h2>8ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                8ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/6703">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 18</span>
+            <span class="day">12</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4673"><h2>Audiência Pública - Plano da Bacia Hidrográfica do Alto Tietê - PBHAT</h2></a>
+            <p>
+                Audiência Pública - PBHAT                <a href="/collegiate/5/pageitems/328/events/4673">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 18</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6698"><h2>10ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA</h2></a>
+            <p>
+                10ª Reunião da Câmara Técnica de Planejamento e Articulação - CTPA                <a href="/collegiate/5/pageitems/328/events/6698">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 17</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4615"><h2>5ª Reunião Plenária Ordinária do CBH-AT de 2017</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/4615">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 17</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6701"><h2>10ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                10ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/6701">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 17</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4622"><h2>9ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA</h2></a>
+            <p>
+                9ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA                <a href="/collegiate/5/pageitems/328/events/4622">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 17</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4628"><h2>7ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                7ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/4628">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 17</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/6702"><h2>7ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                7ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/6702">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 17</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4625"><h2>9ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                9ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/4625">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 17</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4624"><h2>8ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                8ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/4624">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 17</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4627"><h2>6ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                6ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/4627">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 17</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4619"><h2>6ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                6ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/4619">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 17</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4621"><h2>8ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA</h2></a>
+            <p>
+                8ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA                <a href="/collegiate/5/pageitems/328/events/4621">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 17</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4626"><h2>5ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                5ª Reunião da Câmara Técnica de Educação Ambiental - CTEA                <a href="/collegiate/5/pageitems/328/events/4626">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 17</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4623"><h2>7ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                7ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI                <a href="/collegiate/5/pageitems/328/events/4623">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 17</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4618"><h2>5ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                5ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/4618">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 17</span>
+            <span class="day">12</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4620"><h2>7ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA</h2></a>
+            <p>
+                7ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA                <a href="/collegiate/5/pageitems/328/events/4620">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 17</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4505"><h2>4ª Reunião da Câmara Técnica de Educação Ambiental - CTEA</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/4505">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 17</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4617"><h2>4ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH</h2></a>
+            <p>
+                4ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH                <a href="/collegiate/5/pageitems/328/events/4617">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 17</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4494"><h2>5ª Reunião da Câmara Técnica de Gestão de Investimentos - CTGI</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/4494">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 17</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/4508"><h2>5ª Reunião da Câmara Técnica de Planejamento e Aticulação - CTPA</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/4508">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 16</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/3159"><h2>10ª Reunião Plenária do Subcomitê Pinheiros-Pirapora</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/3159">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 16</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/3084"><h2>10ª Reunião da Câmara Técnica de Monitoramento Hidrológico (CTMH)</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/3084">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 16</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/3031"><h2>6ª Reunião Plenária do Subcomitê Pinheiros-Pirapora, gestão 2015-2017</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/3031">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 16</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/2983"><h2>Reunião do Grupo de Trabalho sobre Educação Ambiental </h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/2983">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 16</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/2984"><h2>2ª Reunião do GT Leis de Mananciais, conjunta com o Subcomitê Alto Tietê-Cabeceiras</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/2984">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 16</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/2978"><h2>2ª Reunião do GT Consultas Ambientais - Conjunta com o SCBH-ATC</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/2978">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 15</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/2956"><h2>3ª Reunião Plenária do Subcomitê Alto Tietê-Cabeceiras, gestão 2015-2017</h2></a>
+            <p>
+                mais detaçhes                <a href="/collegiate/5/pageitems/328/events/2956">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 15</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/2901"><h2>8ª Reunião do Subcomitê Cotia Guarapiranga, Gestão 2015-2017</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/2901">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 15</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1837"><h2>2ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH, gestão 2015-2017</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1837">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 15</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1804"><h2>1ª Reunião da Câmara Técnica de Monitoramento Hidrológico - CTMH - Gestão 2015-2017</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1804">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 15</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1633"><h2>3ª Reunião Plenária Extraordinária do CBH-AT </h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1633">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 15</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1606"><h2>Reunião do Subcomitê Cotia-Guarapiranga</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1606">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 15</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1608"><h2>Reunião do Subcomitê Alto Tietê-Cabeceiras</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1608">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 15</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1607"><h2>Reunião do Subcomitê Juqueri-Cantareira</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1607">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 15</span>
+            <span class="day">12</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/5/pageitems/328/events/1546"><h2>1ª Reunião Plenária Ordinária de 2015</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/5/pageitems/328/events/1546">[+]</a>
+            </p>
+        </div>
+    </div>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-AT - Comitê da Bacia Hidrográfica do Alto Tietê</h2>
+                <li>
+					Rua Boa Vista, 84 - 8° andar - Centro - 01014-000 - São Paulo - SP																				                </li>
+                <li> Tel: (11) 3106-6850 | Fax:  | contato: comiteat@sp.gov.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
