@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="" />
+        <meta name="description" content="" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/processoeleitoralsociedadecivil20212023' >Processo eleitoral - Sociedade Civil 2021-2023</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria' >Contratação de Consultoria</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/index.php?option=com_content&view=article&id=72%3Ahidrometeorologia&catid=43%3Ahidrometeorologia&Itemid=30' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-SMT</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhsmt/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhsmt/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhsmt/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhsmt/cobrancaasmt' >Cobrança SMT</a></li>
+                                                                        <li><a href='/cbhsmt/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhsmt/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhsmt/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhsmt/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhsmt/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhsmt/cteea/camaratecnicadeeventoseeducacaoambiental' >CT-EEA</a></li>
+                                                            <li><a href='/cbhsmt/ctpa/camaratecnicadeprotecaodasaguas' >CT-PA</a></li>
+                                                            <li><a href='/cbhsmt/ctplagrhi/camaratecnicadeplanejamentoegerenciamentoderecursoshidricos' >CT-PLAGRHI</a></li>
+                                                            <li><a href='/cbhsmt/ctriotiete/camaratecnicariotiete' >CT-RIOTIETE</a></li>
+                                                            <li><a href='/cbhsmt/ctsan/camaratecnicadesaneamento' >CT-SAN</a></li>
+                                                            <li class="last"><a href='javascript:void(0);' >GT-CH</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="0" data-year="2022" data-unity="78" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="01" data-year="2022" data-unity="78" data-scope="global">Janeiro/2022</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="2" data-year="2022" data-unity="78" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>Ano Novo !!!</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 01/01/2022  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Estado de SP  <br />  <a href='/pageitems/451/events/11193'>Ver mais</a></div>">1</td></tr><tr class="calendar-row"><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td></tr><tr class="calendar-row"><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td></tr><tr class="calendar-row"><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 19/01/2022  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/341/events/11235'>Ver mais</a></div>">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td></tr><tr class="calendar-row"><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day calendar-event" title="<h2>Aniversário Cidade de SP</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 25/01/2022  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Cidade de São Paulo  <br />  <a href='/pageitems/451/events/11194'>Ver mais</a></div>">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td></tr><tr class="calendar-row"><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="0" data-year="2022" data-unity="78" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="01" data-year="2022" data-unity="78" data-scope="scoped">Janeiro/2022</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="2" data-year="2022" data-unity="78" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td></tr><tr class="calendar-row"><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td></tr><tr class="calendar-row"><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day calendar-event" title="<h2>56ª Reunião Extraordinária da Câmara Técnica de Planejamento (CT-PL)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 14/01/2022  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> a reunião será realizada por videoconferência  <br />  <a href='/pageitems/313/events/11202'>Ver mais</a></div>">14</td><td class="calendar-day">15</td></tr><tr class="calendar-row"><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td></tr><tr class="calendar-row"><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td></tr><tr class="calendar-row"><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria" class="banner">
+            <img src='/public/uploads/banners//16379220856522.jpg'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br//perh20202023" class="banner">
+            <img src='/public/uploads/banners//16067331776314.jpg'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/crh/progestao" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Documentos</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+        
+                                    <h3>Plano de Bacia</h3>
+        <div>
+                                <div class="block" id="record_20635">
+            <h2>Plano da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê 2016-2027</h2>
+            <ul>
+                <li><label>Data do documento:</label> 20/12/2016<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20635/delib_cbh-smt_416_atualizacao-papi-2020-2023.pdf" target="_blank">delib_cbh-smt_416_atualizacao-papi-2020-2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/20635/plano-acao-programa-investimentos-2016-2019-cbh-smt.pdf" target="_blank">plano-acao-programa-investimentos-2016-2019-cbh-smt.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/20635/plano_bacia_hidrografica_2016-2027_cbh-smt_v-final.pdf" target="_blank">plano_bacia_hidrografica_2016-2027_cbh-smt_v-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20635" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20635">Compartilhar</a>    </div>
+    <div id="item_20635" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Comunicados</h3>
+        <div>
+                                <div class="block" id="record_20685">
+            <h2>COMUNICADO CBH-SMT Nº 05/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/03/2021<br /></li>
+                <li><label>Postado em:</label> 30/03/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20685/comunicado-05_cbh-smt_analise-recursos-soc-civil-terceira-chamada-resultado-final.pdf" target="_blank">comunicado-05_cbh-smt_analise-recursos-soc-civil-terceira-chamada-resultado-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20685" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20685">Compartilhar</a>    </div>
+    <div id="item_20685" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20683">
+            <h2>COMUNICADO CBH-SMT Nº 04/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 25/03/2021<br /></li>
+                <li><label>Postado em:</label> 25/03/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20683/comunicado-04_cbh-smt_analise-inscricoes-soc-civil-terceira-chamada.pdf" target="_blank">comunicado-04_cbh-smt_analise-inscricoes-soc-civil-terceira-chamada.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20683" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20683">Compartilhar</a>    </div>
+    <div id="item_20683" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20632">
+            <h2>COMUNICADO CBH-SMT Nº 03/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/03/2021<br /></li>
+                <li><label>Postado em:</label> 01/03/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20632/comunicado-03_relacao_membros-soc-civil-assembleia-marco-2021-rev1.pdf" target="_blank">comunicado-03_relacao_membros-soc-civil-assembleia-marco-2021-rev1.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20632" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20632">Compartilhar</a>    </div>
+    <div id="item_20632" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20631">
+            <h2>COMUNICADO CBH-SMT Nº 02/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/03/2021<br /></li>
+                <li><label>Postado em:</label> 01/03/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20631/comunicado-02_cbh-smt_analise-inscricoes-soc-civil-final-marco-2021-rev1.pdf" target="_blank">comunicado-02_cbh-smt_analise-inscricoes-soc-civil-final-marco-2021-rev1.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20631" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20631">Compartilhar</a>    </div>
+    <div id="item_20631" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19628">
+            <h2>COMUNICADO CBH-SMT Nº 01/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/02/2021<br /></li>
+                <li><label>Postado em:</label> 04/02/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/19628/comunicado-01-2021_cbh-smt_analise-inscricoes-soc-civil.pdf" target="_blank">comunicado-01-2021_cbh-smt_analise-inscricoes-soc-civil.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19628" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_19628">Compartilhar</a>    </div>
+    <div id="item_19628" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Relatórios</h3>
+        <div>
+                                <div class="block" id="record_21403">
+            <h2>Relatório de Situação dos Recursos Hídricos na Bacia SMT 2021-2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 14/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/21403/relato-rio-de-situac-a-o-2021-2020-v-final.pdf" target="_blank">relato-rio-de-situac-a-o-2021-2020-v-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21403" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_21403">Compartilhar</a>    </div>
+    <div id="item_21403" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21402">
+            <h2>RELATÓRIO DE ATIVIDADES DO CBH-SMT - 2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 14/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/21402/delib_cbh-smt-442_relatorio-atividades-cbh-smt-2021.pdf" target="_blank">delib_cbh-smt-442_relatorio-atividades-cbh-smt-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21402" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_21402">Compartilhar</a>    </div>
+    <div id="item_21402" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20940">
+            <h2>RELATÓRIO DE AVALIAÇÃO DO PROCESSO DE SELEÇÃO DOS  EMPREENDIMENTOS FEHIDRO 2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/06/2021<br /></li>
+                <li><label>Postado em:</label> 28/06/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20940/relatorio_avaliacao_fehidro_2021-28-06.pdf" target="_blank">relatorio_avaliacao_fehidro_2021-28-06.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20940" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20940">Compartilhar</a>    </div>
+    <div id="item_20940" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19552">
+            <h2>Relatorio de Atividades da Secretaria Executiva CBH-SMT 2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/12/2020<br /></li>
+                <li><label>Postado em:</label> 16/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/19552/relatorio-secretaria_executiva-cbh-smt-2020.pdf" target="_blank">relatorio-secretaria_executiva-cbh-smt-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19552" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_19552">Compartilhar</a>    </div>
+    <div id="item_19552" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19344">
+            <h2>Relatório de Situação dos Recursos Hídricos 2020 - Ano Base 2019</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/11/2020<br /></li>
+                <li><label>Postado em:</label> 09/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/19344/relatorio-situacao-recursos-hidricos-cbh-smt-2020-2019.rar" target="_blank">relatorio-situacao-recursos-hidricos-cbh-smt-2020-2019.rar</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19344" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_19344">Compartilhar</a>    </div>
+    <div id="item_19344" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Apresentações</h3>
+        <div>
+                                <div class="block" id="record_20851">
+            <h2>Avaliação Quali-Quantitativa UGRHI 10</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/05/2021<br /></li>
+                <li><label>Postado em:</label> 27/05/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20851/monitoramento-ugrhi-10-smt-cob-10-v4.pdf" target="_blank">monitoramento-ugrhi-10-smt-cob-10-v4.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20851" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20851">Compartilhar</a>    </div>
+    <div id="item_20851" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Documentos</h3>
+        <div>
+                                <div class="block" id="record_21440">
+            <h2>PLANILHA DE ACOMPANHAMENTO DOS PROJETOS E EMPREENDIMENTOS INDICADOS AO FEHIDRO</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 16/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/21440/planilha_acompanhamento_papi_ugrhis_delib190-cbh-smt-final.pdf" target="_blank">planilha_acompanhamento_papi_ugrhis_delib190-cbh-smt-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21440" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_21440">Compartilhar</a>    </div>
+    <div id="item_21440" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21401">
+            <h2>Atualização do Plano de Ação e Programa de Investimentos - PA/PI, para o período de 2020 a 2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 14/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/21401/delib_cbh-smt-439_atualizacao-pa-pi_2022-2023.pdf" target="_blank">delib_cbh-smt-439_atualizacao-pa-pi_2022-2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21401" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_21401">Compartilhar</a>    </div>
+    <div id="item_21401" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21439">
+            <h2>Plano de Capacitação CBH-SMT</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/21439/plano-de-capacitacao-2022-2023-v-final.pdf" target="_blank">plano-de-capacitacao-2022-2023-v-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21439" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_21439">Compartilhar</a>    </div>
+    <div id="item_21439" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21438">
+            <h2>Plano de Comunicação CBH-SMT</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/06/2021<br /></li>
+                <li><label>Postado em:</label> 22/06/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/21438/plano-de-comunicao-cbh-smt-final.pdf" target="_blank">plano-de-comunicao-cbh-smt-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21438" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_21438">Compartilhar</a>    </div>
+    <div id="item_21438" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20825">
+            <h2>Plano de Trabalho 2021 da Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/05/2021<br /></li>
+                <li><label>Postado em:</label> 12/05/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/20825/plano_trabalho-fabh-smt-2021.pdf" target="_blank">plano_trabalho-fabh-smt-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20825" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_20825">Compartilhar</a>    </div>
+    <div id="item_20825" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Referências Técnicas</h3>
+        <div>
+                                <div class="block" id="record_10452">
+            <h2>FEHIDRO TERMOS DE REFERÊNCIA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/12/2015<br /></li>
+                <li><label>Postado em:</label> 18/12/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/01_introducao.pdf" target="_blank">01_introducao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/02_estacao.pdf" target="_blank">02_estacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/03_abastecimento.pdf" target="_blank">03_abastecimento.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/04_tratamento.pdf" target="_blank">04_tratamento.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/05_aterro.pdf" target="_blank">05_aterro.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/06_educacao_ambiental.pdf" target="_blank">06_educacao_ambiental.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/07_plano-controle-de-erosao-rural.pdf" target="_blank">07_plano-controle-de-erosao-rural.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/08_implantacao-restauracao-ecologica.pdf" target="_blank">08_implantacao-restauracao-ecologica.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/09_diagnostico.pdf" target="_blank">09_diagnostico.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/10_viveiro.pdf" target="_blank">10_viveiro.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/manual_ea_fehidro.pdf" target="_blank">manual_ea_fehidro.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/roteiro-elaboraca-projetos-ea.pdf" target="_blank">roteiro-elaboraca-projetos-ea.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-SMT/10452/roteiro-fflorestal.pdf" target="_blank">roteiro-fflorestal.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10452" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_10452">Compartilhar</a>    </div>
+    <div id="item_10452" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Sem Categoria</h3>
+        <div>
+                                <div class="block" id="record_7512">
+            <h2>Plano Regional  De Saneamento Da Bacia do SMT - 2011</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/11/2011<br /></li>
+                <li><label>Postado em:</label> 26/05/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7512/plano-regional-de-saneamento-2011.pdf" target="_blank">plano-regional-de-saneamento-2011.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7512" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7512">Compartilhar</a>    </div>
+    <div id="item_7512" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7226">
+            <h2>Relatório de Situação de 2010 da UGRHI 10</h2>
+            <ul>
+                <li><label>Data do documento:</label> 23/12/2010<br /></li>
+                <li><label>Postado em:</label> 29/12/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7226/relatorio-de-situacao-2010-cbh-smt.pdf" target="_blank">relatorio-de-situacao-2010-cbh-smt.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7226" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7226">Compartilhar</a>    </div>
+    <div id="item_7226" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7122">
+            <h2>Relatório de Situação da UGRHI-10 de 2009</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/12/2009<br /></li>
+                <li><label>Postado em:</label> 18/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7122" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7122">Compartilhar</a>    </div>
+    <div id="item_7122" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7120">
+            <h2>Decreto 55.008 de 10/12/2009</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/12/2009<br /></li>
+                <li><label>Postado em:</label> 12/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7120/2009_dec_est_55008.pdf" target="_blank">2009_dec_est_55008.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7120" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7120">Compartilhar</a>    </div>
+    <div id="item_7120" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7099">
+            <h2>Plano de Bacia UGRHI10 CBHSMT</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/09/2009<br /></li>
+                <li><label>Postado em:</label> 16/09/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7099/capacd_smt_rpb.pdf" target="_blank">capacd_smt_rpb.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7099/mapademandas.pdf" target="_blank">mapademandas.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7099/mapadiagnostico.pdf" target="_blank">mapadiagnostico.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7099/smt_rpb.pdf" target="_blank">smt_rpb.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7099" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7099">Compartilhar</a>    </div>
+    <div id="item_7099" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7021">
+            <h2>Encontro Técnico Câmara Técnica de Saneamento</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/08/2007<br /></li>
+                <li><label>Postado em:</label> 23/08/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7021/encontro-tecnico-lei-11-445.doc" target="_blank">encontro-tecnico-lei-11-445.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7021" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7021">Compartilhar</a>    </div>
+    <div id="item_7021" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7000">
+            <h2>Plano de Bacia.</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/12/2006<br /></li>
+                <li><label>Postado em:</label> 25/04/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7000/mapadedemandas.pdf" target="_blank">mapadedemandas.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapadiagnostico.pdf" target="_blank">mapadiagnostico.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapasintese_subbacia01.pdf" target="_blank">mapasintese_subbacia01.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapasintese_subbacia02.pdf" target="_blank">mapasintese_subbacia02.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapasintese_subbacia03.pdf" target="_blank">mapasintese_subbacia03.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapasintese_subbacia04.pdf" target="_blank">mapasintese_subbacia04.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapasintese_subbacia05.pdf" target="_blank">mapasintese_subbacia05.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/mapasintese_subbacia06.pdf" target="_blank">mapasintese_subbacia06.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7000/reltec_91-265-205.pdf" target="_blank">reltec_91-265-205.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7000" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_7000">Compartilhar</a>    </div>
+    <div id="item_7000" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6969">
+            <h2>Atas referentes às reuniões da Unidade de Gerenciamento de Projetos</h2>
+            <ul>
+                <li><label>Data do documento:</label> 17/10/2006<br /></li>
+                <li><label>Postado em:</label> 17/10/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6969/1-minuta-da-ata-da-1a-reuniao-da-ugp.doc" target="_blank">1-minuta-da-ata-da-1a-reuniao-da-ugp.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/10-ata-da-10a-reuniao-ugp-190406.doc" target="_blank">10-ata-da-10a-reuniao-ugp-190406.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/11-ata-da-11a-reuniao-da-ugp-150906.doc" target="_blank">11-ata-da-11a-reuniao-da-ugp-150906.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/2-minuta-da-ata-da-2a-reuniao-da-ugp.doc" target="_blank">2-minuta-da-ata-da-2a-reuniao-da-ugp.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/3-ata-da-3-reuniao-da-ugp.doc" target="_blank">3-ata-da-3-reuniao-da-ugp.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/4-minuta-da-ata-da-4-reuniao-da-ugp.doc" target="_blank">4-minuta-da-ata-da-4-reuniao-da-ugp.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/5-ata-da-5-reuniao-ugp-150705.doc" target="_blank">5-ata-da-5-reuniao-ugp-150705.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/7-ata-da-7a-reuniao-ugp-151206.doc" target="_blank">7-ata-da-7a-reuniao-ugp-151206.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/8-ata-da-8a-e-9a-reunioes-ugp.doc" target="_blank">8-ata-da-8a-e-9a-reunioes-ugp.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/ata-da-reuniao-de-eleicao-da-ugp-abr-05.doc" target="_blank">ata-da-reuniao-de-eleicao-da-ugp-abr-05.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6969/audiencia-publica-sorocaba-18-11-05.doc" target="_blank">audiencia-publica-sorocaba-18-11-05.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6969" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6969">Compartilhar</a>    </div>
+    <div id="item_6969" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6967">
+            <h2>Atas referentes ao Grupo Técnico de Itupararanga</h2>
+            <ul>
+                <li><label>Data do documento:</label> 22/09/2006<br /></li>
+                <li><label>Postado em:</label> 22/09/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6967/ata-4-gti.doc" target="_blank">ata-4-gti.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6967/minuta-do-relato-da-reuniao-gti-110706.doc" target="_blank">minuta-do-relato-da-reuniao-gti-110706.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6967/minuta-do-relato-da-reuniao-gti-28-jun-06.doc" target="_blank">minuta-do-relato-da-reuniao-gti-28-jun-06.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6967/relato-reuniao-gti-mai-06.doc" target="_blank">relato-reuniao-gti-mai-06.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6967" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6967">Compartilhar</a>    </div>
+    <div id="item_6967" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6966">
+            <h2>Legislação referente à cobrança pelo uso da água no estado de São Paulo</h2>
+            <ul>
+                <li><label>Data do documento:</label> 22/09/2006<br /></li>
+                <li><label>Postado em:</label> 22/09/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6966/decreto-50667_30_3_2006-cobranca-transcrito.doc" target="_blank">decreto-50667_30_3_2006-cobranca-transcrito.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6966/decreto-estadual-32955-91.doc" target="_blank">decreto-estadual-32955-91.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6966/lei-estadual-7663-91.doc" target="_blank">lei-estadual-7663-91.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6966/lei-estadual-9034-94.doc" target="_blank">lei-estadual-9034-94.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6966/lei-estadual10020-98.doc" target="_blank">lei-estadual10020-98.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6966/lei-federal-9433-97.doc" target="_blank">lei-federal-9433-97.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6966/leicobranca12183_30dez06.pdf" target="_blank">leicobranca12183_30dez06.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6966" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6966">Compartilhar</a>    </div>
+    <div id="item_6966" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6965">
+            <h2>Atas referentes às reuniões do GT-COB</h2>
+            <ul>
+                <li><label>Data do documento:</label> 22/09/2006<br /></li>
+                <li><label>Postado em:</label> 22/09/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6965/minuta-de-relato-de-reuniao-gtcob-10ago-06.doc" target="_blank">minuta-de-relato-de-reuniao-gtcob-10ago-06.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6965/minuta-gtcob-de-relato-de-reuniao-01-set-06.doc" target="_blank">minuta-gtcob-de-relato-de-reuniao-01-set-06.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6965/minuta-gtcob-de-relato-de-reuniao-25-ago-06.doc" target="_blank">minuta-gtcob-de-relato-de-reuniao-25-ago-06.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6965/relato-da-reuniao-do-gt-cobranca-02-ago-06.doc" target="_blank">relato-da-reuniao-do-gt-cobranca-02-ago-06.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6965" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6965">Compartilhar</a>    </div>
+    <div id="item_6965" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6941">
+            <h2>1ª Reunião do Grupo Técnico de Itupararanga de 2006</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/01/2006<br /></li>
+                <li><label>Postado em:</label> 17/01/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6941/agenda-ambiental-itupararanga-versao-2-0.doc" target="_blank">agenda-ambiental-itupararanga-versao-2-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6941/agenda-ambiental-itupararanga-versao-2.doc" target="_blank">agenda-ambiental-itupararanga-versao-2.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6941/apresentacao-cba-gti-110106.pdf" target="_blank">apresentacao-cba-gti-110106.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/cadastramento-de-irrigantes-na-bacia-hidrografica-da-uhe-de-itupararanga.pdf" target="_blank">cadastramento-de-irrigantes-na-bacia-hidrografica-da-uhe-de-itupararanga.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/cadastro-irrigantes-gti-110106.pdf" target="_blank">cadastro-irrigantes-gti-110106.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/cnec-sem-fotos-grandes-gti-110106.pdf" target="_blank">cnec-sem-fotos-grandes-gti-110106.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/cth-gti-110106.pdf" target="_blank">cth-gti-110106.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/fepaf-gti-110106.pdf" target="_blank">fepaf-gti-110106.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/levantamento-de-caracteristicas-do-entorno-monitoramento-de-qualidade-de-agua-e-concentracao-de-compostos-organicos-no-reservatorio-de-itupararanga.pdf" target="_blank">levantamento-de-caracteristicas-do-entorno-monitoramento-de-qualidade-de-agua-e-concentracao-de-compostos-organicos-no-reservatorio-de-itupararanga.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6941/minuta-ata-reuniao-11-01-06-alterada2.doc" target="_blank">minuta-ata-reuniao-11-01-06-alterada2.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6941/monitoramento-hidrologico-da-bacia-hidrografica-do-rio-sorocaba-1-fase.pdf" target="_blank">monitoramento-hidrologico-da-bacia-hidrografica-do-rio-sorocaba-1-fase.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6941" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6941">Compartilhar</a>    </div>
+    <div id="item_6941" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6930">
+            <h2>Plano de Bacias do Sorocaba e Médio-Tietê: Relatório de Situação</h2>
+            <ul>
+                <li><label>Data do documento:</label> 06/12/2005<br /></li>
+                <li><label>Postado em:</label> 07/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6930/volume-1-texto.pdf" target="_blank">volume-1-texto.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6930" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6930">Compartilhar</a>    </div>
+    <div id="item_6930" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6928">
+            <h2>Audiência Pública: Priorização das soluções nos diferentes temas (Água: Oferta x Demanda x Perdas; Desmatamento; Erosão/Assoreamento; Poluição e Vulnerabilidades) </h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/11/2005<br /></li>
+                <li><label>Postado em:</label> 24/11/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6928/prioridades-elencadas-na-audiencia-publica.pdf" target="_blank">prioridades-elencadas-na-audiencia-publica.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6928" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6928">Compartilhar</a>    </div>
+    <div id="item_6928" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6927">
+            <h2>Termos de Referência</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/11/2006<br /></li>
+                <li><label>Postado em:</label> 09/11/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6927/avaliacao-de-locais-para-disposicao-de-residuos-solidos-0.doc" target="_blank">avaliacao-de-locais-para-disposicao-de-residuos-solidos-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/avaliacao-de-locais-para-disposicao-de-residuos-solidos.doc" target="_blank">avaliacao-de-locais-para-disposicao-de-residuos-solidos.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/captacao-para-abastecimento-0.doc" target="_blank">captacao-para-abastecimento-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/captacao-para-abastecimento.doc" target="_blank">captacao-para-abastecimento.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/combate-a-inundacoes-0.doc" target="_blank">combate-a-inundacoes-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/combate-a-inundacoes-1.doc" target="_blank">combate-a-inundacoes-1.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/combate-a-inundacoes.doc" target="_blank">combate-a-inundacoes.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/controle-de-erosao-superficial-0.doc" target="_blank">controle-de-erosao-superficial-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/controle-de-erosao-superficial.doc" target="_blank">controle-de-erosao-superficial.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/deliberacao-176-05-anexo-i-relacao-documentos-smt-2006.doc" target="_blank">deliberacao-176-05-anexo-i-relacao-documentos-smt-2006.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/deliberacao-176-05-anexo-ii-ficha-inscricao-smt-2006.doc" target="_blank">deliberacao-176-05-anexo-ii-ficha-inscricao-smt-2006.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/deliberacao-176-05-fehidro-2006-0.pdf" target="_blank">deliberacao-176-05-fehidro-2006-0.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6927/disposicao-de-residuos-solidos-urbanos-0.doc" target="_blank">disposicao-de-residuos-solidos-urbanos-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/disposicao-de-residuos-solidos-urbanos.doc" target="_blank">disposicao-de-residuos-solidos-urbanos.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/educacao_ambiental-0.pdf" target="_blank">educacao_ambiental-0.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6927/educacao_ambiental.pdf" target="_blank">educacao_ambiental.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6927/modelo-orientador-para-apresentacao-de-obras-e-servicos-0.doc" target="_blank">modelo-orientador-para-apresentacao-de-obras-e-servicos-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/modelo-orientador-para-apresentacao-de-obras-e-servicos.doc" target="_blank">modelo-orientador-para-apresentacao-de-obras-e-servicos.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/modelo-orientador-para-apresentacao-de-projetos-cbh-smt-0.doc" target="_blank">modelo-orientador-para-apresentacao-de-projetos-cbh-smt-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/modelo-orientador-para-apresentacao-de-projetos-cbh-smt.doc" target="_blank">modelo-orientador-para-apresentacao-de-projetos-cbh-smt.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/outorgas-0.doc" target="_blank">outorgas-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/outorgas.doc" target="_blank">outorgas.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/producao_de_mudas_e_recuperacao_florestal-0.pdf" target="_blank">producao_de_mudas_e_recuperacao_florestal-0.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6927/producao_de_mudas_e_recuperacao_florestal.pdf" target="_blank">producao_de_mudas_e_recuperacao_florestal.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6927/sistema_de_esgotos_sanitarios-0.doc" target="_blank">sistema_de_esgotos_sanitarios-0.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6927/sistema_de_esgotos_sanitarios.doc" target="_blank">sistema_de_esgotos_sanitarios.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6927" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6927">Compartilhar</a>    </div>
+    <div id="item_6927" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6880">
+            <h2>Estatuto do CBH-SMT</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/05/2005<br /></li>
+                <li><label>Postado em:</label> 09/05/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6880/estatuto-do-cbh-smt.pdf" target="_blank">estatuto-do-cbh-smt.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6880" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6880">Compartilhar</a>    </div>
+    <div id="item_6880" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6822">
+            <h2>1º Reunião no Plano de Comunicação de Itupararanga</h2>
+            <ul>
+                <li><label>Data do documento:</label> 08/06/2004<br /></li>
+                <li><label>Postado em:</label> 08/06/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6822/documento-de-referencia-para-a-1-reuniao-do-gtc.doc" target="_blank">documento-de-referencia-para-a-1-reuniao-do-gtc.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6822" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6822">Compartilhar</a>    </div>
+    <div id="item_6822" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6819">
+            <h2>Protocolo de intenções entre CBA e CBHSMT</h2>
+            <ul>
+                <li><label>Data do documento:</label> 14/04/2004<br /></li>
+                <li><label>Postado em:</label> 18/05/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6819/protocolo_final_smt_cba.doc" target="_blank">protocolo_final_smt_cba.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6819" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_6819">Compartilhar</a>    </div>
+    <div id="item_6819" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhsmt/documentos#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-SMT - Comitê da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</h2>
+                <li>
+					Rua Epitácio Pessoa, 269											 - Além Ponte																 - Sorocaba/SP																 - 18013-190										                </li>
+                <li> Tel: (15) 3237-7060 | Fax:  | contato: colegiado.cbhsmt@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
