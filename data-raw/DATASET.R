@@ -1,16 +1,5 @@
 ## code to prepare `DATASET` dataset goes here
 
-# Função --------
-obter_tabela_atas_comites_modificado <- function(base) {
-  base_lida <- ComitesBaciaSP::obter_tabela_atas_comites(
-    sigla_do_comite = base$comite[1],
-    online = FALSE,
-    path_arquivo = base$caminho[1]
-  )
-
-  base_lida |> readr::write_rds(file = base$caminho_salvar_rds[1])
-}
-
 # Scripts para preparar os dados -----
 
 caminho_arquivos <-
@@ -26,7 +15,7 @@ caminho_arquivos <-
   dplyr::mutate(nome_arquivo = fs::path_file(nome_arquivo)) |>
   tidyr::separate(
     nome_arquivo,
-    c("comite", "conteudo_de_pagina", "dia", "mes", "ano"),
+    c("comite", "conteudo_da_pagina", "dia", "mes", "ano"),
     sep = "-",
     remove = FALSE,
     extra = "drop"
@@ -55,11 +44,22 @@ arquivos_lidos <-
 caminho_arquivos_nao_lidos <- caminho_arquivos |>
   dplyr::filter(!caminho_salvar_rds %in% arquivos_lidos)
 
+unique(caminho_arquivos$conteudo_da_pagina)
 
 # LER ATAS ------------------------------------
+# Função --------
+obter_tabela_atas_comites_modificado <- function(base) {
+  base_lida <- ComitesBaciaSP::obter_tabela_atas_comites(
+    sigla_do_comite = base$comite[1],
+    online = FALSE,
+    path_arquivo = base$caminho[1]
+  )
+
+  base_lida |> readr::write_rds(file = base$caminho_salvar_rds[1])
+}
 # filtrar por atas
 atas_ler <- caminho_arquivos_nao_lidos |>
-  dplyr::filter(conteudo_de_pagina == "atas")
+  dplyr::filter(conteudo_da_pagina == "atas")
 
 # ler atas
 atas_ler |>
@@ -78,3 +78,6 @@ atas_completas <-
 
 # exportar base de atas
 usethis::use_data(atas_completas, overwrite = TRUE)
+
+
+# PRÓXIMO: REPRESENTANTES
