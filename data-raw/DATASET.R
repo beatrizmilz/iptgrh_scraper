@@ -1,8 +1,8 @@
 ## code to prepare `DATASET` dataset goes here
+# devtools::load_all("../ComitesBaciaSP/")
+# devtools::install_github("beatrizmilz/ComitesBaciaSP")
 
 # Scripts para preparar os dados -----
-
-
 caminho_arquivos <-
   tibble::tibble(
     caminho = list.files(
@@ -28,6 +28,7 @@ caminho_arquivos <-
     funcao_utilizar = dplyr::case_when(
       conteudo_da_pagina == "atas" ~ "ComitesBaciaSP::obter_tabela_atas_comites",
       conteudo_da_pagina == "representantes" ~ "ComitesBaciaSP::obter_tabela_representantes_comites",
+      conteudo_da_pagina == "agenda" ~ "ComitesBaciaSP::obter_tabela_agenda_comites",
     ),
     glue_executar = dplyr::case_when(
       !is.na(funcao_utilizar) ~
@@ -64,8 +65,12 @@ eval_parse <- function(caminho_arquivo_para_ler) {
   eval(parse(text = caminho_arquivo_para_ler))
 }
 
+safe_eval_parse <- purrr::safely(eval_parse, "erro")
+
+
 arquivos_transformar_em_rds$glue_executar |>
-  purrr::map(eval_parse)
+  purrr::map(safe_eval_parse)
+# ERRO AQUI! APENAS PARA O COMITE DE MP
 
 # Unificar e exportar bases
 unificar_base <- function(conteudo) {
@@ -90,3 +95,8 @@ usethis::use_data(atas_completo, overwrite = TRUE)
 # representantes
 representantes_completo <- unificar_base("representantes")
 usethis::use_data(representantes_completo, overwrite = TRUE)
+
+
+# agenda
+agenda_completo <- unificar_base("agenda")
+usethis::use_data(agenda_completo, overwrite = TRUE)
