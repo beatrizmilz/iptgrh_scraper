@@ -2,6 +2,7 @@
 
 # Scripts para preparar os dados -----
 
+
 caminho_arquivos <-
   tibble::tibble(
     caminho = list.files(
@@ -23,7 +24,17 @@ caminho_arquivos <-
   dplyr::mutate(ano = stringr::str_remove_all(ano, ".html")) |>
   dplyr::mutate(
     caminho_salvar_rds =  stringr::str_replace(caminho, ".html$", ".Rds"),
-    caminho_salvar_rds =  stringr::str_replace(caminho_salvar_rds, "dados_html", "dados_rds")
+    caminho_salvar_rds =  stringr::str_replace(caminho_salvar_rds, "dados_html", "dados_rds"),
+    funcao_utilizar = dplyr::case_when(
+      conteudo_da_pagina == "atas" ~ "ComitesBaciaSP::obter_tabela_atas_comites",
+      conteudo_da_pagina == "representantes" ~ "ComitesBaciaSP::obter_tabela_representantes_comites",
+    ),
+    glue_executar = dplyr::case_when(
+      !is.na(funcao_utilizar) ~
+        glue::glue(
+          "{funcao_utilizar}(sigla_do_comite = '{comite}', online = FALSE, path_arquivo = '{caminho}') |> readr::write_rds(file = '{caminho_salvar_rds}')"
+        )
+    )
   )
 
 # criar as pastas
@@ -46,38 +57,36 @@ caminho_arquivos_nao_lidos <- caminho_arquivos |>
 
 unique(caminho_arquivos$conteudo_da_pagina)
 
-# LER ATAS ------------------------------------
-# Função --------
-obter_tabela_atas_comites_modificado <- function(base) {
-  base_lida <- ComitesBaciaSP::obter_tabela_atas_comites(
-    sigla_do_comite = base$comite[1],
-    online = FALSE,
-    path_arquivo = base$caminho[1]
-  )
+arquivos_transformar_em_rds <- caminho_arquivos_nao_lidos |>
+  tidyr::drop_na(glue_executar)
 
-  base_lida |> readr::write_rds(file = base$caminho_salvar_rds[1])
+eval_parse <- function(caminho_arquivo_para_ler) {
+  eval(parse(text = caminho_arquivo_para_ler))
 }
-# filtrar por atas
-atas_ler <- caminho_arquivos_nao_lidos |>
-  dplyr::filter(conteudo_da_pagina == "atas")
 
-# ler atas
-atas_ler |>
-  dplyr::group_split(caminho) |>
-  purrr::map(obter_tabela_atas_comites_modificado)
+arquivos_transformar_em_rds$glue_executar |>
+  purrr::map(eval_parse)
 
-# unificar base de atas
-atas_completas <-
-  list.files(
-    "inst/dados_rds",
-    pattern = ".Rds",
-    full.names = TRUE,
-    recursive = TRUE
-  ) |>
-  purrr::map_dfr(readr::read_rds)
+# Unificar e exportar bases
+unificar_base <- function(conteudo) {
+  arquivos_completos <-
+    list.files(
+      "inst/dados_rds",
+      pattern = ".Rds",
+      full.names = TRUE,
+      recursive = TRUE
+    ) |>
+    tibble::enframe() |>
+    dplyr::filter(stringr::str_detect(value, conteudo))
 
-# exportar base de atas
-usethis::use_data(atas_completas, overwrite = TRUE)
+  arquivos_completos$value |>
+    purrr::map_dfr(readr::read_rds)
+}
 
+# atas
+atas_completo <- unificar_base("atas")
+usethis::use_data(atas_completo, overwrite = TRUE)
 
-# PRÓXIMO: REPRESENTANTES
+# representantes
+representantes_completo <- unificar_base("representantes")
+usethis::use_data(representantes_completo, overwrite = TRUE)
