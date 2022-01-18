@@ -1,5 +1,6 @@
 ## code to prepare `DATASET` dataset goes here
-# devtools::load_all("../ComitesBaciaSP/")
+
+# Download da versão mais recente
 # devtools::install_github("beatrizmilz/ComitesBaciaSP")
 
 # Scripts para preparar os dados -----
@@ -38,13 +39,12 @@ caminho_arquivos <-
     )
   )
 
-# criar as pastas
+# criar as pastas (se necessário)
 dirname(caminho_arquivos$caminho) |>
   stringr::str_replace("dados_html", "dados_rds") |>
   fs::dir_create()
 
 # ver arquivos já lidos
-
 arquivos_lidos <-
   list.files(
     "inst/dados_rds",
@@ -53,50 +53,29 @@ arquivos_lidos <-
     recursive = TRUE
   )
 
+# caminho de arquivos não lidos
 caminho_arquivos_nao_lidos <- caminho_arquivos |>
   dplyr::filter(!caminho_salvar_rds %in% arquivos_lidos)
 
-unique(caminho_arquivos$conteudo_da_pagina)
 
+# caminho de arquivos para transformar em RDS
 arquivos_transformar_em_rds <- caminho_arquivos_nao_lidos |>
   tidyr::drop_na(glue_executar)
 
-eval_parse <- function(caminho_arquivo_para_ler) {
-  eval(parse(text = caminho_arquivo_para_ler))
-}
-
-safe_eval_parse <- purrr::safely(eval_parse, "erro")
-
-
+# transformar em rds
 arquivos_transformar_em_rds$glue_executar |>
   purrr::map(safe_eval_parse)
-# ERRO AQUI! APENAS PARA O COMITE DE MP
 
-# Unificar e exportar bases
-unificar_base <- function(conteudo) {
-  arquivos_completos <-
-    list.files(
-      "inst/dados_rds",
-      pattern = ".Rds",
-      full.names = TRUE,
-      recursive = TRUE
-    ) |>
-    tibble::enframe() |>
-    dplyr::filter(stringr::str_detect(value, conteudo))
-
-  arquivos_completos$value |>
-    purrr::map_dfr(readr::read_rds)
-}
-
-# atas
+# atas --------
 atas_completo <- unificar_base("atas")
 usethis::use_data(atas_completo, overwrite = TRUE)
 
-# representantes
+# representantes -----
 representantes_completo <- unificar_base("representantes")
 usethis::use_data(representantes_completo, overwrite = TRUE)
 
 
-# agenda
-agenda_completo <- unificar_base("agenda")
+# agenda -----
+agenda_completa <- unificar_base("agenda") |>
+  limpar_datas_agenda()
 usethis::use_data(agenda_completo, overwrite = TRUE)
