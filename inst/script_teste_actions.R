@@ -3,6 +3,6 @@ ano <- lubridate::year(data)
 mes <- lubridate::month(data)
 caminho <- glue::glue("inst/dados_teste/{ano}/{mes}")
 
-ComitesBaciaSP::download_html(path = caminho,
+ComitesBaciaSP::download_pagina_sigrh(path = caminho,
                               sigla_do_comite = "AT",
                               pagina = "atas")
