@@ -80,7 +80,7 @@ usethis::use_data(representantes_completo, overwrite = TRUE)
 
 
 # agenda -----
-agenda_completa <- unificar_base("agenda") |>
+agenda_completo <- unificar_base("agenda") |>
   limpar_datas_agenda()
 usethis::use_data(agenda_completo, overwrite = TRUE)
 
