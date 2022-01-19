@@ -1,7 +1,7 @@
 ## code to prepare `DATASET` dataset goes here
 devtools::load_all()
 # Download da versão mais recente
-# devtools::install_github("beatrizmilz/ComitesBaciaSP")
+# devtools::install_github("beatrizmilz/ComitesBaciaSP", force = TRUE)
 
 # Scripts para preparar os dados -----
 caminho_arquivos <-
@@ -62,13 +62,11 @@ caminho_arquivos_nao_lidos <- caminho_arquivos |>
 
 # caminho de arquivos para transformar em RDS
 arquivos_transformar_em_rds <- caminho_arquivos_nao_lidos |>
-  tidyr::drop_na(glue_executar) |>
-  dplyr::filter(conteudo_da_pagina == "documentos")
+  tidyr::drop_na(glue_executar)
 
 # transformar em rds
 arquivos_transformar_em_rds$glue_executar |>
   purrr::map(safe_eval_parse)
-# para MP o código não funciona, arrumar
 
 beepr::beep(1)
 
@@ -95,3 +93,4 @@ usethis::use_data(deliberacoes_completo, overwrite = TRUE)
 # documentos  -----
 documentos_completo <- unificar_base("documentos")
 usethis::use_data(documentos_completo, overwrite = TRUE)
+
