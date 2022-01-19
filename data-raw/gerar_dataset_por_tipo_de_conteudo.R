@@ -28,6 +28,7 @@ caminho_arquivos <-
       stringr::str_detect(conteudo_da_pagina, "agencia") ~ "agencia",
       TRUE ~ "cbh"
     ),
+    conteudo_da_pagina = stringr::str_remove_all(conteudo_da_pagina, "_agencia"),
     caminho_salvar_rds =  stringr::str_replace(caminho, ".html$", ".Rds"),
     caminho_salvar_rds =  stringr::str_replace(caminho_salvar_rds, "dados_html", "dados_rds"),
     funcao_utilizar = dplyr::case_when(
@@ -74,6 +75,10 @@ beepr::beep(1)
 atas_completo <- unificar_base("atas")
 usethis::use_data(atas_completo, overwrite = TRUE)
 
+atas_agencia_completo <- unificar_base("atas", agencia = TRUE)
+usethis::use_data(atas_agencia_completo, overwrite = TRUE)
+
+
 # representantes -----
 representantes_completo <- unificar_base("representantes")
 usethis::use_data(representantes_completo, overwrite = TRUE)
@@ -93,4 +98,6 @@ usethis::use_data(deliberacoes_completo, overwrite = TRUE)
 # documentos  -----
 documentos_completo <- unificar_base("documentos")
 usethis::use_data(documentos_completo, overwrite = TRUE)
+
+
 
