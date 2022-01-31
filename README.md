@@ -3,6 +3,19 @@
 
 # RelatoriosTransparenciaAguaSP
 
+-   Este repositório utiliza as funções do pacote
+    [ComitesBaciaSP](https://github.com/beatrizmilz/ComitesBaciaSP),
+    para fazer download das páginas e raspar dados do
+    [SigRH](https://sigrh.sp.gov.br/).
+
+-   Existe um [GitHub
+    Action](https://github.com/beatrizmilz/RelatoriosTransparenciaAguaSP/actions/workflows/executar-script-download-html.yaml)
+    que faz download dos arquivos HTML duas vezes ao mês: dias 01 e 15
+    de cada mês. Isso é importante para ter um histório e possibilitar
+    comparação.
+
+-   Autoria: [Beatriz Milz](https://github.com/beatrizmilz).
+
 ## Anotações importantes
 
 -   Em alguns casos, os links não são padronizados e por parte do
