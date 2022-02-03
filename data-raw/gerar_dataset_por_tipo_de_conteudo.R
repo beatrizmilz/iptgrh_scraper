@@ -26,6 +26,7 @@ caminho_arquivos <-
   dplyr::mutate(
     orgao = dplyr::case_when(
       stringr::str_detect(conteudo_da_pagina, "agencia") ~ "agencia",
+      stringr::str_detect(comite, "crh") ~ "crh",
       TRUE ~ "cbh"
     ),
     conteudo_da_pagina = stringr::str_remove_all(conteudo_da_pagina, "_agencia"),
