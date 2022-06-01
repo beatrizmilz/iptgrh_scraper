@@ -1,0 +1,3325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/processoeleitoralsociedadecivil20212023' >Processo eleitoral - Sociedade Civil 2021-2023</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria' >Contratação de Consultoria</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/index.php?option=com_content&view=article&id=72%3Ahidrometeorologia&catid=43%3Ahidrometeorologia&Itemid=30' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-RB</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhrb/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhrb/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhrb/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhrb/cobrancapelousodaagua' >Cobrança pelo Uso da Água</a></li>
+                                                                        <li><a href='/cbhrb/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhrb/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhrb/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhrb/estrutura' >Estrutura</a></li>
+                                                                        <li><a href='/cbhrb/listadepresenca' >Lista de Presença</a></li>
+                                                                        <li><a href='/cbhrb/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhrb/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhrb/ctaprmajsl/agenda' >CT-APRM-AJ-SL</a></li>
+                                                            <li><a href='/cbhrb/ctol/estrutura' >CT-OL</a></li>
+                                                            <li><a href='/cbhrb/ctpg/agenda' >CT-PG</a></li>
+                                                            <li><a href='/cbhrb/cts/agenda' >CT-S</a></li>
+                                                            <li><a href='/cbhrb/ctea/agenda' >CTEA</a></li>
+                                                            <li><a href='/cbhrb/gtplano/agenda' >GT-PLANO</a></li>
+                                                            <li class="last"><a href='/cbhrb/gtspsl/agenda' >GT-SPSL</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="5" data-year="2022" data-unity="62" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="06" data-year="2022" data-unity="62" data-scope="global">Junho/2022</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="7" data-year="2022" data-unity="62" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td></tr><tr class="calendar-row"><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTAS</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Águas Subterrâneas - CRH  <br />  <b>Data do evento:</b> 09/06/2022  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/336/events/11645'>Ver mais</a></div>">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td></tr><tr class="calendar-row"><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day calendar-event" title="<h2>Feriado de Corpus Christi</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 16/06/2022  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Estado de SP  <br />  <a href='/pageitems/451/events/11736'>Ver mais</a></div>">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td></tr><tr class="calendar-row"><td class="calendar-day">19</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 20/06/2022  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/568/events/11198'>Ver mais</a></div>">20</td><td class="calendar-day">21</td><td class="calendar-day calendar-event" title="<h2>Alterada_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 22/06/2022  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/341/events/11559'>Ver mais</a></div>">22</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 23/06/2022  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/341/events/11731'>Ver mais</a></div>">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td></tr><tr class="calendar-row"><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="5" data-year="2022" data-unity="62" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="06" data-year="2022" data-unity="62" data-scope="scoped">Junho/2022</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="7" data-year="2022" data-unity="62" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td></tr><tr class="calendar-row"><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td></tr><tr class="calendar-row"><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td></tr><tr class="calendar-row"><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td></tr><tr class="calendar-row"><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br//perh20202023" class="banner">
+            <img src='/public/uploads/banners//16067331776314.jpg'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Atas</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+                                    <h3>Ano de 2022</h3>
+        <div>
+        
+                        <div class="block" id="record_23102">
+            <h2>ATA DA 100ª ASSEMBLEIA PUBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2022<br /></li>
+                <li><label>Postado em:</label> 30/05/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/23102/cbhata100_22.doc" target="_blank">cbhata100_22.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23102" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_23102">Compartilhar</a>    </div>
+    <div id="item_23102" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2021</h3>
+        <div>
+        
+                        <div class="block" id="record_21999">
+            <h2>ATA DA 99ª ASSEMBLEIA PUBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2021<br /></li>
+                <li><label>Postado em:</label> 31/03/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/21999/cbhata099_21.pdf" target="_blank">cbhata099_21.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21999" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_21999">Compartilhar</a>    </div>
+    <div id="item_21999" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21441">
+            <h2>ATA DA 98ª ASSEMBLEIA PUBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/06/2021<br /></li>
+                <li><label>Postado em:</label> 16/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/21441/cbhata098_21.doc" target="_blank">cbhata098_21.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21441" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_21441">Compartilhar</a>    </div>
+    <div id="item_21441" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_20875">
+            <h2>ATA DA 26ª ASSEMBLEIA PÚBLICA EXTRAORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/02/2021<br /></li>
+                <li><label>Postado em:</label> 09/06/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/20875/cbh-extra026_21.doc" target="_blank">cbh-extra026_21.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20875" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_20875">Compartilhar</a>    </div>
+    <div id="item_20875" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2020</h3>
+        <div>
+        
+                        <div class="block" id="record_19685">
+            <h2>ATA DA 97ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/11/2020<br /></li>
+                <li><label>Postado em:</label> 26/02/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/19685/cbhata097_20.pdf" target="_blank">cbhata097_20.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19685" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_19685">Compartilhar</a>    </div>
+    <div id="item_19685" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19456">
+            <h2>ATA DA 96ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/07/2020<br /></li>
+                <li><label>Postado em:</label> 25/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/19456/cbhata096_20.doc" target="_blank">cbhata096_20.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19456" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_19456">Compartilhar</a>    </div>
+    <div id="item_19456" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2019</h3>
+        <div>
+        
+                        <div class="block" id="record_18919">
+            <h2>ATA DA 95ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2019<br /></li>
+                <li><label>Postado em:</label> 22/07/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/18919/cbhata095_19.doc" target="_blank">cbhata095_19.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18919" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_18919">Compartilhar</a>    </div>
+    <div id="item_18919" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18632">
+            <h2>ATA DA 94ª ASSEMBLEIA PUBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL  </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2019<br /></li>
+                <li><label>Postado em:</label> 18/12/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/18632/cbhata094_19.doc" target="_blank">cbhata094_19.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18632" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_18632">Compartilhar</a>    </div>
+    <div id="item_18632" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17573">
+            <h2>ATA DA 93ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/09/2019<br /></li>
+                <li><label>Postado em:</label> 02/10/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/17573/cbhata093_19.doc" target="_blank">cbhata093_19.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17573" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_17573">Compartilhar</a>    </div>
+    <div id="item_17573" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16242">
+            <h2>ATA DA 92ª ASSEMBLEIA PUBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL  </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/04/2019<br /></li>
+                <li><label>Postado em:</label> 30/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/16242/cbhata092_19.doc" target="_blank">cbhata092_19.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16242" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_16242">Compartilhar</a>    </div>
+    <div id="item_16242" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16335">
+            <h2>25ª Assembleia Pública Extraordinária do Comitêdo da Bacia Hidrográfica do Ribeira e Litoral - CBH-RB  </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/04/2019<br /></li>
+                <li><label>Postado em:</label> 05/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/16335/cbhextra25_19.doc" target="_blank">cbhextra25_19.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16335" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_16335">Compartilhar</a>    </div>
+    <div id="item_16335" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2018</h3>
+        <div>
+        
+                        <div class="block" id="record_14095">
+            <h2>69ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/11/2018<br /></li>
+                <li><label>Postado em:</label> 26/02/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/14095/ctaprm69-29-11-18.pdf" target="_blank">ctaprm69-29-11-18.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="14095" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_14095">Compartilhar</a>    </div>
+    <div id="item_14095" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_14094">
+            <h2>68ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/10/2018<br /></li>
+                <li><label>Postado em:</label> 26/02/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/14094/ctaprm68-25-10-18.doc" target="_blank">ctaprm68-25-10-18.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="14094" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_14094">Compartilhar</a>    </div>
+    <div id="item_14094" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13942">
+            <h2>67ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/09/2018<br /></li>
+                <li><label>Postado em:</label> 22/11/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/13942/ctaprm67-27-09-18.doc" target="_blank">ctaprm67-27-09-18.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13942" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_13942">Compartilhar</a>    </div>
+    <div id="item_13942" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_15153">
+            <h2>24ª Assembleia Publica Extraordinária do CBH-RB </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/09/2018<br /></li>
+                <li><label>Postado em:</label> 04/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/15153/cbhextra024_18-resumida.docx" target="_blank">cbhextra024_18-resumida.docx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="15153" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_15153">Compartilhar</a>    </div>
+    <div id="item_15153" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13941">
+            <h2>66ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/08/2018<br /></li>
+                <li><label>Postado em:</label> 22/11/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/13941/ctaprm66-30-08-18.doc" target="_blank">ctaprm66-30-08-18.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13941" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_13941">Compartilhar</a>    </div>
+    <div id="item_13941" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13883">
+            <h2>65ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/07/2018<br /></li>
+                <li><label>Postado em:</label> 23/08/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/13883/ctaprm65-26-07-18-ata.doc" target="_blank">ctaprm65-26-07-18-ata.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13883" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_13883">Compartilhar</a>    </div>
+    <div id="item_13883" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13832">
+            <h2>64ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2018<br /></li>
+                <li><label>Postado em:</label> 24/07/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/13832/ctaprm64-29-06-18.doc" target="_blank">ctaprm64-29-06-18.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13832" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_13832">Compartilhar</a>    </div>
+    <div id="item_13832" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16194">
+            <h2>ATA DA 91ª ASSEMBLEIA PUBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL  </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/06/2018<br /></li>
+                <li><label>Postado em:</label> 22/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/16194/cbhata091_18.docx" target="_blank">cbhata091_18.docx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16194" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_16194">Compartilhar</a>    </div>
+    <div id="item_16194" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13778">
+            <h2>63ª Reunião da CT APRM do Alto Juquiá e S. Lourenço</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/06/2018<br /></li>
+                <li><label>Postado em:</label> 25/06/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/13778/ctaprm63-14-06-18.doc" target="_blank">ctaprm63-14-06-18.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13778" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_13778">Compartilhar</a>    </div>
+    <div id="item_13778" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16193">
+            <h2>ATA DA 90ª ASSEMBLEIA PUBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL  </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/03/2018<br /></li>
+                <li><label>Postado em:</label> 22/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/16193/cbhata090_18.docx" target="_blank">cbhata090_18.docx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16193" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_16193">Compartilhar</a>    </div>
+    <div id="item_16193" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2017</h3>
+        <div>
+        
+                        <div class="block" id="record_12648">
+            <h2>ATA DA 89ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2017<br /></li>
+                <li><label>Postado em:</label> 23/03/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/12648/cbhata089_17.pdf" target="_blank">cbhata089_17.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12648" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_12648">Compartilhar</a>    </div>
+    <div id="item_12648" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12521">
+            <h2>ATA DA 88ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/10/2017<br /></li>
+                <li><label>Postado em:</label> 28/12/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/12521/cbhata088_17-resumida.pdf" target="_blank">cbhata088_17-resumida.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12521" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_12521">Compartilhar</a>    </div>
+    <div id="item_12521" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12520">
+            <h2>ATA DA 87ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/06/2017<br /></li>
+                <li><label>Postado em:</label> 28/12/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/12520/cbhata087-resumida-_17.pdf" target="_blank">cbhata087-resumida-_17.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12520" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_12520">Compartilhar</a>    </div>
+    <div id="item_12520" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12301">
+            <h2>ATA DA 86ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2017<br /></li>
+                <li><label>Postado em:</label> 26/09/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/12301/cbhata086_17-resumida.pdf" target="_blank">cbhata086_17-resumida.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12301" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_12301">Compartilhar</a>    </div>
+    <div id="item_12301" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2016</h3>
+        <div>
+        
+                        <div class="block" id="record_12300">
+            <h2>ATA DA 85ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/12/2016<br /></li>
+                <li><label>Postado em:</label> 26/09/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/12300/cbhata085_17-resumida.pdf" target="_blank">cbhata085_17-resumida.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12300" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_12300">Compartilhar</a>    </div>
+    <div id="item_12300" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12299">
+            <h2>ATA DA 84ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/06/2016<br /></li>
+                <li><label>Postado em:</label> 26/09/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/12299/cbhata084_16-resumida.pdf" target="_blank">cbhata084_16-resumida.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12299" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_12299">Compartilhar</a>    </div>
+    <div id="item_12299" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10671">
+            <h2>ATA DA 83ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/02/2016<br /></li>
+                <li><label>Postado em:</label> 22/06/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/10671/cbhata083_15.pdf" target="_blank">cbhata083_15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10671" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_10671">Compartilhar</a>    </div>
+    <div id="item_10671" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2015</h3>
+        <div>
+        
+                        <div class="block" id="record_10670">
+            <h2>ATA DA 82ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2015<br /></li>
+                <li><label>Postado em:</label> 22/06/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/10670/cbhata082_15.pdf" target="_blank">cbhata082_15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10670" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_10670">Compartilhar</a>    </div>
+    <div id="item_10670" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10570">
+            <h2>ATA DA 82ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2015<br /></li>
+                <li><label>Postado em:</label> 04/03/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/10570/cbhata082_15.pdf" target="_blank">cbhata082_15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10570" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_10570">Compartilhar</a>    </div>
+    <div id="item_10570" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10573">
+            <h2>ATA DA 81ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/2015<br /></li>
+                <li><label>Postado em:</label> 04/03/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/10573/cbhata081_15.pdf" target="_blank">cbhata081_15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10573" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_10573">Compartilhar</a>    </div>
+    <div id="item_10573" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10572">
+            <h2>ATA DA 80ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DE BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL (CBH-RB)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/03/2015<br /></li>
+                <li><label>Postado em:</label> 04/03/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-RB/10572/cbhata080_15.pdf" target="_blank">cbhata080_15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10572" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_10572">Compartilhar</a>    </div>
+    <div id="item_10572" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2014</h3>
+        <div>
+        
+                        <div class="block" id="record_8557">
+            <h2>ATA DA 79ª ASSEMBLEIA </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2014<br /></li>
+                <li><label>Postado em:</label> 24/03/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8557/cbhata079_14.pdf" target="_blank">cbhata079_14.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8557" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_8557">Compartilhar</a>    </div>
+    <div id="item_8557" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_8556">
+            <h2>ATA DA 78ª ASSEMBLEIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/2014<br /></li>
+                <li><label>Postado em:</label> 16/12/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8556/cbhata078_14.pdf" target="_blank">cbhata078_14.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8556" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_8556">Compartilhar</a>    </div>
+    <div id="item_8556" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2294">
+            <h2>ATA DA 77ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL - CBH-RB, DE 21/03/2014.</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/03/2014<br /></li>
+                <li><label>Postado em:</label> 07/08/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2294/cbhata077_14.docx" target="_blank">cbhata077_14.docx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2294" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2294">Compartilhar</a>    </div>
+    <div id="item_2294" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2013</h3>
+        <div>
+        
+                        <div class="block" id="record_2260">
+            <h2>ATA DA 76ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL - CBH-RB, DE 10/12/2013</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/12/2013<br /></li>
+                <li><label>Postado em:</label> 01/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2260/cbhata076_13.docx" target="_blank">cbhata076_13.docx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2260" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2260">Compartilhar</a>    </div>
+    <div id="item_2260" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2259">
+            <h2>ATA DA 75ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL - CBH-RB, DE 26/06/13.</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/2013<br /></li>
+                <li><label>Postado em:</label> 01/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2259/cbhata075_13.doc" target="_blank">cbhata075_13.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2259" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2259">Compartilhar</a>    </div>
+    <div id="item_2259" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2258">
+            <h2> ATA DA 74ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIBEIRA DE IGUAPE E LITORAL SUL - CBH-RB, DE 21/03/13.</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/03/2013<br /></li>
+                <li><label>Postado em:</label> 01/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2258/cbhata074_13.doc" target="_blank">cbhata074_13.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2258" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2258">Compartilhar</a>    </div>
+    <div id="item_2258" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2012</h3>
+        <div>
+        
+                        <div class="block" id="record_2163">
+            <h2>ATA DA 73ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2012<br /></li>
+                <li><label>Postado em:</label> 08/04/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2163/cbhata073_12.doc" target="_blank">cbhata073_12.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2163" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2163">Compartilhar</a>    </div>
+    <div id="item_2163" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2162">
+            <h2>ATA DA 72ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/09/2012<br /></li>
+                <li><label>Postado em:</label> 08/04/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2162/cbhata072_12.doc" target="_blank">cbhata072_12.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2162" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2162">Compartilhar</a>    </div>
+    <div id="item_2162" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2120">
+            <h2>ATA DA 71ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/06/2012<br /></li>
+                <li><label>Postado em:</label> 03/09/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2120/cbhata071_12.doc" target="_blank">cbhata071_12.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2120" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2120">Compartilhar</a>    </div>
+    <div id="item_2120" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2042">
+            <h2>ATA DA 70ª ASSEMBLEIA PÚBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/06/2012<br /></li>
+                <li><label>Postado em:</label> 02/07/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2042/cbhata070_12.doc" target="_blank">cbhata070_12.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2042" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_2042">Compartilhar</a>    </div>
+    <div id="item_2042" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1597">
+            <h2>ATA DA 69ª ASSEMBLÉIA PÚBLICA ORDINÁRIA CBH_RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/04/2012<br /></li>
+                <li><label>Postado em:</label> 16/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1597/cbhata069_12.doc" target="_blank">cbhata069_12.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1597" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1597">Compartilhar</a>    </div>
+    <div id="item_1597" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2011</h3>
+        <div>
+        
+                        <div class="block" id="record_1438">
+            <h2>ATA DA 68ª ASSEMBLEIA PÚBLICA ORDINÁRIA CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2011<br /></li>
+                <li><label>Postado em:</label> 23/02/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1438/cbhata068_11.doc" target="_blank">cbhata068_11.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1438" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1438">Compartilhar</a>    </div>
+    <div id="item_1438" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1418">
+            <h2>ATA DA 23ª ASSEMBLÉIA EXTRAORDINÁRIA PÚBLICA CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/09/2011<br /></li>
+                <li><label>Postado em:</label> 19/12/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1418/cbhextra2311.pdf" target="_blank">cbhextra2311.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1418" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1418">Compartilhar</a>    </div>
+    <div id="item_1418" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1392">
+            <h2>Ata da 22ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/07/2011<br /></li>
+                <li><label>Postado em:</label> 08/08/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1392/cbhextra22_11.pdf" target="_blank">cbhextra22_11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1392" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1392">Compartilhar</a>    </div>
+    <div id="item_1392" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1417">
+            <h2>Ata da 67ª ASSEMBLÉIA PÚBLICA ORDINÁRIA DO CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/06/2011<br /></li>
+                <li><label>Postado em:</label> 19/12/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1417/cbhata067_11.pdf" target="_blank">cbhata067_11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1417" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1417">Compartilhar</a>    </div>
+    <div id="item_1417" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1382">
+            <h2>Ata da 66ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/06/2011<br /></li>
+                <li><label>Postado em:</label> 20/06/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1382/cbhata066_11.pdf" target="_blank">cbhata066_11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1382" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1382">Compartilhar</a>    </div>
+    <div id="item_1382" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2010</h3>
+        <div>
+        
+                        <div class="block" id="record_1326">
+            <h2>Ata da 65ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2010<br /></li>
+                <li><label>Postado em:</label> 04/03/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1326/cbhata06510.pdf" target="_blank">cbhata06510.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1326" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1326">Compartilhar</a>    </div>
+    <div id="item_1326" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1306">
+            <h2>Ata da 64ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/10/2010<br /></li>
+                <li><label>Postado em:</label> 01/12/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1306/cbhata06410.pdf" target="_blank">cbhata06410.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1306" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1306">Compartilhar</a>    </div>
+    <div id="item_1306" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1305">
+            <h2>Ata da 63ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/06/2010<br /></li>
+                <li><label>Postado em:</label> 01/12/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1305/cbhata06310.pdf" target="_blank">cbhata06310.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1305" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1305">Compartilhar</a>    </div>
+    <div id="item_1305" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1251">
+            <h2>Ata da 62ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/04/2010<br /></li>
+                <li><label>Postado em:</label> 14/06/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1251/cbhata06210.pdf" target="_blank">cbhata06210.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1251" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1251">Compartilhar</a>    </div>
+    <div id="item_1251" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1222">
+            <h2>Ata da 20ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/01/2010<br /></li>
+                <li><label>Postado em:</label> 22/04/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1222/cbhextra2010.pdf" target="_blank">cbhextra2010.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1222" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1222">Compartilhar</a>    </div>
+    <div id="item_1222" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2009</h3>
+        <div>
+        
+                        <div class="block" id="record_1223">
+            <h2>Ata da 19ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/12/2009<br /></li>
+                <li><label>Postado em:</label> 22/04/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1223/cbhextra1909.pdf" target="_blank">cbhextra1909.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1223" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1223">Compartilhar</a>    </div>
+    <div id="item_1223" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1165">
+            <h2>Ata da 61ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/11/2009<br /></li>
+                <li><label>Postado em:</label> 05/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1165/cbhata06109.pdf" target="_blank">cbhata06109.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1165" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1165">Compartilhar</a>    </div>
+    <div id="item_1165" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1164">
+            <h2>Ata da 60ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/08/2009<br /></li>
+                <li><label>Postado em:</label> 05/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1164/cbhata06009.pdf" target="_blank">cbhata06009.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1164" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1164">Compartilhar</a>    </div>
+    <div id="item_1164" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1163">
+            <h2>Ata da 59ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/07/2009<br /></li>
+                <li><label>Postado em:</label> 05/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1163/cbhata05909.pdf" target="_blank">cbhata05909.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1163" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1163">Compartilhar</a>    </div>
+    <div id="item_1163" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1162">
+            <h2>Ata da 58ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/02/2009<br /></li>
+                <li><label>Postado em:</label> 05/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1162/cbhata05809.pdf" target="_blank">cbhata05809.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1162" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1162">Compartilhar</a>    </div>
+    <div id="item_1162" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2008</h3>
+        <div>
+        
+                        <div class="block" id="record_1070">
+            <h2>Ata da 18ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/12/2008<br /></li>
+                <li><label>Postado em:</label> 19/02/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1070/cbhextra1808-0.pdf" target="_blank">cbhextra1808-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1070/cbhextra1808.pdf" target="_blank">cbhextra1808.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1070" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1070">Compartilhar</a>    </div>
+    <div id="item_1070" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1069">
+            <h2>Ata da 57ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/11/2008<br /></li>
+                <li><label>Postado em:</label> 19/02/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1069/cbhata05708-0.pdf" target="_blank">cbhata05708-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1069/cbhata05708.pdf" target="_blank">cbhata05708.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1069" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1069">Compartilhar</a>    </div>
+    <div id="item_1069" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1068">
+            <h2>Ata da 17ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/09/2008<br /></li>
+                <li><label>Postado em:</label> 19/02/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1068/cbhextra1708-0.pdf" target="_blank">cbhextra1708-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1068/cbhextra1708.pdf" target="_blank">cbhextra1708.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1068" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_1068">Compartilhar</a>    </div>
+    <div id="item_1068" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_992">
+            <h2>Ata da 56ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/06/2008<br /></li>
+                <li><label>Postado em:</label> 28/10/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/992/cbhata05608.pdf" target="_blank">cbhata05608.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="992" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_992">Compartilhar</a>    </div>
+    <div id="item_992" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_991">
+            <h2>Ata da 55ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/04/2008<br /></li>
+                <li><label>Postado em:</label> 28/10/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/991/cbhata05508.pdf" target="_blank">cbhata05508.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="991" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_991">Compartilhar</a>    </div>
+    <div id="item_991" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_990">
+            <h2>Ata da 54ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/03/2008<br /></li>
+                <li><label>Postado em:</label> 28/10/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/990/cbhata05408.pdf" target="_blank">cbhata05408.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="990" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_990">Compartilhar</a>    </div>
+    <div id="item_990" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2007</h3>
+        <div>
+        
+                        <div class="block" id="record_989">
+            <h2>Ata da 53ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/11/2007<br /></li>
+                <li><label>Postado em:</label> 28/10/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/989/cbhata05307.pdf" target="_blank">cbhata05307.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="989" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_989">Compartilhar</a>    </div>
+    <div id="item_989" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_919">
+            <h2>Ata da 52ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/06/2007<br /></li>
+                <li><label>Postado em:</label> 27/11/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/919/cbhata05207.html" target="_blank">cbhata05207.html</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="919" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_919">Compartilhar</a>    </div>
+    <div id="item_919" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_889">
+            <h2>Ata da 16ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/03/2007<br /></li>
+                <li><label>Postado em:</label> 19/06/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/889/cbhextra1607.htm" target="_blank">cbhextra1607.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="889" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_889">Compartilhar</a>    </div>
+    <div id="item_889" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2006</h3>
+        <div>
+        
+                        <div class="block" id="record_876">
+            <h2>Ata da 15ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2006<br /></li>
+                <li><label>Postado em:</label> 03/05/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/876/cbhextra1506.htm" target="_blank">cbhextra1506.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="876" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_876">Compartilhar</a>    </div>
+    <div id="item_876" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_875">
+            <h2>Ata da 51ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/06/2006<br /></li>
+                <li><label>Postado em:</label> 03/05/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/875/cbhata05106.htm" target="_blank">cbhata05106.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="875" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_875">Compartilhar</a>    </div>
+    <div id="item_875" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_863">
+            <h2>Ata da 50ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/04/2006<br /></li>
+                <li><label>Postado em:</label> 12/03/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/863/cbhata05006.htm" target="_blank">cbhata05006.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="863" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_863">Compartilhar</a>    </div>
+    <div id="item_863" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2005</h3>
+        <div>
+        
+                        <div class="block" id="record_864">
+            <h2>Ata da 49ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2005<br /></li>
+                <li><label>Postado em:</label> 12/03/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/864/cbhata04905.htm" target="_blank">cbhata04905.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="864" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_864">Compartilhar</a>    </div>
+    <div id="item_864" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_698">
+            <h2>Ata da 48ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2005<br /></li>
+                <li><label>Postado em:</label> 15/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/698/cbhata04805.htm" target="_blank">cbhata04805.htm</a></li>
+                                    <li><a href="/public/uploads/records/698/cbhata04805.pdf" target="_blank">cbhata04805.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="698" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_698">Compartilhar</a>    </div>
+    <div id="item_698" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_695">
+            <h2>Ata da 47ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/08/2005<br /></li>
+                <li><label>Postado em:</label> 02/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/695/cbhata04705.htm" target="_blank">cbhata04705.htm</a></li>
+                                    <li><a href="/public/uploads/records/695/cbhata04705.pdf" target="_blank">cbhata04705.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="695" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_695">Compartilhar</a>    </div>
+    <div id="item_695" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_694">
+            <h2>Ata da 46ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/06/2005<br /></li>
+                <li><label>Postado em:</label> 02/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/694/cbhata04605.htm" target="_blank">cbhata04605.htm</a></li>
+                                    <li><a href="/public/uploads/records/694/cbhata04605.pdf" target="_blank">cbhata04605.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="694" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_694">Compartilhar</a>    </div>
+    <div id="item_694" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_693">
+            <h2>Ata da 45ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/03/2005<br /></li>
+                <li><label>Postado em:</label> 02/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/693/cbhata04505.htm" target="_blank">cbhata04505.htm</a></li>
+                                    <li><a href="/public/uploads/records/693/cbhata04505.pdf" target="_blank">cbhata04505.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="693" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_693">Compartilhar</a>    </div>
+    <div id="item_693" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2004</h3>
+        <div>
+        
+                        <div class="block" id="record_697">
+            <h2>Ata da 14ª Assembléia Pública Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/12/2004<br /></li>
+                <li><label>Postado em:</label> 15/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/697/cbhextra1404.htm" target="_blank">cbhextra1404.htm</a></li>
+                                    <li><a href="/public/uploads/records/697/cbhextra1404.pdf" target="_blank">cbhextra1404.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="697" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_697">Compartilhar</a>    </div>
+    <div id="item_697" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_692">
+            <h2>Ata da 44ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/11/2004<br /></li>
+                <li><label>Postado em:</label> 02/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/692/cbhata04404.htm" target="_blank">cbhata04404.htm</a></li>
+                                    <li><a href="/public/uploads/records/692/cbhata04404.pdf" target="_blank">cbhata04404.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="692" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_692">Compartilhar</a>    </div>
+    <div id="item_692" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_691">
+            <h2>Ata da 43ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/08/2004<br /></li>
+                <li><label>Postado em:</label> 02/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/691/cbhata04304.htm" target="_blank">cbhata04304.htm</a></li>
+                                    <li><a href="/public/uploads/records/691/cbhata04304.pdf" target="_blank">cbhata04304.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="691" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_691">Compartilhar</a>    </div>
+    <div id="item_691" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_620">
+            <h2>Ata da 42ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/05/2004<br /></li>
+                <li><label>Postado em:</label> 23/09/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/620/cbhata04204-final.htm" target="_blank">cbhata04204-final.htm</a></li>
+                                    <li><a href="/public/uploads/records/620/cbhata04204.pdf" target="_blank">cbhata04204.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="620" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_620">Compartilhar</a>    </div>
+    <div id="item_620" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_570">
+            <h2>Ata da 41ª Assembléia Pública Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/01/2004<br /></li>
+                <li><label>Postado em:</label> 06/07/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/570/cbhata04104.doc" target="_blank">cbhata04104.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="570" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_570">Compartilhar</a>    </div>
+    <div id="item_570" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2001</h3>
+        <div>
+        
+                        <div class="block" id="record_836">
+            <h2>Ata da 9ª Reunião da CT-APRM-AJ/SL</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/05/2001<br /></li>
+                <li><label>Postado em:</label> 28/11/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/836/ctaprm0901.htm" target="_blank">ctaprm0901.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="836" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_836">Compartilhar</a>    </div>
+    <div id="item_836" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_453">
+            <h2>Ata da 30ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/01/2001<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/453/cbhata03001.htm" target="_blank">cbhata03001.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="453" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_453">Compartilhar</a>    </div>
+    <div id="item_453" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2000</h3>
+        <div>
+        
+                        <div class="block" id="record_472">
+            <h2>Ata da 9ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/12/2000<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/472/cbhextra0900.htm" target="_blank">cbhextra0900.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="472" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_472">Compartilhar</a>    </div>
+    <div id="item_472" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_452">
+            <h2>Ata da 29ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/11/2000<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/452/cbhata02900.htm" target="_blank">cbhata02900.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="452" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_452">Compartilhar</a>    </div>
+    <div id="item_452" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_450">
+            <h2>Ata da 27ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/07/2000<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/450/cbhata02700.htm" target="_blank">cbhata02700.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="450" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_450">Compartilhar</a>    </div>
+    <div id="item_450" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_449">
+            <h2>Ata da 26ª Asembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/05/2000<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/449/cbhata02600.htm" target="_blank">cbhata02600.htm</a></li>
+                                    <li><a href="/public/uploads/records/449/cbhata02600.pdf" target="_blank">cbhata02600.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="449" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_449">Compartilhar</a>    </div>
+    <div id="item_449" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_448">
+            <h2>Ata da 25ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/04/2000<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/448/cbhata02500.htm" target="_blank">cbhata02500.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="448" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_448">Compartilhar</a>    </div>
+    <div id="item_448" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1999</h3>
+        <div>
+        
+                        <div class="block" id="record_447">
+            <h2>Ata da 24ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/12/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/447/cbhata02499.htm" target="_blank">cbhata02499.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="447" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_447">Compartilhar</a>    </div>
+    <div id="item_447" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_446">
+            <h2>Ata da 23ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/10/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/446/cbhata02399.htm" target="_blank">cbhata02399.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="446" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_446">Compartilhar</a>    </div>
+    <div id="item_446" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_445">
+            <h2>Ata da 22ª Assembléia Ordinária do CBH-Rb</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/09/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/445/cbhata02299.htm" target="_blank">cbhata02299.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="445" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_445">Compartilhar</a>    </div>
+    <div id="item_445" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_444">
+            <h2>Ata da 21ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/07/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/444/cbhata02199.htm" target="_blank">cbhata02199.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="444" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_444">Compartilhar</a>    </div>
+    <div id="item_444" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_443">
+            <h2>Ata da 20ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/05/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/443/cbhata02099.htm" target="_blank">cbhata02099.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="443" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_443">Compartilhar</a>    </div>
+    <div id="item_443" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_441">
+            <h2>Ata da 18ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/02/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/441/cbhata01899.htm" target="_blank">cbhata01899.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="441" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_441">Compartilhar</a>    </div>
+    <div id="item_441" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_470">
+            <h2>Ata da 7ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/01/1999<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/470/cbhextra0799.htm" target="_blank">cbhextra0799.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="470" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_470">Compartilhar</a>    </div>
+    <div id="item_470" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1998</h3>
+        <div>
+        
+                        <div class="block" id="record_440">
+            <h2>Ata da 17ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/12/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/440/cbhata01798_1.htm" target="_blank">cbhata01798_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="440" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_440">Compartilhar</a>    </div>
+    <div id="item_440" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_439">
+            <h2>Ata da 16ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/10/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/439/cbhata01698.htm" target="_blank">cbhata01698.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="439" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_439">Compartilhar</a>    </div>
+    <div id="item_439" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_469">
+            <h2>Ata da 6ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/09/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/469/cbhextra0698.htm" target="_blank">cbhextra0698.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="469" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_469">Compartilhar</a>    </div>
+    <div id="item_469" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_438">
+            <h2>Ata da 15ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/08/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/438/cbhata01598.htm" target="_blank">cbhata01598.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="438" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_438">Compartilhar</a>    </div>
+    <div id="item_438" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_437">
+            <h2>Ata da 14ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/437/cbhata01498.htm" target="_blank">cbhata01498.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="437" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_437">Compartilhar</a>    </div>
+    <div id="item_437" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_436">
+            <h2>Ata da 13ª Assembléia Ordinária  do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/05/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/436/cbhata01398.htm" target="_blank">cbhata01398.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="436" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_436">Compartilhar</a>    </div>
+    <div id="item_436" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_435">
+            <h2>Ata da 12ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/04/1998<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/435/cbhata01298.htm" target="_blank">cbhata01298.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="435" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_435">Compartilhar</a>    </div>
+    <div id="item_435" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1997</h3>
+        <div>
+        
+                        <div class="block" id="record_434">
+            <h2>Ata da 11ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/434/cbhata01197.htm" target="_blank">cbhata01197.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="434" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_434">Compartilhar</a>    </div>
+    <div id="item_434" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_433">
+            <h2>Ata da 10ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/11/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/433/cbhata01097.htm" target="_blank">cbhata01097.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="433" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_433">Compartilhar</a>    </div>
+    <div id="item_433" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_432">
+            <h2>Ata da 9ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/09/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/432/cbhata00997.htm" target="_blank">cbhata00997.htm</a></li>
+                                    <li><a href="/public/uploads/records/432/cbhata00997.pdf" target="_blank">cbhata00997.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="432" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_432">Compartilhar</a>    </div>
+    <div id="item_432" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_431">
+            <h2>Ata da 7ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/06/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/431/cbhata00797.htm" target="_blank">cbhata00797.htm</a></li>
+                                    <li><a href="/public/uploads/records/431/cbhata00797.pdf" target="_blank">cbhata00797.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="431" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_431">Compartilhar</a>    </div>
+    <div id="item_431" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_468">
+            <h2>Ata da 5ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/04/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/468/cbhextra0597.htm" target="_blank">cbhextra0597.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="468" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_468">Compartilhar</a>    </div>
+    <div id="item_468" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_467">
+            <h2>Ata da 4ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/02/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/467/cbhextra0497.htm" target="_blank">cbhextra0497.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="467" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_467">Compartilhar</a>    </div>
+    <div id="item_467" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_466">
+            <h2>Ata da  3ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/01/1997<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/466/cbhextra0397.htm" target="_blank">cbhextra0397.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="466" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_466">Compartilhar</a>    </div>
+    <div id="item_466" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1996</h3>
+        <div>
+        
+                        <div class="block" id="record_465">
+            <h2>Ata da 2ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/12/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/465/cbhextra0296.htm" target="_blank">cbhextra0296.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="465" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_465">Compartilhar</a>    </div>
+    <div id="item_465" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_464">
+            <h2>Ata da 1ª Assembléia Extraordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/11/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/464/cbhextra0196.htm" target="_blank">cbhextra0196.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="464" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_464">Compartilhar</a>    </div>
+    <div id="item_464" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_430">
+            <h2>Ata da 6ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/10/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/430/cbhata00696.htm" target="_blank">cbhata00696.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="430" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_430">Compartilhar</a>    </div>
+    <div id="item_430" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_429">
+            <h2>Ata da 5ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/09/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/429/cbhata00596.htm" target="_blank">cbhata00596.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="429" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_429">Compartilhar</a>    </div>
+    <div id="item_429" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_428">
+            <h2>Ata da 4ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/08/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/428/cbhata00496.htm" target="_blank">cbhata00496.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="428" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_428">Compartilhar</a>    </div>
+    <div id="item_428" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_427">
+            <h2>Ata  da 3ª Assmbléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/06/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/427/cbhata00396.htm" target="_blank">cbhata00396.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="427" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_427">Compartilhar</a>    </div>
+    <div id="item_427" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_426">
+            <h2>Ata da 2ª Assembléia Ordinária do CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/05/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/426/cbhata00296.htm" target="_blank">cbhata00296.htm</a></li>
+                                    <li><a href="/public/uploads/records/426/cbhata00296.pdf" target="_blank">cbhata00296.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="426" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_426">Compartilhar</a>    </div>
+    <div id="item_426" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_425">
+            <h2>1ª Assembléia Ordinária dos CBH-RB</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/01/1996<br /></li>
+                <li><label>Postado em:</label> 30/03/2001</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/425/cbhata00196.htm" target="_blank">cbhata00196.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="425" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhrb/atas#record_425">Compartilhar</a>    </div>
+    <div id="item_425" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhrb/atas#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-RB - Comitê da Bacia Hidrográfica do Ribeira de Iguape e Litoral Sul</h2>
+                <li>
+					Rua Félix Aby Azar-442/ CEP 11.900-000 Registro																				                </li>
+                <li> Tel: (13) 3821-3244 | Fax: (13) 3821-4730 | contato: comiterb@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
