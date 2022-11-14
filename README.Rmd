@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 
   - Representantes: Comitês PP, SMG, MP - Corrigido em 28/01/2022.
   
-    - Atas: Comitê PP - Corrigido em 28/01/2022.
+    - Atas: Comitês PP e SM - Corrigido em 28/01/2022. 
     
-    - Documentos: para o comitê SM, não havia uma página disponível exclusiva para divulgação de documentos (checado pela última vez em 28/01/2022).
+    - Documentos: para o comitê SM, não havia uma página disponível exclusiva para divulgação de documentos (checado pela última vez em 28/01/2022 e 14/11/2022).
     
