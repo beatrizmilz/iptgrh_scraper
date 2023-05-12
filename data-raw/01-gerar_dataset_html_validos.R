@@ -28,5 +28,12 @@ base_html_validacao <-
                    base_html_validada) |>
   dplyr::distinct()
 
+# Porque existem esses invalidos? Tem algo a ser atualizado?
+base_html_validacao |>
+  dplyr::filter(html_valido == FALSE, ano > 2021) |>
+  dplyr::distinct(comite, tipo_info, ano) |>
+  dplyr::arrange(comite)
+
+
 
 usethis::use_data(base_html_validacao, overwrite = TRUE)

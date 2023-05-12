@@ -1,5 +1,5 @@
-  RelatoriosTransparenciaAguaSP::documentos_completo|>
-  dplyr::filter( stringr::str_detect(data_coleta_dados, "2022")) |>
+  RelatoriosTransparenciaAguaSP::documentos_completo |>
+  dplyr::filter(stringr::str_detect(data_coleta_dados, "2022")) |>
   dplyr::count(comite) |>
   dplyr::filter(n < 10) |>
     View()
