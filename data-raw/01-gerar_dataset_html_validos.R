@@ -30,10 +30,9 @@ base_html_validacao <-
 
 # Porque existem esses invalidos? Tem algo a ser atualizado?
 base_html_validacao |>
-  dplyr::filter(html_valido == FALSE, ano > 2021) |>
+  dplyr::filter(html_valido == FALSE, ano > 2022) |>
   dplyr::distinct(comite, tipo_info, ano) |>
   dplyr::arrange(comite)
-
 
 
 usethis::use_data(base_html_validacao, overwrite = TRUE)
