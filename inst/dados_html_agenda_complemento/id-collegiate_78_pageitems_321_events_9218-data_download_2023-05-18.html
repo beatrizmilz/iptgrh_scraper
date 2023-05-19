@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="10ª Reunião Ordinária do Conselho Gestor da APA de Itupararanga" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/collegiate/78/pageitems/321/events/9218" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="10ª Reunião Ordinária do Conselho Gestor da APA de Itupararanga" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/collegiate/78/pageitems/321/events/9218" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria' >Contratação de Consultoria</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-SMT</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhsmt/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhsmt/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhsmt/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhsmt/cobrancaasmt' >Cobrança SMT</a></li>
+                                                                        <li><a href='/cbhsmt/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhsmt/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhsmt/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhsmt/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhsmt/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhsmt/cteea/camaratecnicadeeventoseeducacaoambiental' >CT-EEA</a></li>
+                                                            <li><a href='/cbhsmt/ctpa/camaratecnicadeprotecaodasaguas' >CT-PA</a></li>
+                                                            <li><a href='/cbhsmt/ctplagrhi/camaratecnicadeplanejamentoegerenciamentoderecursoshidricos' >CT-PLAGRHI</a></li>
+                                                            <li><a href='/cbhsmt/ctriotiete/camaratecnicariotiete' >CT-RIOTIETE</a></li>
+                                                            <li><a href='/cbhsmt/ctsan/camaratecnicadesaneamento' >CT-SAN</a></li>
+                                                            <li><a href='javascript:void(0);' >GT-CH</a></li>
+                                                            <li class="last"><a href='/cbhsmt/gtpsa/grupodetrabalhopagamentodeservicosambientais' >GT-PSA</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2023" data-unity="78" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2023" data-unity="78" data-scope="global">Maio/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2023" data-unity="78" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>Dia do Trabalho</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 01/05/2023  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/12014'>Ver mais</a></div>">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>Encontro de Integração da SRSB com as SE CBHs e Agências</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 18/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> CHT_USP  <br />  <a href='/pageitems/451/events/12219'>Ver mais</a></div>">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2023" data-unity="78" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2023" data-unity="78" data-scope="scoped">Maio/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2023" data-unity="78" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day calendar-event" title="<h2>Reunião Presencial e On-line da Câmara Técnica de Planejamento e Gestão de Recursos Hídricos e Assuntos Institucionais (CT-PLAGRHI/AI) do CBH-TG</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica Turvo / Grande  <br />  <b>Data do evento:</b> 03/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> DAEE/CBH-TG  <br />  <a href='/pageitems/317/events/12202'>Ver mais</a></div>">3</td><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>Reunião  da Câmara Técnica de Planejamento e Avaliação (CT-PLA) do CBH-SJD</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 05/05/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Microsoft Teams   <br />  <a href='/pageitems/318/events/12199'>Ver mais</a></div>">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CT-AI</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Pontal do Paranapanema  <br />  <b>Data do evento:</b> 09/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Sala de Reunião \&quot;Sandro Roberto Selmo\&quot; - DAEE  <br />  <a href='/pageitems/320/events/12209'>Ver mais</a></div><h2>Reunião CT-TEAM</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 09/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Online  <br />  <a href='/pageitems/330/events/12215'>Ver mais</a></div>">9</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CT-EA conjunta com CT-RE</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Pontal do Paranapanema  <br />  <b>Data do evento:</b> 10/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Sala de Reunião \&quot;Sandro Roberto Selmo\&quot; - DAEE  <br />  <a href='/pageitems/320/events/12210'>Ver mais</a></div>">10</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CT-PAS</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Pontal do Paranapanema  <br />  <b>Data do evento:</b> 11/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Sala de Reunião \&quot;Sandro Roberto Selmo\&quot; - DAEE  <br />  <a href='/pageitems/320/events/12211'>Ver mais</a></div>">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião da CT-PLAGRHI 2023</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Baixo Pardo / Grande  <br />  <b>Data do evento:</b> 16/05/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sede da Secretaria Executiva do CBH-BPG  <br />  <a href='/pageitems/354/events/13221'>Ver mais</a></div><h2>Reunião de Diretoria do CBH-SJD </h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 16/05/2023  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Plataforma Microsoft Teams  <br />  <a href='/pageitems/318/events/13229'>Ver mais</a></div>">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>REUNIÃO ORDINÁRIA DE HIERARQUIZAÇÃO FEHIDRO 2023 (presencial)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 19/05/2023  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Auditório DAEE - Novo Horizonte/SP  <br />  <a href='/pageitems/315/events/12212'>Ver mais</a></div>">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day calendar-event" title="<h2>Reunião Plenária </h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 23/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Prefeitura Municipal de São Bento do Sapucaí   <br />  <a href='/pageitems/330/events/12216'>Ver mais</a></div><h2>70º REUNIÃO EXTRAORDINÁRIA DO CBH-SJD</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 23/05/2023  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Microsoft Teams  <br />  <a href='/pageitems/318/events/13230'>Ver mais</a></div>">23</td><td class="calendar-day">24</td><td class="calendar-day calendar-event" title="<h2>75ª Reunião Plenária Ordinária do CBH-SMG</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica Sapucaí-Mirim / Grande  <br />  <b>Data do evento:</b> 25/05/2023  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Franca  <br />  <a href='/pageitems/316/events/12040'>Ver mais</a></div><h2>1ª Reunião Extraordinária do CBH-BS</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 25/05/2023  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> SEDUC Praia Grande - Sala das Capacitações  <br />  <a href='/pageitems/310/events/12207'>Ver mais</a></div>">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1>10ª Reunião Ordinária do Conselho Gestor da APA de Itupararanga</h1>
+
+
+<span><b>Data do evento:</b> 13/08/2020</span>
+<br />
+<span><b>Horário:</b> 15:00</span>
+<br />
+<span><b>Local:</b> Plataforma Virtual</span>
+<br />
+<span><b>Descrição:</b> 10ª Reunião Ordinária do Conselho Gestor da APA de Itupararanga.</span>
+<br />
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 15px; line-height: inherit; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web (West European)&quot;, &quot;Segoe UI&quot;, -apple-system, BlinkMacSystemFont, Roboto, &quot;Helvetica Neue&quot;, sans-serif; vertical-align: baseline; color: rgb(50, 49, 48);">
+<p dir="ltr"><span style="color:inherit; font-family:arial,serif,emojifont; font-size:inherit">Prezados(as) Conselheiros(as) da APA Itupararanga,</span><br><br>
+
+<p dir="ltr"><br />
+<span style="color:inherit">Vimos por meio do presente convid&aacute;-los para a 10&ordf; Reuni&atilde;o Ordin&aacute;ria </span><span style="color:inherit">do Conselho Gestor da APA de Itupararanga, conforme abaixo:<br />
+<br />
+DATA: 13 de Agosto de 2020 (quinta-feira)</span><br><br>
+ 
+
+<p dir="ltr"><span style="color:inherit">HOR&Aacute;RIO: 15:00h </span><br><br>
+ 
+
+<p dir="ltr"><span style="color:inherit">LOCAL:</span><span style="color:inherit"><span style="color:inherit"> Plataforma Virtual conforme</span> link:  <a href="https://bityli.com/EHPLC" id="LPlnk681758" rel="noopener noreferrer" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline;" target="_blank">https://bityli.com/EHPLC</a></span><br><br>
+
+<p dir="ltr"> <br><br>
+
+<p dir="ltr"><span style="color:inherit">PAUTA:  </span><br><br>
+
+<p dir="ltr"> <br><br>
+
+<p dir="ltr"><span style="color:rgb(32, 31, 30); font-family:inherit">        </span><span style="color:rgb(32, 31, 30); font-family:inherit"><strong>1)</strong></span><span style="color:inherit"><span style="color:inherit; font-family:inherit">  </span><span style="color:inherit; font-family:inherit; font-size:12pt">Devolutiva da Suzano em resposta aos questionamentos do conselho gestor referente  a </span><span style="color:inherit"><span style="color:inherit; font-family:inherit; font-size:12pt">Silvicultura na fazenda &quot;Gir&quot; nos limites dos  munic&iacute;pios</span><span style="color:inherit; font-family:inherit; font-size:12pt"> de </span><span style="color:inherit; font-family:inherit; font-size:12pt">Alum&iacute;nio</span><span style="color:inherit; font-family:inherit; font-size:12pt">, Mairinque e Votorantim.</span></span><span style="color:inherit; font-family:inherit; font-size:12pt"> </span></span><br><br>
+
+<span style="color:inherit">    </span><span style="font-family:inherit">      </span><span style="font-family:inherit"><strong>  </strong></span><strong>  </strong><br><br>
+
+<p dir="ltr"><span style="color:inherit">       </span><span style="color:inherit"><strong> 2)</strong></span><span style="color:inherit">   Informes.</span><br><br>
+
+<p dir="ltr"> <br><br>
+
+<p dir="ltr"><span style="color:inherit">Contamos com a presen&ccedil;a de todos(a), e pedimos n&atilde;o atrasar para que possamos iniciar a reuni&atilde;o no hor&aacute;rio previsto.</span><br><br>
+
+<p dir="ltr"> <br><br>
+
+<p dir="ltr"><span style="color:inherit">Atenciosamente,</span><br><br>
+</div>
+
+<div style="margin: 0px; padding: 0px; border: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 15px; line-height: inherit; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web (West European)&quot;, &quot;Segoe UI&quot;, -apple-system, BlinkMacSystemFont, Roboto, &quot;Helvetica Neue&quot;, sans-serif; vertical-align: baseline; color: rgb(50, 49, 48);">
+<div style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 12pt; line-height: inherit; font-family: Calibri, Arial, Helvetica, sans-serif, serif, EmojiFont; vertical-align: baseline; color: black;"> </div>
+
+<div id="x_x_Signature" style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: inherit;">
+<div style="margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; color: inherit;">
+<div style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: 12pt; line-height: inherit; font-family: Calibri, Arial, Helvetica, sans-serif, serif, EmojiFont; vertical-align: baseline; color: black;"><img src="data:image/png;base64,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Q47SJSEgBISAEBACQkAIpDkBEXZpPgXSASEgBISAEBACQkAIJA8BEXbJw1FaEQJCQAgIASEgBIRAmhMQYZfmUyAdEAJCQAgIASEgBIRA8hAQYZc8HKUVISAEhIAQEAJCQAikOQERdmk+BdIBISAEhIAQEAJCQAgkDwERdsnDUVoRAkJACAgBISAEhECaExBhl+ZTIB0QAkJACAgBISAEhEDyEBBhlzwcpRUhIASEgBAQAkJACKQ5ARF2aT4F0gEhIASEgBAQAkJACCQPARF2ycNRWhECQkAICAEhIASEQJoTEGGX5lMgHRACQkAICAEhIASEQPIQEGGXPBylFSEgBISAEBACQkAIpDkBEXZpPgXSASEgBISAEBACQkAIJA8BEXbJw1FaEQJCQAgIASEgBIRAmhMQYZfmUyAdEAJCQAgIASEgBIRA8hAQYZc8HKUVISAEhIAQEAJCQAikOQEfYZdtQJM075B0QAgIASEgBISAEBACQsA5gUtj//CcLBY759zkTCEgBISAEBACQkAIpGsCIuzS9fRI54SAEBACQkAICAEh4JyACDvnrORMISAEhIAQEAJCQAikawIi7NL19EjnhIAQEAJCQAgIASHgnIAIO+es5EwhIASEgBAQAkJACKRrAiLs0vX0SOeEgBAQAkJACAgBIeCcgAg756zkTCEgBISAEBACQkAIpGsCIuzS9fRI54SAEBACQkAICAEh4JyACDvnrORMISAEhIAQEAJCQAikawIi7NL19EjnhIAQEAJCQAgIASHgnIAIO+es5EwhIASEgBAQAkJACKRrAiLs0vX0SOeEgBAQAkJACAgBIeCcgAg756zkTCEgBISAEBACQkAIpGsCIuzS9fRI54SAEBACQkAICAEh4JyACDvnrORMISAEhIAQEAJCQAikawIi7NL19EjnhIAQEAJCQAgIASHgnIAIO+es5EwhIASEgBAQAkJACKRrAiLs0vX0SOeEgBAQAkJACAgBIeCcgAg756zkTCEgBISAEBACQkAIpGsCIuzS9fRI54SAEBACQkAICAEh4JzA/wFj8ZgVX1Ac9gAAAABJRU5ErkJggg==" style="border:0px; color:inherit; cursor:pointer; font-family:verdana,arial,helvetica,sans-serif; font-size:small; font-stretch:inherit; font-style:inherit; font-variant:inherit; font-weight:inherit; height:auto; line-height:inherit; margin:0px; max-width:100%; padding:0px; vertical-align:baseline" /></div>
+</div>
+</div>
+</div>
+
+  <h2>Arquivos</h2>
+  <ul>
+          <li><a href="/public/uploads/events//CBH-SMT/9218/questionamentos-silvicultura.pdf" >questionamentos-silvicultura.pdf</a></li>
+      </ul>
+
+      
+  
+    
+<br />
+<br />
+
+<div class="social_link" style="height: 30px; width: 520px; margin-left: 76px;">
+  <div style="float: left; max-width: 150px;">
+    <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://sigrh.sp.gov.br:443/collegiate/78/pageitems/321/events/9218"></div>
+  </div>
+  <div style="float: left; max-width: 110px;">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sigrh.sp.gov.br:443/collegiate/78/pageitems/321/events/9218" data-lang="pt">Tweet</a>
+  </div>
+  <div style="float: left; max-width: 165px;">
+    <div class="fb-share-button" style="max-width:200px;" data-href="http://sigrh.sp.gov.br:443/collegiate/78/pageitems/321/events/9218" data-type="button_count"></div>
+  </div>
+  <div style="float: left; max-width: 100px;">
+    <a id="link_send_email" class="links_send_email" href="/sharelinkemails?url_to_share=http://sigrh.sp.gov.br:443/collegiate/78/pageitems/321/events/9218">Enviar</a>
+  </div>
+  <!--<iframe src="" frameborder="0" height="32" width="200"></iframe> -->
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    gapi.plus.go();
+    FB.XFBML.parse();
+  });
+</script>
+
+<div class="actions">
+    <a href='/cbhsmt/agenda' class="button">Voltar</a></div>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-SMT - Comitê da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</h2>
+                <li>
+					Rua Epitácio Pessoa, 269											 - Além Ponte																 - Sorocaba/SP																 - 18013-190										                </li>
+                <li> Tel: (15) 3237-7060 | Fax:  | contato: colegiado.cbhsmt@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>

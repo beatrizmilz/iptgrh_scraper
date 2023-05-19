@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Processo Eleitoral CBH-SM Biênio 2017/2019" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/collegiate/73/pageitems/330/events/4352" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Processo Eleitoral CBH-SM Biênio 2017/2019" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/collegiate/73/pageitems/330/events/4352" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria' >Contratação de Consultoria</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-SM</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhsm/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhsm/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhsm/atas' >ATAs</a></li>
+                                                                        <li><a href='/cbhsm/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhsm/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhsm/estrutura' >Estrutura</a></li>
+                                                                        <li><a href='/cbhsm/noticias' >Notícias</a></li>
+                                                                        <li><a href='/cbhsm/papi' >PA / PI</a></li>
+                                                                        <li><a href='/cbhsm/planodebacia' >Plano de Bacia</a></li>
+                                                                        <li><a href='/cbhsm/procomites' >PROCOMITÊS</a></li>
+                                                                        <li><a href='/cbhsm/relatoriodesituacao' >Relatório de Situação</a></li>
+                                                                        <li class="last"><a href='/cbhsm/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhsm/ctcoua/regimentointernodactcoua' >CTCOUA</a></li>
+                                                            <li><a href='/cbhsm/ctpai/regimentointernodactpai' >CTPAI</a></li>
+                                                            <li><a href='/cbhsm/ctsan/regimentointernodactsan' >CTSAN</a></li>
+                                                            <li class="last"><a href='/cbhsm/ctteam/regimentointernodactteam' >CTTEAM</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2023" data-unity="73" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2023" data-unity="73" data-scope="global">Maio/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2023" data-unity="73" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>Dia do Trabalho</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 01/05/2023  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/12014'>Ver mais</a></div>">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>Encontro de Integração da SRSB com as SE CBHs e Agências</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 18/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> CHT_USP  <br />  <a href='/pageitems/451/events/12219'>Ver mais</a></div>">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2023" data-unity="73" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2023" data-unity="73" data-scope="scoped">Maio/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2023" data-unity="73" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day calendar-event" title="<h2>Reunião Presencial e On-line da Câmara Técnica de Planejamento e Gestão de Recursos Hídricos e Assuntos Institucionais (CT-PLAGRHI/AI) do CBH-TG</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica Turvo / Grande  <br />  <b>Data do evento:</b> 03/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> DAEE/CBH-TG  <br />  <a href='/pageitems/317/events/12202'>Ver mais</a></div>">3</td><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>Reunião  da Câmara Técnica de Planejamento e Avaliação (CT-PLA) do CBH-SJD</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 05/05/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Microsoft Teams   <br />  <a href='/pageitems/318/events/12199'>Ver mais</a></div>">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CT-AI</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Pontal do Paranapanema  <br />  <b>Data do evento:</b> 09/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Sala de Reunião \&quot;Sandro Roberto Selmo\&quot; - DAEE  <br />  <a href='/pageitems/320/events/12209'>Ver mais</a></div><h2>Reunião CT-TEAM</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 09/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Online  <br />  <a href='/pageitems/330/events/12215'>Ver mais</a></div>">9</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CT-EA conjunta com CT-RE</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Pontal do Paranapanema  <br />  <b>Data do evento:</b> 10/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Sala de Reunião \&quot;Sandro Roberto Selmo\&quot; - DAEE  <br />  <a href='/pageitems/320/events/12210'>Ver mais</a></div>">10</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CT-PAS</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Pontal do Paranapanema  <br />  <b>Data do evento:</b> 11/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Sala de Reunião \&quot;Sandro Roberto Selmo\&quot; - DAEE  <br />  <a href='/pageitems/320/events/12211'>Ver mais</a></div>">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day calendar-event" title="<h2>2ª Reunião da CT-PLAGRHI 2023</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Baixo Pardo / Grande  <br />  <b>Data do evento:</b> 16/05/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sede da Secretaria Executiva do CBH-BPG  <br />  <a href='/pageitems/354/events/13221'>Ver mais</a></div><h2>Reunião de Diretoria do CBH-SJD </h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 16/05/2023  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Plataforma Microsoft Teams  <br />  <a href='/pageitems/318/events/13229'>Ver mais</a></div>">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>REUNIÃO ORDINÁRIA DE HIERARQUIZAÇÃO FEHIDRO 2023 (presencial)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 19/05/2023  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Auditório DAEE - Novo Horizonte/SP  <br />  <a href='/pageitems/315/events/12212'>Ver mais</a></div>">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day calendar-event" title="<h2>Reunião Plenária </h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 23/05/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Prefeitura Municipal de São Bento do Sapucaí   <br />  <a href='/pageitems/330/events/12216'>Ver mais</a></div><h2>70º REUNIÃO EXTRAORDINÁRIA DO CBH-SJD</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do São José dos Dourados  <br />  <b>Data do evento:</b> 23/05/2023  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Microsoft Teams  <br />  <a href='/pageitems/318/events/13230'>Ver mais</a></div>">23</td><td class="calendar-day">24</td><td class="calendar-day calendar-event" title="<h2>75ª Reunião Plenária Ordinária do CBH-SMG</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica Sapucaí-Mirim / Grande  <br />  <b>Data do evento:</b> 25/05/2023  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Franca  <br />  <a href='/pageitems/316/events/12040'>Ver mais</a></div><h2>1ª Reunião Extraordinária do CBH-BS</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 25/05/2023  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> SEDUC Praia Grande - Sala das Capacitações  <br />  <a href='/pageitems/310/events/12207'>Ver mais</a></div>">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1>Processo Eleitoral CBH-SM Biênio 2017/2019</h1>
+
+
+<span><b>Data do evento:</b> 14/12/2016</span>
+<br />
+<span><b>Horário:</b> 08:00</span>
+<br />
+<span><b>Local:</b> Sede da Secretaria Executiva do CBH-SM</span>
+<br />
+<span><b>Endereço:</b> Brigadeiro Jordão, 553, Abernessia, Campos do Jordão - SP</span>
+<br />
+<span><b>Descrição:</b> Regulamento do Processo Eleitoral do CBH-SM biênio 2017/2019.</span>
+<br />
+<p style="text-align:center"><strong><u>EDITAL CBH-SM 03/2016 de 13 de dezembro 2016</u></strong><br><br>
+
+<h4 style="text-align:center"><strong>REGULAMENTO DO PROCESSO ELEITORAL</strong></h4>
+
+<h4 style="text-align:center"><strong>BI&Ecirc;NIO 2017/2019</strong></h4>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>1. Abrang&ecirc;ncia</strong><br><br>
+
+<p style="text-align:justify">Esta norma orienta o processo eleitoral do Comit&ecirc; das Bacias Hidrogr&aacute;ficas da Serra da Mantiqueira - CBH-SM, para o bi&ecirc;nio 2017-2019. Os anexos I e II constituem-se partes integrantes da presente norma.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>2. Coordena&ccedil;&atilde;o</strong><br><br>
+
+<p style="text-align:justify">O processo eleitoral ser&aacute; coordenado pela Secretaria Executiva do CBH-SM.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">Cabe &agrave; Secretaria Executiva promover a divulga&ccedil;&atilde;o, recep&ccedil;&atilde;o do cadastro das entidades, organizar e realizar as reuni&otilde;es preparat&oacute;rias e as assembl&eacute;ias gerais.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3. Calend&aacute;rio Geral</strong><br><br>
+
+<p style="text-align:justify">O processo eleitoral obedecer&aacute; ao seguinte calend&aacute;rio geral:<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3.1. 13/12/2016</strong> - Publica&ccedil;&atilde;o do Edital 03/2016 com o regulamento do processo eleitoral para do mandato 2017/2019.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3.2. 14/12/2016 a 31/01/2017</strong> - Per&iacute;odo para o cadastramento de entidades da Sociedade Civil, de acordo com procedimentos dos <strong>anexos I e II</strong>.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3.3. 14/02/2017</strong> - Plen&aacute;ria para escolha dos representantes da Sociedade Civil.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>Local:</strong> C&acirc;mara Municipal de Campos do Jord&atilde;o<br><br>
+
+<p style="text-align:justify">(Rua In&aacute;cio Caetano, 490 - Abern&eacute;ssia - Campos do Jord&atilde;o / SP).<br><br>
+
+<p style="text-align:justify">Hor&aacute;rio: 09 horas e 30 minutos.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3.4. 15/02/2017 a 22/02/2017</strong> - Per&iacute;odo para informa&ccedil;&atilde;o &agrave; Secretaria Executiva dos resultados da Plen&aacute;ria realizada pela Sociedade Civil. O segmento dever&aacute; informar a SE, dentre as entidades previamente cadastradas, quais foram &agrave;s entidades escolhidas para novos membros do CBH-SM. Os novos membros, rec&eacute;m escolhidos pelo segmento para compor o CBH-SM, dever&atilde;o indicar de seus quadros os novos membros das C&acirc;maras T&eacute;cnicas, de acordo com o <strong>anexo I</strong>.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3.5. 14/12/2016 a 14/03/2017</strong> - Per&iacute;odo de inscri&ccedil;&atilde;o dos representantes das Prefeituras e do Estado. Neste per&iacute;odo dever&atilde;o ser indicados tamb&eacute;m os representantes das entidades nas C&acirc;maras T&eacute;cnicas de acordo com o <strong>anexo I</strong>.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3.6. 31/03/2017</strong> - Reuni&atilde;o Plen&aacute;ria Ordin&aacute;ria do CBH-SM para:<br><br>
+
+<p style="text-align:justify">a) posse dos novos representantes da Sociedade Civil;<br><br>
+
+<p style="text-align:justify">b) posse dos novos representantes das Prefeituras;<br><br>
+
+<p style="text-align:justify">c) posse dos novos representantes do Estado;<br><br>
+
+<p style="text-align:justify">d) decis&atilde;o sobre qual segmento ocupar&aacute; cada um dos cargos: Presid&ecirc;ncia, Vice- Presid&ecirc;ncia e Secretaria Executiva;<br><br>
+
+<p style="text-align:justify">e) posse da Diretoria;<br><br>
+
+<p style="text-align:justify">f) posse dos membros das C&acirc;maras T&eacute;cnicas. <br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>4.</strong> <strong>Procedimentos</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>4.1.</strong> <strong>Aviso p&uacute;blico</strong><br><br>
+
+<p style="text-align:justify">A Secretaria Executiva do CBH-SM far&aacute; publicar comunicado sobre o processo eleitoral no Di&aacute;rio Oficial do Estado de S&atilde;o Paulo, enviando-o a todas as entidades atualmente cadastradas, com assento no Comit&ecirc; da Bacia Hidrogr&aacute;fica da Serra da Mantiqueira - CBH-SM.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>4.2.</strong> <strong>Cadastramento de entidades da sociedade civil.</strong><br><br>
+
+<p style="text-align:justify">O cadastramento das entidades da sociedade civil interessadas em participar do processo ser&aacute; feito mediante o preenchimento da Ficha de Cadastro (<strong>anexo I</strong>).<br><br>
+
+<p style="text-align:justify">A entidade interessada dever&aacute; indicar, no respectivo campo, a categoria na qual esteja inserida.<br><br>
+
+<p style="text-align:justify">A entidade interessada dever&aacute; ter no m&iacute;nimo 1 (um) ano de exist&ecirc;ncia legal devidamente comprovada.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">Poder&atilde;o ser cadastradas entidades comprovadamente vinculadas &agrave;s seguintes categorias:<br><br>
+
+<ol style="list-style-type:lower-alpha">
+	<li style="text-align:justify">Universidades e entidades de pesquisa;</li>
+	<li style="text-align:justify">Usu&aacute;rios de &aacute;gua representados por entidades associativas;</li>
+	<li style="text-align:justify">Associa&ccedil;&otilde;es de Moradores;</li>
+	<li style="text-align:justify">Entidades Ambientalistas;</li>
+	<li style="text-align:justify">Entidades de Classe de Engenheiros e Arquitetos;</li>
+	<li style="text-align:justify">Entidades de Classe de Advogados;</li>
+	<li style="text-align:justify">Entidades de Classe de Hotelaria e Com&eacute;rcio.</li>
+</ol>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>4.3.</strong> <strong>Representa&ccedil;&atilde;o do segmento Estado</strong><br><br>
+
+<p style="text-align:justify">Ser&atilde;o enviados of&iacute;cios aos &oacute;rg&atilde;os do Estado com assento no Comit&ecirc; da Bacia Hidrogr&aacute;fica da Serra da Mantiqueira - CBH-SM, conforme regimento em vigor, solicitando a designa&ccedil;&atilde;o dos representantes (um membro titular e um suplente).<br><br>
+
+<p style="margin-left:14.2pt; text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>4.4.</strong> <strong>Representa&ccedil;&atilde;o dos Munic&iacute;pios</strong><br><br>
+
+<p style="text-align:justify">Ser&atilde;o enviados of&iacute;cios aos munic&iacute;pios e c&acirc;maras municipais sendo que cada prefeitura indicar&aacute; 02 (dois) representantes titulares e respectivos suplentes. As C&acirc;maras Municipais escolher&atilde;o entre os vereadores dos tr&ecirc;s munic&iacute;pios 01 (um) representante titular e respectivo suplente em reuni&atilde;o a ser realizada na sede do CBH-SM, entre os representantes das C&acirc;maras Municipais ou quem for designado pelos mesmos.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>4.5.</strong> <strong>Realiza&ccedil;&atilde;o de Plen&aacute;ria da Sociedade Civil</strong><br><br>
+
+<p style="text-align:justify">Cada categoria escolher&aacute; entre seus pares os representantes titulares e suplentes, de acordo com o disposto no estatuto do Comit&ecirc; da Bacia Hidrogr&aacute;fica - CBH-SM.<br><br>
+
+<p style="text-align:justify">Cada entidade inscrita ter&aacute; direito a um &uacute;nico voto.<br><br>
+
+<p style="text-align:justify">O representante da entidade que n&atilde;o for da diretoria dever&aacute; apresentar procura&ccedil;&atilde;o do presidente ou coordenador, para ter direito a voto.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>5.</strong> <strong>Elei&ccedil;&atilde;o da diretoria do CBH-SM</strong>.<br><br>
+
+<p style="text-align:justify">A elei&ccedil;&atilde;o ser&aacute; feita de acordo com a Delibera&ccedil;&atilde;o 16/98 do CRH-Conselho Estadual de Recursos H&iacute;dricos, Artigo 4&ordm;, par&aacute;grafos 1&ordm; e 2&ordm; e de acordo com o Estatuto do CBH-SM.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>6.</strong> <strong>Local de Cadastramento</strong><br><br>
+
+<p style="text-align:justify">Secretaria Executiva do Comit&ecirc; das Bacias Hidrogr&aacute;ficas da Serra da Mantiqueira - CBH-SM.<br><br>
+
+<p style="text-align:justify">Rua Brigadeiro Jord&atilde;o, 553 - Abern&eacute;ssia<br><br>
+
+<p style="text-align:justify">Campos do Jord&atilde;o - SP - Fone/Fax: (12) 3662-3229<br><br>
+
+<p style="text-align:justify">E-mail: <a href="mailto:comitesm@terra.com.br">comitesm@terra.com.br</a><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>PROCESSO ELEITORAL PARA O MANDATO DO BI&Ecirc;NIO 2017/2019</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>CALEND&Aacute;RIO</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<table border="1" cellpadding="0" cellspacing="0" style="width:483px">
+	<tbody>
+		<tr>
+			<td style="height:13px; width:222px">
+			<h5 style="text-align:justify">ATIVIDADES</h5>
+			</td>
+			<td colspan="4" style="height:13px; width:261px">
+			<h5 style="text-align:justify">DATAS</h5>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify">Dez/16<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify">Jan/17<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> Fev/17<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify">Mar/17<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify">* In&iacute;cio do Processo.<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify">13<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify">* Per&iacute;odo para o cadastramento de entidades da Sociedade Civil<br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify">14<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify">31<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify">* Plen&aacute;ria para escolha dos representantes da Sociedade Civil no CBH-SM e indica&ccedil;&atilde;o pelos membros rec&eacute;m eleitos, dos membros para as C&acirc;maras T&eacute;cnicas.<br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify">14<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="margin-left:-11.5pt; text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify">* Per&iacute;odo para informa&ccedil;&atilde;o &agrave; Secretaria Executiva dos resultados da Plen&aacute;ria realizada pela Sociedade Civil.<br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify">15 a 22<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify">* Per&iacute;odo de inscri&ccedil;&atilde;o dos representantes das Prefeituras e do Estado. Neste per&iacute;odo dever&atilde;o ser indicados tamb&eacute;m os representantes das entidades nas C&acirc;maras T&eacute;cnicas<br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify">14<br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify">14<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:222px">
+			<p style="text-align:justify">* Elei&ccedil;&atilde;o e Posse dos Diri-gentes do CBH-SM e posse dos membros de suas C&acirc;maras T&eacute;cnicas. (Reuni&atilde;o Ordin&aacute;ria do CBH-SM).<br><br>
+			</td>
+			<td style="width:63px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="width:66px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify">31<br><br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>ANEXO I</strong><br><br>
+
+<p style="text-align:justify">Per&iacute;odo de cadastro Sociedade Civil: 14/12/2016 a 31/01/2017<br><br>
+
+<p style="text-align:justify">Per&iacute;odo de cadastro Estado e Munic&iacute;pios: 14/12/2016 a 14/03/2017<br><br>
+
+<h2 style="text-align:justify"> </h2>
+
+<h2 style="text-align:justify"><strong><u>FICHA CADASTRO</u></strong></h2>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">N&deg;__________/2016<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>1) CADASTRO DA ENTIDADE</strong><strong> / Membro do CBH-SM   -   J&aacute; &eacute; membro? (___) sim (___) n&atilde;o</strong><br><br>
+
+<table align="left" border="1" cellpadding="0" cellspacing="0" style="width:655px">
+	<tbody>
+		<tr>
+			<td colspan="2" style="height:11px; width:655px">
+			<p style="text-align:justify">SEGMENTO:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:11px; width:655px">
+			<p style="text-align:justify">CATEGORIA (somente Sociedade Civil. Vide item 4.2):<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:655px">
+			<p style="text-align:justify">NOME DE ENTIDADE:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:655px">
+			<p style="text-align:justify">ENDERE&Ccedil;O DA SEDE DA ENTIDADE:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:655px">
+			<p style="text-align:justify">MUNICIPIO:<br><br>
+
+			<p style="text-align:justify">                                                                                   CEP:<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:19px; width:273px">
+			<p style="text-align:justify">TEL: (12)<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+			<td style="height:19px; width:382px">
+			<p style="text-align:justify">FAX: (12)<br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:273px">
+			<p style="text-align:justify">CELULAR: (12)<br><br>
+			</td>
+			<td style="width:382px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:655px">
+			<p style="text-align:justify">EMAIL:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:655px">
+			<p style="text-align:justify">A Entidade &eacute; Registrada em Cart&oacute;rio? (___) Sim                            (___) N&atilde;o   <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:17px; width:655px">
+			<p style="text-align:justify">CNPJ DA ENTIDADE:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:655px">
+			<p style="text-align:justify">PRESIDENTE DA ENTIDADE:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:5px; width:655px">
+			<p style="text-align:justify">OBSERVA&Ccedil;&Otilde;ES:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>2) CADASTRO DO REPRESENTANTE DA ENTIDADE / Membro do CBH-SM (ANEXO I)</strong><br><br>
+
+<table align="left" border="1" cellpadding="0" cellspacing="0" style="width:655px">
+	<tbody>
+		<tr>
+			<td colspan="2" style="height:11px; width:655px">
+			<p style="text-align:justify">NOME DO REPRESENTANTE:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:13px; width:655px">
+			<p style="text-align:justify">ENDERE&Ccedil;O:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:14px; width:655px">
+			<p style="text-align:justify">MUNICIPIO:                                                                                   CEP:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:32px; width:268px">
+			<p style="text-align:justify">TEL: (12)<br><br>
+			</td>
+			<td style="height:32px; width:387px">
+			<p style="text-align:justify">FAX: (12)<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:5px; width:268px">
+			<p style="text-align:justify">CELULAR: (    )<br><br>
+			</td>
+			<td style="height:5px; width:387px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:5px; width:655px">
+			<p style="text-align:justify">EMAIL:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>3) CADASTRO DO REPRESENTANTE DA ENTIDADE / Membro de C&acirc;mara T&eacute;cnica (ANEXO I)</strong><br><br>
+
+<table align="left" border="1" cellpadding="0" cellspacing="0" style="width:656px">
+	<tbody>
+		<tr>
+			<td colspan="2" style="height:14px; width:656px">
+			<p style="text-align:justify">NOME DO REPRESENTANTE:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:15px; width:656px">
+			<p style="text-align:justify">ENDERE&Ccedil;O:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:17px; width:656px">
+			<p style="text-align:justify">MUNICIPIO:                                                                                   CEP:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:38px; width:268px">
+			<p style="text-align:justify">TEL: (  )<br><br>
+			</td>
+			<td style="height:38px; width:387px">
+			<p style="text-align:justify">FAX: (  )<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:6px; width:268px">
+			<p style="text-align:justify">CELULAR: (    )<br><br>
+			</td>
+			<td style="height:6px; width:387px">
+			<p style="text-align:justify"> <br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:6px; width:656px">
+			<p style="text-align:justify">EMAIL:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height:6px; width:656px">
+			<p style="text-align:justify">C&Acirc;MARA T&Eacute;CNICA:<br><br>
+
+			<p style="text-align:justify"> <br><br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>* Os Membros titulares do CBH-SM dever&atilde;o indicar, de acordo com o item 3 do presente regulamento, os representantes das C&acirc;maras T&eacute;cnicas do CBH-SM. O CBH-SM possui 4 (quatro) C&acirc;maras T&eacute;cnicas, sendo:</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<ul>
+	<li style="text-align:justify"><strong>CT-PAI - C&acirc;mara T&eacute;cnica de Planejamento e Assuntos Institucionais;</strong></li>
+</ul>
+
+<p style="margin-left:18pt; text-align:justify"> <br><br>
+
+<ul>
+	<li style="text-align:justify"><strong>CT-TEAM - C&acirc;mara T&eacute;cnica de Turismo e Educa&ccedil;&atilde;o Ambiental;</strong></li>
+</ul>
+
+<p style="text-align:justify"> <br><br>
+
+<ul>
+	<li style="text-align:justify"><strong>CT-COUA - C&acirc;mara T&eacute;cnica de Outorga e Uso da &Aacute;gua;</strong></li>
+</ul>
+
+<p style="text-align:justify"> <br><br>
+
+<ul>
+	<li style="text-align:justify"><strong>CT-SAN - C&acirc;mara T&eacute;cnica de Saneamento.</strong></li>
+</ul>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>ANEXO II</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>Edital de Convoca&ccedil;&atilde;o da Sociedade Civil CBH-SM 03/2016 de 13/12/2016.</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="margin-left:212.4pt; text-align:justify"><em>Convoca&ccedil;&atilde;o para cadastramento e elei&ccedil;&atilde;o dos representantes de entidades do segmento sociedade civil, junto ao Comit&ecirc; das Bacias Hidrogr&aacute;ficas da Serra da Mantiqueira - CBH-SM.</em><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">            O Presidente do Comit&ecirc; das Bacias Hidrogr&aacute;ficas da Serra da Mantiqueira - CBH-SM, no uso de suas atribui&ccedil;&otilde;es e considerando, o disposto no Estatuto do CBH-SM, Artigo 5, Inciso III, que regulamenta a participa&ccedil;&atilde;o do segmento Sociedade Civil no CBH-SM;<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify"><strong>Comunica:</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">1- Fica estabelecido o prazo m&aacute;ximo de at&eacute; <strong>31 de janeiro de 2017</strong> para que as entidades interessadas em participar possam cadastrar-se ou recadastrar-se junto &agrave; Secretaria Executiva do CBH-SM;<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">2- As entidades j&aacute; cadastradas, devem tamb&eacute;m formalizar a solicita&ccedil;&atilde;o de recadastramento, sob pena de perder o atual cadastro, mediante protocoliza&ccedil;&atilde;o dos documentos relacionados no item 4 do presente edital, para a Secretaria Executiva do CBH-SM, at&eacute; a data estabelecida no item 1 supracitado;<br><br>
+
+<p style="margin-left:18pt; text-align:justify"> <br><br>
+
+<p style="text-align:justify">3- Todos os documentos devem ser protocolados pela Secretaria Executiva do CBH-SM, no momento da respectiva entrega que dever&aacute; ser efetuada &agrave; Rua Brigadeiro Jord&atilde;o, 553 - Abern&eacute;ssia - Campos do Jord&atilde;o-SP;<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">4- Para que se possa efetivar o cadastro e aferir a natureza jur&iacute;dica e o enquadramento das entidades discriminadas no artigo 5, Inciso III   do Estatuto do CBH-SM, as entidades interessadas dever&atilde;o apresentar no ato da inscri&ccedil;&atilde;o:<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">a) Ficha de cadastramento, conforme modelo anexo;<br><br>
+
+<p style="text-align:justify">b) C&oacute;pia do Estatuto social, demonstrando que a constitui&ccedil;&atilde;o definitiva deu-se, no m&iacute;nimo, 01 (um) ano antes da data do cadastro e nos termos da legisla&ccedil;&atilde;o pertinente;<br><br>
+
+<p style="text-align:justify">c) Comprovante de atividades anteriores, demonstrando que a interessada atua, no &acirc;mbito do Estado de S&atilde;o Paulo, com sede na &aacute;rea de abrang&ecirc;ncia da UGRHI 1 e que enquadra-se em uma das categorias a seguir elencadas, de acordo com o disciplinado no Artigo 5, Inciso III do Estatuto do CBH-SM:<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">I -   Universidades e Entidades de Pesquisa;<br><br>
+
+<p style="text-align:justify">II -  Usu&aacute;rios de &aacute;gua representados por entidades associativas;<br><br>
+
+<p style="text-align:justify">III - Associa&ccedil;&otilde;es de Moradores:<br><br>
+
+<p style="text-align:justify">IV -  Entidades Ambientalistas;<br><br>
+
+<p style="margin-left:35.45pt; text-align:justify">V -   Entidades de Classe de Engenheiros e Arquitetos,<br><br>
+
+<p style="text-align:justify">VI -  Entidades de Classe de Advogados;<br><br>
+
+<p style="text-align:justify">VII - Entidades de Classe de Hotelaria e Com&eacute;rcio<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">5- A entidade interessada &eacute; inteiramente respons&aacute;vel pela veracidade das informa&ccedil;&otilde;es fornecidas e pela legalidade da documenta&ccedil;&atilde;o apresentada para o respectivo cadastramento. A n&atilde;o observ&acirc;ncia deste item implicar&aacute; na n&atilde;o efetiva&ccedil;&atilde;o do cadastro da entidade;<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">6- Findo o per&iacute;odo estabelecido para cadastramento, a Secretaria Executiva do CBH-SM dever&aacute; avaliar a documenta&ccedil;&atilde;o apresentada pelas interessadas. A rela&ccedil;&atilde;o das entidades habilitadas em participar da Reuni&atilde;o destinada a escolher os representantes titulares e suplentes, que compor&atilde;o o Colegiado, ser&aacute; informada a todas inscritas atrav&eacute;s de e-mail, a ser enviado at&eacute; o dia 6 de mar&ccedil;o de 2017.<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">7- Esclarecimentos adicionais podem ser obtidos pelo telefone: 12 3664 3229, ou e-mail: <a href="mailto:comitesm@terra.com.br">comitesm@terra.com.br</a> .<br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">Frederico Guidoni Scaranello<br><br>
+
+<p style="text-align:justify"><strong>Presidente</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">Luiz Roberto Barretti<br><br>
+
+<p style="text-align:justify"><strong>Vice Presidente</strong><br><br>
+
+<p style="text-align:justify"> <br><br>
+
+<p style="text-align:justify">Nazareno Mostarda Neto<br><br>
+
+<p style="text-align:justify"><strong>Secret&aacute;rio Executivo</strong><br><br>
+
+  <h2>Arquivos</h2>
+  <ul>
+          <li><a href="/public/uploads/events//CBH-SM/4352/deliberao-cbh-sm-13-2016---processo-eleitoral.pdf" >deliberao-cbh-sm-13-2016---processo-eleitoral.pdf</a></li>
+          <li><a href="/public/uploads/events//CBH-SM/4352/regulamento-do-processo-eleitoral-para-o-mandato-2017-2019.pdf" >regulamento-do-processo-eleitoral-para-o-mandato-2017-2019.pdf</a></li>
+      </ul>
+
+      
+  
+    
+<br />
+<br />
+
+<div class="social_link" style="height: 30px; width: 520px; margin-left: 76px;">
+  <div style="float: left; max-width: 150px;">
+    <div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://sigrh.sp.gov.br:443/collegiate/73/pageitems/330/events/4352"></div>
+  </div>
+  <div style="float: left; max-width: 110px;">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sigrh.sp.gov.br:443/collegiate/73/pageitems/330/events/4352" data-lang="pt">Tweet</a>
+  </div>
+  <div style="float: left; max-width: 165px;">
+    <div class="fb-share-button" style="max-width:200px;" data-href="http://sigrh.sp.gov.br:443/collegiate/73/pageitems/330/events/4352" data-type="button_count"></div>
+  </div>
+  <div style="float: left; max-width: 100px;">
+    <a id="link_send_email" class="links_send_email" href="/sharelinkemails?url_to_share=http://sigrh.sp.gov.br:443/collegiate/73/pageitems/330/events/4352">Enviar</a>
+  </div>
+  <!--<iframe src="" frameborder="0" height="32" width="200"></iframe> -->
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    gapi.plus.go();
+    FB.XFBML.parse();
+  });
+</script>
+
+<div class="actions">
+    <a href='/cbhsm/agenda' class="button">Voltar</a></div>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-SM - Comitê das Bacias Hidrográficas da Serra da Mantiqueira</h2>
+                <li>
+					Rua Brigadeiro Jordão, 553 - Vila Abernéssia - Campos do Jordão - SP																				                </li>
+                <li> Tel: (12) 3664-3229 | Fax: (12) 3664-3229 | contato: comitesm@terra.com.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
