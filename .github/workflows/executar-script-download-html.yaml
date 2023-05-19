@@ -25,6 +25,7 @@ jobs:
       - name: Execute script
         run: |
           Rscript -e 'source("inst/script_download_arquivos.R")'
+          Rscript -e 'source("inst/actions_download_agenda_mais_informacoes.R")'
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
