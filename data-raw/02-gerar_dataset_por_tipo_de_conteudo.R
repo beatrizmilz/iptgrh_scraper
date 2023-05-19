@@ -4,17 +4,10 @@ devtools::load_all()
 # devtools::install_github("beatrizmilz/ComitesBaciaSP", force = TRUE)
 
 # Scripts para preparar os dados -----
-caminho_arquivos <-
-  tibble::tibble(
-    caminho = list.files(
-      "inst/dados_html",
-      pattern = ".html",
-      full.names = TRUE,
-      recursive = TRUE
-    ),
-    nome_arquivo = list.files("inst/dados_html", pattern = ".html", recursive = TRUE)
-  ) |>
-  dplyr::mutate(nome_arquivo = fs::path_file(nome_arquivo)) |>
+caminho_arquivos <- base_html_validacao |>
+  dplyr::filter(html_valido) |>
+  dplyr::mutate(nome_arquivo = fs::path_file(value),
+                caminho = value) |>
   tidyr::separate(
     nome_arquivo,
     c("comite", "conteudo_da_pagina", "dia", "mes", "ano"),
@@ -68,7 +61,9 @@ arquivos_transformar_em_rds <- caminho_arquivos_nao_lidos |>
 
 # transformar em rds
 arquivos_transformar_em_rds$glue_executar |>
-  purrr::map(safe_eval_parse)
+  purrr::map(safe_eval_parse, .progress = TRUE)
+
+# TODO: RESOLVER ERRO!
 
 beepr::beep(1)
 
