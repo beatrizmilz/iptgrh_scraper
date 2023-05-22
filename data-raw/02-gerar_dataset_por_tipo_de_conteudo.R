@@ -61,9 +61,8 @@ arquivos_transformar_em_rds <- caminho_arquivos_nao_lidos |>
 
 # transformar em rds
 arquivos_transformar_em_rds$glue_executar |>
-  purrr::map(safe_eval_parse, .progress = TRUE)
+  purrr::map(eval_parse, .progress = TRUE)
 
-# TODO: RESOLVER ERRO!
 
 beepr::beep(1)
 
