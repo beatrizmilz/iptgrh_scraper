@@ -68,31 +68,35 @@ beepr::beep(1)
 
 # atas --------
 atas_completo <- unificar_base("atas")
-usethis::use_data(atas_completo, overwrite = TRUE)
+
+salvar_dados_piggyback(atas_completo)
+
 
 atas_agencia_completo <- unificar_base("atas", agencia = TRUE)
-usethis::use_data(atas_agencia_completo, overwrite = TRUE)
+
+salvar_dados_piggyback(atas_agencia_completo)
 
 
 # representantes -----
 representantes_completo <- unificar_base("representantes")
-usethis::use_data(representantes_completo, overwrite = TRUE)
+
+salvar_dados_piggyback(representantes_completo)
 
 
 # agenda -----
 agenda_completo <- unificar_base("agenda") |>
   limpar_datas_agenda()
-usethis::use_data(agenda_completo, overwrite = TRUE)
 
+salvar_dados_piggyback(agenda_completo)
 
 # deliberacoes  -----
 deliberacoes_completo <- unificar_base("deliberacoes")
-usethis::use_data(deliberacoes_completo, overwrite = TRUE)
 
+salvar_dados_piggyback(deliberacoes_completo)
 
 # documentos  -----
 documentos_completo <- unificar_base("documentos")
-usethis::use_data(documentos_completo, overwrite = TRUE)
 
+salvar_dados_piggyback(documentos_completo)
 
 

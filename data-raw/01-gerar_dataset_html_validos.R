@@ -34,5 +34,5 @@ base_html_validacao |>
   dplyr::distinct(comite, tipo_info, ano) |>
   dplyr::arrange(comite)
 
+salvar_dados_piggyback(base_html_validacao)
 
-usethis::use_data(base_html_validacao, overwrite = TRUE)
