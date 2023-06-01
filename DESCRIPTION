@@ -23,6 +23,7 @@ Imports:
     httr,
     lubridate,
     magrittr,
+    piggyback,
     purrr,
     readr,
     stringr,
