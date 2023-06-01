@@ -8,6 +8,17 @@ arquivos_baixados <-
       stringr::str_remove("inst/dados_html_agenda_complemento/id-")
   )
 
+
+piggyback::pb_download(
+  repo = "beatrizmilz/RelatoriosTransparenciaAguaSP",
+  tag = "dados",
+  file = "agenda_completo.rds"
+)
+
+
+agenda_completo <- readr::read_rds("agenda_completo.rds")
+
+
 arquivos_completo <- agenda_completo |>
   dplyr::mutate(
     nome_mais_info = stringr::str_remove(link_mais_informacoes, "https://sigrh.sp.gov.br/") |>

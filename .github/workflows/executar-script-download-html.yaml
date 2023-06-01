@@ -30,6 +30,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add .
+          git add --all inst/
           git commit -m 'Download das páginas em HTML' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
