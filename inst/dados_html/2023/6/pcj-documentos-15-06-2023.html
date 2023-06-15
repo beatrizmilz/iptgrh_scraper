@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsm/representantes" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsm/representantes" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria' >Contratação de Consultoria</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciaslegais' >Referências Legais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdocrh' >Deliberações do CRH</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/resolucoesfederais' >Resoluções Federais</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-PCJ</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhpcj/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhpcj/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhpcj/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhpcj/cobrancapaulista' >Cobrança PCJ Paulista</a></li>
+                                                                        <li><a href='/cbhpcj/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhpcj/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhpcj/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhpcj/estrutura' >Estrutura</a></li>
+                                                                                                    <li><a href='http://comitespcj.org.br/index.php' target="_blank">Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhpcj/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhpcj/ctas/apresentacao' >CT-AS</a></li>
+                                                            <li><a href='/cbhpcj/ctea/apresentacao' >CT-EA</a></li>
+                                                            <li><a href='/cbhpcj/ctid/apresentacao' >CT-ID</a></li>
+                                                            <li><a href='/cbhpcj/ctind/apresentacao' >CT-IND</a></li>
+                                                            <li><a href='/cbhpcj/ctmh/apresentacao' >CT-MH</a></li>
+                                                            <li><a href='/cbhpcj/ctol/apresentacao' >CT-OL</a></li>
+                                                            <li><a href='/cbhpcj/ctpb/apresentacao' >CT-PB</a></li>
+                                                            <li><a href='/cbhpcj/ctpl/apresentacao' >CT-PL</a></li>
+                                                            <li><a href='/cbhpcj/ctrn/apresentacao' >CT-RN</a></li>
+                                                            <li><a href='/cbhpcj/ctrural/apresentacao' >CT-RURAL</a></li>
+                                                            <li><a href='/cbhpcj/ctsa/apresentacao' >CT-SA</a></li>
+                                                            <li class="last"><a href='/cbhpcj/ctsam/apresentacao' >CT-SAM</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="5" data-year="2023" data-unity="34" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="06" data-year="2023" data-unity="34" data-scope="global">Junho/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="7" data-year="2023" data-unity="34" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td></tr><tr class="calendar-row"><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day calendar-event" title="<h2>Reunião virtual sobre o novo agente técnico do FEHIDRO,</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 06/06/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Modo Virtual  <br />  <a href='/pageitems/451/events/13238'>Ver mais</a></div>">6</td><td class="calendar-day">7</td><td class="calendar-day calendar-event" title="<h2>Corpus Christi</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 08/06/2023  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/12015'>Ver mais</a></div>">8</td><td class="calendar-day calendar-event" title="<h2>Corpus Christi_Ponto Facultativo</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 09/06/2023  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/12092'>Ver mais</a></div>">9</td><td class="calendar-day">10</td></tr><tr class="calendar-row"><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day calendar-event" title="<h2>Reunião_AT FEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 15/06/2023  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Zoom  <br />  <a href='/pageitems/451/events/13253'>Ver mais</a></div>">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td></tr><tr class="calendar-row"><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td></tr><tr class="calendar-row"><td class="calendar-day">25</td><td class="calendar-day calendar-event" title="<h2>Workshop FEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 26/06/2023  <br />  <b>Horário:</b> 11:00  <br />  <b>Local:</b> São Pedro - SP  <br />  <a href='/pageitems/451/events/13250'>Ver mais</a></div>">26</td><td class="calendar-day calendar-event" title="<h2>Workshop FEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 27/06/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> São Pedro - SP  <br />  <a href='/pageitems/451/events/13251'>Ver mais</a></div>">27</td><td class="calendar-day calendar-event" title="<h2>Workshop FEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 28/06/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> São Pedro - SP  <br />  <a href='/pageitems/451/events/13252'>Ver mais</a></div>">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="5" data-year="2023" data-unity="34" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="06" data-year="2023" data-unity="34" data-scope="scoped">Junho/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="7" data-year="2023" data-unity="34" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td></tr><tr class="calendar-row"><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td></tr><tr class="calendar-row"><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td></tr><tr class="calendar-row"><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td></tr><tr class="calendar-row"><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day calendar-event" title="<h2>28ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL, CBH-PJ1)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 29/06/2023  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Reunião por videoconferência.  <br />  <a href='/pageitems/313/events/12205'>Ver mais</a></div>">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Documentos</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+        
+                                    <h3>Plano de Bacia</h3>
+        <div>
+                                <div class="block" id="record_19207">
+            <h2>Plano das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí 2020-2035</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/08/2020<br /></li>
+                <li><label>Postado em:</label> 30/10/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="https://drive.google.com/drive/folders/1KxJlk2WDSmudlH_WU4AiZBPI6Pb9r0LA" target="_blank"><span title="https://drive.google.com/drive/folders/1KxJlk2WDSmudlH_WU4AiZBPI6Pb9r0LA">https://drive.google.com/drive/folders/1KxJlk2WDSmudlH_WU4AiZBPI6Pb9r0LA</span></a></li>
+                                                                                                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19207/delibcomitespcj332-20.pdf" target="_blank">delibcomitespcj332-20.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19207/relatorio-sintese_pbh-pcj-2020-2035.pdf" target="_blank">relatorio-sintese_pbh-pcj-2020-2035.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19207" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19207">Compartilhar</a>    </div>
+    <div id="item_19207" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19208">
+            <h2>Plano das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí 2010-2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2010<br /></li>
+                <li><label>Postado em:</label> 30/10/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://comitespcj.org.br/images/Download/PB/PCJ_PB-2010-2020_Anexos.zip" target="_blank"><span title="http://comitespcj.org.br/images/Download/PB/PCJ_PB-2010-2020_Anexos.zip">http://comitespcj.org.br/images/Download/PB/PCJ_PB-2010-2020_Anexos.zip</span></a></li>
+                                                                                                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19208/delibcomitespcj097-10.pdf" target="_blank">delibcomitespcj097-10.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19208/relatorio-final_pbh-pcj-2010-2020.pdf" target="_blank">relatorio-final_pbh-pcj-2010-2020.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19208/relatorio-sintese_pbh-pcj-2010-2020.pdf" target="_blank">relatorio-sintese_pbh-pcj-2010-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19208" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19208">Compartilhar</a>    </div>
+    <div id="item_19208" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19416">
+            <h2>Plano das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí 2008-2011</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2008<br /></li>
+                <li><label>Postado em:</label> 29/10/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19416/delibcomitespcj-016-08.pdf" target="_blank">delibcomitespcj-016-08.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19416/pb-2008-2011.pdf" target="_blank">pb-2008-2011.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19416" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19416">Compartilhar</a>    </div>
+    <div id="item_19416" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19417">
+            <h2>Plano das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí 2004-2007</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/11/2005<br /></li>
+                <li><label>Postado em:</label> 28/10/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19417/delib-conj-028-05.pdf" target="_blank">delib-conj-028-05.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19417/pb0407_relatorio-completo.pdf" target="_blank">pb0407_relatorio-completo.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19417/pb0407_relatorio-sintese.pdf" target="_blank">pb0407_relatorio-sintese.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19417" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19417">Compartilhar</a>    </div>
+    <div id="item_19417" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19418">
+            <h2>Plano das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí 2000-2003</h2>
+            <ul>
+                <li><label>Data do documento:</label> 14/11/2000<br /></li>
+                <li><label>Postado em:</label> 26/10/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19418/delibpcj095-00.pdf" target="_blank">delibpcj095-00.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19418/relatorio-final-pbh_2000-2003.pdf" target="_blank">relatorio-final-pbh_2000-2003.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19418" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19418">Compartilhar</a>    </div>
+    <div id="item_19418" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19419">
+            <h2>Minuta do Plano de Recursos Hídricos das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí 1994-1995 - Proposta encaminhada ao Conselho Estadual de Recursos Hídricos (CRH)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/11/1993<br /></li>
+                <li><label>Postado em:</label> 23/10/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19419/delibpcj003-93.pdf" target="_blank">delibpcj003-93.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19419/minuta-plano-de-recursos-hidricos-94-95.pdf" target="_blank">minuta-plano-de-recursos-hidricos-94-95.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19419" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19419">Compartilhar</a>    </div>
+    <div id="item_19419" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Relatórios</h3>
+        <div>
+                                <div class="block" id="record_23777">
+            <h2>Relatório de Atividades dos Comitês PCJ - exercício 2022</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/05/2023<br /></li>
+                <li><label>Postado em:</label> 03/05/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/23777/relatorio-de-atividades-dos-comites-pcj-exercicio-2022.pdf" target="_blank">relatorio-de-atividades-dos-comites-pcj-exercicio-2022.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23777" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_23777">Compartilhar</a>    </div>
+    <div id="item_23777" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23776">
+            <h2>Relatório de Execução Anual do Plano de Comunicação dos Comitês PCJ - exercício 2022</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/05/2023<br /></li>
+                <li><label>Postado em:</label> 03/05/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/23776/relatorio-de-execucao-anual-2022_pcom-pcj.pdf" target="_blank">relatorio-de-execucao-anual-2022_pcom-pcj.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23776" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_23776">Compartilhar</a>    </div>
+    <div id="item_23776" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23775">
+            <h2>Relatório de Execução Anual do Plano de Capacitação dos Comitês PCJ - exercício 2022</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/05/2023<br /></li>
+                <li><label>Postado em:</label> 03/05/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/23775/relatorio-de-execucao-anual-2022_pcap-pcj.pdf" target="_blank">relatorio-de-execucao-anual-2022_pcap-pcj.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23775" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_23775">Compartilhar</a>    </div>
+    <div id="item_23775" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23424">
+            <h2>Relatório de Situação dos Recursos Hídricos nas Bacias PCJ 2022 - Ano Base 2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/10/2022<br /></li>
+                <li><label>Postado em:</label> 16/12/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/23424/delib-comitespcj-418-22_aprovarelatoriosituacao.pdf" target="_blank">delib-comitespcj-418-22_aprovarelatoriosituacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/23424/relatorio-de-situacao_rs_2022.pdf" target="_blank">relatorio-de-situacao_rs_2022.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23424" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_23424">Compartilhar</a>    </div>
+    <div id="item_23424" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21975">
+            <h2>Relatório de Atividades dos Comitês PCJ 2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 29/06/2022<br /></li>
+                <li><label>Postado em:</label> 14/03/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/21975/relatorio-cnrh_2021_final.pdf" target="_blank">relatorio-cnrh_2021_final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21975" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_21975">Compartilhar</a>    </div>
+    <div id="item_21975" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21391">
+            <h2>Relatório de Situação dos Recursos Hídricos nas Bacias PCJ 2021 - Ano Base 2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/12/2021<br /></li>
+                <li><label>Postado em:</label> 14/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/21391/delibcmtpcj_389_21.pdf" target="_blank">delibcmtpcj_389_21.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21391/relatorio-de-situacao-dos-recursos-hidricos-nas-bacias-pcj-2021-ano-base-2020.pdf" target="_blank">relatorio-de-situacao-dos-recursos-hidricos-nas-bacias-pcj-2021-ano-base-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21391" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_21391">Compartilhar</a>    </div>
+    <div id="item_21391" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20991">
+            <h2>Livreto de Orientações Sobre A Constituição e o Funcionamento Dos Plenários e das Câmaras Técnicas Dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/07/2021<br /></li>
+                <li><label>Postado em:</label> 08/07/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/20991/livreto-cts-2021_final.pdf" target="_blank">livreto-cts-2021_final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20991" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_20991">Compartilhar</a>    </div>
+    <div id="item_20991" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20773">
+            <h2>Relatório de Atividades dos Comitês PCJ 2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 07/04/2021<br /></li>
+                <li><label>Postado em:</label> 14/04/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/20773/relatorio-de-atividades-dos-comites-pcj-2020.pdf" target="_blank">relatorio-de-atividades-dos-comites-pcj-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20773" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_20773">Compartilhar</a>    </div>
+    <div id="item_20773" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19571">
+            <h2>Relatório de situação PCJ 2020 (ano base 2019)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/12/2020<br /></li>
+                <li><label>Postado em:</label> 21/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19571/delibcomitespcj-348-20.pdf" target="_blank">delibcomitespcj-348-20.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19571/relatorio-de-situacao-pcj-2020-ano-base-2019.pdf" target="_blank">relatorio-de-situacao-pcj-2020-ano-base-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19571" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19571">Compartilhar</a>    </div>
+    <div id="item_19571" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19394">
+            <h2>Relatório de Situação dos Comitês PCJ 2019 (ano base 2018)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 26/07/2019<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19394/delibcomitespcj322-19.pdf" target="_blank">delibcomitespcj322-19.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19394/pcj_rs-2019_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2019_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19394" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19394">Compartilhar</a>    </div>
+    <div id="item_19394" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19393">
+            <h2>Relatório de Situação dos Comitês PCJ 2018 (ano base 2017)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/06/2018<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19393/delibcomitespcj294-18.pdf" target="_blank">delibcomitespcj294-18.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19393/pcj_rs-2018_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2018_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19393" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19393">Compartilhar</a>    </div>
+    <div id="item_19393" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19392">
+            <h2>Relatório de Situação dos Comitês PCJ 2017 (ano base 2016)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 05/05/2017<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19392/delibcomitespcj272-17.pdf" target="_blank">delibcomitespcj272-17.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19392/pcj_rs-2017_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2017_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19392" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19392">Compartilhar</a>    </div>
+    <div id="item_19392" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19391">
+            <h2>Relatório de Situação dos Comitês PCJ 2016 (ano base 2015)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/12/2016<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19391/delibcomitespcj260-16.pdf" target="_blank">delibcomitespcj260-16.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19391/relatorio-pcj-2016.pdf" target="_blank">relatorio-pcj-2016.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19391" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19391">Compartilhar</a>    </div>
+    <div id="item_19391" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19390">
+            <h2>Relatório de Situação dos Comitês PCJ 2015 (ano base 2014)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/12/2015<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19390/delibcomitespcj245-15.pdf" target="_blank">delibcomitespcj245-15.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19390/pcj_rs-2015_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2015_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19390" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19390">Compartilhar</a>    </div>
+    <div id="item_19390" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19389">
+            <h2>Relatório de Situação do Comitês PCJ 2014 (ano base 2013)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2014<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19389/delibcomitespcj213-14.pdf" target="_blank">delibcomitespcj213-14.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19389/pcj_rs-2014_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2014_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19389" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19389">Compartilhar</a>    </div>
+    <div id="item_19389" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19388">
+            <h2>Relatório de Situação Comitês PCJ 2013 (ano base 2012)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2013<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19388/delibcomitespcj192-13.pdf" target="_blank">delibcomitespcj192-13.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19388/pcj_rs-2013_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2013_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19388" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19388">Compartilhar</a>    </div>
+    <div id="item_19388" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19387">
+            <h2>Relatório de Situação Comitês PCJ 2012 (ano base 2011)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/03/2013<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19387/delibcomitespcj168-13.pdf" target="_blank">delibcomitespcj168-13.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19387/pcj_rs-2012_relatoriofinal_crh-sp.pdf" target="_blank">pcj_rs-2012_relatoriofinal_crh-sp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19387" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19387">Compartilhar</a>    </div>
+    <div id="item_19387" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19386">
+            <h2>Relatório de Situação Comitês PCJ 2011 (ano base 2010)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/12/2011<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19386/delibcomitespcj134-11.pdf" target="_blank">delibcomitespcj134-11.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19386/relatorio-comites-pcj-2011.pdf" target="_blank">relatorio-comites-pcj-2011.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19386" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19386">Compartilhar</a>    </div>
+    <div id="item_19386" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19385">
+            <h2>Relatório de Situação Comitês PCJ 2010 (ano base 2009)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2010<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19385/delibcomitespcj096-10.pdf" target="_blank">delibcomitespcj096-10.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19385/pcj_rs-2010_relatoriofinal.pdf" target="_blank">pcj_rs-2010_relatoriofinal.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19385" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19385">Compartilhar</a>    </div>
+    <div id="item_19385" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19384">
+            <h2>Relatório de Situação Comitês PCJ 2009 (ano base 2008)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/12/2009<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19384/delibcomitespcj060-09.pdf" target="_blank">delibcomitespcj060-09.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19384/relatorio-pcj-2009.pdf" target="_blank">relatorio-pcj-2009.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19384" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19384">Compartilhar</a>    </div>
+    <div id="item_19384" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19383">
+            <h2>Relatório de Situação Comitês PCJ 2007 (ano base 2006)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2008<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19383/delibcomitespcj017-08.pdf" target="_blank">delibcomitespcj017-08.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19383/relatorio-pcj-2007.pdf" target="_blank">relatorio-pcj-2007.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19383" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19383">Compartilhar</a>    </div>
+    <div id="item_19383" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19382">
+            <h2>Relatório de Situação CBH-PCJ 2004-2006</h2>
+            <ul>
+                <li><label>Data do documento:</label> 20/09/2007<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19382/delibconj076-07.pdf" target="_blank">delibconj076-07.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19382/rs-04-06_relatorio-sintese.pdf" target="_blank">rs-04-06_relatorio-sintese.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19382" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19382">Compartilhar</a>    </div>
+    <div id="item_19382" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19381">
+            <h2>Relatório de Situação CBH-PCJ 2002-2003</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/03/2005<br /></li>
+                <li><label>Postado em:</label> 11/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19381/delibpcj150-05.pdf" target="_blank">delibpcj150-05.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19381/rs-02-03_relatorio-sintese.pdf" target="_blank">rs-02-03_relatorio-sintese.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19381" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19381">Compartilhar</a>    </div>
+    <div id="item_19381" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19380">
+            <h2>Relatório de Situação CBH-PCJ 2000-2001 (Relatório 0)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 25/02/2000<br /></li>
+                <li><label>Postado em:</label> 10/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19380/delibpcj088-00.pdf" target="_blank">delibpcj088-00.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19380/relatorio-de-situacao-pcj-2000-2001-relatorio-0.pdf" target="_blank">relatorio-de-situacao-pcj-2000-2001-relatorio-0.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19380" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19380">Compartilhar</a>    </div>
+    <div id="item_19380" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19379">
+            <h2>Relatório de Situação CBH-PCJ 1995</h2>
+            <ul>
+                <li><label>Data do documento:</label> 06/09/1996<br /></li>
+                <li><label>Postado em:</label> 10/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19379/delibpcj038-96.pdf" target="_blank">delibpcj038-96.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19379/rs-pcj-1995.pdf" target="_blank">rs-pcj-1995.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19379" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19379">Compartilhar</a>    </div>
+    <div id="item_19379" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19378">
+            <h2>Relatório de Situação CBH-PCJ 1994</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/03/1995<br /></li>
+                <li><label>Postado em:</label> 10/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19378/delibpcj021-95.pdf" target="_blank">delibpcj021-95.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19378/rs-pcj-1994.pdf" target="_blank">rs-pcj-1994.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19378" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19378">Compartilhar</a>    </div>
+    <div id="item_19378" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19368">
+            <h2>Relatório de Situação CBH-PCJ 1993</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/04/1994<br /></li>
+                <li><label>Postado em:</label> 10/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19368/delibpcj007-94.pdf" target="_blank">delibpcj007-94.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19368/rs-pcj-1993.pdf" target="_blank">rs-pcj-1993.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19368" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19368">Compartilhar</a>    </div>
+    <div id="item_19368" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Documentos</h3>
+        <div>
+                                <div class="block" id="record_23774">
+            <h2>Plano de Aplicação - Cobrança PCJ Paulista - exercício 2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/05/2023<br /></li>
+                <li><label>Postado em:</label> 03/05/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/23774/delib-comitespcj-435-23_planoaplicacaopaulista2023.pdf" target="_blank">delib-comitespcj-435-23_planoaplicacaopaulista2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/23774/plano-de-aplicacao-2023-anexo-i.pdf" target="_blank">plano-de-aplicacao-2023-anexo-i.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/23774/plano-de-aplicacao-2023-anexo-ii.pdf" target="_blank">plano-de-aplicacao-2023-anexo-ii.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/23774/plano-de-aplicacao-2023-anexo-iii.pdf" target="_blank">plano-de-aplicacao-2023-anexo-iii.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23774" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_23774">Compartilhar</a>    </div>
+    <div id="item_23774" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23443">
+            <h2>Plano de Ação e Programa de Investimentos (PA/PI) para a gestão dos recursos hídricos nas Bacias PCJ para o quadriênio 2020 a 2023 (versão Deliberação dos Comitês PCJ nº 419/22, de 04/10/2022)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/10/2022<br /></li>
+                <li><label>Postado em:</label> 19/12/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/23443/delib-comitespcj-419-22_revisao_pa-pi.pdf" target="_blank">delib-comitespcj-419-22_revisao_pa-pi.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/23443/pa-pi-21-23_crhi_2022.xlsx" target="_blank">pa-pi-21-23_crhi_2022.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/23443/planilha_pa-pi_pcj_2022_2023-atualizacao_2022.xlsx" target="_blank">planilha_pa-pi_pcj_2022_2023-atualizacao_2022.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23443" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_23443">Compartilhar</a>    </div>
+    <div id="item_23443" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21887">
+            <h2>Plano de Ação e Programa de Investimentos (PA/PI) para a gestão dos recursos hídricos nas Bacias PCJ para o quadriênio 2020 a 2023 (versão Deliberação dos Comitês PCJ nº 390/2021, de 10/12/2021)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/12/2021<br /></li>
+                <li><label>Postado em:</label> 04/01/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/21887/delibcmtpcj_390_21.pdf" target="_blank">delibcmtpcj_390_21.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21887/delibcmtpcj_404_22.pdf" target="_blank">delibcmtpcj_404_22.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21887/delibcmtpcj_404_22_reti-ratificada.pdf" target="_blank">delibcmtpcj_404_22_reti-ratificada.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21887/papi_pcj_crhi_2022_2023_delib_390_2021.xlsx" target="_blank">papi_pcj_crhi_2022_2023_delib_390_2021.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21887" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_21887">Compartilhar</a>    </div>
+    <div id="item_21887" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21886">
+            <h2>Plano de Comunicação dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/12/2021<br /></li>
+                <li><label>Postado em:</label> 04/01/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/21886/delibcmtpcj_399_21.pdf" target="_blank">delibcmtpcj_399_21.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21886/plano-de-comunicacao-dos-comites-pcj.pdf" target="_blank">plano-de-comunicacao-dos-comites-pcj.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21886" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_21886">Compartilhar</a>    </div>
+    <div id="item_21886" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21885">
+            <h2>Plano de Capacitação dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/12/2021<br /></li>
+                <li><label>Postado em:</label> 04/01/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/21885/delibcmtpcj_400_21.pdf" target="_blank">delibcmtpcj_400_21.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21885/plano-de-capacitacao-dos-comites-pcj.pdf" target="_blank">plano-de-capacitacao-dos-comites-pcj.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21885" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_21885">Compartilhar</a>    </div>
+    <div id="item_21885" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21128">
+            <h2>Plano de Ação e Programa de Investimentos (PA/PI) para a gestão dos recursos hídricos nas Bacias PCJ para o quadriênio 2020 a 2023 (versão Deliberação dos Comitês PCJ nº 376/2021, de 07/10/2021)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/05/2021<br /></li>
+                <li><label>Postado em:</label> 13/09/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/21128/291_21_acompanhamento_pa_pi_crhi.pdf" target="_blank">291_21_acompanhamento_pa_pi_crhi.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21128/delibcmtpcj_376_21.pdf" target="_blank">delibcmtpcj_376_21.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/21128/papi_pcj_crhi_2020_2023_delib_376_2021.xlsx" target="_blank">papi_pcj_crhi_2020_2023_delib_376_2021.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21128" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_21128">Compartilhar</a>    </div>
+    <div id="item_21128" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_20989">
+            <h2>Plano de Ação e Programa de Investimentos 2020-2023 (versão Deliberação dos Comitês PCJ nº 366/2021, de 29/06/2021)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 24/06/2021<br /></li>
+                <li><label>Postado em:</label> 07/07/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/20989/delibcmtpcj_366_21.pdf" target="_blank">delibcmtpcj_366_21.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/20989/papi_pcj_crhi_2020_2023_delib_366_2021.xlsx" target="_blank">papi_pcj_crhi_2020_2023_delib_366_2021.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20989" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_20989">Compartilhar</a>    </div>
+    <div id="item_20989" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19569">
+            <h2>Plano de Ação e Programa de Investimentos 2020-2023 (versão Deliberação dos Comitês PCJ nº 349/2020, de 11/12/2020)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/12/2020<br /></li>
+                <li><label>Postado em:</label> 21/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19569/delibcomitespcj-349-20.pdf" target="_blank">delibcomitespcj-349-20.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19569/papi_pcj_crhi_2020_2023.xlsx" target="_blank">papi_pcj_crhi_2020_2023.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19569" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19569">Compartilhar</a>    </div>
+    <div id="item_19569" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19422">
+            <h2>Plano de Ação e Programa de Investimentos 2020-2023 (versão Deliberação dos Comitês PCJ nº 333/2020, de 31/08/2020)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/08/2020<br /></li>
+                <li><label>Postado em:</label> 14/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19422/delibcomitespcj333-20.pdf" target="_blank">delibcomitespcj333-20.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19422/papi_pcj_crhi_2020_2023_rev_delib_333_20.xlsx" target="_blank">papi_pcj_crhi_2020_2023_rev_delib_333_20.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19422" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19422">Compartilhar</a>    </div>
+    <div id="item_19422" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19421">
+            <h2>Plano de Ação e Programa de Investimentos 2020-2023 (versão Deliberação Conjunta "Ad Referendum" dos Comitês PCJ nº 114/2020, de 28/05/2020)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/05/2020<br /></li>
+                <li><label>Postado em:</label> 14/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19421/delibconjadrefendum_114-20.pdf" target="_blank">delibconjadrefendum_114-20.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19421/papi_pcj_crhi_2020_2023_rev_delibconjadref_114_20.xlsx" target="_blank">papi_pcj_crhi_2020_2023_rev_delibconjadref_114_20.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19421" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19421">Compartilhar</a>    </div>
+    <div id="item_19421" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19420">
+            <h2>Plano de Ação e Programa de Investimentos 2020-2023 (versão Deliberação Conjunta "Ad Referendum" dos Comitês PCJ nº 110/2020, de 27/03/2020)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/03/2020<br /></li>
+                <li><label>Postado em:</label> 14/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19420/delibconjadrefendum_110-20.pdf" target="_blank">delibconjadrefendum_110-20.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19420/papi_pcj_crhi_2020_2023_rev_delibconjadref_110_20.xlsx" target="_blank">papi_pcj_crhi_2020_2023_rev_delibconjadref_110_20.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19420" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19420">Compartilhar</a>    </div>
+    <div id="item_19420" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19423">
+            <h2>Plano de Ação e Programa de Investimentos 2016-2019 (versão Deliberação dos Comitês PCJ nº 323/2019, de 26/07/2019)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 26/07/2019<br /></li>
+                <li><label>Postado em:</label> 13/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19423/delibcomitespcj323-19.pdf" target="_blank">delibcomitespcj323-19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19423" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19423">Compartilhar</a>    </div>
+    <div id="item_19423" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19426">
+            <h2>Plano de Ação e Programa de Investimentos 2016-2019 (versão Deliberação dos Comitês PCJ nº 294/2018, de 28/06/2018)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/06/2018<br /></li>
+                <li><label>Postado em:</label> 13/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19426/2018-quadro_pa-pi_rs.xlsx" target="_blank">2018-quadro_pa-pi_rs.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19426/delibcomitespcj294-18.pdf" target="_blank">delibcomitespcj294-18.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19426" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19426">Compartilhar</a>    </div>
+    <div id="item_19426" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19425">
+            <h2>Plano de Ação e Programa de Investimentos 2016-2019 (versão Deliberação dos Comitês PCJ nº 260/16, de 16/12/2016, reti-ratificada em 31/03/2017)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/03/2017<br /></li>
+                <li><label>Postado em:</label> 13/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19425/2017-quadro_plano_de_acao.xlsx" target="_blank">2017-quadro_plano_de_acao.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19425/delibcomitespcj260-16.pdf" target="_blank">delibcomitespcj260-16.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19425" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19425">Compartilhar</a>    </div>
+    <div id="item_19425" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19424">
+            <h2>Plano de Ação e Programa de Investimentos 2016-2019 (versão Deliberação dos Comitês PCJ nº 260/2016, de 16/12/2016)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/12/2016<br /></li>
+                <li><label>Postado em:</label> 13/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-PCJ/19424/2016-plano_acao_investimentos_revisado_176_179.xlsx" target="_blank">2016-plano_acao_investimentos_revisado_176_179.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-PCJ/19424/delibcomitespcj260-16.pdf" target="_blank">delibcomitespcj260-16.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19424" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_19424">Compartilhar</a>    </div>
+    <div id="item_19424" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhpcj/documentos#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-PCJ - Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí</h2>
+                <li>
+					Rua Alfredo Guedes, 1949 - Sala 604											 - Alto																 - Piracicaba																 - 13416-901																 - SP					                </li>
+                <li> Tel: (19) 3437-2100 Opção 2 | Fax:  | contato: se.pcj@comites.baciaspcj.org.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
