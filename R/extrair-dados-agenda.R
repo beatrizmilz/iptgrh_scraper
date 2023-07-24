@@ -1,13 +1,13 @@
 extrair_dados_agenda <- function(caminho_arquivo) {
+
   nome_arquivo <- basename(caminho_arquivo)
 
   id_arquivo <- stringr::str_extract(nome_arquivo, "id-.*-data") |>
     stringr::str_remove_all("id-|-data")
 
   data_download <-
-    stringr::str_extract(nome_arquivo, "-data.*.html") |>
-    stringr::str_remove_all("-data|.html|_download_") |>
-    as.Date()
+    stringr::str_extract(nome_arquivo, "[0-9]{2}-[0-9]{2}-[0-9]{4}") |>
+    readr::parse_date(format = "%d-%m-%Y")
 
   conteudo_html <-
     xml2::read_html(caminho_arquivo, encoding = "UTF-8") |>
