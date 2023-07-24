@@ -35,4 +35,5 @@ base_html_validacao |>
   dplyr::arrange(comite)
 
 salvar_dados_piggyback(base_html_validacao)
+usethis::use_data(base_html_validacao, overwrite = TRUE)
 
