@@ -28,4 +28,7 @@
 
     - Documentos: para o comitê SM, não havia uma página disponível
       exclusiva para divulgação de documentos (checado pela última vez
-      em 28/01/2022 e 14/11/2022).
+      em 28/01/2022 e 14/11/2022). A partir de 06/2023, foi detectado a
+      presença de várias páginas que apresentam conteúdos relacionados à
+      documentos, mas separadamente. Portanto, ainda não havia uma
+      página disponível exclusiva para divulgação de documentos.
