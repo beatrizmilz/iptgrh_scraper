@@ -36,11 +36,16 @@ arquivos_baixar <- arquivos_completo |>
   tibble::rowid_to_column() |>
   dplyr::group_split(rowid)
 
+
+possibly_download_html <- purrr::possibly(download_html, otherwise = "ERRO")
+
 purrr::map(
   arquivos_baixar,
-  ~ download_html(
+  ~ possibly_download_html(
     url = .x$link_mais_informacoes,
     caminho_salvar = .x$caminho_baixar
   ),
   .progress = TRUE
 )
+
+
