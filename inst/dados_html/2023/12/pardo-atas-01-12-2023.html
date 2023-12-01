@@ -1,0 +1,3163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsm/representantes" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsm/representantes" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/contratacaodeconsultoria' >Contratação de Consultoria</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/gtenquadramento' >GT-Enquadramento</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="last">
+                    <a href='/concursoaquiferoguarani' >Concurso Aquífero Guarani </a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-PARDO</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhpardo/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhpardo/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhpardo/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhpardo/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhpardo/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhpardo/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhpardo/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhpardo/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhpardo/cobranca/documentos' >COBRANCA</a></li>
+                                                            <li><a href='/cbhpardo/ctaea/estrutura' >CT-AEA</a></li>
+                                                            <li><a href='/cbhpardo/ctolil/estrutura' >CT-OL-IL</a></li>
+                                                            <li><a href='/cbhpardo/ctpgrh/estrutura' >CT-PGRH</a></li>
+                                                            <li><a href='/cbhpardo/ctsanas/estrutura' >CT-SAN-AS</a></li>
+                                                            <li><a href='/cbhpardo/papi/papi20202021' >PAPI</a></li>
+                                                            <li class="last"><a href='/cbhpardo/rspb/estrutura' >RSPB</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="11" data-year="2023" data-unity="28" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="12" data-year="2023" data-unity="28" data-scope="global">Dezembro/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="13" data-year="2023" data-unity="28" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td></tr><tr class="calendar-row"><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 05/12/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/15574'>Ver mais</a></div><h2>Reunião de Reinstalação CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas - CRH  <br />  <b>Data do evento:</b> 05/12/2023  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> CTH/USP  <br />  <a href='/pageitems/502/events/15581'>Ver mais</a></div>">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td></tr><tr class="calendar-row"><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td></tr><tr class="calendar-row"><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>Reunião Ordinária CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 18/12/2023  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Auditório do Consema (Sede SEMIL)  <br />  <a href='/pageitems/332/events/15582'>Ver mais</a></div>">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td></tr><tr class="calendar-row"><td class="calendar-day">24</td><td class="calendar-day calendar-event" title="<h2>Natal</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 25/12/2023  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/12099'>Ver mais</a></div>">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td></tr><tr class="calendar-row"><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="11" data-year="2023" data-unity="28" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="12" data-year="2023" data-unity="28" data-scope="scoped">Dezembro/2023</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="13" data-year="2023" data-unity="28" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>46ª Reunião Ordinária do CBH-AP</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Aguapeí e Peixe  <br />  <b>Data do evento:</b> 01/12/2023  <br />  <b>Horário:</b> 10:30  <br />  <b>Local:</b> MODALIDADE: VIDEOCONFERÊNCIA | PLATAFORMA: Google Meet  <br />  <a href='/pageitems/314/events/14568'>Ver mais</a></div><h2>48ª Reunião Ordinária do CBH-MP</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Médio Paranapanema  <br />  <b>Data do evento:</b> 01/12/2023  <br />  <b>Horário:</b> 08:30  <br />  <b>Local:</b> MODALIDADE: VIDEOCONFERÊNCIA | PLATAFORMA: Google Meet  <br />  <a href='/pageitems/311/events/14569'>Ver mais</a></div>">1</td><td class="calendar-day">2</td></tr><tr class="calendar-row"><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day calendar-event" title="<h2>30ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e CBH-PJ1)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 07/12/2023  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Embrapa Meio Ambiente - Jaguariúna/SP  <br />  <a href='/pageitems/313/events/13459'>Ver mais</a></div>">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td></tr><tr class="calendar-row"><td class="calendar-day">10</td><td class="calendar-day calendar-event" title="<h2>3ª Reunião Ordinária do CBH-TB em 2023 (PRESENCIAL)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 11/12/2023  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Auditório Administrativo da Prefeitura de Bauru   <br />  <a href='/pageitems/315/events/15572'>Ver mais</a></div>">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td></tr><tr class="calendar-row"><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td></tr><tr class="calendar-row"><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td></tr><tr class="calendar-row"><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//16317879506887.png'  />        </a>
+            <a target="_blank" href="http://eepurl.com/g2QMeb" class="banner">
+            <img src='/public/uploads/banners//1631873538418.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            <a  href="http://www.sigrh.sp.gov.br/lei1366118" class="banner">
+            <img src='/public/uploads/banners//15290691311685.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Atas</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+                                    <h3>Ano de 2023</h3>
+        <div>
+        
+                        <div class="block" id="record_26010">
+            <h2>27ª Reunião Extraordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/06/2023<br /></li>
+                <li><label>Postado em:</label> 06/09/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/26010/27-extra-ata-14_06_2023.pdf" target="_blank">27-extra-ata-14_06_2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="26010" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_26010">Compartilhar</a>    </div>
+    <div id="item_26010" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_24866">
+            <h2>82ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/05/2023<br /></li>
+                <li><label>Postado em:</label> 15/06/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/24866/82-ata-19_05_2023.pdf" target="_blank">82-ata-19_05_2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="24866" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_24866">Compartilhar</a>    </div>
+    <div id="item_24866" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_24852">
+            <h2>81ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/03/2023<br /></li>
+                <li><label>Postado em:</label> 05/06/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/24852/81-ata-03_03_2023.pdf" target="_blank">81-ata-03_03_2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="24852" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_24852">Compartilhar</a>    </div>
+    <div id="item_24852" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2022</h3>
+        <div>
+        
+                        <div class="block" id="record_23375">
+            <h2>79ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/08/2022<br /></li>
+                <li><label>Postado em:</label> 06/12/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/23375/79-ata-12_08_2022.pdf" target="_blank">79-ata-12_08_2022.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23375" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_23375">Compartilhar</a>    </div>
+    <div id="item_23375" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23176">
+            <h2>78ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/04/2022<br /></li>
+                <li><label>Postado em:</label> 16/08/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/23176/78-ata-29_04_2022.pdf" target="_blank">78-ata-29_04_2022.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23176" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_23176">Compartilhar</a>    </div>
+    <div id="item_23176" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2021</h3>
+        <div>
+        
+                        <div class="block" id="record_22052">
+            <h2>77ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 02/05/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/22052/77-ata-03_12_2021.pdf" target="_blank">77-ata-03_12_2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22052" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_22052">Compartilhar</a>    </div>
+    <div id="item_22052" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_22051">
+            <h2>76ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/09/2021<br /></li>
+                <li><label>Postado em:</label> 02/05/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/22051/76-ata-17_09_2021.pdf" target="_blank">76-ata-17_09_2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22051" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_22051">Compartilhar</a>    </div>
+    <div id="item_22051" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21310">
+            <h2>75ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/06/2021<br /></li>
+                <li><label>Postado em:</label> 22/11/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/21310/75-ata-18_06_2021.pdf" target="_blank">75-ata-18_06_2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21310" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_21310">Compartilhar</a>    </div>
+    <div id="item_21310" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_20907">
+            <h2>74ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/03/2021<br /></li>
+                <li><label>Postado em:</label> 24/06/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/20907/74-ata-26_03_2021.pdf" target="_blank">74-ata-26_03_2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20907" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_20907">Compartilhar</a>    </div>
+    <div id="item_20907" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2020</h3>
+        <div>
+        
+                        <div class="block" id="record_20694">
+            <h2>73ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/12/2020<br /></li>
+                <li><label>Postado em:</label> 05/04/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/20694/73-ata-04_12_2020.pdf" target="_blank">73-ata-04_12_2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20694" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_20694">Compartilhar</a>    </div>
+    <div id="item_20694" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19582">
+            <h2>72ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/07/2020<br /></li>
+                <li><label>Postado em:</label> 23/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/19582/72-ata-17_07_2020.pdf" target="_blank">72-ata-17_07_2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19582" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_19582">Compartilhar</a>    </div>
+    <div id="item_19582" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18912">
+            <h2>71ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/03/2020<br /></li>
+                <li><label>Postado em:</label> 17/07/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/18912/71-ata-06_03_2020.pdf" target="_blank">71-ata-06_03_2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18912" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_18912">Compartilhar</a>    </div>
+    <div id="item_18912" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2019</h3>
+        <div>
+        
+                        <div class="block" id="record_18811">
+            <h2>70ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/2019<br /></li>
+                <li><label>Postado em:</label> 10/03/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/18811/70-ata-06_12_2019.pdf" target="_blank">70-ata-06_12_2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18811" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_18811">Compartilhar</a>    </div>
+    <div id="item_18811" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18596">
+            <h2>69ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/09/2019<br /></li>
+                <li><label>Postado em:</label> 12/12/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/18596/69-ata-20_09_2019.pdf" target="_blank">69-ata-20_09_2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18596" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_18596">Compartilhar</a>    </div>
+    <div id="item_18596" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17555">
+            <h2>68ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/07/2019<br /></li>
+                <li><label>Postado em:</label> 30/09/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/17555/68-ata-12_07_2019.pdf" target="_blank">68-ata-12_07_2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17555" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_17555">Compartilhar</a>    </div>
+    <div id="item_17555" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17389">
+            <h2>67ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/03/2019<br /></li>
+                <li><label>Postado em:</label> 26/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/17389/67-ata-29_03_2019.pdf" target="_blank">67-ata-29_03_2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17389" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_17389">Compartilhar</a>    </div>
+    <div id="item_17389" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2018</h3>
+        <div>
+        
+                        <div class="block" id="record_15167">
+            <h2>66ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2018<br /></li>
+                <li><label>Postado em:</label> 08/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/15167/66-ata-07_12_2018.pdf" target="_blank">66-ata-07_12_2018.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="15167" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_15167">Compartilhar</a>    </div>
+    <div id="item_15167" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13988">
+            <h2>26ª Reunião Extraordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/08/2018<br /></li>
+                <li><label>Postado em:</label> 13/12/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/13988/26-extraordinaria-ata-17-08-2018.pdf" target="_blank">26-extraordinaria-ata-17-08-2018.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13988" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_13988">Compartilhar</a>    </div>
+    <div id="item_13988" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13885">
+            <h2>65ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/06/2018<br /></li>
+                <li><label>Postado em:</label> 27/08/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/13885/65-ata-29-06-2018.pdf" target="_blank">65-ata-29-06-2018.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13885" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_13885">Compartilhar</a>    </div>
+    <div id="item_13885" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13820">
+            <h2>64ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/04/2018<br /></li>
+                <li><label>Postado em:</label> 13/07/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/13820/64-ata-06-04-2018.pdf" target="_blank">64-ata-06-04-2018.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13820" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_13820">Compartilhar</a>    </div>
+    <div id="item_13820" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2017</h3>
+        <div>
+        
+                        <div class="block" id="record_13665">
+            <h2>63ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/12/2017<br /></li>
+                <li><label>Postado em:</label> 20/04/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/13665/63-ata-resumida-08-12-2017.pdf" target="_blank">63-ata-resumida-08-12-2017.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13665" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_13665">Compartilhar</a>    </div>
+    <div id="item_13665" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12410">
+            <h2>62ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/07/2017<br /></li>
+                <li><label>Postado em:</label> 12/12/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/12410/62-ata-resumida-07-07-2017-1.pdf" target="_blank">62-ata-resumida-07-07-2017-1.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12410" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_12410">Compartilhar</a>    </div>
+    <div id="item_12410" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12409">
+            <h2>61ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/03/2017<br /></li>
+                <li><label>Postado em:</label> 12/12/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/12409/61-ata-resumida-24-03-2017.pdf" target="_blank">61-ata-resumida-24-03-2017.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12409" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_12409">Compartilhar</a>    </div>
+    <div id="item_12409" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2016</h3>
+        <div>
+        
+                        <div class="block" id="record_12127">
+            <h2>25ª Reunião Extraordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/12/2016<br /></li>
+                <li><label>Postado em:</label> 06/04/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/12127/25-ata-resumida-16-12-2016-pdf.pdf" target="_blank">25-ata-resumida-16-12-2016-pdf.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12127" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_12127">Compartilhar</a>    </div>
+    <div id="item_12127" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12126">
+            <h2>60ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/12/2016<br /></li>
+                <li><label>Postado em:</label> 06/04/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/12126/60-ata-resumida-02-12-2016.pdf" target="_blank">60-ata-resumida-02-12-2016.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12126" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_12126">Compartilhar</a>    </div>
+    <div id="item_12126" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_11910">
+            <h2>Ata da 59ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/06/2016<br /></li>
+                <li><label>Postado em:</label> 28/12/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/11910/59-ata-resumida-10-06-2016.pdf" target="_blank">59-ata-resumida-10-06-2016.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11910" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_11910">Compartilhar</a>    </div>
+    <div id="item_11910" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10655">
+            <h2>Ata da 58ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/03/2016<br /></li>
+                <li><label>Postado em:</label> 16/06/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/10655/58-ata-resumida-04-03-2016-pdf.pdf" target="_blank">58-ata-resumida-04-03-2016-pdf.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10655" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_10655">Compartilhar</a>    </div>
+    <div id="item_10655" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2015</h3>
+        <div>
+        
+                        <div class="block" id="record_10576">
+            <h2>Ata da 57ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/12/2015<br /></li>
+                <li><label>Postado em:</label> 11/03/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/10576/57-resumida-04-12-2015-resumida-pdf.pdf" target="_blank">57-resumida-04-12-2015-resumida-pdf.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10576" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_10576">Compartilhar</a>    </div>
+    <div id="item_10576" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10406">
+            <h2>Ata da 56ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/2015<br /></li>
+                <li><label>Postado em:</label> 15/12/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PARDO/10406/56-ata-resumida-para-publicacao-26-06-2015.pdf" target="_blank">56-ata-resumida-para-publicacao-26-06-2015.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10406" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_10406">Compartilhar</a>    </div>
+    <div id="item_10406" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9197">
+            <h2>Ata da 55ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/2015<br /></li>
+                <li><label>Postado em:</label> 16/07/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9197/55-ata-resumida-para-publicacao-27-03-2015-pdf.pdf" target="_blank">55-ata-resumida-para-publicacao-27-03-2015-pdf.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9197" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_9197">Compartilhar</a>    </div>
+    <div id="item_9197" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2014</h3>
+        <div>
+        
+                        <div class="block" id="record_8945">
+            <h2>Ata da 54ª Reunião Ordinária</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/12/2014<br /></li>
+                <li><label>Postado em:</label> 16/07/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8945/54-ordinaria-05-12-2014.htm" target="_blank">54-ordinaria-05-12-2014.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8945" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_8945">Compartilhar</a>    </div>
+    <div id="item_8945" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_8504">
+            <h2>Ata da 53ª Reunião Ordinária - 2014</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/08/2014<br /></li>
+                <li><label>Postado em:</label> 12/12/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8504/53-ordinaria-01-08-14.htm" target="_blank">53-ordinaria-01-08-14.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8504" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_8504">Compartilhar</a>    </div>
+    <div id="item_8504" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2303">
+            <h2>Ata da 52ª Reunião Ordinária - 2014</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/03/2014<br /></li>
+                <li><label>Postado em:</label> 21/08/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2303/52-ordinaria-28-03-2014.htm" target="_blank">52-ordinaria-28-03-2014.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2303" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2303">Compartilhar</a>    </div>
+    <div id="item_2303" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2013</h3>
+        <div>
+        
+                        <div class="block" id="record_2302">
+            <h2>Ata da 51ª Reunião Ordinária - 2013</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/2013<br /></li>
+                <li><label>Postado em:</label> 21/08/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2302/51-ordinaria-06-12-13.htm" target="_blank">51-ordinaria-06-12-13.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2302" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2302">Compartilhar</a>    </div>
+    <div id="item_2302" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2301">
+            <h2>Ata da 50ª Reunião Ordinária - 2013</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/08/2013<br /></li>
+                <li><label>Postado em:</label> 21/08/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2301/50-ordinaria-30-08-13.htm" target="_blank">50-ordinaria-30-08-13.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2301" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2301">Compartilhar</a>    </div>
+    <div id="item_2301" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2211">
+            <h2>Ata da 24ª Reunião Extraordinária - 2013</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/06/2013<br /></li>
+                <li><label>Postado em:</label> 16/09/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2211/24-reuniao-extraordinaria-21-06-13.htm" target="_blank">24-reuniao-extraordinaria-21-06-13.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2211" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2211">Compartilhar</a>    </div>
+    <div id="item_2211" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2188">
+            <h2>Ata da 49ª Reunião Ordinária - 2013</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/03/2013<br /></li>
+                <li><label>Postado em:</label> 03/07/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2188/49-ordinaria-27-03-13.htm" target="_blank">49-ordinaria-27-03-13.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2188" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2188">Compartilhar</a>    </div>
+    <div id="item_2188" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2012</h3>
+        <div>
+        
+                        <div class="block" id="record_2166">
+            <h2>Ata da 48ª Reunião Ordinária - 2012</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/2012<br /></li>
+                <li><label>Postado em:</label> 07/05/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2166/48-_ordinaria_30_11_12_-final.htm" target="_blank">48-_ordinaria_30_11_12_-final.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2166" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2166">Compartilhar</a>    </div>
+    <div id="item_2166" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2129">
+            <h2>Ata da 23ª Reunião Extraordinária -2012</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/09/2012<br /></li>
+                <li><label>Postado em:</label> 03/12/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2129/23-reuniao-extraordinaria-28-09-12.htm" target="_blank">23-reuniao-extraordinaria-28-09-12.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2129" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2129">Compartilhar</a>    </div>
+    <div id="item_2129" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2123">
+            <h2>Ata da 47ª Reunião Ordinária - 2012</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/06/2012<br /></li>
+                <li><label>Postado em:</label> 02/10/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2123/47-ordinaria-22-06-12.htm" target="_blank">47-ordinaria-22-06-12.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2123" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2123">Compartilhar</a>    </div>
+    <div id="item_2123" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2121">
+            <h2>Ata da 46ª Reunião Ordinária - 2012</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/03/2012<br /></li>
+                <li><label>Postado em:</label> 04/09/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2121/46-ordinaria-02-03-12.htm" target="_blank">46-ordinaria-02-03-12.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2121" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_2121">Compartilhar</a>    </div>
+    <div id="item_2121" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2011</h3>
+        <div>
+        
+                        <div class="block" id="record_1444">
+            <h2>Ata da 45ª Reunião Ordinária - 2011</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/12/2011<br /></li>
+                <li><label>Postado em:</label> 22/03/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1444/45-ordinaria-02-12-11.htm" target="_blank">45-ordinaria-02-12-11.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1444" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1444">Compartilhar</a>    </div>
+    <div id="item_1444" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1420">
+            <h2>Ata da 44ª Reunião Ordinária - 2011</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/09/2011<br /></li>
+                <li><label>Postado em:</label> 28/12/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1420/44-ordinaria-02-09-11.htm" target="_blank">44-ordinaria-02-09-11.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1420" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1420">Compartilhar</a>    </div>
+    <div id="item_1420" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1404">
+            <h2>Ata da 43ª Reunião Ordinária - 2011</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/05/2011<br /></li>
+                <li><label>Postado em:</label> 13/09/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1404/43-ordinaria-27-05-11.htm" target="_blank">43-ordinaria-27-05-11.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1404" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1404">Compartilhar</a>    </div>
+    <div id="item_1404" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1377">
+            <h2>Ata da 42ª Reunião Ordinária - 2011</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/03/2011<br /></li>
+                <li><label>Postado em:</label> 30/05/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1377/42-ordinaria-25-03-11.htm" target="_blank">42-ordinaria-25-03-11.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1377" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1377">Compartilhar</a>    </div>
+    <div id="item_1377" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2010</h3>
+        <div>
+        
+                        <div class="block" id="record_1337">
+            <h2>Ata da 41ª Reunião Ordinária - 2010</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/12/2010<br /></li>
+                <li><label>Postado em:</label> 14/04/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1337/41-ord-03-12-10.htm" target="_blank">41-ord-03-12-10.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1337" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1337">Compartilhar</a>    </div>
+    <div id="item_1337" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1312">
+            <h2>Ata da 40ª Reunião Ordinária - 2010</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/09/2010<br /></li>
+                <li><label>Postado em:</label> 13/12/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1312/40-ord-10-09-10.htm" target="_blank">40-ord-10-09-10.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1312" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1312">Compartilhar</a>    </div>
+    <div id="item_1312" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1284">
+            <h2>Ata da 39ª Reunião Ordinária - 2010</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/04/2010<br /></li>
+                <li><label>Postado em:</label> 06/10/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1284/39-ord-16-04-10.htm" target="_blank">39-ord-16-04-10.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1284" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1284">Compartilhar</a>    </div>
+    <div id="item_1284" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2009</h3>
+        <div>
+        
+                        <div class="block" id="record_1232">
+            <h2>Ata da 38ª Reunião Ordinária - 2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/12/2009<br /></li>
+                <li><label>Postado em:</label> 20/05/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1232/38-ord-04-12-09.htm" target="_blank">38-ord-04-12-09.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1232" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1232">Compartilhar</a>    </div>
+    <div id="item_1232" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1152">
+            <h2>Ata da 22ª Reunião Extraordinária - 2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/08/2009<br /></li>
+                <li><label>Postado em:</label> 14/12/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1152/22-extraord-28-08-09.htm" target="_blank">22-extraord-28-08-09.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1152" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1152">Compartilhar</a>    </div>
+    <div id="item_1152" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1140">
+            <h2>Ata da 37ª Reunião Ordinária - 2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/06/2009<br /></li>
+                <li><label>Postado em:</label> 29/09/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1140/37-ord-26-06-09.htm" target="_blank">37-ord-26-06-09.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1140" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1140">Compartilhar</a>    </div>
+    <div id="item_1140" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1107">
+            <h2>Ata da 36ª Reunião Ordinária - 2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/03/2009<br /></li>
+                <li><label>Postado em:</label> 31/07/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1107/36-ord-13-03-09.htm" target="_blank">36-ord-13-03-09.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1107" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1107">Compartilhar</a>    </div>
+    <div id="item_1107" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2008</h3>
+        <div>
+        
+                        <div class="block" id="record_1086">
+            <h2>Ata da 35ª Reunião Ordinária - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/12/2008<br /></li>
+                <li><label>Postado em:</label> 05/05/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1086/35-ord-05-12-08.htm" target="_blank">35-ord-05-12-08.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1086" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1086">Compartilhar</a>    </div>
+    <div id="item_1086" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1048">
+            <h2>Ata da 34ª Reunião Ordinária - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/12/2008<br /></li>
+                <li><label>Postado em:</label> 17/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1048/34-ord-27-06-08.htm" target="_blank">34-ord-27-06-08.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1048" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1048">Compartilhar</a>    </div>
+    <div id="item_1048" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1047">
+            <h2>Ata da 21ª Reunião Extraordinária - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/10/2008<br /></li>
+                <li><label>Postado em:</label> 17/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1047/21-extraord-24-10-08.htm" target="_blank">21-extraord-24-10-08.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1047" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_1047">Compartilhar</a>    </div>
+    <div id="item_1047" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_978">
+            <h2>Ata da 33ª Reunião Ordinária - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/04/2008<br /></li>
+                <li><label>Postado em:</label> 18/07/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/978/33-ord-04-04-08.htm" target="_blank">33-ord-04-04-08.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="978" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_978">Compartilhar</a>    </div>
+    <div id="item_978" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2007</h3>
+        <div>
+        
+                        <div class="block" id="record_865">
+            <h2>Ata da Reunião de Escolha dos Membros do Estado - 2007/2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/12/2007<br /></li>
+                <li><label>Postado em:</label> 12/03/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/865/ata-estado-26-02-2007.htm" target="_blank">ata-estado-26-02-2007.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="865" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_865">Compartilhar</a>    </div>
+    <div id="item_865" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_961">
+            <h2>Ata da 32ª Reunião Ordinária - 2007</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/2007<br /></li>
+                <li><label>Postado em:</label> 22/04/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/961/32-ord-06-12-07.htm" target="_blank">32-ord-06-12-07.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="961" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_961">Compartilhar</a>    </div>
+    <div id="item_961" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_913">
+            <h2>Ata da 31ª Reunião Ordinária - 2007</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/06/2007<br /></li>
+                <li><label>Postado em:</label> 29/10/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/913/31-ord-01-06-07.htm" target="_blank">31-ord-01-06-07.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="913" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_913">Compartilhar</a>    </div>
+    <div id="item_913" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_908">
+            <h2>Ata da 30ª Reunião Ordinária - 2007</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2007<br /></li>
+                <li><label>Postado em:</label> 28/08/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/908/30-ord-30-03-07.htm" target="_blank">30-ord-30-03-07.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="908" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_908">Compartilhar</a>    </div>
+    <div id="item_908" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_857">
+            <h2>Ata da Reunião de Escolha dos Membros dos Municípios - 2007/2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/02/2007<br /></li>
+                <li><label>Postado em:</label> 28/02/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/857/ata-municipios-27-02-2007.htm" target="_blank">ata-municipios-27-02-2007.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="857" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_857">Compartilhar</a>    </div>
+    <div id="item_857" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_856">
+            <h2>Ata da Reunião de Escolha dos Membros da Sociedade Civil - 2007/2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/02/2007<br /></li>
+                <li><label>Postado em:</label> 28/02/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/856/ata-sociedade-civil-23-02-2007.htm" target="_blank">ata-sociedade-civil-23-02-2007.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="856" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_856">Compartilhar</a>    </div>
+    <div id="item_856" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2006</h3>
+        <div>
+        
+                        <div class="block" id="record_907">
+            <h2>Ata da 29ª Reunião Ordinária - 2006</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/12/2006<br /></li>
+                <li><label>Postado em:</label> 28/08/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/907/29-ord-01-12-06.htm" target="_blank">29-ord-01-12-06.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="907" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_907">Compartilhar</a>    </div>
+    <div id="item_907" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_849">
+            <h2>Ata da 28ª Reunião Ordinária - 2006</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/06/2006<br /></li>
+                <li><label>Postado em:</label> 12/01/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/849/28-ord-09-06-06.htm" target="_blank">28-ord-09-06-06.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="849" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_849">Compartilhar</a>    </div>
+    <div id="item_849" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_821">
+            <h2>Ata da 27ª Reunião Ordinária - 2006</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/03/2006<br /></li>
+                <li><label>Postado em:</label> 07/07/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/821/27ord100306.htm" target="_blank">27ord100306.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="821" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_821">Compartilhar</a>    </div>
+    <div id="item_821" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2005</h3>
+        <div>
+        
+                        <div class="block" id="record_732">
+            <h2>Ata da 4ª Reunião Ordinária - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2005<br /></li>
+                <li><label>Postado em:</label> 24/03/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/732/4ord091205.htm" target="_blank">4ord091205.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="732" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_732">Compartilhar</a>    </div>
+    <div id="item_732" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_718">
+            <h2>Ata da 3ª Reunião Ordinária - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/09/2005<br /></li>
+                <li><label>Postado em:</label> 27/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/718/3ord230905.htm" target="_blank">3ord230905.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="718" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_718">Compartilhar</a>    </div>
+    <div id="item_718" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_717">
+            <h2>Ata da 2ª Reunião Ordinária - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/06/2005<br /></li>
+                <li><label>Postado em:</label> 27/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/717/2ord170605.htm" target="_blank">2ord170605.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="717" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_717">Compartilhar</a>    </div>
+    <div id="item_717" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_716">
+            <h2>Ata da 1ª Reunião Ordinária - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/04/2005<br /></li>
+                <li><label>Postado em:</label> 27/12/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/716/1ord010405.htm" target="_blank">1ord010405.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="716" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_716">Compartilhar</a>    </div>
+    <div id="item_716" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2004</h3>
+        <div>
+        
+                        <div class="block" id="record_659">
+            <h2>Ata da 2ª Reunião Extraordinária - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/12/2004<br /></li>
+                <li><label>Postado em:</label> 08/04/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/659/2-extraordi-10-12-04.doc" target="_blank">2-extraordi-10-12-04.doc</a></li>
+                                    <li><a href="/public/uploads/records/659/2extra101204.htm" target="_blank">2extra101204.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="659" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_659">Compartilhar</a>    </div>
+    <div id="item_659" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_634">
+            <h2>Ata da 3ª Reunião Ordinária - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/10/2004<br /></li>
+                <li><label>Postado em:</label> 21/12/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/634/3ord221004.htm" target="_blank">3ord221004.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="634" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_634">Compartilhar</a>    </div>
+    <div id="item_634" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_623">
+            <h2>Ata da 2ª Reunião Ordinária - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/06/2004<br /></li>
+                <li><label>Postado em:</label> 25/10/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/623/2ord250604.htm" target="_blank">2ord250604.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="623" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_623">Compartilhar</a>    </div>
+    <div id="item_623" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_572">
+            <h2>Ata da 1ª Reunião Ordinária - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/03/2004<br /></li>
+                <li><label>Postado em:</label> 08/07/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/572/1ord120304.htm" target="_blank">1ord120304.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="572" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_572">Compartilhar</a>    </div>
+    <div id="item_572" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_571">
+            <h2>Ata da 1ª Reunião Extraordinária - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/03/2004<br /></li>
+                <li><label>Postado em:</label> 08/07/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/571/1extra050304.htm" target="_blank">1extra050304.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="571" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_571">Compartilhar</a>    </div>
+    <div id="item_571" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2003</h3>
+        <div>
+        
+                        <div class="block" id="record_34">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-Pardo - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/10/2003<br /></li>
+                <li><label>Postado em:</label> 15/12/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/34/2ord3110.htm" target="_blank">2ord3110.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="34" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_34">Compartilhar</a>    </div>
+    <div id="item_34" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_30">
+            <h2>Ata da 2ª Reunião Extraordinária do CBH-Pardo - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/06/2003<br /></li>
+                <li><label>Postado em:</label> 10/11/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/30/2-extra1606_1.htm" target="_blank">2-extra1606_1.htm</a></li>
+                                    <li><a href="/public/uploads/records/30/2extra1606.htm" target="_blank">2extra1606.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="30" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_30">Compartilhar</a>    </div>
+    <div id="item_30" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_11">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-Pardo - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/05/2003<br /></li>
+                <li><label>Postado em:</label> 10/11/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/11/1ord2305.htm" target="_blank">1ord2305.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_11">Compartilhar</a>    </div>
+    <div id="item_11" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_7">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-Pardo - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/03/2003<br /></li>
+                <li><label>Postado em:</label> 13/06/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/7/1extra2103.htm" target="_blank">1extra2103.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_7">Compartilhar</a>    </div>
+    <div id="item_7" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2002</h3>
+        <div>
+        
+                        <div class="block" id="record_31">
+            <h2>Ata da 2ª Reunião Extraordinária do CBH-Pardo - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/12/2002<br /></li>
+                <li><label>Postado em:</label> 03/04/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/31/2-extra2012.htm" target="_blank">2-extra2012.htm</a></li>
+                                    <li><a href="/public/uploads/records/31/2extra2012.htm" target="_blank">2extra2012.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="31" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_31">Compartilhar</a>    </div>
+    <div id="item_31" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_39">
+            <h2>Ata da 3ª Reunião Ordinária do CBH-Pardo - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/11/2002<br /></li>
+                <li><label>Postado em:</label> 26/12/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/39/3ord2911.htm" target="_blank">3ord2911.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="39" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_39">Compartilhar</a>    </div>
+    <div id="item_39" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_32">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-Pardo - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/11/2002<br /></li>
+                <li><label>Postado em:</label> 26/12/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/32/2-ord2811.htm" target="_blank">2-ord2811.htm</a></li>
+                                    <li><a href="/public/uploads/records/32/2ord2811.htm" target="_blank">2ord2811.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="32" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_32">Compartilhar</a>    </div>
+    <div id="item_32" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-Pardo - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/10/2002<br /></li>
+                <li><label>Postado em:</label> 26/12/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9/1-ord1110.htm" target="_blank">1-ord1110.htm</a></li>
+                                    <li><a href="/public/uploads/records/9/1ord1110.htm" target="_blank">1ord1110.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_9">Compartilhar</a>    </div>
+    <div id="item_9" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_8">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-Pardo - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/04/2002<br /></li>
+                <li><label>Postado em:</label> 21/10/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8/1extra3004.htm" target="_blank">1extra3004.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_8">Compartilhar</a>    </div>
+    <div id="item_8" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2001</h3>
+        <div>
+        
+                        <div class="block" id="record_33">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-Pardo - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/2001<br /></li>
+                <li><label>Postado em:</label> 21/10/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/33/2-ord30-11.htm" target="_blank">2-ord30-11.htm</a></li>
+                                    <li><a href="/public/uploads/records/33/2ord3011.htm" target="_blank">2ord3011.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="33" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_33">Compartilhar</a>    </div>
+    <div id="item_33" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_29">
+            <h2>Ata da 2ª Reunião Extraordinária do CBH-PARDO - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/10/2001<br /></li>
+                <li><label>Postado em:</label> 17/07/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/29/2-extra16-10.htm" target="_blank">2-extra16-10.htm</a></li>
+                                    <li><a href="/public/uploads/records/29/2extra1610.htm" target="_blank">2extra1610.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="29" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_29">Compartilhar</a>    </div>
+    <div id="item_29" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_6">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-PARDO - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/06/2001<br /></li>
+                <li><label>Postado em:</label> 17/07/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/6/1-extra01-06-0.htm" target="_blank">1-extra01-06-0.htm</a></li>
+                                    <li><a href="/public/uploads/records/6/1extra0106.htm" target="_blank">1extra0106.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_6">Compartilhar</a>    </div>
+    <div id="item_6" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PARDO - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2001<br /></li>
+                <li><label>Postado em:</label> 17/07/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/10/1ord3003.htm" target="_blank">1ord3003.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_10">Compartilhar</a>    </div>
+    <div id="item_10" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2000</h3>
+        <div>
+        
+                        <div class="block" id="record_360">
+            <h2>Ata da 4ª Reunião Extraordinária do CBH-PARDO - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2000<br /></li>
+                <li><label>Postado em:</label> 17/07/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/360/ata4e-00.htm" target="_blank">ata4e-00.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="360" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_360">Compartilhar</a>    </div>
+    <div id="item_360" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_356">
+            <h2>Ata da 3ª Reunião Extraordinária do CBH-PARDO - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/11/2000<br /></li>
+                <li><label>Postado em:</label> 17/07/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/356/ata3e-00.htm" target="_blank">ata3e-00.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="356" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_356">Compartilhar</a>    </div>
+    <div id="item_356" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_349">
+            <h2>Ata  da 2ª Reunião Extraordinária do CBH-PARDO - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/08/2000<br /></li>
+                <li><label>Postado em:</label> 15/07/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/349/ata2e-00-1.htm" target="_blank">ata2e-00-1.htm</a></li>
+                                    <li><a href="/public/uploads/records/349/ata2e-00.htm" target="_blank">ata2e-00.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="349" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_349">Compartilhar</a>    </div>
+    <div id="item_349" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_334">
+            <h2>Ata  da 1ª Reunião Extraordinária do CBH-PARDO - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/04/2000<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/334/ata1e-00.htm" target="_blank">ata1e-00.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="334" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_334">Compartilhar</a>    </div>
+    <div id="item_334" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_322">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PARDO - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/02/2000<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/322/ata1-00.htm" target="_blank">ata1-00.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="322" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_322">Compartilhar</a>    </div>
+    <div id="item_322" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1999</h3>
+        <div>
+        
+                        <div class="block" id="record_357">
+            <h2>Ata da 3ª Reunião Extraordinária do CBH-PARDO - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/1999<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/357/ata3e-99-0.htm" target="_blank">ata3e-99-0.htm</a></li>
+                                    <li><a href="/public/uploads/records/357/ata3e-99.htm" target="_blank">ata3e-99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="357" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_357">Compartilhar</a>    </div>
+    <div id="item_357" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_290">
+            <h2>Ata do Encontro Nacional de Bacias Hidrográficas</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/10/1999<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/290/ata-do-i-encontro-de-bacias99.htm" target="_blank">ata-do-i-encontro-de-bacias99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="290" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_290">Compartilhar</a>    </div>
+    <div id="item_290" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_350">
+            <h2>Ata da 2ª Reunião Extraordinária do CBH-PARDO - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/10/1999<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/350/ata2e-99.htm" target="_blank">ata2e-99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="350" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_350">Compartilhar</a>    </div>
+    <div id="item_350" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_336">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-PARDO - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/08/1999<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/336/ata1e-99.htm" target="_blank">ata1e-99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="336" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_336">Compartilhar</a>    </div>
+    <div id="item_336" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_340">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-PARDO - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/05/1999<br /></li>
+                <li><label>Postado em:</label> 11/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/340/ata2-99.htm" target="_blank">ata2-99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="340" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_340">Compartilhar</a>    </div>
+    <div id="item_340" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_326">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PARDO - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/03/1999<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/326/ata1-99.htm" target="_blank">ata1-99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="326" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_326">Compartilhar</a>    </div>
+    <div id="item_326" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1998</h3>
+        <div>
+        
+                        <div class="block" id="record_339">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-PARDO - 1998</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/1998<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/339/ata2-98.htm" target="_blank">ata2-98.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="339" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_339">Compartilhar</a>    </div>
+    <div id="item_339" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_325">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PARDO - 1998</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/09/1998<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/325/ata1-98.htm" target="_blank">ata1-98.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="325" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_325">Compartilhar</a>    </div>
+    <div id="item_325" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_335">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-PARDO - 1998</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/04/1998<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/335/ata1e-98.htm" target="_blank">ata1e-98.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="335" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_335">Compartilhar</a>    </div>
+    <div id="item_335" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1997</h3>
+        <div>
+        
+                        <div class="block" id="record_368">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-PARDO - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/10/1997<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/368/atae1-97.htm" target="_blank">atae1-97.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="368" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_368">Compartilhar</a>    </div>
+    <div id="item_368" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_352">
+            <h2>Ata da 3ª Reunião Ordinária do CBH-PARDO - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/09/1997<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/352/ata3-97.htm" target="_blank">ata3-97.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="352" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_352">Compartilhar</a>    </div>
+    <div id="item_352" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_338">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-PARDO - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/06/1997<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/338/ata2-97.htm" target="_blank">ata2-97.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="338" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_338">Compartilhar</a>    </div>
+    <div id="item_338" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_324">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PARDO - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/04/1997<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/324/ata1-97.htm" target="_blank">ata1-97.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="324" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_324">Compartilhar</a>    </div>
+    <div id="item_324" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1996</h3>
+        <div>
+        
+                        <div class="block" id="record_337">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-PARDO - 1996</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/1996<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/337/ata2-96.htm" target="_blank">ata2-96.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="337" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_337">Compartilhar</a>    </div>
+    <div id="item_337" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_323">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PARDO - 1996</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/09/1996<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/323/ata1-96.htm" target="_blank">ata1-96.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="323" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_323">Compartilhar</a>    </div>
+    <div id="item_323" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_411">
+            <h2>Ata da Assembléia de Instalação do CBH-PARDO</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/06/1996<br /></li>
+                <li><label>Postado em:</label> 08/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/411/atai-96.htm" target="_blank">atai-96.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="411" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpardo/atas#record_411">Compartilhar</a>    </div>
+    <div id="item_411" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhpardo/atas#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-PARDO - Comitê da Bacia Hidrográfica do Pardo</h2>
+                <li>
+					Rua Olinda, 150 - Bairro Santa Terezinha - 14025-150 - Ribeirão Preto - SP																				                </li>
+                <li> Tel: (16) 3623-3940 | Fax: (16) 3623-3940 | contato: comitepardo@yahoo.com.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
