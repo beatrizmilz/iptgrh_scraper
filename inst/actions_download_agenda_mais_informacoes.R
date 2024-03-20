@@ -10,7 +10,7 @@ arquivos_baixados <-
 
 
 piggyback::pb_download(
-  repo = "beatrizmilz/RelatoriosTransparenciaAguaSP",
+  repo = "beatrizmilz/iptgrh_scraper",
   tag = "dados",
   file = "agenda_completo.rds"
 )

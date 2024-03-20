@@ -1,4 +1,4 @@
 library(testthat)
-library(RelatoriosTransparenciaAguaSP)
+library(iptgrhScraper)
 
-test_check("RelatoriosTransparenciaAguaSP")
+test_check("iptgrhScraper")

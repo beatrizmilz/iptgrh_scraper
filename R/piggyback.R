@@ -5,7 +5,7 @@ salvar_dados_piggyback <- function(objeto){
   readr::write_rds(objeto, caminho)
 
   piggyback::pb_upload(caminho,
-                       repo = "beatrizmilz/RelatoriosTransparenciaAguaSP",
+                       repo = "beatrizmilz/iptgrh_scraper",
                        tag = "dados")
 
 }
