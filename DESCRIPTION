@@ -1,6 +1,6 @@
 Package: iptgrhScraper
 Title: Utiliza as funções do pacote ComitesBaciaSP, para fazer download das páginas e raspar dados do SigRH 
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Beatriz",
            family = "Milz",
@@ -15,7 +15,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     ComitesBaciaSP (>= 0.0.0.9000),
-    devtools,
     dplyr,
     fs,
     glue,
@@ -25,14 +24,19 @@ Imports:
     piggyback,
     purrr,
     readr,
+    rvest,
     stringr,
     tibble,
-    usethis
+    tidyr,
+    usethis,
+    xml2
 Remotes: 
     beatrizmilz/ComitesBaciaSP
 URL: https://github.com/beatrizmilz/iptgrh_scraper
 BugReports: https://github.com/beatrizmilz/iptgrh_scraper/issues
 Suggests: 
+    devtools,
+    here,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 

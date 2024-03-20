@@ -3,3 +3,9 @@
 ^\.github$
 ^data-raw$
 ^README\.Rmd$
+^dados_html$
+^inst/dados_html_agenda_complemento$
+^inst/dados_rds$
+^LICENSE\.md$
+^inst/dados_html$
+^iptgrh_Scraper\.Rproj$

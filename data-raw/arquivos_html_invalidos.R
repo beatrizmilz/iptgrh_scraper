@@ -1,6 +1,6 @@
-test_that("funcao de validacao do HTML", {
+## code to prepare `arquivos_html_invalidos` dataset goes here
 
-  arquivos_invalidos <- c(
+  arquivos_html_invalidos <- c(
     "inst/dados_html/2021/10/mp-representantes-01-10-2021.html",
     "inst/dados_html/2021/10/mp-representantes-15-10-2021.html",
     "inst/dados_html/2021/10/pp-atas-01-10-2021.html",
@@ -131,30 +131,5 @@ test_that("funcao de validacao do HTML", {
     "inst/dados_html/2022/9/sm-documentos-15-09-2022.html"
     )
 
-# arquivos que sao invalidos:
-  testando_arquivos_invalidos <- arquivos_invalidos |>
-  #  purrr::set_names() |>
-    purrr::map_lgl(html_valido)
 
-  expect_equal(testando_arquivos_invalidos,
-               rep(FALSE, length(testando_arquivos_invalidos)))
-
-  # arquivos validos
-
-  todos_arquivos <- list.files("inst/dados_html", recursive = TRUE, full.names = TRUE)
-
-
- arquivos_validos <- todos_arquivos[!todos_arquivos %in% arquivos_invalidos]
-
- set.seed(345134)
-
- testando_arquivos_validos <- arquivos_validos |>
-   #purrr::set_names() |>
-   sample(30) |>
-   purrr::map_lgl(html_valido)
-
-
- expect_equal(testando_arquivos_validos,
-              rep(TRUE, length(testando_arquivos_validos)))
-
-})
+usethis::use_data(arquivos_html_invalidos, overwrite = TRUE)
