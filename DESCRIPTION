@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "milz.bea@gmail.com",
            comment = c(ORCID = "0000-0002-3064-4486"))
-Description: What the package does (one paragraph).
+Description: Existe um Workflow com GitHub Actions que faz download dos arquivos HTML duas vezes ao mês.
 License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
