@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/admin/main' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehiidro20' target="_blank">SinFEHIDRO 2.0</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-TJ</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhtj/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhtj/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhtj/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhtj/camaratecnicadeaguassubterraneas' >Câmara Técnica de Águas Subterrâneas</a></li>
+                                                                        <li><a href='/cbhtj/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhtj/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhtj/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhtj/estrutura' >Estrutura</a></li>
+                                                                        <li><a href='/cbhtj/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhtj/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhtj/ctas/estrutura' >CT-AS</a></li>
+                                                            <li><a href='/cbhtj/ctea/estrutura' >CT-EA</a></li>
+                                                            <li><a href='/cbhtj/ctpg/estrutura' >CT-PG</a></li>
+                                                            <li><a href='/cbhtj/ctrn/estrutura' >CT-RN</a></li>
+                                                            <li><a href='/cbhtj/ctsan/estrutura' >CT-SAN</a></li>
+                                                            <li class="last"><a href='/cbhtj/gtcobranca/estrutura' >GT-COBRANCA</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="3" data-year="2024" data-unity="88" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="04" data-year="2024" data-unity="88" data-scope="global">Abril/2024</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="5" data-year="2024" data-unity="88" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day calendar-event" title="<h2>Reagenda_Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 02/04/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/15770'>Ver mais</a></div>">2</td><td class="calendar-day">3</td><td class="calendar-day calendar-event" title="<h2>Reagendada_ Reunião_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 04/04/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/15703'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day calendar-event" title="<h2>Reagendada_Reunião Extraordinária CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 08/04/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/332/events/15772'>Ver mais</a></div><h2>Reunião COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 08/04/2024  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/451/events/15806'>Ver mais</a></div>">8</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 09/04/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/339/events/15693'>Ver mais</a></div><h2>Prevista_Reunião Conj CORHI_CTAJI_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais - CRH  <br />  <b>Data do evento:</b> 09/04/2024  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/338/events/15774'>Ver mais</a></div>">9</td><td class="calendar-day">10</td><td class="calendar-day calendar-event" title="<h2>Prevista Reunião_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 11/04/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/15794'>Ver mais</a></div>">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day calendar-event" title="<h2>Tiradentes</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 21/04/2024  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15610'>Ver mais</a></div>">21</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião Extraordinária CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 22/04/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/332/events/15775'>Ver mais</a></div>">22</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 23/04/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/15795'>Ver mais</a></div>">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="3" data-year="2024" data-unity="88" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="04" data-year="2024" data-unity="88" data-scope="scoped">Abril/2024</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="5" data-year="2024" data-unity="88" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>31ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL, CBH-PJ1)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 05/04/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Videoconferência.  <br />  <a href='/pageitems/313/events/15657'>Ver mais</a></div>">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day calendar-event" title="<h2>3° Análise técnica, administrativa e jurídica das propostas </h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Rio Mogi Guaçu  <br />  <b>Data do evento:</b> 08/04/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sede da Secretaria Executiva do CBH Mogi  <br />  <a href='/pageitems/329/events/15788'>Ver mais</a></div><h2>Reunião COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> Conselho de Orientação do Fundo Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 08/04/2024  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/337/events/15805'>Ver mais</a></div>">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day calendar-event" title="<h2>49ª Reunião Ordinária do CBH-MP</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Médio Paranapanema  <br />  <b>Data do evento:</b> 16/04/2024  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> LOCAL: HOTEL SUN VALLEY MARILIA BY ATLANTICA  <br />  <a href='/pageitems/311/events/15792'>Ver mais</a></div><h2>47ª Reunião Ordinária do CBH-AP</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Aguapeí e Peixe  <br />  <b>Data do evento:</b> 16/04/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> LOCAL: HOTEL SUN VALLEY MARILIA BY ATLANTICA  <br />  <a href='/pageitems/314/events/15793'>Ver mais</a></div>">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>87° Reunião Plenária do CBH Mogi </h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Rio Mogi Guaçu  <br />  <b>Data do evento:</b> 19/04/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sede da Associação Comercial e Industrial de Mogi Guaçu  <br />  <a href='/pageitems/329/events/15789'>Ver mais</a></div>">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Agenda</h1>
+
+
+
+
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 24</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/15763"><h2>Reunião de Pontuação de Projetos CT-PG</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/15763">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 24</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/15761"><h2>Reunião de Pontuação de Projetos CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/15761">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 24</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/15762"><h2>Reunião de Pontuação de Projetos CT-AS e CT-SAN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/15762">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 24</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/15760"><h2>Reunião de Pontuação de Projetos CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/15760">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 23</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/15605"><h2>Reunião CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/15605">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 23</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/15568"><h2>Reunião Plenária 84</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/15568">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 23</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/14564"><h2>Reunião CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/14564">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 23</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/14530"><h2>Reunião Câmaras Técnicas</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/14530">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 23</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/13472"><h2>Reunião Plenária 83</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/13472">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 23</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/13281"><h2>Reunião de Pontuação de Projetos CT-AS CT-PG eCT-SAN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/13281">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 23</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/13280"><h2>Reunião de Pontuação de Projetos CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/13280">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 23</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/13279"><h2>Reunião de Pontuação de Projetos CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/13279">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 23</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12168"><h2>Reunião Plenária 82</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12168">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 23</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12147"><h2>Reunião de Pontuação de Projetos CT-PG</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12147">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 23</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12146"><h2>Reunião de Pontuação de Projetos CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12146">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 23</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12145"><h2>Reunião de Pontuação de Projetos CT-AS e CT-SAN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12145">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 23</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12144"><h2>Reunião de Pontuação de Projetos CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12144">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 23</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12074"><h2>Reunião CTs Análise EIA-RIMA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12074">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 23</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/12057"><h2>Reunião todas CTs</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/12057">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 22</span>
+            <span class="day">12</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11949"><h2>Reunião Plenária 80</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11949">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 22</span>
+            <span class="day">21</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11948"><h2>Reunião GT-OGA </h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11948">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 22</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11947"><h2>Reunião GT-OGA </h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11947">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 22</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11946"><h2>Convocação Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11946">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 22</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11945"><h2>Reunião GT -  Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11945">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 22</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11944"><h2>Convocação Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11944">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 22</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11942"><h2>Plenária 79ª - Convocação20/2022</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11942">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 22</span>
+            <span class="day">12</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11943"><h2>Reunião GT-OGA </h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11943">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 22</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11941"><h2>Convocação 019-22 Reunião Pontuação CT-PG-SAN-AS</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11941">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 22</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11940"><h2>Convocação 018-22 Reunião Pontuação CT-RN - segunda chamada</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11940">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 22</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11939"><h2>Convocação 017-2022 Reunião Pontuação CT-EA - segunda chamada</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11939">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 22</span>
+            <span class="day">01</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11935"><h2>Convocação CBH-TJ nº 13/2022</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11935">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 22</span>
+            <span class="day">27</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11938"><h2>Convocação Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11938">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 22</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11936"><h2>Convocação Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11936">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 22</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11937"><h2>Reunião GT -  Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11937">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 22</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11934"><h2>Convocação CBH-TJ nº 12/2022 Reunião GT -  Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11934">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 22</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11702"><h2>Reunião GT -  Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11702">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 22</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11666"><h2>Reunião Plenária 78</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11666">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 22</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11668"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11668">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 22</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11655"><h2>Convite - Programa de Drenagem Sustentável e Revitalização de Rios Urbanos</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11655">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 22</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11651"><h2>Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11651">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 22</span>
+            <span class="day">01</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11615"><h2>Reunião de Pontuação de Projetos CT-PG</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11615">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 22</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11614"><h2>Reunião de Pontuação de Projetos CT-AS e CT-SAN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11614">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 22</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11613"><h2>Reunião de Pontuação de Projetos CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11613">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 22</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11612"><h2>Reunião de Pontuação de Projetos CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11612">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 22</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11585"><h2>Reunião GT-Capacitação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11585">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 22</span>
+            <span class="day">21</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11567"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11567">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 22</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11566"><h2>Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11566">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 21</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11179"><h2>Reunião Plenária 77</h2></a>
+            <p>
+                Reunião Plenária 77                <a href="/collegiate/88/pageitems/353/events/11179">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 21</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11147"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11147">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 21</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11146"><h2>Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11146">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 21</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11087"><h2>Reunião CT-EA</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11087">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 21</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11088"><h2>Reunião GT-Capacitação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11088">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 21</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11067"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                Reunião GT-Comunicação                <a href="/collegiate/88/pageitems/353/events/11067">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 21</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/11068"><h2>Reunião GT-Capacitação</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/11068">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 21</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10784"><h2>Reunião CT-AS</h2></a>
+            <p>
+                Reunião CT-AS                <a href="/collegiate/88/pageitems/353/events/10784">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 21</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10783"><h2>Reunião CT-RN e CT-SAN</h2></a>
+            <p>
+                Reunião CT-RN e CT-SAN                <a href="/collegiate/88/pageitems/353/events/10783">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 21</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10782"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                Reunião GT-Comunica~ção                <a href="/collegiate/88/pageitems/353/events/10782">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 21</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10755"><h2>Reunião CT-EA</h2></a>
+            <p>
+                Reunião CT-EA                <a href="/collegiate/88/pageitems/353/events/10755">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 21</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10749"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                Reunião GT-Comunicação                <a href="/collegiate/88/pageitems/353/events/10749">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 21</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10573"><h2>Reunião  CT-PG</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-PG                <a href="/collegiate/88/pageitems/353/events/10573">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 21</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10572"><h2>Reunião CT-RN</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-RN                <a href="/collegiate/88/pageitems/353/events/10572">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 21</span>
+            <span class="day">06</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10571"><h2>Reunião CT-AS e CT-SAN</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-AS e CT-SAN                <a href="/collegiate/88/pageitems/353/events/10571">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 21</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10570"><h2>Reunião CT-EA</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos                <a href="/collegiate/88/pageitems/353/events/10570">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 21</span>
+            <span class="day">31</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10586"><h2>Reunião  CT-RN</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/10586">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 21</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10583"><h2>Reunião CT-AS; CT-PG e CT-SAN</h2></a>
+            <p>
+                Reunião de capacitação CTs                <a href="/collegiate/88/pageitems/353/events/10583">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 21</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/10582"><h2>Reunião CT-EA</h2></a>
+            <p>
+                Reunião capacitação CT-EA                <a href="/collegiate/88/pageitems/353/events/10582">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 21</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9552"><h2>Reunião Plenária 75</h2></a>
+            <p>
+                Reunião Plenária 75                <a href="/collegiate/88/pageitems/353/events/9552">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">FEV / 21</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9551"><h2>Reunião Diretoria e Prefeitos</h2></a>
+            <p>
+                Reunião Diretoria e Prefeitos                <a href="/collegiate/88/pageitems/353/events/9551">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 21</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9476"><h2>Oficina de Elaboração de Projetos FEHIDRO</h2></a>
+            <p>
+                Oficina de Elaboração de Projetos FEHIDRO                <a href="/collegiate/88/pageitems/353/events/9476">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 20</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9262"><h2>Reunião Plenária 74</h2></a>
+            <p>
+                Reunião Plenária 74                <a href="/collegiate/88/pageitems/353/events/9262">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 20</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9261"><h2>Reunião Câmaras Técnicas</h2></a>
+            <p>
+                Reunião de todas as Câmaras Técnicas                <a href="/collegiate/88/pageitems/353/events/9261">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 20</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9260"><h2>Reunião GT-Comunicação</h2></a>
+            <p>
+                Reunião GT-Comunicação                <a href="/collegiate/88/pageitems/353/events/9260">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 20</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9242"><h2>Reunião de formação de equipe de Elaboração do Plano de Comunicação da UGRHi</h2></a>
+            <p>
+                Reunião de formação de equipe de Elaboração do Plano de Comunicação da UGRHi                <a href="/collegiate/88/pageitems/353/events/9242">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 20</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9226"><h2>Reunião CT-EA - Plano de Comunicação</h2></a>
+            <p>
+                Reunião CT-EA Plano de Comunicação                <a href="/collegiate/88/pageitems/353/events/9226">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 20</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9190"><h2>Reunião Plenária 73</h2></a>
+            <p>
+                Reunião Plenária 73                <a href="/collegiate/88/pageitems/353/events/9190">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9182"><h2>Reunião de Pontuação de Projetos CT-PG</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-PG                <a href="/collegiate/88/pageitems/353/events/9182">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9177"><h2>Reunião de Pontuação de Projetos CT-AS e CT-SAN</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-AS e CT-SAN                <a href="/collegiate/88/pageitems/353/events/9177">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9175"><h2>Reunião de Pontuação de Projetos CT-RN</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-RN                <a href="/collegiate/88/pageitems/353/events/9175">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 20</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9149"><h2>Reunião de Pontuação de Projetos CT-EA</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos CT-EA                <a href="/collegiate/88/pageitems/353/events/9149">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 20</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9107"><h2>Reunião de Pontuação de Projetos</h2></a>
+            <p>
+                Reunião de Pontuação de Projetos FEHIDRO                <a href="/collegiate/88/pageitems/353/events/9107">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 19</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/9016"><h2>72a Reunião Plenária</h2></a>
+            <p>
+                72a Reunião Plenária                <a href="/collegiate/88/pageitems/353/events/9016">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 19</span>
+            <span class="day">06</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/7988"><h2>Convocação 08/2019</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/7988">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 19</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/7916"><h2>Convocação 05/2019</h2></a>
+            <p>
+                71ª Reunião Plenária do CBH-TJ                 <a href="/collegiate/88/pageitems/353/events/7916">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 19</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/7926"><h2>Convocação 06/2019</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/7926">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 19</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6876"><h2>Reunião de Pontuação Projetos 2019 - Câmaras Técnicas</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/6876">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 19</span>
+            <span class="day">15</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6860"><h2>Reunião Eleição CBH-TJ - Biênio 2019/2021</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/6860">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JAN / 19</span>
+            <span class="day">29</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6842"><h2>Convocaççao Extraordinária 01/2019 CBH-TJ</h2></a>
+            <p>
+                Reunião Extraordinária para  os Membros da Plenária do CBH-TJ, seguimento Estado                <a href="/collegiate/88/pageitems/353/events/6842">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 18</span>
+            <span class="day">07</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6789"><h2>Convocação 69a Reunião Plenária </h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/6789">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 18</span>
+            <span class="day">09</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6769"><h2>Reunião de Câmaras Técnicas</h2></a>
+            <p>
+                Convocação para membros das Câmaras Técnicas - Critérios e Prazo para Projetos FEHIDRO; Critérios e prazos para eleição                <a href="/collegiate/88/pageitems/353/events/6769">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 18</span>
+            <span class="day">03</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6738"><h2>Convocação 04/08 - Reunião CTs</h2></a>
+            <p>
+                Convocação para os membros das Cts de Planejamento e Gestão e Recursos Naturais para reunião de discussão do Ofício do COMDEMA de Brotas 06 de 2018 de 03 de julho de 2018 e Apresentação do EIA Rima da Duplicação da Rodovia SP 255                <a href="/collegiate/88/pageitems/353/events/6738">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 18</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/6715"><h2>Convocação para 68ª Reunião Plenária </h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/6715">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 17</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4589"><h2>Convoção 10/2017 </h2></a>
+            <p>
+                67ª Reunião PLenária do CBH-TJ                <a href="/collegiate/88/pageitems/353/events/4589">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 17</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4580"><h2>Convocação 09/2017</h2></a>
+            <p>
+                Convocação de Reunião do Grupo Técnico do Plano de Bacia e demais Câmaras Técnicas                <a href="/collegiate/88/pageitems/353/events/4580">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 17</span>
+            <span class="day">24</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4539"><h2>Oficio nº 37/2017 - Propostas de Ações Plano de Bacia</h2></a>
+            <p>
+                Ofício convocando os atores envolvidos no gerenciamento de recursos hídricos para preencherem uma ficha com propostas de ações para compor o Plano de Bacia                <a href="/collegiate/88/pageitems/353/events/4539">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">SET / 17</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4529"><h2>Convocação 08 de 2017</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4529">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 17</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4468"><h2>Convocação 05/2017</h2></a>
+            <p>
+                Reunião do Grupo Técnico de Acompanhamento do Plano de Bacia                <a href="/collegiate/88/pageitems/353/events/4468">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 17</span>
+            <span class="day">02</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4467"><h2>Convocação 04/2017</h2></a>
+            <p>
+                Reunião de Pontuação com a Câmara Técnica de Planejamento e coordenadores de demais Câmaras Técnicas                <a href="/collegiate/88/pageitems/353/events/4467">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAI / 17</span>
+            <span class="day">05</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4436"><h2>Convocação 02/2017</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4436">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 16</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4340"><h2>Convocação Plenária</h2></a>
+            <p>
+                Convocação para a 63ª Reunião Plenária                <a href="/collegiate/88/pageitems/353/events/4340">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 16</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4328"><h2>Convoção 12/2016 - Reunião</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4328">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 16</span>
+            <span class="day">20</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4276"><h2>Reunião Plano de Bacia - Araraquara</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4276">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 16</span>
+            <span class="day">19</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4278"><h2>Reunião Plano de Bacia - Brotas</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4278">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 16</span>
+            <span class="day">17</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4277"><h2>Reunião Plano de Bacia - Bauru</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4277">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 16</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/4279"><h2>Reunião Plano de Bacia - Jauh</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/4279">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 15</span>
+            <span class="day">10</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/2942"><h2>Convocação 09/2015 - 60ª Reunião Plenária</h2></a>
+            <p>
+                Convocação para 60ª Reunião Plenária do CBh - TJ                <a href="/collegiate/88/pageitems/353/events/2942">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 15</span>
+            <span class="day">06</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1811"><h2>Convocação 04/2015</h2></a>
+            <p>
+                Convocação para Reunião Diagnóstico Rede de Monitoriamento                <a href="/collegiate/88/pageitems/353/events/1811">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 15</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1689"><h2>Convite 02/2015</h2></a>
+            <p>
+                Convite para 58ª Reunião Plenária do CBH-TJ                <a href="/collegiate/88/pageitems/353/events/1689">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 15</span>
+            <span class="day">06</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1499"><h2>Convite 01/2015 - 57ª Reunião Plenária</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/1499">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">DEZ / 13</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1521"><h2>Convocação 13/2013 -  54ª Reunião Plenária</h2></a>
+            <p>
+                54ª Reunião da Plenária                <a href="/collegiate/88/pageitems/353/events/1521">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 13</span>
+            <span class="day">26</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1522"><h2>Convocação 14/2013 -   Reunião da Câmara Técnica de Educação Ambiental</h2></a>
+            <p>
+                Reunião da Câmara Técnica de Educação Ambiental                <a href="/collegiate/88/pageitems/353/events/1522">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 13</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1520"><h2>Convocação 12/2013 - Reunião da Câmara Técnica de Educação Ambiental</h2></a>
+            <p>
+                Reunião da Câmara Técnica de Educação Ambiental                <a href="/collegiate/88/pageitems/353/events/1520">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">NOV / 13</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1519"><h2>Convite 07/2013 - Reunião da Câmara Técnica de Gestão e Planejamento</h2></a>
+            <p>
+                Reunião da Câmara Técnica de Gestão e Planejamento                <a href="/collegiate/88/pageitems/353/events/1519">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 13</span>
+            <span class="day">22</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1518"><h2>Convocação 10/2013 - Reunião da Câmara Técnica de Educação Ambiental</h2></a>
+            <p>
+                Reunião da Câmara Técnica de Educação Ambiental                <a href="/collegiate/88/pageitems/353/events/1518">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 13</span>
+            <span class="day">04</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1517"><h2>Convocação 09/2013 - Reunião Câmara Técnica Recursos Naturais e da Câmara Técnica de Gestão e Planejamento</h2></a>
+            <p>
+                Reunião Câmara Técnica de Recursos Naturais e da Câmara Técnica de Gestão e Planejamento                <a href="/collegiate/88/pageitems/353/events/1517">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 13</span>
+            <span class="day">30</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1516"><h2>Convocação 08/2013 - Reunião Câmara Técnica de Gestão e Planejamento e Grupo de Trabalho do Plano de Recursos Hídricos</h2></a>
+            <p>
+                Reunião da Câmara Técnica de Gestão e Planejamento e Grupo de Trabalho do Plano de Recursos Hídricos                <a href="/collegiate/88/pageitems/353/events/1516">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">AGO / 13</span>
+            <span class="day">16</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1515"><h2>Convocação 07/2013 - Reunião Câmara Técnica de Gestão e Planejamento e Grupo de Trabalho do Plano de Recursos Hídricos</h2></a>
+            <p>
+                Reunião da Câmara Técnica de Gestão e Planejamento e Grupo de Trabalho do Plano de Recursos Hídricos                <a href="/collegiate/88/pageitems/353/events/1515">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUL / 13</span>
+            <span class="day">23</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1514"><h2>Convocação 06/2013 </h2></a>
+            <p>
+                Reunião da Câmara Técnica de Educação Ambiental                <a href="/collegiate/88/pageitems/353/events/1514">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 13</span>
+            <span class="day">28</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1509"><h2>Convocação 05/2013 -  53ª Reunião Plenária</h2></a>
+            <p>
+                                <a href="/collegiate/88/pageitems/353/events/1509">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 13</span>
+            <span class="day">25</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1506"><h2>Convocação da Reunião da Câmara Técnica de Educação Ambiental</h2></a>
+            <p>
+                Convocação 04/2013 - Reunião da Câmara Técnica de Educação Ambiental.                <a href="/collegiate/88/pageitems/353/events/1506">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">JUN / 13</span>
+            <span class="day">14</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1505"><h2>Reunião da Câmara Técnica de Gestão e Planejamento e demais Câmaras Técnicas</h2></a>
+            <p>
+                Convocação 03/2013 - Para Reunião da Câmara Técnica de Gestão e Planejamento, e demais Câmaras Técnicas                <a href="/collegiate/88/pageitems/353/events/1505">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 13</span>
+            <span class="day">11</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1108"><h2>REUNIÃO DAS CÂMARAS TÉCNICAS DO CBH-TJ</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/88/pageitems/353/events/1108">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">MAR / 13</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1099"><h2>52ª Reunião Plenária do CBH-TJ</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/88/pageitems/353/events/1099">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 12</span>
+            <span class="day">18</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1056"><h2>51 Reunião Plenária do CBH-TJ</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/88/pageitems/353/events/1056">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">OUT / 12</span>
+            <span class="day">08</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/1051"><h2>REUNIÃO DA CÂMARA TÉCNICA DE RECURSOS NATURAIS</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/88/pageitems/353/events/1051">[+]</a>
+            </p>
+        </div>
+    </div>
+    <div class="news_event">
+        <div class="calendar">
+            <span class="month">ABR / 12</span>
+            <span class="day">13</span>
+        </div>
+        <div class="description">
+            <a href="/collegiate/88/pageitems/353/events/983"><h2>REUNIÃO DAS CÂMARAS TÉCNICAS DO CBH-TJ</h2></a>
+            <p>
+                mais detalhes                <a href="/collegiate/88/pageitems/353/events/983">[+]</a>
+            </p>
+        </div>
+    </div>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-TJ - Comitê da Bacia Hidrográfica do Tietê-Jacaré</h2>
+                <li>
+					Rua Capitão Noray de Paula e Silva, 135 - Jd. Panorama - Araraquara - CEP 14.807-071																				                </li>
+                <li> Tel: (16) 3333-7010 | Fax: (16) 3333-2525 | contato: comitetj@yahoo.com.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
