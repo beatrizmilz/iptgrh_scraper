@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/admin/main' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-BPG</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhbpg/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhbpg/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhbpg/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhbpg/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhbpg/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhbpg/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhbpg/estrutura' >Estrutura</a></li>
+                                                                        <li><a href='/cbhbpg/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhbpg/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhbpg/ctea/representantesctea' >CT-EA</a></li>
+                                                            <li><a href='/cbhbpg/ctplagrhi/estrutura' >CT-PLAGRHI</a></li>
+                                                            <li class="last"><a href='javascript:void(0);' >GT-OL</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2024" data-unity="11" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2024" data-unity="11" data-scope="global">Maio/2024</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2024" data-unity="11" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>Dia do Trabalho</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 01/05/2024  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15611'>Ver mais</a></div>">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td></tr><tr class="calendar-row"><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 09/05/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/15704'>Ver mais</a></div>">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td></tr><tr class="calendar-row"><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 14/05/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/339/events/15694'>Ver mais</a></div>">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>10º Fórum Mundial da Água</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 18/05/2024  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Bali, Indonésia  <br />  <a href='/pageitems/451/events/15840'>Ver mais</a></div>">18</td></tr><tr class="calendar-row"><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td></tr><tr class="calendar-row"><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day calendar-event" title="<h2>Corpus Christi</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 30/05/2024  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15612'>Ver mais</a></div>">30</td><td class="calendar-day calendar-event" title="<h2>Corpus Christi_Facultativo</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 31/05/2024  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15660'>Ver mais</a></div>">31</td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2024" data-unity="11" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2024" data-unity="11" data-scope="scoped">Maio/2024</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2024" data-unity="11" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td></tr><tr class="calendar-row"><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td></tr><tr class="calendar-row"><td class="calendar-day">12</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião Ordinária do CBH/TB em 2024 (PRESENCIAL)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 13/05/2024  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Auditório DAEE - Novo Horizonte/SP  <br />  <a href='/pageitems/315/events/15848'>Ver mais</a></div>">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td></tr><tr class="calendar-row"><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td></tr><tr class="calendar-row"><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Documentos</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+        
+                                    <h3>Cobrança</h3>
+        <div>
+                                <div class="block" id="record_27281">
+            <h2>Valores arrecadados da Cobrança urbano-industrial estadual e % de adimplência</h2>
+            <ul>
+                <li><label>Data do documento:</label> 08/01/2024<br /></li>
+                <li><label>Postado em:</label> 19/01/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/27281/indice-de-adimplencia-da-cobranca-20-23.pdf" target="_blank">indice-de-adimplencia-da-cobranca-20-23.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27281" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_27281">Compartilhar</a>    </div>
+    <div id="item_27281" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23515">
+            <h2>Valores arrecadados da Cobrança urbano-industrial estadual e % de adimplência</h2>
+            <ul>
+                <li><label>Data do documento:</label> 06/01/2023<br /></li>
+                <li><label>Postado em:</label> 06/01/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/23515/arrecadacao-cobranca-agua-2022_bpg.pdf" target="_blank">arrecadacao-cobranca-agua-2022_bpg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23515/arrecadacao-cobranca-agua-2022_bpg.xlsx" target="_blank">arrecadacao-cobranca-agua-2022_bpg.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23515" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_23515">Compartilhar</a>    </div>
+    <div id="item_23515" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21937">
+            <h2>COBRANÇA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/01/2022<br /></li>
+                <li><label>Postado em:</label> 11/01/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/21937/arrecadacao-bpg.pdf" target="_blank">arrecadacao-bpg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21937" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_21937">Compartilhar</a>    </div>
+    <div id="item_21937" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7469">
+            <h2>Simulador da Cobrança pelo Uso da Água</h2>
+            <ul>
+                <li><label>Data do documento:</label> 11/02/2014<br /></li>
+                <li><label>Postado em:</label> 11/02/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7469/simulador-cbh-bpg.xls" target="_blank">simulador-cbh-bpg.xls</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7469" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7469">Compartilhar</a>    </div>
+    <div id="item_7469" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_27358">
+            <h2>DECRETO Nº 58.813, DE 27 DE DEZEMBRO DE 2012</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/12/2012<br /></li>
+                <li><label>Postado em:</label> 27/12/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/27358/decreto-n-58-813_2012.pdf" target="_blank">decreto-n-58-813_2012.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27358" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_27358">Compartilhar</a>    </div>
+    <div id="item_27358" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7200">
+            <h2>FUNDAMENTAÇÃO DA COBRANÇA PELO USO DOS RECURSOS HÍDRICOS NA BACIA DO BAIXO PARDO / GRANDE</h2>
+            <ul>
+                <li><label>Data do documento:</label> 05/07/2010<br /></li>
+                <li><label>Postado em:</label> 06/07/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7200/relatorio-cobranca-aprovado-plenaria.doc" target="_blank">relatorio-cobranca-aprovado-plenaria.doc</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/7200/fundamentos-da-cobranca-bacia-hidrografica-do-baixo-pardo-grande.pdf" target="_blank">fundamentos-da-cobranca-bacia-hidrografica-do-baixo-pardo-grande.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7200" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7200">Compartilhar</a>    </div>
+    <div id="item_7200" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>PAPI</h3>
+        <div>
+                                <div class="block" id="record_21936">
+            <h2>Plano de Ação e Programa de Investimento - 2022-2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2021<br /></li>
+                <li><label>Postado em:</label> 09/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/21936/del-280-22-planilha_papi_2022_2023-atualizada-2022.xlsx" target="_blank">del-280-22-planilha_papi_2022_2023-atualizada-2022.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21936/planilha_papi_2022_2023.pdf" target="_blank">planilha_papi_2022_2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21936" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_21936">Compartilhar</a>    </div>
+    <div id="item_21936" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Relatório de Situação</h3>
+        <div>
+                                <div class="block" id="record_26116">
+            <h2>RELATÓRIO DE SITUAÇÃO 2022/2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/10/2023<br /></li>
+                <li><label>Postado em:</label> 31/10/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/26116/anexo-i.pdf" target="_blank">anexo-i.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/26116/anexo-ii.pdf" target="_blank">anexo-ii.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/26116/anexo-iii-avaliacao-dos-emp-fehidro-e-acomp-das-acoes-do-papi-2022-aba2.pdf" target="_blank">anexo-iii-avaliacao-dos-emp-fehidro-e-acomp-das-acoes-do-papi-2022-aba2.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/26116/anexo-iii-avaliacao-dos-emp-fehidro-e-acomp-das-acoes-do-papi-2022-aba3.pdf" target="_blank">anexo-iii-avaliacao-dos-emp-fehidro-e-acomp-das-acoes-do-papi-2022-aba3.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/26116/relatorio-de-situacao-2023-ano-base-2022.pdf" target="_blank">relatorio-de-situacao-2023-ano-base-2022.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="26116" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_26116">Compartilhar</a>    </div>
+    <div id="item_26116" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23223">
+            <h2>Relatório de Situação 2022 - Ano base 2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 06/09/2022<br /></li>
+                <li><label>Postado em:</label> 16/09/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-i-del-276-22-aprova-a-revisao-do-relatorio-de-situacao-publicacao.pdf" target="_blank">anexo-i-del-276-22-aprova-a-revisao-do-relatorio-de-situacao-publicacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-ii-del-248-2020-atualiza-o-papi-2020-2023.pdf" target="_blank">anexo-ii-del-248-2020-atualiza-o-papi-2020-2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-iii-planilha-papi-2020-2023.pdf" target="_blank">anexo-iii-planilha-papi-2020-2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-iv-planilha-papi-2022-2023.pdf" target="_blank">anexo-iv-planilha-papi-2022-2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-v-del-264-21-atualizacao-papi-2022-2023.pdf" target="_blank">anexo-v-del-264-21-atualizacao-papi-2022-2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-vi-avaliacao-dos-emp-fehidro-e-acomp-das-acoes-do-papi-2021.pdf" target="_blank">anexo-vi-avaliacao-dos-emp-fehidro-e-acomp-das-acoes-do-papi-2021.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/anexo-vii-acompanhamento-das-acoes-do-papi-2022-2023.pdf" target="_blank">anexo-vii-acompanhamento-das-acoes-do-papi-2022-2023.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/23223/relatorio-de-situacao-2022-ano-base-2021.pdf" target="_blank">relatorio-de-situacao-2022-ano-base-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23223" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_23223">Compartilhar</a>    </div>
+    <div id="item_23223" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21664">
+            <h2>Relatório de Situação 2020/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2021<br /></li>
+                <li><label>Postado em:</label> 16/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/1-relatorio-de-situacao-2021-ano-base-2020-final.pdf" target="_blank">1-relatorio-de-situacao-2021-ano-base-2020-final.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-i.pdf" target="_blank">anexo-i.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-ii.pdf" target="_blank">anexo-ii.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-iii-rs-2020-2021.pdf" target="_blank">anexo-iii-rs-2020-2021.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-iv.pdf" target="_blank">anexo-iv.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-v-rs-2020-2021.pdf" target="_blank">anexo-v-rs-2020-2021.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-vi-rs-2020-2021.pdf" target="_blank">anexo-vi-rs-2020-2021.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-vii.pdf" target="_blank">anexo-vii.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21664/anexo-viii-planilha_papi_2022_2023_246.pdf" target="_blank">anexo-viii-planilha_papi_2022_2023_246.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21664" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_21664">Compartilhar</a>    </div>
+    <div id="item_21664" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_19470">
+            <h2>Relatório de Situação 2020 - Ano Base 2019</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/11/2020<br /></li>
+                <li><label>Postado em:</label> 01/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/19470/relatorio-de-situacao-2020-ano-base-2019-final.pdf" target="_blank">relatorio-de-situacao-2020-ano-base-2019-final.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/19470/rs-anexo-papi.pdf" target="_blank">rs-anexo-papi.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19470" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_19470">Compartilhar</a>    </div>
+    <div id="item_19470" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_11877">
+            <h2>RELATÓRIO DE SITUAÇÃO 2016 (Ano Base 2015)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/12/2016<br /></li>
+                <li><label>Postado em:</label> 21/12/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/11877/relatorio-de-situacao-2016-2015.pdf" target="_blank">relatorio-de-situacao-2016-2015.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11877" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_11877">Compartilhar</a>    </div>
+    <div id="item_11877" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_8176">
+            <h2>RELATÓRIO DE SITUAÇÃO 2014 (Ano Base 2013)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/12/2014<br /></li>
+                <li><label>Postado em:</label> 21/01/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/8176/apresentacao-relatorio-de-situacao.pdf" target="_blank">apresentacao-relatorio-de-situacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/8176/deliberacao.jpg" target="_blank">deliberacao.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/8176/relatorio-de-situacao-dos-recursos-hidricos-2013-14.pdf" target="_blank">relatorio-de-situacao-dos-recursos-hidricos-2013-14.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8176" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_8176">Compartilhar</a>    </div>
+    <div id="item_8176" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7388">
+            <h2>RELATÓRIO DE SITUAÇÃO 2011</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/03/2013<br /></li>
+                <li><label>Postado em:</label> 02/04/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7388/rs-2.pdf" target="_blank">rs-2.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7388" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7388">Compartilhar</a>    </div>
+    <div id="item_7388" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7086">
+            <h2>RELATÓRIO DE SITUAÇÃO DE RECURSOS HÍDRICOS DA BACIA HIDROGRÁFICA DO BAIXO PARDO / GRANDE COM BASE EM INDICADORES</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/12/2008<br /></li>
+                <li><label>Postado em:</label> 31/03/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7086/relatorio-de-indicadores.doc" target="_blank">relatorio-de-indicadores.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7086" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7086">Compartilhar</a>    </div>
+    <div id="item_7086" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Edital</h3>
+        <div>
+                                <div class="block" id="record_23614">
+            <h2>Regulamento do Concurso Cultural do Projeto Acqua Titãs - Os Guardiões das Águas</h2>
+            <ul>
+                <li><label>Data do documento:</label> 06/03/2023<br /></li>
+                <li><label>Postado em:</label> 06/03/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/23614/regulamento-concurso-acqua-titas.pdf" target="_blank">regulamento-concurso-acqua-titas.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23614" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_23614">Compartilhar</a>    </div>
+    <div id="item_23614" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Plano de Bacia</h3>
+        <div>
+                                <div class="block" id="record_13730">
+            <h2>PLANO DE BACIA 2016-2027</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/03/2018<br /></li>
+                <li><label>Postado em:</label> 28/05/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/13730/bpg-pi-pa-2016-2019.pdf" target="_blank">bpg-pi-pa-2016-2019.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/13730/bpg-plano-de-acao-para-gestao-dos-recursos-hidricos.pdf" target="_blank">bpg-plano-de-acao-para-gestao-dos-recursos-hidricos.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/13730/i-diagnostico-e-relatorio-1.pdf" target="_blank">i-diagnostico-e-relatorio-1.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/13730/i-mapa-sintese-i-caracterizacao-fisica.pdf" target="_blank">i-mapa-sintese-i-caracterizacao-fisica.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/13730/i-mapa-sintese-ii-caracterizacao-dos-recursos-hidricos.pdf" target="_blank">i-mapa-sintese-ii-caracterizacao-dos-recursos-hidricos.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/13730/ii-prognostico-rev-01.pdf" target="_blank">ii-prognostico-rev-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13730" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_13730">Compartilhar</a>    </div>
+    <div id="item_13730" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7235">
+            <h2>Plano de Bacia - Revisão 2009</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/11/2009<br /></li>
+                <li><label>Postado em:</label> 17/01/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7235/1_capa-resumo-lista-de-siglas.pdf" target="_blank">1_capa-resumo-lista-de-siglas.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/2_baixopardo_relatorio-final.pdf" target="_blank">2_baixopardo_relatorio-final.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/3-a-capa-anexo-a_.pdf" target="_blank">3-a-capa-anexo-a_.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/3-b-anexo-a_mapadiagnosticougrhi12.pdf" target="_blank">3-b-anexo-a_mapadiagnosticougrhi12.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/4-a-capa-anexo-b_mapa-de-demanda.pdf" target="_blank">4-a-capa-anexo-b_mapa-de-demanda.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/4-b-anexo-b_mapademandasugrhi12.pdf" target="_blank">4-b-anexo-b_mapademandasugrhi12.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/5-a-capa-anexo-c.pdf" target="_blank">5-a-capa-anexo-c.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/5-b-anexo-c_mapasinteseugrhi12.pdf" target="_blank">5-b-anexo-c_mapasinteseugrhi12.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/6-a-capa-anexo-d.pdf" target="_blank">6-a-capa-anexo-d.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/6-b-anexo-d_metas-e-acoes.pdf" target="_blank">6-b-anexo-d_metas-e-acoes.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/7_anexo-e_projetos-financiados-na-ugrhi.pdf" target="_blank">7_anexo-e_projetos-financiados-na-ugrhi.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7235/8-anexo-f_indicadores-para-avaliacao-recursos-hidricos.pdf" target="_blank">8-anexo-f_indicadores-para-avaliacao-recursos-hidricos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7235" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7235">Compartilhar</a>    </div>
+    <div id="item_7235" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7085">
+            <h2>PLANO DE BACIA DA UNIDADE DE GERENCIAMENTO DA BACIA HIDROGRÁFICA DO BAIXO PARDO/GRANDE (UGRHI 12)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 04/12/2008<br /></li>
+                <li><label>Postado em:</label> 31/03/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7085/anexo-a_indicadores.pdf" target="_blank">anexo-a_indicadores.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/anexo-b_investimentos-na-bacia.pdf" target="_blank">anexo-b_investimentos-na-bacia.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/anexo-c.pdf" target="_blank">anexo-c.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/anexo-c_mapa-demandas_ugrhi-12.pdf" target="_blank">anexo-c_mapa-demandas_ugrhi-12.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/anexo-c_mapa-diagnostico_ugrhi-12.pdf" target="_blank">anexo-c_mapa-diagnostico_ugrhi-12.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/anexo-d_metas-e-acoes-bpg.pdf" target="_blank">anexo-d_metas-e-acoes-bpg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/anexo-d_metas-e-acoes.pdf" target="_blank">anexo-d_metas-e-acoes.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7085/plano-bpg_final.pdf" target="_blank">plano-bpg_final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7085" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7085">Compartilhar</a>    </div>
+    <div id="item_7085" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>FEHIDRO</h3>
+        <div>
+                                <div class="block" id="record_27197">
+            <h2>Cadastro empreendimentos FEHIDRO</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2023<br /></li>
+                <li><label>Postado em:</label> 15/12/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="https://forms.gle/U5L668GqRmgZQbSu8" target="_blank"><span title="https://forms.gle/U5L668GqRmgZQbSu8">https://forms.gle/U5L668GqRmgZQbSu8</span></a></li>
+                                                                                                                                    <li><a href="/public/uploads/documents//CBH-BPG/27197/deliberacao-cbh-bpg-n-291_2023-30_05_2023-reabre-prazo-2-pleito-2023.pdf" target="_blank">deliberacao-cbh-bpg-n-291_2023-30_05_2023-reabre-prazo-2-pleito-2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27197" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_27197">Compartilhar</a>    </div>
+    <div id="item_27197" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7392">
+            <h2>TREINAMENTO PARA TOMADORES FEHIDRO/2013</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/04/2013<br /></li>
+                <li><label>Postado em:</label> 18/04/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7392/01_estacao.pdf" target="_blank">01_estacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/02_abastecimento.pdf" target="_blank">02_abastecimento.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/03_tratamento.pdf" target="_blank">03_tratamento.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/04_aterro.pdf" target="_blank">04_aterro.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/05_educacao_ambiental.pdf" target="_blank">05_educacao_ambiental.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/06_plano.pdf" target="_blank">06_plano.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/07_implantacao.pdf" target="_blank">07_implantacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/08_diagnostico.pdf" target="_blank">08_diagnostico.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/09_viveiro.pdf" target="_blank">09_viveiro.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/10_introducao.pdf" target="_blank">10_introducao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/del-145-13-criterios.pdf" target="_blank">del-145-13-criterios.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7392/pdc-atual.doc" target="_blank">pdc-atual.doc</a></li>
+                                    <li><a href="/public/uploads/documents/7392/resolucao-19-13.pdf" target="_blank">resolucao-19-13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7392" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7392">Compartilhar</a>    </div>
+    <div id="item_7392" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Relatórios</h3>
+        <div>
+                                <div class="block" id="record_27397">
+            <h2>Relatório Anual de Atividades - CBH_BPG_2023 - Período 4</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/03/2024<br /></li>
+                <li><label>Postado em:</label> 28/03/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/27397/relatorio-anual-de-atividades-cbh_bpg_2023-periodo-4-assinado.pdf" target="_blank">relatorio-anual-de-atividades-cbh_bpg_2023-periodo-4-assinado.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27397" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_27397">Compartilhar</a>    </div>
+    <div id="item_27397" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_27396">
+            <h2>Plano de Tabalho Anual 2024 - CBH_BPG-Período 4</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/03/2024<br /></li>
+                <li><label>Postado em:</label> 28/03/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/27396/plano-de-trabalho-do-cbh_bpg_2024-periodo-4-assinado.pdf" target="_blank">plano-de-trabalho-do-cbh_bpg_2024-periodo-4-assinado.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27396" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_27396">Compartilhar</a>    </div>
+    <div id="item_27396" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_22026">
+            <h2>Relatório de Atividades 2021 do CBH-BPG</h2>
+            <ul>
+                <li><label>Data do documento:</label> 20/04/2022<br /></li>
+                <li><label>Postado em:</label> 20/04/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/22026/relatorio-anual-de-atividades-cbh_bpg-2021.pdf" target="_blank">relatorio-anual-de-atividades-cbh_bpg-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22026" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_22026">Compartilhar</a>    </div>
+    <div id="item_22026" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_22025">
+            <h2>Plano de Trabalho 2022 do CBH-BPG</h2>
+            <ul>
+                <li><label>Data do documento:</label> 20/04/2022<br /></li>
+                <li><label>Postado em:</label> 20/04/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/22025/plano-de-tabalho-anual-cbh_bpg-2022.pdf" target="_blank">plano-de-tabalho-anual-cbh_bpg-2022.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22025" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_22025">Compartilhar</a>    </div>
+    <div id="item_22025" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7459">
+            <h2>RELATÓRIO DE SITUAÇÃO DOS RECURSOS HÍDRICOS DO CBH-BPG - UGRHI 12 - ANO BASE 2012</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2013<br /></li>
+                <li><label>Postado em:</label> 27/12/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7459/relatorio-de-situacao-ano-base-2012.pdf" target="_blank">relatorio-de-situacao-ano-base-2012.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7459" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7459">Compartilhar</a>    </div>
+    <div id="item_7459" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Documentos</h3>
+        <div>
+                                <div class="block" id="record_21935">
+            <h2>PLANO DE CAPACITAÇÃO DO CBH-BPG (2022-2023)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 20/10/2021<br /></li>
+                <li><label>Postado em:</label> 20/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/21935/plano-de-capacitacao-cbh-bpg.pdf" target="_blank">plano-de-capacitacao-cbh-bpg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21935" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_21935">Compartilhar</a>    </div>
+    <div id="item_21935" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21018">
+            <h2>Plano de Comunicação do CBH-BPG (2021-2023)</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/03/2021<br /></li>
+                <li><label>Postado em:</label> 01/04/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/21018/comunicado-cbh-bpg.pdf" target="_blank">comunicado-cbh-bpg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-BPG/21018/plano-de-comunicacao-bpg-final.pdf" target="_blank">plano-de-comunicacao-bpg-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21018" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_21018">Compartilhar</a>    </div>
+    <div id="item_21018" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7098">
+            <h2>ESTATUTO DO CBH-BPG</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/03/2009<br /></li>
+                <li><label>Postado em:</label> 15/09/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7098/del-081-09-anexo-estatuto.htm" target="_blank">del-081-09-anexo-estatuto.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7098" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7098">Compartilhar</a>    </div>
+    <div id="item_7098" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Sem Categoria</h3>
+        <div>
+                                <div class="block" id="record_19471">
+            <h2>Moção CBH-BPG nº 001/2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/11/2020<br /></li>
+                <li><label>Postado em:</label> 01/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-BPG/19471/mocao-01-2020.pdf" target="_blank">mocao-01-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19471" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_19471">Compartilhar</a>    </div>
+    <div id="item_19471" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7442">
+            <h2>MOÇÃO CBH-BPG N.º 002/2013</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2013<br /></li>
+                <li><label>Postado em:</label> 13/12/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7442/mocao-cbh-bpg-002-13.pdf" target="_blank">mocao-cbh-bpg-002-13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7442" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7442">Compartilhar</a>    </div>
+    <div id="item_7442" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7441">
+            <h2>MOÇÃO CBH-BPG N.º 001/2013</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2013<br /></li>
+                <li><label>Postado em:</label> 13/12/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7441/mocao-cbh-bpg-001-13.pdf" target="_blank">mocao-cbh-bpg-001-13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7441" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7441">Compartilhar</a>    </div>
+    <div id="item_7441" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7389">
+            <h2>RESOLUÇÃO CBH-BPG N.º 019/2013</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/03/2013<br /></li>
+                <li><label>Postado em:</label> 02/04/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7389/resolucao-19-13.pdf" target="_blank">resolucao-19-13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7389" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7389">Compartilhar</a>    </div>
+    <div id="item_7389" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7377">
+            <h2>ENTIDADES HABILITADAS PARA O BIÊNIO 2013-2015</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/02/2013<br /></li>
+                <li><label>Postado em:</label> 28/02/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7377/entidades-civis-e-usuarios-habilitados-para-participar-de-reuniao-de-segmentos.pdf" target="_blank">entidades-civis-e-usuarios-habilitados-para-participar-de-reuniao-de-segmentos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7377" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7377">Compartilhar</a>    </div>
+    <div id="item_7377" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7309">
+            <h2>RESOLUÇÃO CBH-BPG N.º 018/2011</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2011<br /></li>
+                <li><label>Postado em:</label> 29/12/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7309/resolucao-18-11.doc" target="_blank">resolucao-18-11.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7309" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7309">Compartilhar</a>    </div>
+    <div id="item_7309" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7259">
+            <h2>RESOLUÇÃO CBH-BPG N.º 17/2011</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2011<br /></li>
+                <li><label>Postado em:</label> 05/04/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7259/resolucao-17-11.doc" target="_blank">resolucao-17-11.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7259" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7259">Compartilhar</a>    </div>
+    <div id="item_7259" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7213">
+            <h2>MOÇÃO CBH-BPG N.º 01/2010</h2>
+            <ul>
+                <li><label>Data do documento:</label> 29/11/2010<br /></li>
+                <li><label>Postado em:</label> 30/11/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7213/mocao.doc" target="_blank">mocao.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7213" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7213">Compartilhar</a>    </div>
+    <div id="item_7213" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7093">
+            <h2>MOÇÃO CBH-BPG N.º 01/2009</h2>
+            <ul>
+                <li><label>Data do documento:</label> 26/06/2009<br /></li>
+                <li><label>Postado em:</label> 16/07/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7093/mocao-01-09.htm" target="_blank">mocao-01-09.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7093" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7093">Compartilhar</a>    </div>
+    <div id="item_7093" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7092">
+            <h2>RESOLUÇÃO CBH-BPG N.º 015/2009</h2>
+            <ul>
+                <li><label>Data do documento:</label> 26/06/2009<br /></li>
+                <li><label>Postado em:</label> 16/07/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7092/resolucao-15-09.htm" target="_blank">resolucao-15-09.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7092" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7092">Compartilhar</a>    </div>
+    <div id="item_7092" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7039">
+            <h2>RESOLUÇÃO CBH-BPG N.º 014/2007</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2007<br /></li>
+                <li><label>Postado em:</label> 10/12/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7039/resolucao-14-07-de-121207-modificada-2.doc" target="_blank">resolucao-14-07-de-121207-modificada-2.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7039" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_7039">Compartilhar</a>    </div>
+    <div id="item_7039" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6995">
+            <h2>RESOLUÇÃO CBH-BPG N.º 013/2007</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/03/2007<br /></li>
+                <li><label>Postado em:</label> 29/03/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6995/resolucao-13-05.htm" target="_blank">resolucao-13-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6995" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6995">Compartilhar</a>    </div>
+    <div id="item_6995" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6979">
+            <h2>RESOLUÇÃO CBH-BPG n.º 12/2006</h2>
+            <ul>
+                <li><label>Data do documento:</label> 08/12/2006<br /></li>
+                <li><label>Postado em:</label> 13/12/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6979/resolucao-12-05.htm" target="_blank">resolucao-12-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6979" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6979">Compartilhar</a>    </div>
+    <div id="item_6979" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6931">
+            <h2>RESOLUÇÃO CBH-BPG N.º 11/2005</h2>
+            <ul>
+                <li><label>Data do documento:</label> 13/12/2005<br /></li>
+                <li><label>Postado em:</label> 05/01/2006</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6931/resolucao-11-05.htm" target="_blank">resolucao-11-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6931" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6931">Compartilhar</a>    </div>
+    <div id="item_6931" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6918">
+            <h2>Moção CBH-BPG n.º 05/2005</h2>
+            <ul>
+                <li><label>Data do documento:</label> 17/06/2005<br /></li>
+                <li><label>Postado em:</label> 23/08/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6918/mocao-05-05.htm" target="_blank">mocao-05-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6918" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6918">Compartilhar</a>    </div>
+    <div id="item_6918" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6917">
+            <h2>Moção CBH-BPG n.º 04/2005</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/03/2005<br /></li>
+                <li><label>Postado em:</label> 23/08/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6917/mocao-04-05.htm" target="_blank">mocao-04-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6917" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6917">Compartilhar</a>    </div>
+    <div id="item_6917" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6916">
+            <h2>Moção CBH-BPG n.º 03/2005</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2005<br /></li>
+                <li><label>Postado em:</label> 23/08/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6916/mocao-03-05.htm" target="_blank">mocao-03-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6916" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6916">Compartilhar</a>    </div>
+    <div id="item_6916" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6915">
+            <h2>Moção CBH-BPG n.º 02/2005</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2005<br /></li>
+                <li><label>Postado em:</label> 23/08/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6915/mocao-02-05.htm" target="_blank">mocao-02-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6915" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6915">Compartilhar</a>    </div>
+    <div id="item_6915" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6914">
+            <h2>Moção CBH-BPG n.º 01/2005</h2>
+            <ul>
+                <li><label>Data do documento:</label> 22/02/2005<br /></li>
+                <li><label>Postado em:</label> 23/08/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6914/mocao-01-05.htm" target="_blank">mocao-01-05.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6914" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6914">Compartilhar</a>    </div>
+    <div id="item_6914" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6913">
+            <h2>Administração Ambiental</h2>
+            <ul>
+                <li><label>Data do documento:</label> 23/08/2005<br /></li>
+                <li><label>Postado em:</label> 23/08/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6913/administracaoambiental.pdf" target="_blank">administracaoambiental.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6913" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6913">Compartilhar</a>    </div>
+    <div id="item_6913" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6850">
+            <h2>RECOMENDAÇÃO N.º 02/2001</h2>
+            <ul>
+                <li><label>Data do documento:</label> 07/12/2001<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6850/recomendacao-02-01.pdf" target="_blank">recomendacao-02-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6850" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6850">Compartilhar</a>    </div>
+    <div id="item_6850" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6849">
+            <h2>RECOMENDAÇÃO N.º 01/2001</h2>
+            <ul>
+                <li><label>Data do documento:</label> 07/12/2001<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6849/recomendacao-01-01.pdf" target="_blank">recomendacao-01-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6849" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6849">Compartilhar</a>    </div>
+    <div id="item_6849" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6848">
+            <h2>MOÇÃO CBH-BPG N.º 03/2003</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/11/2002<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6848/mocao-03-03.pdf" target="_blank">mocao-03-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6848" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6848">Compartilhar</a>    </div>
+    <div id="item_6848" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6847">
+            <h2>MOÇÃO CBH-BPG N.º 02/2003</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/06/2003<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6847/mocao-02-03.pdf" target="_blank">mocao-02-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6847" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6847">Compartilhar</a>    </div>
+    <div id="item_6847" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6846">
+            <h2>MOÇÃO CBH-BPG N.º 01/2003</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/06/2003<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6846/mocao-01-03.pdf" target="_blank">mocao-01-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6846" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6846">Compartilhar</a>    </div>
+    <div id="item_6846" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6845">
+            <h2>MOÇÃO CBH-BPG N.º 01/2002</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/12/2002<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6845/mocao-01-02.pdf" target="_blank">mocao-01-02.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6845" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6845">Compartilhar</a>    </div>
+    <div id="item_6845" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6844">
+            <h2>MOÇÃO CBH-BPG n.º 01/2001</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/03/2001<br /></li>
+                <li><label>Postado em:</label> 09/11/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6844/mocao-01-01.pdf" target="_blank">mocao-01-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6844" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6844">Compartilhar</a>    </div>
+    <div id="item_6844" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6715">
+            <h2>Moção CBH-BPG n.º 02/2002</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/12/2002<br /></li>
+                <li><label>Postado em:</label> 11/02/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6715/mocao-02-02.htm" target="_blank">mocao-02-02.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6715" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6715">Compartilhar</a>    </div>
+    <div id="item_6715" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6423">
+            <h2>03 - Mapa 02</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6423/geologicoseg.pdf" target="_blank">geologicoseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6423" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6423">Compartilhar</a>    </div>
+    <div id="item_6423" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6433">
+            <h2>02 - Mapa 01</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6433/basico2seg.pdf" target="_blank">basico2seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6433" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6433">Compartilhar</a>    </div>
+    <div id="item_6433" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6472">
+            <h2>07 - Mapa 06</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6472/vulner_bpgseg.pdf" target="_blank">vulner_bpgseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6472" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6472">Compartilhar</a>    </div>
+    <div id="item_6472" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6478">
+            <h2>05 - Mapa 04</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6478/pedol_pardo_grandeseg.pdf" target="_blank">pedol_pardo_grandeseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6478" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6478">Compartilhar</a>    </div>
+    <div id="item_6478" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6480">
+            <h2>01 - Minuta Preliminar do Relatório Técnico Final</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6480/relbpgseg.pdf" target="_blank">relbpgseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6480" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6480">Compartilhar</a>    </div>
+    <div id="item_6480" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6513">
+            <h2>04 - Mapa 03</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6513/geomorfologicobpgseg.pdf" target="_blank">geomorfologicobpgseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6513" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6513">Compartilhar</a>    </div>
+    <div id="item_6513" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6518">
+            <h2>06 - Mapa 05</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6518/uso_do_soloseg.pdf" target="_blank">uso_do_soloseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6518" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_6518">Compartilhar</a>    </div>
+    <div id="item_6518" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhbpg/documentos#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-BPG - Comitê da Bacia Hidrográfica do Baixo Pardo / Grande</h2>
+                <li>
+					Av. 43 n.º 0842 - Bairro Celina - CEP: 14.780-733 - Barretos/SP																				                </li>
+                <li> Tel: (17) 3325-3342 | Fax: (17) 3325-3342 | contato: cbh.bpg@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
