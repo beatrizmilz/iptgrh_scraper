@@ -1,0 +1,3323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhteste/apresentacao' >CBH Teste</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20232025' >Processo eleitoral - Sociedade Civil 2023 - 2025</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/admin/main' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-MOGI</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhmogi/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhmogi/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhmogi/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhmogi/cobrancapelousodaagua' >Cobrança pelo uso da Água</a></li>
+                                                                        <li><a href='/cbhmogi/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhmogi/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhmogi/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhmogi/planodeacaoeprogramadeinvestimentopapi' >Plano de Ação e Programa de Investimento (PA/PI)</a></li>
+                                                                        <li><a href='/cbhmogi/planodetrabalhocbhmogi' >Plano de Trabalho CBH Mogi</a></li>
+                                                                        <li><a href='/cbhmogi/processoeleitoral20232025' >Processo Eleitoral 2023-2025</a></li>
+                                                                        <li class="last"><a href='/cbhmogi/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhmogi/ctgp/representantesctgp' >CTGP</a></li>
+                                                            <li class="last"><a href='/cbhmogi/ctil/representantesctil' >CTIL</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2024" data-unity="25" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2024" data-unity="25" data-scope="global">Maio/2024</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2024" data-unity="25" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>Dia do Trabalho</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 01/05/2024  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15611'>Ver mais</a></div>">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td></tr><tr class="calendar-row"><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day calendar-event" title="<h2>Reunião_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento - CRH  <br />  <b>Data do evento:</b> 09/05/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Google Meet  <br />  <a href='/pageitems/340/events/15704'>Ver mais</a></div>">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td></tr><tr class="calendar-row"><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day calendar-event" title="<h2>Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 14/05/2024  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/339/events/15694'>Ver mais</a></div>">14</td><td class="calendar-day calendar-event" title="<h2>Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos - CRH  <br />  <b>Data do evento:</b> 15/05/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/341/events/15857'>Ver mais</a></div>">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>10º Fórum Mundial da Água</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 18/05/2024  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Bali, Indonésia  <br />  <a href='/pageitems/451/events/15840'>Ver mais</a></div>">18</td></tr><tr class="calendar-row"><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td></tr><tr class="calendar-row"><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day calendar-event" title="<h2>Corpus Christi</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 30/05/2024  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15612'>Ver mais</a></div>">30</td><td class="calendar-day calendar-event" title="<h2>Corpus Christi_Facultativo</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 31/05/2024  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/15660'>Ver mais</a></div>">31</td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="4" data-year="2024" data-unity="25" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="05" data-year="2024" data-unity="25" data-scope="scoped">Maio/2024</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="6" data-year="2024" data-unity="25" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day">4</td></tr><tr class="calendar-row"><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day">11</td></tr><tr class="calendar-row"><td class="calendar-day">12</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião Ordinária do CBH/TB em 2024 (PRESENCIAL)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 13/05/2024  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Auditório DAEE - Novo Horizonte/SP  <br />  <a href='/pageitems/315/events/15848'>Ver mais</a></div>">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td></tr><tr class="calendar-row"><td class="calendar-day">19</td><td class="calendar-day">20</td><td class="calendar-day calendar-event" title="<h2>73º REUNIÃO EXTRAORDINÁRIA DO CBH-SJD</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Rio São José dos Dourados  <br />  <b>Data do evento:</b> 21/05/2024  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Microsoft Teams  <br />  <a href='/pageitems/318/events/15868'>Ver mais</a></div>">21</td><td class="calendar-day">22</td><td class="calendar-day calendar-event" title="<h2>Protocolo Presencial para a tomada de recursos do FEHIDRO 2024</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Aguapeí e Peixe  <br />  <b>Data do evento:</b> 23/05/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> DAEE  <br />  <a href='/pageitems/314/events/15859'>Ver mais</a></div><h2>Protocolo Presencial para a tomada de recursos do FEHIDRO 2024</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Médio Paranapanema  <br />  <b>Data do evento:</b> 23/05/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> DAEE  <br />  <a href='/pageitems/311/events/15862'>Ver mais</a></div>">23</td><td class="calendar-day calendar-event" title="<h2>Protocolo Presencial para a tomada de recursos do FEHIDRO 2024</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Aguapeí e Peixe  <br />  <b>Data do evento:</b> 24/05/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> DAEE  <br />  <a href='/pageitems/314/events/15860'>Ver mais</a></div><h2>Protocolo Presencial para a tomada de recursos do FEHIDRO 2024</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Médio Paranapanema  <br />  <b>Data do evento:</b> 24/05/2024  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> DAEE  <br />  <a href='/pageitems/311/events/15863'>Ver mais</a></div>">24</td><td class="calendar-day">25</td></tr><tr class="calendar-row"><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Atas</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+                                    <h3>Ano de 2023</h3>
+        <div>
+        
+                        <div class="block" id="record_27472">
+            <h2>EXTRATO DA ATA DA 86 REUNIÃO ORDINÁRIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/11/2023<br /></li>
+                <li><label>Postado em:</label> 26/04/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/27472/extrato-da-ata-86-r-o-pirassununga-24-de-novembro-de-2023.pdf" target="_blank">extrato-da-ata-86-r-o-pirassununga-24-de-novembro-de-2023.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27472" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_27472">Compartilhar</a>    </div>
+    <div id="item_27472" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_27179">
+            <h2>EXTRATO DA ATA DA 85 REUNIÃO ORDINÁRIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/11/2023<br /></li>
+                <li><label>Postado em:</label> 01/12/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/27179/4-extrato-da-ata-completa-85-r-o-pirassununga.pdf" target="_blank">4-extrato-da-ata-completa-85-r-o-pirassununga.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27179" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_27179">Compartilhar</a>    </div>
+    <div id="item_27179" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_27178">
+            <h2>ATA DA 85 REUNIÃO ORDINÁRIA </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/11/2023<br /></li>
+                <li><label>Postado em:</label> 01/12/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/27178/3-ata-completa-85-r-o-pirassununga.pdf" target="_blank">3-ata-completa-85-r-o-pirassununga.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27178" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_27178">Compartilhar</a>    </div>
+    <div id="item_27178" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_26033">
+            <h2>EXTRATO DA ATA DA 84 REUNIÃO ORDINÁRIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/05/2023<br /></li>
+                <li><label>Postado em:</label> 14/09/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/26033/extrato-da-ata-84-r-o-pirassununga.pdf" target="_blank">extrato-da-ata-84-r-o-pirassununga.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="26033" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_26033">Compartilhar</a>    </div>
+    <div id="item_26033" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_26032">
+            <h2>Ata completa da 84 Reunião Planária Ordinária </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/05/2023<br /></li>
+                <li><label>Postado em:</label> 14/09/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/26032/ata-completa-84-r-o-pirassununga.pdf" target="_blank">ata-completa-84-r-o-pirassununga.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="26032" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_26032">Compartilhar</a>    </div>
+    <div id="item_26032" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_24816">
+            <h2>EXTRATO DA ATA DA 83 REUNIÃO ORDINÁRIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/03/2023<br /></li>
+                <li><label>Postado em:</label> 30/05/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/24816/extrato-da-ata-83-r-o-pirassununga.pdf" target="_blank">extrato-da-ata-83-r-o-pirassununga.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="24816" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_24816">Compartilhar</a>    </div>
+    <div id="item_24816" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23649">
+            <h2>EXTRATO DA ATA DA 82ª REUNIÃO ORDINÁRIA DO CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/03/2023<br /></li>
+                <li><label>Postado em:</label> 21/03/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/23649/4-extrato-da-ata-82-r-o-porto-ferreira.pdf" target="_blank">4-extrato-da-ata-82-r-o-porto-ferreira.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23649" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_23649">Compartilhar</a>    </div>
+    <div id="item_23649" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_24815">
+            <h2>ATA DA 83 REUNIÃO ORDINÁRIA </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/03/2023<br /></li>
+                <li><label>Postado em:</label> 30/05/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/24815/ata-completa-83-r-o-pirassununga.pdf" target="_blank">ata-completa-83-r-o-pirassununga.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="24815" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_24815">Compartilhar</a>    </div>
+    <div id="item_24815" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23648">
+            <h2>ATA DA 82ª REUNIÃO ORDINÁRIA DO CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/03/2023<br /></li>
+                <li><label>Postado em:</label> 21/03/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/23648/3-ata-completa-82-r-o-porto-ferreira.pdf" target="_blank">3-ata-completa-82-r-o-porto-ferreira.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23648" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_23648">Compartilhar</a>    </div>
+    <div id="item_23648" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2022</h3>
+        <div>
+        
+                        <div class="block" id="record_23229">
+            <h2>EXTRATO DA ATA DA 80 REUNIÃO ORDINÁRIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/09/2022<br /></li>
+                <li><label>Postado em:</label> 23/09/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/23229/extrato-da-ata-80-plenaria.pdf" target="_blank">extrato-da-ata-80-plenaria.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23229" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_23229">Compartilhar</a>    </div>
+    <div id="item_23229" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23230">
+            <h2>ATA DA 80 REUNIÃO ORDINÁRIA </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/09/2022<br /></li>
+                <li><label>Postado em:</label> 23/09/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/23230/ata-completa-80-r-o-com-marca-d-agua-25-anos-em-construcao.pdf" target="_blank">ata-completa-80-r-o-com-marca-d-agua-25-anos-em-construcao.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23230" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_23230">Compartilhar</a>    </div>
+    <div id="item_23230" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2021</h3>
+        <div>
+        
+                        <div class="block" id="record_22009">
+            <h2>EXTRATO DA ATA DA 79ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA POR VÍDEOCONFERÊNCIA EM 9 DE DEZEMBRO DE 2021</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/04/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/22009/extrato-ata-79-r-o-virtual-09-12-2021.pdf" target="_blank">extrato-ata-79-r-o-virtual-09-12-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22009" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_22009">Compartilhar</a>    </div>
+    <div id="item_22009" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_22008">
+            <h2>ATA DA  79ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA POR VÍDEOCONFERÊNCIA EM 9 DE DEZEMBRO DE 2021.</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/04/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/22008/ata-completa-79-r-o-virtual-09-12-2021.pdf" target="_blank">ata-completa-79-r-o-virtual-09-12-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22008" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_22008">Compartilhar</a>    </div>
+    <div id="item_22008" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21363">
+            <h2>EXTRATO ATA DA  77ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA POR VÍDEOCONFERÊNCIA EM 23 DE JUNHO DE 2021</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/06/2021<br /></li>
+                <li><label>Postado em:</label> 13/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21363/extrato-ata-77-r-o-virtual-23-06-2021.pdf" target="_blank">extrato-ata-77-r-o-virtual-23-06-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21363" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21363">Compartilhar</a>    </div>
+    <div id="item_21363" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21362">
+            <h2>ATA DA  77ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA POR VÍDEOCONFERÊNCIA EM 23 DE JUNHO DE 2021</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/06/2021<br /></li>
+                <li><label>Postado em:</label> 23/07/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21362/ata-completa-77-r-o-virtual-23-06-2021.pdf" target="_blank">ata-completa-77-r-o-virtual-23-06-2021.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21362" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21362">Compartilhar</a>    </div>
+    <div id="item_21362" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21040">
+            <h2>ATA DA 76 REUNIAO ORDINARIA DO CBH MOGI </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/03/2021<br /></li>
+                <li><label>Postado em:</label> 28/07/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21040/4-ata-completa-76-r-o-virtual.pdf" target="_blank">4-ata-completa-76-r-o-virtual.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21040" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21040">Compartilhar</a>    </div>
+    <div id="item_21040" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2020</h3>
+        <div>
+        
+                        <div class="block" id="record_21387">
+            <h2>EXTRATO DA ATA DA 75ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA POR VÍDEOCONFERÊNCIA EM 26 DE NOVEMBRO DE 2020</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/11/2020<br /></li>
+                <li><label>Postado em:</label> 26/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21387/extrato-ata-75-r-o-virtual-26-11-2020.pdf" target="_blank">extrato-ata-75-r-o-virtual-26-11-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21387" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21387">Compartilhar</a>    </div>
+    <div id="item_21387" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_20858">
+            <h2>ATA DA 75ª REUNIAO ORDINARIA DO CBH MOGI </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/11/2020<br /></li>
+                <li><label>Postado em:</label> 23/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/20858/4-ata-completa-75-r-o-virtual-ribeirao-preto.pdf" target="_blank">4-ata-completa-75-r-o-virtual-ribeirao-preto.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20858" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_20858">Compartilhar</a>    </div>
+    <div id="item_20858" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21388">
+            <h2>EXTRATO DA ATA DA 74ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA POR VÍDEOCONFERÊNCIA EM 29 DE JULHO DE 2020</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/07/2020<br /></li>
+                <li><label>Postado em:</label> 29/07/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21388/extrato-ata-74-r-o-virtual-29-07-2020.pdf" target="_blank">extrato-ata-74-r-o-virtual-29-07-2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21388" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21388">Compartilhar</a>    </div>
+    <div id="item_21388" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18977">
+            <h2>EXTRATO DA ATA DA 73ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE ARARAS EM 13 DE MARÇO DE 2020</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/07/2020<br /></li>
+                <li><label>Postado em:</label> 29/07/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/18977/extrato-da-ata-73-r-o.pdf" target="_blank">extrato-da-ata-73-r-o.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18977" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_18977">Compartilhar</a>    </div>
+    <div id="item_18977" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18976">
+            <h2>ATA DA 73ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE ARARAS EM 13 DE MARÇO DE 2020</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/07/2020<br /></li>
+                <li><label>Postado em:</label> 29/07/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/18976/ata-completa-73-r-o.pdf" target="_blank">ata-completa-73-r-o.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18976" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_18976">Compartilhar</a>    </div>
+    <div id="item_18976" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19669">
+            <h2>Ata 74 Reunião Ordinária do CBH Mogi</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/07/2020<br /></li>
+                <li><label>Postado em:</label> 27/08/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/19669/4-ata-completa-74-r-o-virtual-ribeirao-preto.pdf" target="_blank">4-ata-completa-74-r-o-virtual-ribeirao-preto.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19669" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_19669">Compartilhar</a>    </div>
+    <div id="item_19669" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2019</h3>
+        <div>
+        
+                        <div class="block" id="record_21389">
+            <h2>EXTRATO DA ATA DA 72ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE SANTA CRUZ DAS PALMEIRAS EM 13 DE NOVEMBRO DE 2019</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/11/2019<br /></li>
+                <li><label>Postado em:</label> 13/11/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21389/extrato-ata-72-r-o-scpalm-13-11-2019.pdf" target="_blank">extrato-ata-72-r-o-scpalm-13-11-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21389" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21389">Compartilhar</a>    </div>
+    <div id="item_21389" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19666">
+            <h2>Ata 72 Reunião Ordinária do CBH Mogi</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/11/2019<br /></li>
+                <li><label>Postado em:</label> 13/12/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/19666/ata-completa-72-r-o.pdf" target="_blank">ata-completa-72-r-o.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19666" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_19666">Compartilhar</a>    </div>
+    <div id="item_19666" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18563">
+            <h2>Extrato da Ata da 71º Reunião Ordinária do CBH Mogi</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/09/2019<br /></li>
+                <li><label>Postado em:</label> 19/11/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/18563/extrato-ata-71-r-o-sjbv-27-09-2019.pdf" target="_blank">extrato-ata-71-r-o-sjbv-27-09-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18563" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_18563">Compartilhar</a>    </div>
+    <div id="item_18563" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18562">
+            <h2>Ata 71° Reunião do CBH Mogi</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/09/2019<br /></li>
+                <li><label>Postado em:</label> 19/11/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/18562/ata-completa-71-r-o-sjbv-27-09-2019.pdf" target="_blank">ata-completa-71-r-o-sjbv-27-09-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18562" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_18562">Compartilhar</a>    </div>
+    <div id="item_18562" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21390">
+            <h2>EXTRATO DA ATA DA 70ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE SANTA LÚCIA EM 28 DE JUNHO DE 2019</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2019<br /></li>
+                <li><label>Postado em:</label> 28/06/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/21390/extrato-ata-70-r-o-santa-lucia-28-06-2019.pdf" target="_blank">extrato-ata-70-r-o-santa-lucia-28-06-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21390" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_21390">Compartilhar</a>    </div>
+    <div id="item_21390" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17578">
+            <h2>ATA 70º Reunião Plenária Ordinária </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2019<br /></li>
+                <li><label>Postado em:</label> 02/10/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                                                            <li><a href="/public/uploads/records//CBH-MOGI/17578/ata-completa-70-r-o-santa-lucia-28-06-2019.pdf" target="_blank">ata-completa-70-r-o-santa-lucia-28-06-2019.pdf</a></li>
+                                    <li><a href="/public/uploads/records//CBH-MOGI/17578/extrato-ata-70-r-o-santa-lucia-28-06-2019.pdf" target="_blank">extrato-ata-70-r-o-santa-lucia-28-06-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17578" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_17578">Compartilhar</a>    </div>
+    <div id="item_17578" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16333">
+            <h2>ATA 69° Reunião Plenária </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/03/2019<br /></li>
+                <li><label>Postado em:</label> 03/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/16333/3-ata-da-69-r-ord-scconceicao-15-03-2019-1.doc" target="_blank">3-ata-da-69-r-ord-scconceicao-15-03-2019-1.doc</a></li>
+                                    <li><a href="/public/uploads/records//CBH-MOGI/16333/extrato-ata-69-r-o-scconceicao-15-03-2019.pdf" target="_blank">extrato-ata-69-r-o-scconceicao-15-03-2019.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16333" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_16333">Compartilhar</a>    </div>
+    <div id="item_16333" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2018</h3>
+        <div>
+        
+                        <div class="block" id="record_16332">
+            <h2>ATA 68° Reunião Plenária </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/2018<br /></li>
+                <li><label>Postado em:</label> 03/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/16332/3-ata-da-68-r-o-itapira-30-11-2018.doc" target="_blank">3-ata-da-68-r-o-itapira-30-11-2018.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16332" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_16332">Compartilhar</a>    </div>
+    <div id="item_16332" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13963">
+            <h2>ATA DA 15ª REUNIÃO PLENÁRIA EXTRAORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE GUARIBA EM 5 DE SETEMBRO DE 2018.  PLENÁRIA DR. JOSÉ NAZARENO OAZI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/09/2018<br /></li>
+                <li><label>Postado em:</label> 05/09/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/13963/4-extrato-da-ata-da-15-r-extraordinaria-gauriba-05-09-2018-1.doc" target="_blank">4-extrato-da-ata-da-15-r-extraordinaria-gauriba-05-09-2018-1.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13963" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_13963">Compartilhar</a>    </div>
+    <div id="item_13963" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2017</h3>
+        <div>
+        
+                        <div class="block" id="record_12552">
+            <h2>ATA DA 64ª REUNIÃO ORDINÁRIA DO CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE MOGI GUAÇU EM 17 DE FEVEREIRO DE 2017</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/02/2017<br /></li>
+                <li><label>Postado em:</label> 17/02/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/12552/ata-completa-da-64-reuniao-plenaria-ordinaria-mogi-guacu-17-02-2017.doc" target="_blank">ata-completa-da-64-reuniao-plenaria-ordinaria-mogi-guacu-17-02-2017.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12552" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_12552">Compartilhar</a>    </div>
+    <div id="item_12552" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2016</h3>
+        <div>
+        
+                        <div class="block" id="record_12551">
+            <h2>ATA DA 63ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE MOGI GUAÇU EM 7 DEZEMBRO DE 2016</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2016<br /></li>
+                <li><label>Postado em:</label> 07/12/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/12551/ata-completa-da-63-reuniao-plenaria-ordinaria-mogi-gaucu-07-12-2016.doc" target="_blank">ata-completa-da-63-reuniao-plenaria-ordinaria-mogi-gaucu-07-12-2016.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12551" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_12551">Compartilhar</a>    </div>
+    <div id="item_12551" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12550">
+            <h2>ATA DA 62ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE MOGI GUAÇU</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/10/2016<br /></li>
+                <li><label>Postado em:</label> 26/10/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/12550/ata-completa-da-62-reuniao-plenaria-ordinaria-mogi-gaucu-26-10-2016.doc" target="_blank">ata-completa-da-62-reuniao-plenaria-ordinaria-mogi-gaucu-26-10-2016.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12550" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_12550">Compartilhar</a>    </div>
+    <div id="item_12550" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12549">
+            <h2>ATA DA 61ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE JABOTICABAL EM 13 DE MAIO DE 2016</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/03/2016<br /></li>
+                <li><label>Postado em:</label> 13/03/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/12549/ata-completa-da-61-reuniao-plenaria-ordinaria-jaboticabal-13-05-2016.doc" target="_blank">ata-completa-da-61-reuniao-plenaria-ordinaria-jaboticabal-13-05-2016.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12549" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_12549">Compartilhar</a>    </div>
+    <div id="item_12549" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2015</h3>
+        <div>
+        
+                        <div class="block" id="record_12548">
+            <h2>ATA DA 60ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO MUNICÍPIO E CIDADE DE SANTA CURZ DA CONCEIÇÃO EM 11 DE DEZEMBRO DE 2015</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2015<br /></li>
+                <li><label>Postado em:</label> 11/12/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/12548/ata-completa-da-60-reuniao-plenaria-ordinaria-scconceicao-11-12-2015-final.doc" target="_blank">ata-completa-da-60-reuniao-plenaria-ordinaria-scconceicao-11-12-2015-final.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12548" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_12548">Compartilhar</a>    </div>
+    <div id="item_12548" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10411">
+            <h2>ATA DA 59ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/06/2015<br /></li>
+                <li><label>Postado em:</label> 19/06/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MOGI/10411/ata-da-59-reuniao-plenaria-ordinaria-guariba-19-06-2015.doc" target="_blank">ata-da-59-reuniao-plenaria-ordinaria-guariba-19-06-2015.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10411" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_10411">Compartilhar</a>    </div>
+    <div id="item_10411" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9030">
+            <h2>ATA DA 58ª REUNIÃO ORDINÁRIA DO CBH-MOGI EM MOGI GUAÇU</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/03/2015<br /></li>
+                <li><label>Postado em:</label> 27/03/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9030/ata-da-58-reuniao-ordinaria-mogi-guacu-20-03-2015.doc" target="_blank">ata-da-58-reuniao-ordinaria-mogi-guacu-20-03-2015.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9030" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_9030">Compartilhar</a>    </div>
+    <div id="item_9030" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2014</h3>
+        <div>
+        
+                        <div class="block" id="record_8037">
+            <h2>ATA DA 56ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU - CBH-MOGI REALIZADA NO </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/09/2014<br /></li>
+                <li><label>Postado em:</label> 12/09/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8037/ata__da_56a-__reunia-o_plena-ria_ordina-ria_-_leme_-_12-09-2014.doc" target="_blank">ata__da_56a-__reunia-o_plena-ria_ordina-ria_-_leme_-_12-09-2014.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8037" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_8037">Compartilhar</a>    </div>
+    <div id="item_8037" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2276">
+            <h2>ATA DA 54ª REUNIÃO PLENÁRIA ORDINÁRIA DO CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/03/2014<br /></li>
+                <li><label>Postado em:</label> 09/06/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2276/ata_da_54a-__r-_plena-ria_ordina-ria_-_sajardim_14-03-2014.doc" target="_blank">ata_da_54a-__r-_plena-ria_ordina-ria_-_sajardim_14-03-2014.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2276" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_2276">Compartilhar</a>    </div>
+    <div id="item_2276" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2013</h3>
+        <div>
+        
+                        <div class="block" id="record_2254">
+            <h2>ATA DA 53ª REUNIÃO PLENÁRIA ORDINÁRIA DO CBH-MOGI </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/2013<br /></li>
+                <li><label>Postado em:</label> 18/03/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2254/ata_da_53a-_reunia-o_ordina-ria_espinhal_06-12-2013-1-doc.doc" target="_blank">ata_da_53a-_reunia-o_ordina-ria_espinhal_06-12-2013-1-doc.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2254" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_2254">Compartilhar</a>    </div>
+    <div id="item_2254" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2225">
+            <h2>ATA DA 51ª REUNIÃO PLENÁRIA ORDINÁRIA DO CBH-MOGI </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/07/2013<br /></li>
+                <li><label>Postado em:</label> 17/10/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2225" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_2225">Compartilhar</a>    </div>
+    <div id="item_2225" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2012</h3>
+        <div>
+        
+                        <div class="block" id="record_2245">
+            <h2>ATA DA 49ª REUNIÃO PLENÁRIA ORDINÁRIA DO COMITÊ DA BACIA HIDROGRÁFICA DO RIO MOGI GUAÇU </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2012<br /></li>
+                <li><label>Postado em:</label> 30/12/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2245/ata-da-49-reuniao-plenaria-ordinaria-sto-ant-jardim-07-12-2012.doc" target="_blank">ata-da-49-reuniao-plenaria-ordinaria-sto-ant-jardim-07-12-2012.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2245" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_2245">Compartilhar</a>    </div>
+    <div id="item_2245" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2011</h3>
+        <div>
+        
+                        <div class="block" id="record_1380">
+            <h2>Ata da 45ª Reunião Plenária Ordinária do Comitê da Bacia Hidrográfica do Rio Mogi Guaçu</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/03/2011<br /></li>
+                <li><label>Postado em:</label> 16/06/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1380/ata-final-da-45-reuniao-ordinaria-plenaria-jaboticabal-18-03-2011.doc" target="_blank">ata-final-da-45-reuniao-ordinaria-plenaria-jaboticabal-18-03-2011.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1380" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1380">Compartilhar</a>    </div>
+    <div id="item_1380" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2010</h3>
+        <div>
+        
+                        <div class="block" id="record_1327">
+            <h2>Ata da 44ª Reunião Plenária Ordinária do Comitê da Bacia Hidrográfica do Rio Mogi Guaçu</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/12/2010<br /></li>
+                <li><label>Postado em:</label> 17/03/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1327/ata-da-44-reuniao-plenaria-ordinaria-aguai-19-10-2010.doc" target="_blank">ata-da-44-reuniao-plenaria-ordinaria-aguai-19-10-2010.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1327" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1327">Compartilhar</a>    </div>
+    <div id="item_1327" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1233">
+            <h2>ATA DA 42ª REUNIÃO PLENÁRIA ORDINÁRIA DO CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/03/2010<br /></li>
+                <li><label>Postado em:</label> 21/05/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1233/ata-da-42-reuniao-plenaria-ordinaria-descalvado-19-03-2010.doc" target="_blank">ata-da-42-reuniao-plenaria-ordinaria-descalvado-19-03-2010.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1233" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1233">Compartilhar</a>    </div>
+    <div id="item_1233" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1184">
+            <h2>ATA DA 2ª REUNIÃO DA CÂMARA TÉCNICA DE EDUCAÇÃO AMBIENTAL </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/01/2010<br /></li>
+                <li><label>Postado em:</label> 01/02/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1184/ata-camara-tecnica-ea-segunda.doc" target="_blank">ata-camara-tecnica-ea-segunda.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1184" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1184">Compartilhar</a>    </div>
+    <div id="item_1184" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2009</h3>
+        <div>
+        
+                        <div class="block" id="record_1213">
+            <h2>ATA 41ª REUNIÃO PLENÁRIA ORDINÁRIA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2009<br /></li>
+                <li><label>Postado em:</label> 24/03/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1213/ata-da-41-reuniao-plenaria-ordinaria-conchal-11-12-2009.pd" target="_blank">ata-da-41-reuniao-plenaria-ordinaria-conchal-11-12-2009.pd</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1213" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1213">Compartilhar</a>    </div>
+    <div id="item_1213" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1151">
+            <h2>Ata reunião CT-EA</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/11/2009<br /></li>
+                <li><label>Postado em:</label> 14/12/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1151/ata-camara-tecnica-ea.pdf" target="_blank">ata-camara-tecnica-ea.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1151" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1151">Compartilhar</a>    </div>
+    <div id="item_1151" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1150">
+            <h2>Ata reunião CT-GP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/11/2009<br /></li>
+                <li><label>Postado em:</label> 14/12/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1150/ata_de_reuniao_ct_gp_24_11_2009.pdf" target="_blank">ata_de_reuniao_ct_gp_24_11_2009.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1150" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1150">Compartilhar</a>    </div>
+    <div id="item_1150" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1146">
+            <h2>Ata terceira reunião CT-Cob</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/11/2009<br /></li>
+                <li><label>Postado em:</label> 26/11/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1146/ata_de_reuniao_ctcob_20_11_2009.doc" target="_blank">ata_de_reuniao_ctcob_20_11_2009.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1146" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1146">Compartilhar</a>    </div>
+    <div id="item_1146" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1145">
+            <h2>Ata segunda reunião da CT-Cobrança</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/10/2009<br /></li>
+                <li><label>Postado em:</label> 12/11/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1145/ata_de_reuniao_ctcob_30_10_2009-0.doc" target="_blank">ata_de_reuniao_ctcob_30_10_2009-0.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1145" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1145">Compartilhar</a>    </div>
+    <div id="item_1145" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1143">
+            <h2>Ata - Primeira Reunião da CT- Cobrança do CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/09/2009<br /></li>
+                <li><label>Postado em:</label> 11/11/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1143/aplicacao-da-oficina_18set.doc" target="_blank">aplicacao-da-oficina_18set.doc</a></li>
+                                    <li><a href="/public/uploads/records/1143/ata_de_reuniao_ctcob_18_09_2009-0.doc" target="_blank">ata_de_reuniao_ctcob_18_09_2009-0.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1143" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1143">Compartilhar</a>    </div>
+    <div id="item_1143" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1144">
+            <h2>Ata - GT-Cobrança </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/08/2009<br /></li>
+                <li><label>Postado em:</label> 11/11/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1144/ata_de_reuniao_ctcob_04_08_2009-0.doc" target="_blank">ata_de_reuniao_ctcob_04_08_2009-0.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1144" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1144">Compartilhar</a>    </div>
+    <div id="item_1144" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1142">
+            <h2>Ata - GT - Cobrança</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/07/2009<br /></li>
+                <li><label>Postado em:</label> 11/11/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1142/ata_de_reuniao_ctcob_07_07_2009-0.doc" target="_blank">ata_de_reuniao_ctcob_07_07_2009-0.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1142" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1142">Compartilhar</a>    </div>
+    <div id="item_1142" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1141">
+            <h2>ATA DA 39ª REUNIÃO ORDINÁRIA DO CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/05/2009<br /></li>
+                <li><label>Postado em:</label> 28/10/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1141/ata-39-plenaria-pdf.pdf" target="_blank">ata-39-plenaria-pdf.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1141" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1141">Compartilhar</a>    </div>
+    <div id="item_1141" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1089">
+            <h2>ATA DA 38ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2009</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/03/2009<br /></li>
+                <li><label>Postado em:</label> 01/06/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1089/doc38.pdf" target="_blank">doc38.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1089" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1089">Compartilhar</a>    </div>
+    <div id="item_1089" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2008</h3>
+        <div>
+        
+                        <div class="block" id="record_1076">
+            <h2>ATA DA 37ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2008<br /></li>
+                <li><label>Postado em:</label> 20/03/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1076/doc37.pdf" target="_blank">doc37.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1076" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1076">Compartilhar</a>    </div>
+    <div id="item_1076" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1063">
+            <h2>ATA DA 36ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/06/2008<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1063/doc36.pdf" target="_blank">doc36.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1063" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1063">Compartilhar</a>    </div>
+    <div id="item_1063" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1062">
+            <h2>ATA DA 35ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2008</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/03/2008<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1062/doc35-0.pdf" target="_blank">doc35-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1062/doc35.pdf" target="_blank">doc35.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1062" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1062">Compartilhar</a>    </div>
+    <div id="item_1062" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2007</h3>
+        <div>
+        
+                        <div class="block" id="record_1061">
+            <h2>ATA DA 34ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2007</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2007<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1061/doc34-0.pdf" target="_blank">doc34-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1061/doc34.pdf" target="_blank">doc34.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1061" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1061">Compartilhar</a>    </div>
+    <div id="item_1061" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1060">
+            <h2>ATA DA 33ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2007</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/06/2007<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1060/doc33-0.pdf" target="_blank">doc33-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1060/doc33.pdf" target="_blank">doc33.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1060" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1060">Compartilhar</a>    </div>
+    <div id="item_1060" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1059">
+            <h2>ATA DA 32ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2007</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/03/2007<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1059/doc32-0.pdf" target="_blank">doc32-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1059/doc32.pdf" target="_blank">doc32.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1059" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1059">Compartilhar</a>    </div>
+    <div id="item_1059" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2006</h3>
+        <div>
+        
+                        <div class="block" id="record_1058">
+            <h2>ATA DA 31ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2006</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/12/2006<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1058/doc31-0.pdf" target="_blank">doc31-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1058/doc31.pdf" target="_blank">doc31.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1058" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1058">Compartilhar</a>    </div>
+    <div id="item_1058" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1057">
+            <h2>ATA DA 30ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2006</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/06/2006<br /></li>
+                <li><label>Postado em:</label> 18/01/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1057/doc30-0.pdf" target="_blank">doc30-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1057/doc30.pdf" target="_blank">doc30.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1057" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1057">Compartilhar</a>    </div>
+    <div id="item_1057" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1139">
+            <h2>ATA DA 29ª REUNIÃO ORDINÁRIA DE CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/03/2006<br /></li>
+                <li><label>Postado em:</label> 28/09/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1139/ata-29-plenaria-pdf.pdf" target="_blank">ata-29-plenaria-pdf.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1139" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1139">Compartilhar</a>    </div>
+    <div id="item_1139" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2005</h3>
+        <div>
+        
+                        <div class="block" id="record_1037">
+            <h2>ATA DA 28ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/12/2005<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1037/doc28.pdf" target="_blank">doc28.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1037" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1037">Compartilhar</a>    </div>
+    <div id="item_1037" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1036">
+            <h2>ATA DA 27ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/07/2005<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1036/doc27.pdf" target="_blank">doc27.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1036" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1036">Compartilhar</a>    </div>
+    <div id="item_1036" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1035">
+            <h2>ATA DA 26ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/04/2005<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1035/doc26.pdf" target="_blank">doc26.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1035" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1035">Compartilhar</a>    </div>
+    <div id="item_1035" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1034">
+            <h2>ATA DA 25ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2005</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/03/2005<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1034/doc25.pdf" target="_blank">doc25.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1034" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1034">Compartilhar</a>    </div>
+    <div id="item_1034" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2004</h3>
+        <div>
+        
+                        <div class="block" id="record_1033">
+            <h2>ATA DA 24ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/11/2004<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1033/doc24.pdf" target="_blank">doc24.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1033" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1033">Compartilhar</a>    </div>
+    <div id="item_1033" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1032">
+            <h2>ATA DA 23ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/04/2004<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1032/doc23.pdf" target="_blank">doc23.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1032" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1032">Compartilhar</a>    </div>
+    <div id="item_1032" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1031">
+            <h2>ATA DA 22ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2004</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/01/2004<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1031/doc22.pdf" target="_blank">doc22.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1031" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1031">Compartilhar</a>    </div>
+    <div id="item_1031" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2003</h3>
+        <div>
+        
+                        <div class="block" id="record_1030">
+            <h2>ATA DA 21ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/11/2003<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1030/doc21-0.pdf" target="_blank">doc21-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1030/doc21.pdf" target="_blank">doc21.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1030" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1030">Compartilhar</a>    </div>
+    <div id="item_1030" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1029">
+            <h2>ATA DA 20ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/07/2003<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1029/doc20-0.pdf" target="_blank">doc20-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1029/doc20.pdf" target="_blank">doc20.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1029" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1029">Compartilhar</a>    </div>
+    <div id="item_1029" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1028">
+            <h2>ATA DA 19ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/06/2003<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1028/doc19-0.pdf" target="_blank">doc19-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1028/doc19.pdf" target="_blank">doc19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1028" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1028">Compartilhar</a>    </div>
+    <div id="item_1028" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1027">
+            <h2>ATA DA 18ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/04/2003<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1027/doc18-0.pdf" target="_blank">doc18-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1027/doc18.pdf" target="_blank">doc18.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1027" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1027">Compartilhar</a>    </div>
+    <div id="item_1027" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1026">
+            <h2>ATA DA 17ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/03/2003<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1026/doc17-0.pdf" target="_blank">doc17-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1026/doc17.pdf" target="_blank">doc17.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1026" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1026">Compartilhar</a>    </div>
+    <div id="item_1026" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1025">
+            <h2>ATA DA 16ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2003</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/01/2003<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1025/doc16-0.pdf" target="_blank">doc16-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1025/doc16.pdf" target="_blank">doc16.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1025" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1025">Compartilhar</a>    </div>
+    <div id="item_1025" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2002</h3>
+        <div>
+        
+                        <div class="block" id="record_1009">
+            <h2>ATA DA 13ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/12/2002<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1009/doc13-0.pdf" target="_blank">doc13-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1009/doc13.pdf" target="_blank">doc13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1009" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1009">Compartilhar</a>    </div>
+    <div id="item_1009" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1008">
+            <h2>ATA DA 12ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/07/2002<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1008/doc12-0.pdf" target="_blank">doc12-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1008/doc12.pdf" target="_blank">doc12.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1008" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1008">Compartilhar</a>    </div>
+    <div id="item_1008" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1007">
+            <h2>ATA DA 11ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/04/2002<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1007/doc11-0.pdf" target="_blank">doc11-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1007/doc11.pdf" target="_blank">doc11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1007" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1007">Compartilhar</a>    </div>
+    <div id="item_1007" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1024">
+            <h2>ATA DA 15ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2002</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/02/2002<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1024/doc15-0.pdf" target="_blank">doc15-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1024/doc15.pdf" target="_blank">doc15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1024" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1024">Compartilhar</a>    </div>
+    <div id="item_1024" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2001</h3>
+        <div>
+        
+                        <div class="block" id="record_1023">
+            <h2>ATA DA 14ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/11/2001<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1023/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0008.jpg" target="_blank">digitalizar0008.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0009.jpg" target="_blank">digitalizar0009.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0010.jpg" target="_blank">digitalizar0010.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0011.jpg" target="_blank">digitalizar0011.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0012.jpg" target="_blank">digitalizar0012.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0013.jpg" target="_blank">digitalizar0013.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0014.jpg" target="_blank">digitalizar0014.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0015.jpg" target="_blank">digitalizar0015.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0016.jpg" target="_blank">digitalizar0016.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0017.jpg" target="_blank">digitalizar0017.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0018.jpg" target="_blank">digitalizar0018.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0019.jpg" target="_blank">digitalizar0019.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0020.jpg" target="_blank">digitalizar0020.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0021.jpg" target="_blank">digitalizar0021.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0022.jpg" target="_blank">digitalizar0022.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0023.jpg" target="_blank">digitalizar0023.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0024.jpg" target="_blank">digitalizar0024.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0025.jpg" target="_blank">digitalizar0025.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/digitalizar0026.jpg" target="_blank">digitalizar0026.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1023/doc14-0.pdf" target="_blank">doc14-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1023/doc14.pdf" target="_blank">doc14.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1023" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1023">Compartilhar</a>    </div>
+    <div id="item_1023" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1022">
+            <h2>ATA DA 13ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/08/2001<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1022/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0008.jpg" target="_blank">digitalizar0008.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0009.jpg" target="_blank">digitalizar0009.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0010.jpg" target="_blank">digitalizar0010.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0011.jpg" target="_blank">digitalizar0011.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0012.jpg" target="_blank">digitalizar0012.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0013.jpg" target="_blank">digitalizar0013.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/digitalizar0014.jpg" target="_blank">digitalizar0014.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1022/doc13-0.pdf" target="_blank">doc13-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1022/doc13.pdf" target="_blank">doc13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1022" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1022">Compartilhar</a>    </div>
+    <div id="item_1022" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1021">
+            <h2>ATA DA 12ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/05/2001<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1021/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/digitalizar0008.jpg" target="_blank">digitalizar0008.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1021/doc12-0.pdf" target="_blank">doc12-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1021/doc12.pdf" target="_blank">doc12.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1021" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1021">Compartilhar</a>    </div>
+    <div id="item_1021" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1006">
+            <h2>ATA DA 10ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2001</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2001<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1006/doc10-0.pdf" target="_blank">doc10-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1006/doc10.pdf" target="_blank">doc10.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1006" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1006">Compartilhar</a>    </div>
+    <div id="item_1006" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2000</h3>
+        <div>
+        
+                        <div class="block" id="record_1005">
+            <h2>ATA DA 9ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/06/2000<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1005/doc9-0.pdf" target="_blank">doc9-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1005/doc9.pdf" target="_blank">doc9.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1005" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1005">Compartilhar</a>    </div>
+    <div id="item_1005" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1004">
+            <h2>ATA DA 8ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/05/2000<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1004/doc8-0.pdf" target="_blank">doc8-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1004/doc8.pdf" target="_blank">doc8.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1004" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1004">Compartilhar</a>    </div>
+    <div id="item_1004" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1003">
+            <h2>ATA DA 7ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/03/2000<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1003/doc7-0.pdf" target="_blank">doc7-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1003/doc7.pdf" target="_blank">doc7.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1003" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1003">Compartilhar</a>    </div>
+    <div id="item_1003" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1020">
+            <h2>ATA DA 11ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 2000</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/02/2000<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1020/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1020/doc11-0.pdf" target="_blank">doc11-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1020/doc11.pdf" target="_blank">doc11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1020" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1020">Compartilhar</a>    </div>
+    <div id="item_1020" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1999</h3>
+        <div>
+        
+                        <div class="block" id="record_1002">
+            <h2>ATA DA 6ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/11/1999<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1002/doc6-0.pdf" target="_blank">doc6-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1002/doc6.pdf" target="_blank">doc6.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1002" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1002">Compartilhar</a>    </div>
+    <div id="item_1002" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1019">
+            <h2>ATA DA 10ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/08/1999<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1019/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1019/doc10-0.pdf" target="_blank">doc10-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1019/doc10.pdf" target="_blank">doc10.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1019" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1019">Compartilhar</a>    </div>
+    <div id="item_1019" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1001">
+            <h2>ATA DA 5ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/06/1999<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1001/doc5-0.pdf" target="_blank">doc5-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1001/doc5.pdf" target="_blank">doc5.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1001" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1001">Compartilhar</a>    </div>
+    <div id="item_1001" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1018">
+            <h2>ATA DA 9ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1999</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/03/1999<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1018/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/digitalizar0008.jpg" target="_blank">digitalizar0008.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1018/doc9-0.pdf" target="_blank">doc9-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1018/doc9.pdf" target="_blank">doc9.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1018" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1018">Compartilhar</a>    </div>
+    <div id="item_1018" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1998</h3>
+        <div>
+        
+                        <div class="block" id="record_1017">
+            <h2>ATA DA 8ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1998</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/08/1998<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1017/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1017/doc8-0.pdf" target="_blank">doc8-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1017/doc8.pdf" target="_blank">doc8.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1017" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1017">Compartilhar</a>    </div>
+    <div id="item_1017" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1000">
+            <h2>ATA DA 4ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 1998</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/07/1998<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1000/doc4-0.pdf" target="_blank">doc4-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1000/doc4.pdf" target="_blank">doc4.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1000" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1000">Compartilhar</a>    </div>
+    <div id="item_1000" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1016">
+            <h2>ATA DA 7ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1998</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/04/1998<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1016/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1016/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1016/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1016/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1016/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1016/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1016/doc7-0.pdf" target="_blank">doc7-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1016/doc7.pdf" target="_blank">doc7.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1016" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1016">Compartilhar</a>    </div>
+    <div id="item_1016" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1997</h3>
+        <div>
+        
+                        <div class="block" id="record_999">
+            <h2>ATA DA 3ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/1997<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/999/doc3-0.pdf" target="_blank">doc3-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/999/doc3.pdf" target="_blank">doc3.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="999" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_999">Compartilhar</a>    </div>
+    <div id="item_999" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_998">
+            <h2>ATA DA 2ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/10/1997<br /></li>
+                <li><label>Postado em:</label> 28/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/998/doc2-0.pdf" target="_blank">doc2-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/998/doc2.pdf" target="_blank">doc2.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="998" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_998">Compartilhar</a>    </div>
+    <div id="item_998" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1015">
+            <h2>ATA DA 6ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/07/1997<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1015/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1015/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1015/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1015/doc6-0.pdf" target="_blank">doc6-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1015/doc6.pdf" target="_blank">doc6.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1015" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1015">Compartilhar</a>    </div>
+    <div id="item_1015" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1014">
+            <h2>ATA DA 5ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/06/1997<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1014/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1014/doc5-0.pdf" target="_blank">doc5-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1014/doc5.pdf" target="_blank">doc5.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1014" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1014">Compartilhar</a>    </div>
+    <div id="item_1014" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1013">
+            <h2>ATA DA 4ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1997</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/03/1997<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1013/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0006.jpg" target="_blank">digitalizar0006.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0007.jpg" target="_blank">digitalizar0007.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0008.jpg" target="_blank">digitalizar0008.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0009.jpg" target="_blank">digitalizar0009.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/digitalizar0010.jpg" target="_blank">digitalizar0010.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1013/doc4-0.pdf" target="_blank">doc4-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1013/doc4.pdf" target="_blank">doc4.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1013" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1013">Compartilhar</a>    </div>
+    <div id="item_1013" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1996</h3>
+        <div>
+        
+                        <div class="block" id="record_1012">
+            <h2>ATA DA 3ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1996</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/11/1996<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1012/digitaliza0002.jpg" target="_blank">digitaliza0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1012/digitaliza0003.jpg" target="_blank">digitaliza0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1012/digitaliza0004.jpg" target="_blank">digitaliza0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1012/digitaliza0005.jpg" target="_blank">digitaliza0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1012/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1012/doc3-0.pdf" target="_blank">doc3-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1012/doc3.pdf" target="_blank">doc3.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1012" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1012">Compartilhar</a>    </div>
+    <div id="item_1012" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_997">
+            <h2>ATA DA 1ª REUNIÃO EXTRAORDINÁRIA DO CBH-MOGI - 1996</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/08/1996<br /></li>
+                <li><label>Postado em:</label> 27/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/997/doc1-0.pdf" target="_blank">doc1-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/997/doc1.pdf" target="_blank">doc1.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="997" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_997">Compartilhar</a>    </div>
+    <div id="item_997" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1011">
+            <h2>ATA DA 2ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1996</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/08/1996<br /></li>
+                <li><label>Postado em:</label> 03/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1011/digitalizar0001.jpg" target="_blank">digitalizar0001.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1011/digitalizar0002.jpg" target="_blank">digitalizar0002.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1011/digitalizar0003.jpg" target="_blank">digitalizar0003.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1011/digitalizar0004.jpg" target="_blank">digitalizar0004.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1011/digitalizar0005.jpg" target="_blank">digitalizar0005.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1011/doc2-0.pdf" target="_blank">doc2-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1011/doc2.pdf" target="_blank">doc2.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1011" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1011">Compartilhar</a>    </div>
+    <div id="item_1011" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1010">
+            <h2>ATA DA 1ª REUNIÃO ORDINÁRIA DO CBH-MOGI - 1996</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/06/1996<br /></li>
+                <li><label>Postado em:</label> 30/11/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1010/1ro1.jpg" target="_blank">1ro1.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro10.jpg" target="_blank">1ro10.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro11.jpg" target="_blank">1ro11.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro2.jpg" target="_blank">1ro2.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro3.jpg" target="_blank">1ro3.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro4.jpg" target="_blank">1ro4.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro5.jpg" target="_blank">1ro5.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro6.jpg" target="_blank">1ro6.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro7.jpg" target="_blank">1ro7.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro8.jpg" target="_blank">1ro8.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/1ro9.jpg" target="_blank">1ro9.jpg</a></li>
+                                    <li><a href="/public/uploads/records/1010/doc1-0.pdf" target="_blank">doc1-0.pdf</a></li>
+                                    <li><a href="/public/uploads/records/1010/doc1.pdf" target="_blank">doc1.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1010" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1010">Compartilhar</a>    </div>
+    <div id="item_1010" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Sem data</h3>
+        <div>
+        
+                        <div class="block" id="record_1316">
+            <h2>ATA DA 43ª REUNIÃO PLENÁRIA ORDINÁRIA DPO CBH-MOGI</h2>
+            <ul>
+                <li><label>Data da reunião:</label> <br /></li>
+                <li><label>Postado em:</label> 20/12/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1316/ata-da-43-reuniao-plenaria-ordinaria-mogi-guacu-14-05-2010.doc" target="_blank">ata-da-43-reuniao-plenaria-ordinaria-mogi-guacu-14-05-2010.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1316" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhmogi/atas#record_1316">Compartilhar</a>    </div>
+    <div id="item_1316" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhmogi/atas#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-MOGI - Comitê da Bacia Hidrográfica do Rio Mogi Guaçu</h2>
+                <li>
+					Rua Olinda, 150											 - Bairro Santa Terezinha																 - Ribeirão Preto 																 - 14025-250																 - São Paulo					                </li>
+                <li> Tel: (16) 3623.3940 | Fax:  | contato: comitemogi@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        COORDENADORIA DE RECURSOS HÍDRICOS      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Alto de Pinheiros, São Paulo - SP, 05459-900, Prédio 12, 3º andar. Tel: (011) 3133-4113    <br />
+    contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
