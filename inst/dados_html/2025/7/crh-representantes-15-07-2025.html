@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027' >Processo Eleitoral - Sociedade Civil 2025-2027</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CRH</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/crh/agenda' >Agenda</a></li>
+                                                                        <li><a href='/crh/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/crh/atas' >Atas</a></li>
+                                                                        <li><a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a></li>
+                                                                        <li><a href='/crh/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/crh/documentos' >Documentos</a></li>
+                                                                        <li><a href='/crh/mocoes' >Moções</a></li>
+                                                                        <li><a href='/crh/processoeleitoralsociedadecivil20252027' >Processo Eleitoral - Sociedade Civil 2025-2027</a></li>
+                                                                        <li><a href='/crh/processoeleitoralsociedadecivil20162018' >Processo Eleitoral Sociedade Civil 2016-2018</a></li>
+                                                                        <li><a href='/crh/processoeleitoralsociedadecivil20182020' >Processo eleitoral Sociedade Civil 2018-2020</a></li>
+                                                                        <li><a href='/crh/processoeleitoralsociedadecivil20212023' >Processo Eleitoral Sociedade Civil 2021-2023</a></li>
+                                                                        <li><a href='/crh/processoeleitoralsociedadecivil20232025' >Processo Eleitoral Sociedade Civil 2023-2025</a></li>
+                                                                        <li><a href='/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Programa de Consolidação do Pacto Nacional pela Gestão das Águas</a></li>
+                                                                        <li><a href='/crh/regimentointerno' >Regimento Interno</a></li>
+                                                                        <li class="last"><a href='/crh/representantes' >Representantes</a></li>
+                        </ul>
+
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="6" data-year="2025" data-unity="1" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="07" data-year="2025" data-unity="1" data-scope="global">Julho/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="8" data-year="2025" data-unity="1" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião Extraordinária CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 02/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> A definir  <br />  <a href='/pageitems/332/events/17335'>Ver mais</a></div>">2</td><td class="calendar-day calendar-event" title="<h2>Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento (CTPLAN- CRH)  <br />  <b>Data do evento:</b> 03/07/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/18420'>Ver mais</a></div>">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td></tr><tr class="calendar-row"><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day calendar-event" title="<h2>Adiada_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB - CRH)  <br />  <b>Data do evento:</b> 08/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/339/events/18390'>Ver mais</a></div><h2>Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas (CTPA - CRH)  <br />  <b>Data do evento:</b> 08/07/2025  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/502/events/18399'>Ver mais</a></div><h2>Reunião Extraordinária CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 08/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sala de Reuniões do CONSEMA   <br />  <a href='/pageitems/332/events/18462'>Ver mais</a></div><h2>Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA - CRH)  <br />  <b>Data do evento:</b> 08/07/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/18476'>Ver mais</a></div>">8</td><td class="calendar-day calendar-event" title="<h2>Revolução Constitucionalista</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 09/07/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/17147'>Ver mais</a></div>">9</td><td class="calendar-day">10</td><td class="calendar-day calendar-event" title="<h2>Oficina_PERH_</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 11/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sala de Reuniões do CONSEMA   <br />  <a href='/pageitems/451/events/18483'>Ver mais</a></div>">11</td><td class="calendar-day">12</td></tr><tr class="calendar-row"><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day calendar-event" title="<h2>Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB - CRH)  <br />  <b>Data do evento:</b> 15/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/339/events/18477'>Ver mais</a></div><h2>Oficina_PERH</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 15/07/2025  <br />  <b>Horário:</b> 13:00  <br />  <b>Local:</b> UNIFEB_Barretos  <br />  <a href='/pageitems/451/events/18484'>Ver mais</a></div>">15</td><td class="calendar-day calendar-event" title="<h2>Alterada_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM - CRH)  <br />  <b>Data do evento:</b> 16/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/341/events/18426'>Ver mais</a></div>">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td></tr><tr class="calendar-row"><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM - CRH)  <br />  <b>Data do evento:</b> 23/07/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/341/events/18490'>Ver mais</a></div>">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td></tr><tr class="calendar-row"><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="6" data-year="2025" data-unity="1" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="07" data-year="2025" data-unity="1" data-scope="scoped">Julho/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="8" data-year="2025" data-unity="1" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-event" title="<h2>2ª Reunião CTSUM</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 01/07/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18469'>Ver mais</a></div>">1</td><td class="calendar-day">2</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião CTAJI</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 03/07/2025  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18454'>Ver mais</a></div>">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td></tr><tr class="calendar-row"><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day calendar-event" title="<h2>52ª Reunião Ordinária do CBH-MP</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Médio Paranapanema  <br />  <b>Data do evento:</b> 11/07/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> HOTEL SUN VALLEY MARILIA BY ATLANTICA  <br />  <a href='/pageitems/311/events/18465'>Ver mais</a></div>">11</td><td class="calendar-day">12</td></tr><tr class="calendar-row"><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day calendar-event" title="<h2>3ª Reunião CTSUM</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 15/07/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18470'>Ver mais</a></div>">15</td><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td></tr><tr class="calendar-row"><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td></tr><tr class="calendar-row"><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027" class="banner">
+            <img src='/public/uploads/banners//17358440606794.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Representantes</h1>
+
+
+
+
+  <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Secretaria Executiva do CRH    </b>
+  </h2>
+
+                                      <div class="block">
+        <h2 class="heading small-dotted-border">Diretoria de Recursos Hídricos - SEMIL_DRHI</h2>
+        <div class="representative full">
+          <div>
+                      <h2>Titular</h2>
+            <br />
+                                <b>
+              Marcela Peixoto Nectoux                          </b>
+            <br />
+                        	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4113</td></tr>						<tr><th>E-mail:</th><td>contato.sigrh@sp.gov.br</td></tr>															</table>
+
+                    </div>
+        </div>
+        <br clear="both" />
+      </div>
+                                        <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Secretarias de Estado (direito à voto)    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Meio Ambiente, Infraestrutura e Logística</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Natália Resende              </b>
+                              <br />
+                Presidente do Conselho Estadual de Recursos Hídricos                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4113</td></tr>						<tr><th>E-mail:</th><td>contato.sigrh@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Cristiano Kenji Iwai              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4113</td></tr>						<tr><th>E-mail:</th><td>ciwai@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Desenvolvimento Urbano e Habitação</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marcelo Cardinale Branco              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3638-5289</td></tr>						<tr><th>E-mail:</th><td>marcelo.branco@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                 Eduardo Trani              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3638-5375</td></tr>						<tr><th>E-mail:</th><td>etrani@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria da Educação</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Renato Feder              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2075-4002</td></tr>						<tr><th>E-mail:</th><td>agenda.secretario@educacao.sp.<br/>gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                 Juliana Velho              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2075-4006</td></tr>						<tr><th>E-mail:</th><td>juliana.velho@educacao.sp.gov.<br/>br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria da Agricultura e Abastecimento</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Guilherme Piai Silva Filizzola              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 5067-0046</td></tr>						<tr><th>E-mail:</th><td>guilhermepiai@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Marcio da Silva Queiroz              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 5067-0323</td></tr>						<tr><th>E-mail:</th><td>marcio.queiroz@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria da Saúde</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Eleuses Paiva              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3066-8660</td></tr>						<tr><th>E-mail:</th><td>evpaiva@saude.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luís Sérgio Ozório Valentim              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3065-4796</td></tr>						<tr><th>E-mail:</th><td>lvalentim@cvs.saude.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Desenvolvimento Econômico</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Jorge Lima              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3718-6550</td></tr>						<tr><th>E-mail:</th><td>gabinete@sde.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Felipe Vieira Alves              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3718-6589</td></tr>						<tr><th>E-mail:</th><td>felipe.alves@sde.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria da Fazenda e Planejamento</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Samuel Kinoshita              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3243-9718</td></tr>						<tr><th>E-mail:</th><td>gabsec@fazenda.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Eduardo WalmsLey Soares              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3243-3129</td></tr>						<tr><th>E-mail:</th><td>ewscarneiro@fazenda.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Governo e Relações Institucionais</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Gilberto Kassab              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2193-8238</td></tr>						<tr><th>E-mail:</th><td>sgri.gabinete@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                 Coronel Hideo Augusto Dendini              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2193-8177</td></tr>						<tr><th>E-mail:</th><td>hadendini@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria da Casa Civil</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Arthur Lima               </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2193-8265</td></tr>						<tr><th>E-mail:</th><td>agenda.casacivil@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Coronel Mauro Benedito de Santana Filho              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2193-8265</td></tr>						<tr><th>E-mail:</th><td>mauro.santana@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Subsecretaria de Convênios com Municípios e Entidades não Governamentais</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Manoel Victor de Azevedo Neto              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3204-4856</td></tr>						<tr><th>E-mail:</th><td>manovic@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                A indicar              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4113</td></tr>						<tr><th>E-mail:</th><td>contato.sigrh@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Subsecretaria de Logística e Transportes</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Denis Gerage Amorim              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4412</td></tr>						<tr><th>E-mail:</th><td>denis.amorim@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Augusto Olavo Leite              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4553</td></tr>						<tr><th>E-mail:</th><td>aoleite@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Grupos de Municípios (direito à voto)    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 1 - Alto Tietê</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luiz Gustavo Pinheiro Volpi              </b>
+                              <br />
+                PM Ribeirão Pires                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 4828-9840</td></tr>						<tr><th>E-mail:</th><td>gp@ribeiraopires.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Walid Ali Hamid              </b>
+                              <br />
+                PM Mairiporã                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 4419-8053</td></tr>						<tr><th>E-mail:</th><td>prefeito@mairipora.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 2 - Paraíba do Sul e Serra da Mantiqueira</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Carlos Eduardo Pereira da Silva              </b>
+                              <br />
+                PM Campos do Jordão                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(12) 3668-5550</td></tr>						<tr><th>E-mail:</th><td>gabinete@camposdojordao.sp.gov<br/>.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Anderson Farias Ferreira              </b>
+                              <br />
+                PM São José dos Campos                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(12) 3947-8123</td></tr>						<tr><th>E-mail:</th><td>prefeito@sjc.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 3 - Litoral Norte e Baixada Santista</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Alberto Pereira Mourão              </b>
+                              <br />
+                PM Praia Grande                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(13) 3496-2267</td></tr>						<tr><th>E-mail:</th><td>prefeito@praiagrande.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Reinaldo Alves Moreira Filho              </b>
+                              <br />
+                PM São Sebastião                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(12) 3891-2007</td></tr>						<tr><th>E-mail:</th><td>segov@saosebastiao.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 4 - Ribeira de Iguape, Litoral Sul e Alto Paranapanema</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                 Araldo Todesco              </b>
+                              <br />
+                PM Tapiraí                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(15) 3277-4800</td></tr>						<tr><th>E-mail:</th><td>gabinete@tapirai.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Salvador José Barbosa Júnior              </b>
+                              <br />
+                PM Iguape                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(13) 3848-6810</td></tr>						<tr><th>E-mail:</th><td>gabinete@iguape.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 5 - Médio Paranapanema e Pontal do Paranapanema</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Mario Luciano Rosa              </b>
+                              <br />
+                PM Salto Grande                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3378-9600</td></tr>						<tr><th>E-mail:</th><td>mario_luciano@uol.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luiz Infante              </b>
+                              <br />
+                PM Santo Anastácio                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3263-9422</td></tr>						<tr><th>E-mail:</th><td>gabinete@santoanastacio.sp.gov<br/>.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 6 - Aguapeí, Peixe e Baixo Tietê</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Carlos Alexandre Pereira              </b>
+                              <br />
+                PM Valparaíso                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3401-9200</td></tr>						<tr><th>E-mail:</th><td>gabinete@valparaiso.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Rodrigo Primo Antunes              </b>
+                              <br />
+                PM Barbosa                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3655-9900</td></tr>						<tr><th>E-mail:</th><td>prefeitura@barbosa.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 7 - Tietê/Jacaré e Tietê/Batalha </h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Tais Fernanda Maimoni Contieri Santana              </b>
+                              <br />
+                PM Cafelândia                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3556-8000</td></tr>						<tr><th>E-mail:</th><td>taiscontieri@cafelandia.sp.gov<br/>.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                 Luiz Gustavo Ferrarez              </b>
+                              <br />
+                PM Mineiros do Tietê                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3646-9090</td></tr>						<tr><th>E-mail:</th><td>luizgustavoferrarez@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 8 - Turvo/Grande e São José dos Dourados</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                 Osvaldo de Oliveira Rosa              </b>
+                              <br />
+                PM Catanduva                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(17) 3531-9100</td></tr>						<tr><th>E-mail:</th><td>gabinete@catanduva.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Rodrigo Batista Gonçalves              </b>
+                              <br />
+                PM Ilha Solteira                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3743-6000</td></tr>						<tr><th>E-mail:</th><td>rodrigo.goncalves@ilhasolteira<br/>.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 9 - Sapucaí-Mirim/Grande e Baixo Pardo/Grande</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                 Felipe Talvani Sontini              </b>
+                              <br />
+                PM Restinga                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3143-1172</td></tr>						<tr><th>E-mail:</th><td>gabinete@restinga.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Odair de Moura Silva              </b>
+                              <br />
+                PM Barretos                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(17) 3612-2000</td></tr>						<tr><th>E-mail:</th><td>gabinete@barretos.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 10 - Pardo e Mogi-Guaçu</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Leonardo Spiga Real              </b>
+                              <br />
+                PM Tambaú                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3673-9500</td></tr>						<tr><th>E-mail:</th><td>gabinete@tambau.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Maurício de Oliveira Santos              </b>
+                              <br />
+                PM Socorro                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3855-9665</td></tr>						<tr><th>E-mail:</th><td>gabinete@socorro.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Grupo 11 - Sorocaba/Médio Tietê e Piracicaba, Capivari e Jundiaí</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Gustavo Martinelli              </b>
+                              <br />
+                PM Jundiaí                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 4589-9377</td></tr>						<tr><th>E-mail:</th><td>gmartinelli@jundiai.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                 José Carlos Quevedo Junior              </b>
+                              <br />
+                PM Araçoiaba da Serra                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(15) 3281-7000</td></tr>						<tr><th>E-mail:</th><td>gabinete@aracoiaba.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Entidades da Sociedade Civil (direito à voto)    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Usuários Industriais dos Recursos Hídricos</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Anícia Aparecida Baptistello Pio              </b>
+                              <br />
+                FIESP - Federação ds Indústrias do Estado de São Paulo                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3549-4434</td></tr>						<tr><th>E-mail:</th><td>aabpio@fiesp.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Alexandre Luis Almeida Vilella              </b>
+                              <br />
+                CIESP - Centro das Indústrias do Estado de São Paulo                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3549-4434</td></tr>						<tr><th>E-mail:</th><td>alexandre.vilella@fiesp.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Usuários Agroindustriais de Recursos Hídricos</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                André Elia Neto               </b>
+                              <br />
+                UNICA - União da Agroind. Canavieira do Est. de S Paulo                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3093-4949</td></tr>						<tr><th>E-mail:</th><td>andre.elia@unica.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Elaine Ap. Maduro Costa              </b>
+                              <br />
+                ABAG/RP - Associação Brasileira do Agronegócio da Região de Ribeirão Preto                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3623-2326</td></tr>						<tr><th>E-mail:</th><td>abagrp@abagrp.org.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Usuários Agrícolas de Recursos Hídricos </h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Renato Veneziani              </b>
+                              <br />
+                FAESP - Federação da Agricultura e Pecuária do Estado de São Paulo                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3121-7233</td></tr>						<tr><th>E-mail:</th><td>rveneziani@uol.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Vitor Pereira Pinto              </b>
+                              <br />
+                ASPIPP - Associação do Sudoeste Paulista de Irrigantes e Plantio na Palha                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3769-1788</td></tr>						<tr><th>E-mail:</th><td>executivo@aspipp.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Usuários de Recursos Hídricos do Setor de Energia </h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Flávio Guilherme dos Santos               </b>
+                              <br />
+                ABIAPE - Associação Brasileira dos Investidores em Autoprodução de Energia                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(15) 3245-2038</td></tr>						<tr><th>E-mail:</th><td>flavio.santos@cba.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Grabrielle Mara do Nascimento              </b>
+                              <br />
+                ABIAPE - Associação Brasileira dos Investidores em Autoprodução de Energia                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(15) 3245-2038</td></tr>						<tr><th>E-mail:</th><td>gabrielle.nascimento@cba.com.b<br/>r</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Usuários de Recursos Hídricos para Abastecimento Público (vaga 1)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luís Filipe Rodrigues              </b>
+                              <br />
+                ASSEMAE - Associação Nacional dos Serviços Municipais de Saneamento                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3735-6100</td></tr>						<tr><th>E-mail:</th><td>filipe.rodrigues@sanasa.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Gustavo Arthur Mechlin Prado              </b>
+                              <br />
+                ASSEMAE - Associação Nacional dos Serviços Municipais de Saneamento                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3735-5295</td></tr>						<tr><th>E-mail:</th><td>gustavo.prado@sanasa.com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Usuários de Recursos Hídricos para Abastecimento Público (vaga 2)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                André Luis Gois Rodrigues              </b>
+                              <br />
+                ABCON - Associação Brasileira das Concessionárias Privadas de Serviços Públicos de Água e Esgoto                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3165-6151</td></tr>						<tr><th>E-mail:</th><td>andregois@sabesp.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Priscila Bezerra              </b>
+                              <br />
+                ABCON - Associação Brasileira das Concessionárias Privadas de Serviços Públicos de Água e Esgoto                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3165-6151</td></tr>						<tr><th>E-mail:</th><td>priscila.bezerra@abconsindcon.<br/>com.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associações Especializadas em Recursos Hídricos; Sindicatos ou Organizações de Trabalhadores em Recursos Hídricos; Entidades Associativas de Profissionais de Nível Superior relacionadas com Recursos Hídricos (vaga 1)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Helifax Pinto de Souza              </b>
+                              <br />
+                SINTAEMA - Sindicato dos Trabalhadores em Água, Esgoto e Meio Ambiente do Estado de São Paulo                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3329-2502</td></tr>						<tr><th>E-mail:</th><td>helifaxpsouza@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Mateus Delatim Simonato               </b>
+                              <br />
+                ABGE - Associação Brasileira de Geologia de Engenharia e Ambiental                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 2355-4421</td></tr>						<tr><th>E-mail:</th><td>madelatim@gmail.com </td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associações Especializadas em Recursos Hídricos; Sindicatos ou Organizações de Trabalhadores em Recursos Hídricos; Entidades Associativas de Profissionais de Nível Superior relacionadas com Recursos Hídricos (vaga 2)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Francisca Adalgisa da Silva              </b>
+                              <br />
+                APU - Associação dos Profissionais Universitários da Sabesp                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3388-8722</td></tr>						<tr><th>E-mail:</th><td>fadalgisa@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Carlos Eduardo Q. Giampá              </b>
+                              <br />
+                ABAS - Associação Brasileira de Águas Subterrâneas                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 5073-1934</td></tr>						<tr><th>E-mail:</th><td>giampa@terra.com.br </td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associações Especializadas em Recursos Hídricos; Sindicatos ou Organizações de Trabalhadores em Recursos Hídricos; Entidades Associativas de Profissionais de Nível Superior relacionadas com Recursos Hídricos (vaga 3)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luis Eduardo Gregolin Grisotto              </b>
+                              <br />
+                ABES - Associação Brasileira de Engenharia Sanitária e Ambiental                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3814-1872</td></tr>						<tr><th>E-mail:</th><td>edu@cobrape.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luciomar Santos Werneck              </b>
+                              <br />
+                AESABESP - Associação dos Engenheiros da SABESP                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3263-0484</td></tr>						<tr><th>E-mail:</th><td>aesabesp@aesabesp.org.br </td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Entidades Ambientalistas ou de Defesa de Interesses Difusos dos Cidadãos (vaga 1)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Maria Luisa Taborda Borges Ribeiro                </b>
+                              <br />
+                SOS Mata Atlântica - Fundação SOS Pró-Mata Atlântica                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3262-4088</td></tr>						<tr><th>E-mail:</th><td>malu@sosma.org.br </td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Rodrigo Pedro de Abreu              </b>
+                              <br />
+                Planeta Verde - Instituto de Educação e Pesquisa Ambiental Planeta Verde                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3253-3500</td></tr>						<tr><th>E-mail:</th><td>abreurodrigo84@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Entidades Ambientalistas ou de Defesa de Interesses Difusos dos Cidadãos (vaga 2)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Amauri Pollachi               </b>
+                              <br />
+                ONDAS - Observatório Nacional dos Direitos à Água e ao Saneamento                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3876-1116</td></tr>						<tr><th>E-mail:</th><td>apollachi@gmail.com </td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Rui Brasil Assis              </b>
+                              <br />
+                ROTARY INTERNATIONAL - Associação dos Rotary Clubs do Distrito 4621                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>ruibrasilassis@gmail.com </td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Conselheiros com direito à voz    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Ministério Público</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Alexandra Facciolli Martins              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3434-7843</td></tr>		<tr><th>Ramal:</th><td>126</td></tr>				<tr><th>E-mail:</th><td>alexfac@mpsp.mp.br</td></tr>		<tr><th>E-mail alternativo:</th><td>gaemapiracicaba@mpsp.mp.br</td></tr>													</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Ivan Carneiro Castanheiro              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3434-7843</td></tr>						<tr><th>E-mail:</th><td>ivancarneiro@mpsp.mp.br</td></tr>		<tr><th>E-mail alternativo:</th><td>gaemapiracicaba@mpsp.mp.br</td></tr>													</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">CREA-SP - Conselho Regional de Engenharia e Agronomia do Estado de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Neiroberto Silva              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>nsengenharia@uol.com.br</td></tr>		<tr><th>E-mail alternativo:</th><td>gps@creasp.org.br</td></tr>													</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Claudia Cristina Paschoaleti              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>claudia.c.paschoaleti@gmail.co<br/>m</td></tr>		<tr><th>E-mail alternativo:</th><td>gps@creasp.org.br</td></tr>													</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">USP - Universidade de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Prof. Dr. José Rodolfo Scarati Martins              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3091-5396</td></tr>						<tr><th>E-mail:</th><td>scarati@usp.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Prof. Dr. Ricardo Cesar Aoki Hirata              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3091-4230</td></tr>						<tr><th>E-mail:</th><td>rhirata@usp.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">UNICAMP - Universidade Estadual de Campinas</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Prof. Dr. André Luís Sotero Salustiano Martim              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3521-4720</td></tr>						<tr><th>E-mail:</th><td>asmartim@unicamp.br	</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Prof. Dr. José Gilberto Dalfré Filho              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3521-4720</td></tr>						<tr><th>E-mail:</th><td>dalfre@unicamp.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">UNESP - Universidade Estadual de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Prof. Dr. Antonio Cezar Leal              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3229-5652</td></tr>						<tr><th>E-mail:</th><td>cezar.leal@unesp.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Prof. Dr. Chang Hung Kiang              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3526-9310</td></tr>						<tr><th>E-mail:</th><td>chang.hung-kiang@unesp.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">PGE - Procuradoria Geral do Estado de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Gisele Novack Diana              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-3350</td></tr>						<tr><th>E-mail:</th><td>gnovack@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Maria de Lourdes d&#39;Arce Pinheiro              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3372-6447</td></tr>						<tr><th>E-mail:</th><td>mlpinheiro@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">OAB - Ordem dos Advogados do Brasil - Seção de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Fabricio Dorado Soler              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>fabriciosoler@felsberg.com.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Flavia Scarpinella Bueno              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>flaviabueno930@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Convidados com direito à voz    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Agência de Águas do Estado de São Paulo - SP-ÁGUAS</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Camila Rocha Viana              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3293-8521</td></tr>						<tr><th>E-mail:</th><td>gabinete@spaguas.sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                A indicar               </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-4113</td></tr>						<tr><th>E-mail:</th><td>contato.sigrh@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">CETESB - Companhia Ambiental do Estado de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Thomaz Toledo              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-3087</td></tr>						<tr><th>E-mail:</th><td>presidencia_cetesb@sp.gov.br</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Carolina Fiorillo Mariani              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 3133-3582</td></tr>						<tr><th>E-mail:</th><td>carolinamariani@sp.gov.br </td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Alto Paranapanema</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Sergio Galvanin Guidio Filho              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3344-9000</td></tr>						<tr><th>E-mail:</th><td>gabinete@ipaussu.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Ipaussu</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê das Bacias Hidrográficas dos Rios Aguapeí e Peixe</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Daniel Alonso              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3402-6002</td></tr>						<tr><th>E-mail:</th><td>gabinete@marilia.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Marília</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Alto Tietê</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Vanderlon Gomes              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(11) 4696-3180</td></tr>						<tr><th>E-mail:</th><td>gabinete@salesopolis.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Salesópolis</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Baixo Pardo/Grande</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Antônio Carlos Ribeiro de Souza              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(17) 3392-8800</td></tr>						<tr><th>E-mail:</th><td>calribero.oficial@yahoo.com.br</td></tr>										<tr><th>Cidade:</th><td>Viradouro</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica da Baixada Santista</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Raquel Auxiliadora Chini              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(13) 3496-2267</td></tr>						<tr><th>E-mail:</th><td>prefeita@praiagrande.sp.gov.br</td></tr>		<tr><th>E-mail alternativo:</th><td>gp1@praiagrande.sp.gov.br </td></tr>								<tr><th>Cidade:</th><td>Praia Grande</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Baixo Tietê</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Rodrigo Primo Antunes              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3655-9133</td></tr>						<tr><th>E-mail:</th><td>prefeitura@barbosa.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Barbosa</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Litoral Norte</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Antonio Luiz Colucci              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(12) 3896-9200</td></tr>						<tr><th>E-mail:</th><td>prefeito@ilhabela.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Ilhabela</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Rio Mogi Guaçu</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luiz Antônio Noli              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3396-9600</td></tr>						<tr><th>E-mail:</th><td>secretaria@santalucia.sp.gov.b<br/>r</td></tr>										<tr><th>Cidade:</th><td>Santa Lúcia</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Médio Paranapanema</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                José Benedito Camacho              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3307-1422</td></tr>						<tr><th>E-mail:</th><td>prefeito@ibirarema.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Ibirarema</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Rio Pardo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marcos Daniel Bonagamba              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3984-9070</td></tr>						<tr><th>E-mail:</th><td>prefeito@saosimao.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>São Simão</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê das Bacias Hidrográficas dos Rios Piracicaba, Capivari e Jundiaí</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luciano Santos Tavares de Almeida              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(19) 3437-2100</td></tr>						<tr><th>E-mail:</th><td>se.pcj@comites.baciaspcj.org.b<br/>r</td></tr>										<tr><th>Cidade:</th><td>Piracicaba</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Pontal do Paranapanema</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Bárbara Medeiros Vilches              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3272-1101</td></tr>						<tr><th>E-mail:</th><td>gabinete@presidentevenceslau.s<br/>p.gov.br</td></tr>										<tr><th>Cidade:</th><td>Presidente Venceslau</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Rio Paraíba do Sul</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Maria Eduarda San Martin               </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(12) 3645-1797</td></tr>						<tr><th>E-mail:</th><td>smma.adm@pindamonhangaba.sp.go<br/>v.br</td></tr>										<tr><th>Cidade:</th><td>Pindamonhangaba</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Ribeira de Iguape e Litoral Sul</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Wagner Bento da Costa              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(13) 3856-7100</td></tr>						<tr><th>E-mail:</th><td>gabinete@pariqueraacu.sp.gov.b<br/>r</td></tr>										<tr><th>Cidade:</th><td>Pariquera-Açu</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Rio São José dos Dourados</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Jefferson Nascimento de Oliveira              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(18) 3743-1211</td></tr>						<tr><th>E-mail:</th><td>jefferson.nascimento@unesp.br</td></tr>										<tr><th>Cidade:</th><td>Ilha Solteira</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica da Serra da Mantiqueira</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Ana Catarina Martins Bonassi              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(12) 3971-6110</td></tr>						<tr><th>E-mail:</th><td>gabinete@saobentodosapucai.sp.<br/>gov.br</td></tr>										<tr><th>Cidade:</th><td>São Bento do Sapucaí</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Sapucaí-Mirim/Grande</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Ricardo da Silva Sobrinho              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(16) 3668-1233</td></tr>						<tr><th>E-mail:</th><td>gabinete@santoantoniodaalegria<br/>.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Santo Antônio da Alegria</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                José Carlos de Quevedo Junior              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(15) 3281-1625</td></tr>						<tr><th>E-mail:</th><td>gabinete@aracoiaba.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Araçoiaba da Serra</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Tietê-Batalha</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Cesar Henrique da Cunha Fiala              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3572-8222</td></tr>						<tr><th>E-mail:</th><td>gp@pirajui.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>Pirajuí</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê das Bacias Hidrográficas dos Rios Turvo e Grande</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Edinho Araújo              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(17) 3203-1100</td></tr>		<tr><th>Ramal:</th><td>5</td></tr>				<tr><th>E-mail:</th><td>gabpref@riopreto.sp.gov.br</td></tr>										<tr><th>Cidade:</th><td>São José do Rio Preto</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Comitê da Bacia Hidrográfica do Tietê-Jacaré</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Ricardo Salaro Neto              </b>
+                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+		<tr><th>Telefone:</th><td>(14) 3812-4410</td></tr>						<tr><th>E-mail:</th><td>rsalaron@uol.com.br</td></tr>										<tr><th>Cidade:</th><td>São Manuel</td></tr>					</table>
+
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+            
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CRH - Conselho Estadual de Recursos Hídricos</h2>
+                <li>
+					Av. Professor Frederico Hermann Júnior, 345 - Prédio 12, 3° andar											 - Alto de Pinheiros																 - São Paulo																 - 05459-900										                </li>
+                <li> Tel: (11) 3133-4113 | Fax:  | contato: contato.sigrh@sp.gov.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        DIRETORIA DE RECURSOS HÍDRICOS (DRHi)      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Prédio 12 - 3º andar - Alto de Pinheiros - São Paulo - SP - CEP: 05459-900    <br />
+     Telefone: (11) 3133-4113 - E-mail: contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp/" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
