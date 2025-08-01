@@ -1,0 +1,3030 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027' >Processo Eleitoral - Sociedade Civil 2025-2027</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-ALPA</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhalpa/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhalpa/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhalpa/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhalpa/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhalpa/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhalpa/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhalpa/noticias' >Notícias</a></li>
+                                                                        <li><a href='/cbhalpa/processoeleitoral20252027' >Processo Eleitoral 2025/2027</a></li>
+                                                                        <li><a href='/cbhalpa/representantes' >Representantes</a></li>
+                                                                        <li class="last"><a href='/cbhalpa/valoresarrecadadospelacobrancaugrhi14' >Valores Arrecadados pela Cobrança UGRHI14</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhalpa/cbhalpa/representantesctai' >CT-AI</a></li>
+                                                            <li><a href='/cbhalpa/cbhalpacbhalpactai/representantes' >CT-AI</a></li>
+                                                            <li><a href='javascript:void(0);' >CT-EA</a></li>
+                                                            <li class="last"><a href='/cbhalpa/cbhalpacbhalpa/entidade' >CT-PGA</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="7" data-year="2025" data-unity="3" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="08" data-year="2025" data-unity="3" data-scope="global">Agosto/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="9" data-year="2025" data-unity="3" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td></tr><tr class="calendar-row"><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA - CRH)  <br />  <b>Data do evento:</b> 05/08/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/18660'>Ver mais</a></div>">5</td><td class="calendar-day">6</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento (CTPLAN- CRH)  <br />  <b>Data do evento:</b> 07/08/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/18421'>Ver mais</a></div>">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td></tr><tr class="calendar-row"><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas (CTPA - CRH)  <br />  <b>Data do evento:</b> 12/08/2025  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma TEAMS  <br />  <a href='/pageitems/502/events/18415'>Ver mais</a></div><h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB - CRH)  <br />  <b>Data do evento:</b> 12/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/339/events/18432'>Ver mais</a></div>">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td></tr><tr class="calendar-row"><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM - CRH)  <br />  <b>Data do evento:</b> 20/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/341/events/18427'>Ver mais</a></div>">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td></tr><tr class="calendar-row"><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td></tr><tr class="calendar-row"><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="7" data-year="2025" data-unity="3" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="08" data-year="2025" data-unity="3" data-scope="scoped">Agosto/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="9" data-year="2025" data-unity="3" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td></tr><tr class="calendar-row"><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td></tr><tr class="calendar-row"><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião do GT-Empreendimento em 2025 (Por Videoconferência)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 14/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Por Videoconferência  <br />  <a href='/pageitems/315/events/18658'>Ver mais</a></div>">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td></tr><tr class="calendar-row"><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>4ª Reunião CTSUM</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 19/08/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18471'>Ver mais</a></div>">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td></tr><tr class="calendar-row"><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day calendar-event" title="<h2>33ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL, CBH-PJ1)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 29/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Reunião por videoconferência.  <br />  <a href='/pageitems/313/events/18491'>Ver mais</a></div><h2>113ª Assembleia Pública Ordinária do CBH-RB</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Ribeira de Iguape e Litoral Sul  <br />  <b>Data do evento:</b> 29/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Reunião em formato híbrido. Presencial no Auditório do Escritório Regional de Governo e remoto pelo app Teams  <br />  <a href='/pageitems/312/events/18683'>Ver mais</a></div>">29</td><td class="calendar-day">30</td></tr><tr class="calendar-row"><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027" class="banner">
+            <img src='/public/uploads/banners//17358440606794.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Documentos</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+        
+                                    <h3>Cobrança</h3>
+        <div>
+                                <div class="block" id="record_27404">
+            <h2>Plano de Aplicação da Cobrança 2024</h2>
+            <ul>
+                <li><label>Data do documento:</label> 25/03/2024<br /></li>
+                <li><label>Postado em:</label> 05/04/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/27404/plano-de-aplicacao-da-cobranca.xlsx" target="_blank">plano-de-aplicacao-da-cobranca.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27404" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_27404">Compartilhar</a>    </div>
+    <div id="item_27404" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>PAPI</h3>
+        <div>
+                                <div class="block" id="record_27402">
+            <h2>PAPI 2024 2027</h2>
+            <ul>
+                <li><label>Data do documento:</label> 25/03/2024<br /></li>
+                <li><label>Postado em:</label> 05/04/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/27402/papi-2024-27_v2024_03_08-1.xlsm" target="_blank">papi-2024-27_v2024_03_08-1.xlsm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27402" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_27402">Compartilhar</a>    </div>
+    <div id="item_27402" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_23310">
+            <h2>Plano de Aplicação e de Investimentos 2021-2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/10/2022<br /></li>
+                <li><label>Postado em:</label> 31/10/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/23310/papi-21-23-rs-2021.xlsx" target="_blank">papi-21-23-rs-2021.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23310" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_23310">Compartilhar</a>    </div>
+    <div id="item_23310" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Relatório de Situação</h3>
+        <div>
+                                <div class="block" id="record_28942">
+            <h2>Relatório de Situação 2024 Ano base 2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/12/2024<br /></li>
+                <li><label>Postado em:</label> 16/12/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/28942/rs-ano-24-base-23.pdf" target="_blank">rs-ano-24-base-23.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="28942" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_28942">Compartilhar</a>    </div>
+    <div id="item_28942" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Plano de Bacia</h3>
+        <div>
+                                <div class="block" id="record_23181">
+            <h2>Plano de Bacia 2016-2027 - CBH-ALPA - UGRHI-14</h2>
+            <ul>
+                <li><label>Data do documento:</label> 16/04/2016<br /></li>
+                <li><label>Postado em:</label> 18/08/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/23181/plano-da-bacia-hidrografica-do-alto-paranapanema.pdf" target="_blank">plano-da-bacia-hidrografica-do-alto-paranapanema.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23181" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_23181">Compartilhar</a>    </div>
+    <div id="item_23181" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21359">
+            <h2>PA/PI 2020-2023 (Base 2022/2023) CRH 246/2021 e CRH 254/2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21359/planilha_papi_2022_2023_246_cbh-alpa.xlsx" target="_blank">planilha_papi_2022_2023_246_cbh-alpa.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/21359/plano-de-aplicacao-e-ivestimentos-ugrhi-14-alto-paranapanema.pdf" target="_blank">plano-de-aplicacao-e-ivestimentos-ugrhi-14-alto-paranapanema.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21359" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21359">Compartilhar</a>    </div>
+    <div id="item_21359" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21358">
+            <h2>PA/PI 2020-2023 (Usado em 2021) CRH 190/2016</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21358/planilha_papi_2020_2023_alpa_24_06_2021.xlsx" target="_blank">planilha_papi_2020_2023_alpa_24_06_2021.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/21358/plano-de-aplicacao-e-ivestimentos-ugrhi-14-alto-paranapanema.pdf" target="_blank">plano-de-aplicacao-e-ivestimentos-ugrhi-14-alto-paranapanema.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21358" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21358">Compartilhar</a>    </div>
+    <div id="item_21358" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21752">
+            <h2>Plano de Acompanhamento Ações -2020 CBH-ALPA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/12/2021<br /></li>
+                <li><label>Postado em:</label> 10/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21752/planilha_acompanhamento_papi_ugrhis_190_alpa.xlsx" target="_blank">planilha_acompanhamento_papi_ugrhis_190_alpa.xlsx</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/21752/plano-de-aplicacao-e-ivestimentos-ugrhi-14-alto-paranapanema.pdf" target="_blank">plano-de-aplicacao-e-ivestimentos-ugrhi-14-alto-paranapanema.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21752" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21752">Compartilhar</a>    </div>
+    <div id="item_21752" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_12024">
+            <h2>Relatório I</h2>
+            <ul>
+                <li><label>Data do documento:</label> 23/02/2017<br /></li>
+                <li><label>Postado em:</label> 02/03/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/anexo1-tipologiasdeusoocupacao.pdf" target="_blank">anexo1-tipologiasdeusoocupacao.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/anexo2-vegetacaoremanescente.pdf" target="_blank">anexo2-vegetacaoremanescente.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/anexo3-metasacoesgestaorecursoshidricos.pdf" target="_blank">anexo3-metasacoesgestaorecursoshidricos.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/anexo4-programainvestimento.pdf" target="_blank">anexo4-programainvestimento.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/anexo5-projetossubmetidosfehidro2016.pdf" target="_blank">anexo5-projetossubmetidosfehidro2016.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/anexo6-distribuicaorecursosfehidropdcssubpdcs-2017-2019.pdf" target="_blank">anexo6-distribuicaorecursosfehidropdcssubpdcs-2017-2019.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12024/relatorioalparevisaodezembrov5.pdf" target="_blank">relatorioalparevisaodezembrov5.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12024" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_12024">Compartilhar</a>    </div>
+    <div id="item_12024" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Boletins</h3>
+        <div>
+                                <div class="block" id="record_22014">
+            <h2>Boletim CIIAGRO 01.01.2022</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/01/2022<br /></li>
+                <li><label>Postado em:</label> 18/04/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/22014/boletim_2022-01-01_a_2022-01-20.pdf" target="_blank">boletim_2022-01-01_a_2022-01-20.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="22014" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_22014">Compartilhar</a>    </div>
+    <div id="item_22014" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21934">
+            <h2>Sala de Crise e Reservatórios do Paranapanema</h2>
+            <ul>
+                <li><label>Data do documento:</label> 10/01/2022<br /></li>
+                <li><label>Postado em:</label> 10/01/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="https://www2.paranapanema.org/comunicacao/reservatorios-do-paranapanema/" ><span title="https://www2.paranapanema.org/comunicacao/reservatorios-do-paranapanema/">https://www2.paranapanema.org/comunicacao/reservatorios-do-paranapanema/</span></a></li>
+                                                                                                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21934/informativo-dos-reservatorios-rio-paranapanema.html" target="_blank">informativo-dos-reservatorios-rio-paranapanema.html</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21934" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21934">Compartilhar</a>    </div>
+    <div id="item_21934" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21682">
+            <h2>Boletim Agrometeorológico - UGRHI-14 Alto Paranapanema - CIIAGRO</h2>
+            <ul>
+                <li><label>Data do documento:</label> 25/11/2021<br /></li>
+                <li><label>Postado em:</label> 28/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.ciiagro.org.br/alpa/boletins/2021/Boletim_2021-11-01_a_2021-11-25.pdf" ><span title="http://www.ciiagro.org.br/alpa/boletins/2021/Boletim_2021-11-01_a_2021-11-25.pdf">http://www.ciiagro.org.br/alpa/boletins/2021/Boletim_2021-11-01_a_2021-11-...</span></a></li>
+                                                                                                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21682/boletim_2021-11-01_a_2021-11-25.pdf" target="_blank">boletim_2021-11-01_a_2021-11-25.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21682" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21682">Compartilhar</a>    </div>
+    <div id="item_21682" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Relatórios</h3>
+        <div>
+                                <div class="block" id="record_23311">
+            <h2>Relatório de Situação dos Recursos Hídricos da UGRHI-14 Alto Paranapanema - Ano base 2021</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/10/2022<br /></li>
+                <li><label>Postado em:</label> 31/10/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/23311/rs_2023_ab_2022_ugrhi_14_v2.pdf" target="_blank">rs_2023_ab_2022_ugrhi_14_v2.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23311" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_23311">Compartilhar</a>    </div>
+    <div id="item_23311" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21360">
+            <h2>Plano de Capacitação - CBH-ALPA 2021/2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21360/plano-de-capacitacao.pdf" target="_blank">plano-de-capacitacao.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21360" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21360">Compartilhar</a>    </div>
+    <div id="item_21360" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_21357">
+            <h2>RELATORIO DE SITUACAO DOS RECURSOS HÍDRICOS DAS BACIAS HIDROGRÁFICAS DO ESTADO DE SÃO PAULO 2021 UGRHI 14 Alto Paranapanema  2021 Ano Base 2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 03/12/2021<br /></li>
+                <li><label>Postado em:</label> 13/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/21357/rs_2021_ab_2020.pdf" target="_blank">rs_2021_ab_2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21357" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_21357">Compartilhar</a>    </div>
+    <div id="item_21357" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_18833">
+            <h2>Relatório de Situação - Ano Base 2018 </h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/07/2019<br /></li>
+                <li><label>Postado em:</label> 28/04/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/18833/relatorio-de-situacao-dos-recursos-hidricos-das-bacias-hidrograficas-do-estado-de-sao-paulo.pdf" target="_blank">relatorio-de-situacao-dos-recursos-hidricos-das-bacias-hidrograficas-do-estado-de-sao-paulo.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18833" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_18833">Compartilhar</a>    </div>
+    <div id="item_18833" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_13699">
+            <h2>Plano de Bacia Hidrográfica da UGRHI-14 Alto Paranapanema</h2>
+            <ul>
+                <li><label>Data do documento:</label> 25/04/2018<br /></li>
+                <li><label>Postado em:</label> 25/04/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/13699/pbh-alpa_relatorioii_final.pdf" target="_blank">pbh-alpa_relatorioii_final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13699" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_13699">Compartilhar</a>    </div>
+    <div id="item_13699" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_12213">
+            <h2>Relatório de Situação dos Recursos Hídricos - UGRHI-14 - 2017 - Ano base 2016</h2>
+            <ul>
+                <li><label>Data do documento:</label> 27/06/2017<br /></li>
+                <li><label>Postado em:</label> 03/07/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/12213/relatorio-de-situacao-2017_v_final.pdf" target="_blank">relatorio-de-situacao-2017_v_final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12213" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_12213">Compartilhar</a>    </div>
+    <div id="item_12213" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_11989">
+            <h2>Relatório de Situação 2016 ano Base 2015</h2>
+            <ul>
+                <li><label>Data do documento:</label> 02/02/2017<br /></li>
+                <li><label>Postado em:</label> 02/02/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/11989/relatorio-de-situacao-2016-vfinal.pdf" target="_blank">relatorio-de-situacao-2016-vfinal.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11989" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_11989">Compartilhar</a>    </div>
+    <div id="item_11989" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_10451">
+            <h2>Relatório de Situação</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/12/2015<br /></li>
+                <li><label>Postado em:</label> 18/12/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/10451/relatorio_situacao_alpa_2015_vfinal.pdf" target="_blank">relatorio_situacao_alpa_2015_vfinal.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10451" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_10451">Compartilhar</a>    </div>
+    <div id="item_10451" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_8124">
+            <h2>RELATÓRIO DE SITUAÇÃO DOS RECURSOS HÍDRICOS DAS BACIAS HIDROGRÁFICAS DO ESTADO DE SÂO PAULO UNIDADE DE GERENCIAMENTO DE RECURSOS HÍDRICOS - ALTO PARANAPANEMA  UGRHI-14</h2>
+            <ul>
+                <li><label>Data do documento:</label> 17/12/2014<br /></li>
+                <li><label>Postado em:</label> 17/12/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/8124/rs_2014_cbhalpa_vfinal_of.pdf" target="_blank">rs_2014_cbhalpa_vfinal_of.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8124" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_8124">Compartilhar</a>    </div>
+    <div id="item_8124" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7458">
+            <h2>Relatório Situação Recursos Hídricos ALPA 2013</h2>
+            <ul>
+                <li><label>Data do documento:</label> 17/12/2013<br /></li>
+                <li><label>Postado em:</label> 19/12/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7458/rs-alpa-2013-vr-final-19-12-2013.pdf" target="_blank">rs-alpa-2013-vr-final-19-12-2013.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7458" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7458">Compartilhar</a>    </div>
+    <div id="item_7458" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7306">
+            <h2>Relatório de Situação dos Recursos Hídricos ALPA 2011</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/12/2011<br /></li>
+                <li><label>Postado em:</label> 16/12/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7306/relatorio-de-situacao-alpa-2011.pdf" target="_blank">relatorio-de-situacao-alpa-2011.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7306" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7306">Compartilhar</a>    </div>
+    <div id="item_7306" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7233">
+            <h2>Relatório de Situação dos Recursos Hídricos ALPA 2010</h2>
+            <ul>
+                <li><label>Data do documento:</label> 07/12/2010<br /></li>
+                <li><label>Postado em:</label> 12/01/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7233/relatorio-de-situacao-alpa-2010.pdf" target="_blank">relatorio-de-situacao-alpa-2010.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7233" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7233">Compartilhar</a>    </div>
+    <div id="item_7233" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7156">
+            <h2>Relatório de Situação dos Recursos Hídricos ALPA 2009</h2>
+            <ul>
+                <li><label>Data do documento:</label> 06/11/2009<br /></li>
+                <li><label>Postado em:</label> 20/04/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7156/relatorio-de-situacao-alpa-2009.doc" target="_blank">relatorio-de-situacao-alpa-2009.doc</a></li>
+                                    <li><a href="/public/uploads/documents/7156/tabela-1-indicadores-relatorio-de-situacao-alpa-2009.pdf" target="_blank">tabela-1-indicadores-relatorio-de-situacao-alpa-2009.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/7156/tabela-2-metas-e-acoes-relatorio-de-situacao-alpa-2009.pdf" target="_blank">tabela-2-metas-e-acoes-relatorio-de-situacao-alpa-2009.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7156" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7156">Compartilhar</a>    </div>
+    <div id="item_7156" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7155">
+            <h2>Relatório de Situação dos Recursos Hídricos do Alto paranapanema 2008</h2>
+            <ul>
+                <li><label>Data do documento:</label> 30/06/2008<br /></li>
+                <li><label>Postado em:</label> 20/04/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7155/relatorio-de-situacao-dos-recursos-hidricos-alpa-2008.doc" target="_blank">relatorio-de-situacao-dos-recursos-hidricos-alpa-2008.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7155" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7155">Compartilhar</a>    </div>
+    <div id="item_7155" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6997">
+            <h2>Relatório de Situação dos Recursos Hídricos da Bacia Hidrográfica do Alto Paranapanema - Relatório 1</h2>
+            <ul>
+                <li><label>Data do documento:</label> 28/06/2005<br /></li>
+                <li><label>Postado em:</label> 05/04/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6997/aguas_subterraneas.html" target="_blank">aguas_subterraneas.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/anexos.html" target="_blank">anexos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/aplicacao_dos_recursos.html" target="_blank">aplicacao_dos_recursos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/apresentacao.html" target="_blank">apresentacao.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/areas_degradadas.html" target="_blank">areas_degradadas.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/areas_protegidas_por_lei.html" target="_blank">areas_protegidas_por_lei.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/areas_suscetiveis_a_inundacoes.html" target="_blank">areas_suscetiveis_a_inundacoes.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/barragens_de_regularizacao.html" target="_blank">barragens_de_regularizacao.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/biodiversidade.html" target="_blank">biodiversidade.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/caracterizacao_fisica.html" target="_blank">caracterizacao_fisica.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/caracterizacao_geral_da_ugrhi_14.html" target="_blank">caracterizacao_geral_da_ugrhi_14.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/caracterizacao_socio_economica.html" target="_blank">caracterizacao_socio_economica.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/conclusoes_e_recomendacoes.html" target="_blank">conclusoes_e_recomendacoes.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/constatacao_de_grupos_contaminantes.jpg" target="_blank">constatacao_de_grupos_contaminantes.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/consumo_de_energia_eletrica.html" target="_blank">consumo_de_energia_eletrica.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/culturas_permanentes.html" target="_blank">culturas_permanentes.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/culturas_temporarias.html" target="_blank">culturas_temporarias.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/demanda_x_disponibilidade.html" target="_blank">demanda_x_disponibilidade.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/demanda_x_disponibilidade.jpg" target="_blank">demanda_x_disponibilidade.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/demografia.html" target="_blank">demografia.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/destribuicao_por_atividade.jpg" target="_blank">destribuicao_por_atividade.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/disponibilidade.html" target="_blank">disponibilidade.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/distribuicao_quanto_ao_estagio_de_remediacao.jpg" target="_blank">distribuicao_quanto_ao_estagio_de_remediacao.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/equipe_tecnica.html" target="_blank">equipe_tecnica.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/esgotos_domesticos.html" target="_blank">esgotos_domesticos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/estado_de_sao_paulo.jpg" target="_blank">estado_de_sao_paulo.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/evolucao_das_demandas.html" target="_blank">evolucao_das_demandas.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/fluviometria.html" target="_blank">fluviometria.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/fontes_de_poluicao.html" target="_blank">fontes_de_poluicao.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/geologia.html" target="_blank">geologia.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/geomorfologia.html" target="_blank">geomorfologia.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/grafico_media_do_indice_de_qualidade.jpg" target="_blank">grafico_media_do_indice_de_qualidade.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image002.jpg" target="_blank">image002.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image004.jpg" target="_blank">image004.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image006.jpg" target="_blank">image006.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image008.jpg" target="_blank">image008.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image010.jpg" target="_blank">image010.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image012.jpg" target="_blank">image012.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image016.jpg" target="_blank">image016.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image018.jpg" target="_blank">image018.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image020.jpg" target="_blank">image020.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image022.jpg" target="_blank">image022.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/image024.jpg" target="_blank">image024.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/indice.html" target="_blank">indice.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/localizacao_da_ugrhi.jpg" target="_blank">localizacao_da_ugrhi.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/mapa_da_ugrhi14.jpg" target="_blank">mapa_da_ugrhi14.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/mapa_dos_aquiferos.jpg" target="_blank">mapa_dos_aquiferos.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/metodologia.html" target="_blank">metodologia.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia.jpg" target="_blank">num_de_economia.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia1.jpg" target="_blank">num_de_economia1.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia10.jpg" target="_blank">num_de_economia10.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia11.jpg" target="_blank">num_de_economia11.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia12.jpg" target="_blank">num_de_economia12.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia2.jpg" target="_blank">num_de_economia2.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia3.jpg" target="_blank">num_de_economia3.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia4.jpg" target="_blank">num_de_economia4.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia5.jpg" target="_blank">num_de_economia5.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia6.jpg" target="_blank">num_de_economia6.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia7.jpg" target="_blank">num_de_economia7.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia8.jpg" target="_blank">num_de_economia8.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/num_de_economia9.jpg" target="_blank">num_de_economia9.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/outros_usos_dos_recursos_hidricos.html" target="_blank">outros_usos_dos_recursos_hidricos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/panorama_dos_postos.jpg" target="_blank">panorama_dos_postos.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/parte1.doc" target="_blank">parte1.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pchs_pequenas_centrais_hidreletricas.html" target="_blank">pchs_pequenas_centrais_hidreletricas.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pedologia.html" target="_blank">pedologia.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/percentual.jpg" target="_blank">percentual.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/percentual_em_relacao.jpg" target="_blank">percentual_em_relacao.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pessoal_ocupado.html" target="_blank">pessoal_ocupado.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pessoal_ocupado.jpg" target="_blank">pessoal_ocupado.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pluviometria.html" target="_blank">pluviometria.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pluviosidade_media_da_bacia.html" target="_blank">pluviosidade_media_da_bacia.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/pontos_de_amostragem.jpg" target="_blank">pontos_de_amostragem.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/populacao-hab.jpg" target="_blank">populacao-hab.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/porcentagem_de_uso_de_aguas.jpg" target="_blank">porcentagem_de_uso_de_aguas.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico1.jpg" target="_blank">posto_pluviometrico1.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico10.jpg" target="_blank">posto_pluviometrico10.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico11.jpg" target="_blank">posto_pluviometrico11.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico12.jpg" target="_blank">posto_pluviometrico12.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico13.jpg" target="_blank">posto_pluviometrico13.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico14.jpg" target="_blank">posto_pluviometrico14.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico15.jpg" target="_blank">posto_pluviometrico15.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico16.jpg" target="_blank">posto_pluviometrico16.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico17.jpg" target="_blank">posto_pluviometrico17.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico18.jpg" target="_blank">posto_pluviometrico18.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico19.jpg" target="_blank">posto_pluviometrico19.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico2.jpg" target="_blank">posto_pluviometrico2.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico20.jpg" target="_blank">posto_pluviometrico20.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico21.jpg" target="_blank">posto_pluviometrico21.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico22.jpg" target="_blank">posto_pluviometrico22.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico23.jpg" target="_blank">posto_pluviometrico23.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico24.jpg" target="_blank">posto_pluviometrico24.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico25.jpg" target="_blank">posto_pluviometrico25.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico26.jpg" target="_blank">posto_pluviometrico26.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico27.jpg" target="_blank">posto_pluviometrico27.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico28.jpg" target="_blank">posto_pluviometrico28.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico29.jpg" target="_blank">posto_pluviometrico29.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico3.jpg" target="_blank">posto_pluviometrico3.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico30.jpg" target="_blank">posto_pluviometrico30.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico31.jpg" target="_blank">posto_pluviometrico31.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico32.jpg" target="_blank">posto_pluviometrico32.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico33.jpg" target="_blank">posto_pluviometrico33.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico34.jpg" target="_blank">posto_pluviometrico34.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico35.jpg" target="_blank">posto_pluviometrico35.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico36.jpg" target="_blank">posto_pluviometrico36.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico37.jpg" target="_blank">posto_pluviometrico37.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico38.jpg" target="_blank">posto_pluviometrico38.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico39.jpg" target="_blank">posto_pluviometrico39.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico4.jpg" target="_blank">posto_pluviometrico4.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico40.jpg" target="_blank">posto_pluviometrico40.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico41.jpg" target="_blank">posto_pluviometrico41.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico42.jpg" target="_blank">posto_pluviometrico42.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico43.jpg" target="_blank">posto_pluviometrico43.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico44.jpg" target="_blank">posto_pluviometrico44.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico45.jpg" target="_blank">posto_pluviometrico45.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico46.jpg" target="_blank">posto_pluviometrico46.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico47.jpg" target="_blank">posto_pluviometrico47.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico48.jpg" target="_blank">posto_pluviometrico48.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico49.jpg" target="_blank">posto_pluviometrico49.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico5.jpg" target="_blank">posto_pluviometrico5.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico50.jpg" target="_blank">posto_pluviometrico50.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico51.jpg" target="_blank">posto_pluviometrico51.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico52.jpg" target="_blank">posto_pluviometrico52.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico53.jpg" target="_blank">posto_pluviometrico53.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico54.jpg" target="_blank">posto_pluviometrico54.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico55.jpg" target="_blank">posto_pluviometrico55.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico56.jpg" target="_blank">posto_pluviometrico56.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico57.jpg" target="_blank">posto_pluviometrico57.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico58.jpg" target="_blank">posto_pluviometrico58.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico59.jpg" target="_blank">posto_pluviometrico59.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico6.jpg" target="_blank">posto_pluviometrico6.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico60.jpg" target="_blank">posto_pluviometrico60.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico61.jpg" target="_blank">posto_pluviometrico61.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico62.jpg" target="_blank">posto_pluviometrico62.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico63.jpg" target="_blank">posto_pluviometrico63.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico64.jpg" target="_blank">posto_pluviometrico64.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico65.jpg" target="_blank">posto_pluviometrico65.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico66.jpg" target="_blank">posto_pluviometrico66.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico67.jpg" target="_blank">posto_pluviometrico67.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico68.jpg" target="_blank">posto_pluviometrico68.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico69.jpg" target="_blank">posto_pluviometrico69.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico7.jpg" target="_blank">posto_pluviometrico7.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico70.jpg" target="_blank">posto_pluviometrico70.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico71.jpg" target="_blank">posto_pluviometrico71.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico72.jpg" target="_blank">posto_pluviometrico72.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico73.jpg" target="_blank">posto_pluviometrico73.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico74.jpg" target="_blank">posto_pluviometrico74.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico75.jpg" target="_blank">posto_pluviometrico75.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico76.jpg" target="_blank">posto_pluviometrico76.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico77.jpg" target="_blank">posto_pluviometrico77.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico78.jpg" target="_blank">posto_pluviometrico78.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico79.jpg" target="_blank">posto_pluviometrico79.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico8.jpg" target="_blank">posto_pluviometrico8.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/posto_pluviometrico9.jpg" target="_blank">posto_pluviometrico9.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/potencialidade_agricola.html" target="_blank">potencialidade_agricola.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/potencialidade_aos_processos_erosivos.html" target="_blank">potencialidade_aos_processos_erosivos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/processos_erosivos_nas_encostas.html" target="_blank">processos_erosivos_nas_encostas.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/projecao_da_populacao.jpg" target="_blank">projecao_da_populacao.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/projecao_da_taxa_de_urbanizacao.jpg" target="_blank">projecao_da_taxa_de_urbanizacao.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/projecao_da_taxa_de_urbanizacao1.jpg" target="_blank">projecao_da_taxa_de_urbanizacao1.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/qualidade_das_aguas_subterraneas.html" target="_blank">qualidade_das_aguas_subterraneas.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/qualidade_das_aguas_superficiais_interiores.html" target="_blank">qualidade_das_aguas_superficiais_interiores.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/recuperacao_florestal.html" target="_blank">recuperacao_florestal.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/recursos_minerais.html" target="_blank">recursos_minerais.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/residuos_solidos.html" target="_blank">residuos_solidos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/saneamento_e_saude_publica.html" target="_blank">saneamento_e_saude_publica.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/saude_publica.html" target="_blank">saude_publica.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/situacao_dos_recursos_hidricos.html" target="_blank">situacao_dos_recursos_hidricos.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/taxas_de_crescimento.jpg" target="_blank">taxas_de_crescimento.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/ugrhi_14.jpg" target="_blank">ugrhi_14.jpg</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_de_agrotoxicos_na_agricultura.html" target="_blank">uso_de_agrotoxicos_na_agricultura.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_dos_recursos_hidricos_e_demanda_de_agua.html" target="_blank">uso_dos_recursos_hidricos_e_demanda_de_agua.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_e_ocupacao_do_solo.html" target="_blank">uso_e_ocupacao_do_solo.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_industrial.html" target="_blank">uso_industrial.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_na_aquicultura.html" target="_blank">uso_na_aquicultura.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_na_irrigacao.html" target="_blank">uso_na_irrigacao.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/uso_urbano_de_agua.html" target="_blank">uso_urbano_de_agua.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/vulnerabilidade_ao_risco_de_poluicao.html" target="_blank">vulnerabilidade_ao_risco_de_poluicao.html</a></li>
+                                    <li><a href="/public/uploads/documents/6997/vulnerabilidade_natural_dos_aquiferos.html" target="_blank">vulnerabilidade_natural_dos_aquiferos.html</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6997" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6997">Compartilhar</a>    </div>
+    <div id="item_6997" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Documentos</h3>
+        <div>
+                                <div class="block" id="record_27403">
+            <h2>Planilha Síntese PBH</h2>
+            <ul>
+                <li><label>Data do documento:</label> 05/04/2024<br /></li>
+                <li><label>Postado em:</label> 05/04/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/27403/planilha_sintese_pbh_v2024_02_29-alpa.xlsx" target="_blank">planilha_sintese_pbh_v2024_02_29-alpa.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27403" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_27403">Compartilhar</a>    </div>
+    <div id="item_27403" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_27289">
+            <h2>Plano de Aplicação da Cobrança 2023</h2>
+            <ul>
+                <li><label>Data do documento:</label> 31/03/2023<br /></li>
+                <li><label>Postado em:</label> 22/01/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/27289/plano-de-aplicacao-cobranca-2023-cbh-alpa.xlsx" target="_blank">plano-de-aplicacao-cobranca-2023-cbh-alpa.xlsx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27289" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_27289">Compartilhar</a>    </div>
+    <div id="item_27289" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Referências Técnicas</h3>
+        <div>
+                                <div class="block" id="record_19447">
+            <h2>Relatório de Situação de Recursos Hídricos da UGRHI-14-Alto Paranapanema ano base 2019 - 2020</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/11/2020<br /></li>
+                <li><label>Postado em:</label> 23/11/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/admin/pageitems/252/documents" ><span title="http://www.sigrh.sp.gov.br/admin/pageitems/252/documents">http://www.sigrh.sp.gov.br/admin/pageitems/252/documents</span></a></li>
+                                                                                                                                    <li><a href="/public/uploads/documents//CBH-ALPA/19447/rs_2020_ab_2019-v-final.pdf" target="_blank">rs_2020_ab_2019-v-final.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19447" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_19447">Compartilhar</a>    </div>
+    <div id="item_19447" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_12160">
+            <h2>Fundamentos da Cobrança pelo Uso dos Recursos Hídricos na UGRHI-14 Alto Paranapanema </h2>
+            <ul>
+                <li><label>Data do documento:</label> 02/01/2017<br /></li>
+                <li><label>Postado em:</label> 27/04/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents//CBH-ALPA/12160/decreto63263.pdf" target="_blank">decreto63263.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12160/deliberacao_crh_201.pdf" target="_blank">deliberacao_crh_201.pdf</a></li>
+                                    <li><a href="/public/uploads/documents//CBH-ALPA/12160/fundamentacao_cobranca_cbh-alpa_janeiro_2017.pdf" target="_blank">fundamentacao_cobranca_cbh-alpa_janeiro_2017.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12160" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_12160">Compartilhar</a>    </div>
+    <div id="item_12160" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                </div>
+                        <h3>Sem Categoria</h3>
+        <div>
+                                <div class="block" id="record_8538">
+            <h2>Relação das Entidades Sociedade Civil Cadastradas/Recadastradas Biênio 2015/2016</h2>
+            <ul>
+                <li><label>Data do documento:</label> 12/03/2015<br /></li>
+                <li><label>Postado em:</label> 12/03/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/8538/lista-sociedade-civil.pdf" target="_blank">lista-sociedade-civil.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8538" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_8538">Compartilhar</a>    </div>
+    <div id="item_8538" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_8107">
+            <h2>FICHA DE CADASTRAMENTO ENTIDADES DA SOCIEDADE CIVIL</h2>
+            <ul>
+                <li><label>Data do documento:</label> 17/12/2014<br /></li>
+                <li><label>Postado em:</label> 17/12/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/8107/ficha-cadastramento-sociedade-civil.docx" target="_blank">ficha-cadastramento-sociedade-civil.docx</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8107" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_8107">Compartilhar</a>    </div>
+    <div id="item_8107" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7385">
+            <h2>Entidades Cadastradas/Recadastradas para eleição Biênio 2013/2014</h2>
+            <ul>
+                <li><label>Data do documento:</label> 26/03/2013<br /></li>
+                <li><label>Postado em:</label> 26/03/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7385/ata-processo-eleitoral-cbh-alpa-bienio-2013-2014.pdf" target="_blank">ata-processo-eleitoral-cbh-alpa-bienio-2013-2014.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7385" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7385">Compartilhar</a>    </div>
+    <div id="item_7385" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7258">
+            <h2>FICHA DE CADASTRAMENTO das Entidades da Sociedade Civil</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2011<br /></li>
+                <li><label>Postado em:</label> 05/04/2011</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7258/cadasto-sociedade-civil.doc" target="_blank">cadasto-sociedade-civil.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7258" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7258">Compartilhar</a>    </div>
+    <div id="item_7258" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7121">
+            <h2>Lei nº 12.183 de 29 de dezembro de 2005, que dispõe sobre a cobrança pelo uso dos recursos hídricos do domínio do Estado de São Paulo</h2>
+            <ul>
+                <li><label>Data do documento:</label> 29/12/2005<br /></li>
+                <li><label>Postado em:</label> 14/01/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7121/lei-n-12-183-cobranca-pelo-uso-da-agua.doc" target="_blank">lei-n-12-183-cobranca-pelo-uso-da-agua.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7121" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7121">Compartilhar</a>    </div>
+    <div id="item_7121" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7083">
+            <h2>Entidades da Sociedade Civil, habilitadas a participar do processo eleitoral do CBH-ALPA, biênio 2011/2012</h2>
+            <ul>
+                <li><label>Data do documento:</label> 19/04/2011<br /></li>
+                <li><label>Postado em:</label> 20/03/2009</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7083/ata-comissao-eleitoral-sede-aspipp-marco-09.doc" target="_blank">ata-comissao-eleitoral-sede-aspipp-marco-09.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7083" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7083">Compartilhar</a>    </div>
+    <div id="item_7083" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7064">
+            <h2>Regimento Interno do CBH-ALPA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2008<br /></li>
+                <li><label>Postado em:</label> 16/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7064/regimento-interno.doc" target="_blank">regimento-interno.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7064" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7064">Compartilhar</a>    </div>
+    <div id="item_7064" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_7063">
+            <h2>Estatuto do CBH-ALPA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 09/12/2008<br /></li>
+                <li><label>Postado em:</label> 16/12/2008</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/7063/estatuto.doc" target="_blank">estatuto.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="7063" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_7063">Compartilhar</a>    </div>
+    <div id="item_7063" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6873">
+            <h2>Relação das Entidades da Sociedade Civil cadastradas no CBH-ALPA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 23/03/2005<br /></li>
+                <li><label>Postado em:</label> 23/03/2005</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6873/relacao-das-entidades-da-sociedade-civil-cadastradas-na-secretaria-executiva-do-cbh.doc" target="_blank">relacao-das-entidades-da-sociedade-civil-cadastradas-na-secretaria-executiva-do-cbh.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6873" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6873">Compartilhar</a>    </div>
+    <div id="item_6873" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6716">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6716/planoalpa8.doc" target="_blank">planoalpa8.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6716" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6716">Compartilhar</a>    </div>
+    <div id="item_6716" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6717">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6717/planoalpa7_1.doc" target="_blank">planoalpa7_1.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6717" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6717">Compartilhar</a>    </div>
+    <div id="item_6717" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6718">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6718/planoalpa6.doc" target="_blank">planoalpa6.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6718" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6718">Compartilhar</a>    </div>
+    <div id="item_6718" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6719">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6719/planoalpa4.doc" target="_blank">planoalpa4.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6719" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6719">Compartilhar</a>    </div>
+    <div id="item_6719" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6720">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6720/planoalpa3.doc" target="_blank">planoalpa3.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6720" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6720">Compartilhar</a>    </div>
+    <div id="item_6720" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6721">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6721/planoalpa2.doc" target="_blank">planoalpa2.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6721" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6721">Compartilhar</a>    </div>
+    <div id="item_6721" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6722">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6722/planoalpa1.doc" target="_blank">planoalpa1.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6722" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6722">Compartilhar</a>    </div>
+    <div id="item_6722" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6723">
+            <h2>Plano de Bacia do CBH-ALPA</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6723/04-an-ii-resumo.xls" target="_blank">04-an-ii-resumo.xls</a></li>
+                                    <li><a href="/public/uploads/documents/6723/11_alpa.htm" target="_blank">11_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/121_alpa.htm" target="_blank">121_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/121_alpa_1.htm" target="_blank">121_alpa_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/122_alpa.htm" target="_blank">122_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/123_alpa.htm" target="_blank">123_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/124_alpa.htm" target="_blank">124_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/125_alpa.htm" target="_blank">125_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/126_alpa.htm" target="_blank">126_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/12_alpa.htm" target="_blank">12_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/131_alpa.htm" target="_blank">131_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/13_alpa.htm" target="_blank">13_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/14_alpa.htm" target="_blank">14_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/15_alpa.htm" target="_blank">15_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/16_alpa.htm" target="_blank">16_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/17_alpa.htm" target="_blank">17_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/211_alpa.htm" target="_blank">211_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/212_alpa.htm" target="_blank">212_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/21_alpa.htm" target="_blank">21_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/22_alpa.htm" target="_blank">22_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/3_alpa.htm" target="_blank">3_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/411_alpa.htm" target="_blank">411_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/412_alpa.htm" target="_blank">412_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/413_alpa.htm" target="_blank">413_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/41_alpa.htm" target="_blank">41_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/421_alpa.htm" target="_blank">421_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/422_alpa.htm" target="_blank">422_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/423_alpa.htm" target="_blank">423_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/42_alpa.htm" target="_blank">42_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/4_alpa.htm" target="_blank">4_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/511_alpa.htm" target="_blank">511_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/512_alpa.htm" target="_blank">512_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/513_alpa.htm" target="_blank">513_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/51_alpa.htm" target="_blank">51_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/5210_alpa.htm" target="_blank">5210_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/5211_alpa.htm" target="_blank">5211_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/521_alpa.htm" target="_blank">521_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/522_alpa.htm" target="_blank">522_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/523_alpa.htm" target="_blank">523_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/524_alpa.htm" target="_blank">524_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/525_alpa.htm" target="_blank">525_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/526_alpa.htm" target="_blank">526_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/527_alpa.htm" target="_blank">527_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/527_alpa_1.htm" target="_blank">527_alpa_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/528_alpa.htm" target="_blank">528_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/528_alpa_1.htm" target="_blank">528_alpa_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/529_alpa.htm" target="_blank">529_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/52_alpa.htm" target="_blank">52_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/53_alpa.htm" target="_blank">53_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/5_alpa.htm" target="_blank">5_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/61_alpa.htm" target="_blank">61_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/62_alpa.htm" target="_blank">62_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/63_alpa.htm" target="_blank">63_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/6_alpa.htm" target="_blank">6_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/7_alpa.htm" target="_blank">7_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/7_alpa_1.htm" target="_blank">7_alpa_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/8_alpa.htm" target="_blank">8_alpa.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/8_alpa_1.htm" target="_blank">8_alpa_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpac1seg.pdf" target="_blank">alpac1seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam1seg.pdf" target="_blank">alpam1seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam2seg.pdf" target="_blank">alpam2seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam3seg.pdf" target="_blank">alpam3seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam4seg.pdf" target="_blank">alpam4seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam5seg.pdf" target="_blank">alpam5seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam6seg.pdf" target="_blank">alpam6seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/alpam7seg.pdf" target="_blank">alpam7seg.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/anexo-3-orcamento_2.xls" target="_blank">anexo-3-orcamento_2.xls</a></li>
+                                    <li><a href="/public/uploads/documents/6723/anexo-4-cronograma_2.xls" target="_blank">anexo-4-cronograma_2.xls</a></li>
+                                    <li><a href="/public/uploads/documents/6723/apresentacao.htm" target="_blank">apresentacao.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/apresentacao_1.htm" target="_blank">apresentacao_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/autorun.bat" target="_blank">autorun.bat</a></li>
+                                    <li><a href="/public/uploads/documents/6723/cbh-alpa" target="_blank">cbh-alpa</a></li>
+                                    <li><a href="/public/uploads/documents/6723/cbh_alpa.ico" target="_blank">cbh_alpa.ico</a></li>
+                                    <li><a href="/public/uploads/documents/6723/cima.htm" target="_blank">cima.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/cima_1.htm" target="_blank">cima_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index.html" target="_blank">index.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index_1.html" target="_blank">index_1.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index_2.html" target="_blank">index_2.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index_3.html" target="_blank">index_3.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index_4.html" target="_blank">index_4.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index_5.html" target="_blank">index_5.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/index_6.html" target="_blank">index_6.html</a></li>
+                                    <li><a href="/public/uploads/documents/6723/indice.htm" target="_blank">indice.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/indice_1.htm" target="_blank">indice_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/logoalpa.gif" target="_blank">logoalpa.gif</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa1.doc" target="_blank">planoalpa1.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa1.pdf" target="_blank">planoalpa1.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa2.doc" target="_blank">planoalpa2.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa2.pdf" target="_blank">planoalpa2.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa3.doc" target="_blank">planoalpa3.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa3.pdf" target="_blank">planoalpa3.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa4.doc" target="_blank">planoalpa4.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa4.pdf" target="_blank">planoalpa4.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa4b.pdf" target="_blank">planoalpa4b.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa5.doc" target="_blank">planoalpa5.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa5.pdf" target="_blank">planoalpa5.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa5b.pdf" target="_blank">planoalpa5b.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa5_1.doc" target="_blank">planoalpa5_1.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa6.doc" target="_blank">planoalpa6.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa6.pdf" target="_blank">planoalpa6.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa7.doc" target="_blank">planoalpa7.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa7.pdf" target="_blank">planoalpa7.pdf</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa7_1.doc" target="_blank">planoalpa7_1.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/planoalpa8.doc" target="_blank">planoalpa8.doc</a></li>
+                                    <li><a href="/public/uploads/documents/6723/principal.htm" target="_blank">principal.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/principal_1.htm" target="_blank">principal_1.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/principal_2.htm" target="_blank">principal_2.htm</a></li>
+                                    <li><a href="/public/uploads/documents/6723/relalpaseg.pdf" target="_blank">relalpaseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6723" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6723">Compartilhar</a>    </div>
+    <div id="item_6723" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6724">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6724/indice_1.htm" target="_blank">indice_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6724" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6724">Compartilhar</a>    </div>
+    <div id="item_6724" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6725">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6725/index_4.html" target="_blank">index_4.html</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6725" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6725">Compartilhar</a>    </div>
+    <div id="item_6725" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6726">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6726/cima_1.htm" target="_blank">cima_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6726" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6726">Compartilhar</a>    </div>
+    <div id="item_6726" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6727">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6727/apresentacao_1.htm" target="_blank">apresentacao_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6727" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6727">Compartilhar</a>    </div>
+    <div id="item_6727" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6728">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6728/8_alpa_1.htm" target="_blank">8_alpa_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6728" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6728">Compartilhar</a>    </div>
+    <div id="item_6728" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6729">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6729/7_alpa_1.htm" target="_blank">7_alpa_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6729" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6729">Compartilhar</a>    </div>
+    <div id="item_6729" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6730">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6730/63_alpa.htm" target="_blank">63_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6730" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6730">Compartilhar</a>    </div>
+    <div id="item_6730" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6731">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6731/62_alpa.htm" target="_blank">62_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6731" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6731">Compartilhar</a>    </div>
+    <div id="item_6731" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6732">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6732/61_alpa.htm" target="_blank">61_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6732" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6732">Compartilhar</a>    </div>
+    <div id="item_6732" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6733">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6733/6_alpa.htm" target="_blank">6_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6733" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6733">Compartilhar</a>    </div>
+    <div id="item_6733" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6734">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6734/53_alpa.htm" target="_blank">53_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6734" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6734">Compartilhar</a>    </div>
+    <div id="item_6734" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6735">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6735/521_alpa.htm" target="_blank">521_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6735" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6735">Compartilhar</a>    </div>
+    <div id="item_6735" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6736">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6736/5210_alpa.htm" target="_blank">5210_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6736" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6736">Compartilhar</a>    </div>
+    <div id="item_6736" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6737">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6737/522_alpa.htm" target="_blank">522_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6737" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6737">Compartilhar</a>    </div>
+    <div id="item_6737" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6738">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6738/523_alpa.htm" target="_blank">523_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6738" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6738">Compartilhar</a>    </div>
+    <div id="item_6738" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6739">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6739/525_alpa.htm" target="_blank">525_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6739" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6739">Compartilhar</a>    </div>
+    <div id="item_6739" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6740">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6740/527_alpa.htm" target="_blank">527_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6740" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6740">Compartilhar</a>    </div>
+    <div id="item_6740" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6741">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6741/527_alpa_1.htm" target="_blank">527_alpa_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6741" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6741">Compartilhar</a>    </div>
+    <div id="item_6741" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6742">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6742/528_alpa.htm" target="_blank">528_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6742" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6742">Compartilhar</a>    </div>
+    <div id="item_6742" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6743">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6743/528_alpa_1.htm" target="_blank">528_alpa_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6743" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6743">Compartilhar</a>    </div>
+    <div id="item_6743" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6744">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6744/529_alpa.htm" target="_blank">529_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6744" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6744">Compartilhar</a>    </div>
+    <div id="item_6744" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6745">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6745/6_alpa.htm" target="_blank">6_alpa.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6745" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6745">Compartilhar</a>    </div>
+    <div id="item_6745" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6746">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6746/indice_1.htm" target="_blank">indice_1.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6746" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6746">Compartilhar</a>    </div>
+    <div id="item_6746" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6747">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6747/principal_2.htm" target="_blank">principal_2.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6747" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6747">Compartilhar</a>    </div>
+    <div id="item_6747" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6748">
+            <h2>(Pagina Principal) Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6748/index_6.html" target="_blank">index_6.html</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6748" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6748">Compartilhar</a>    </div>
+    <div id="item_6748" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6750">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6750/planoalpa1.doc" target="_blank">planoalpa1.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6750" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6750">Compartilhar</a>    </div>
+    <div id="item_6750" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6751">
+            <h2>Plano de Bacia</h2>
+            <ul>
+                <li><label>Data do documento:</label> 18/03/2003<br /></li>
+                <li><label>Postado em:</label> 17/03/2004</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6751/planoalpa4.doc" target="_blank">planoalpa4.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6751" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6751">Compartilhar</a>    </div>
+    <div id="item_6751" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6584">
+            <h2>Diagnóstico da Situação dos Recursos Hídricos da Bacia Hidrográfica do Alto Paranapanema - UGRHI 14 - Out/2000</h2>
+            <ul>
+                <li><label>Data do documento:</label> 01/11/1999<br /></li>
+                <li><label>Postado em:</label> 03/10/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6584/index.html" target="_blank">index.html</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6584" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6584">Compartilhar</a>    </div>
+    <div id="item_6584" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6430">
+            <h2>03 - Mapa 01</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam1seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam1seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam1seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6430/alpam1seg.pdf" target="_blank">alpam1seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6430" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6430">Compartilhar</a>    </div>
+    <div id="item_6430" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6437">
+            <h2>08 - Mapa 06</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam6seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam6seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam6seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6437/alpam6seg.pdf" target="_blank">alpam6seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6437" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6437">Compartilhar</a>    </div>
+    <div id="item_6437" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6438">
+            <h2>07 - Mapa 05</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam5seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam5seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam5seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6438/alpam5seg.pdf" target="_blank">alpam5seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6438" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6438">Compartilhar</a>    </div>
+    <div id="item_6438" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6439">
+            <h2>01 - Minuta Preliminar do Relatório Técnico Final</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/6439/relalpaseg.pdf" target="_blank">relalpaseg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6439" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6439">Compartilhar</a>    </div>
+    <div id="item_6439" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6441">
+            <h2>09 - Mapa 07</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam7seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam7seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam7seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6441/alpam7seg.pdf" target="_blank">alpam7seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6441" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6441">Compartilhar</a>    </div>
+    <div id="item_6441" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6442">
+            <h2>02 - Carta 01</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpac1seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpac1seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpac1seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6442/alpac1seg.pdf" target="_blank">alpac1seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6442" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6442">Compartilhar</a>    </div>
+    <div id="item_6442" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6467">
+            <h2>05 - Mapa 03</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam3seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam3seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam3seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6467/alpam3seg.pdf" target="_blank">alpam3seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6467" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6467">Compartilhar</a>    </div>
+    <div id="item_6467" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6484">
+            <h2>06 - Mapa 04</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam4seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam4seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam4seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6484/alpam4seg.pdf" target="_blank">alpam4seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6484" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6484">Compartilhar</a>    </div>
+    <div id="item_6484" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_6506">
+            <h2>04 - Mapa 02</h2>
+            <ul>
+                <li><label>Data do documento:</label> 15/05/2000<br /></li>
+                <li><label>Postado em:</label> 15/05/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam2seg.pdf" ><span title="http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam2seg.pdf">http://www.sigrh.sp.gov.br/sigrh/ARQS/RELATORIO/CRH/CBH-ALPA/629/alpam2seg...</span></a></li>
+                                                                                                <li><a href="/public/uploads/documents/6506/alpam2seg.pdf" target="_blank">alpam2seg.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="6506" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_6506">Compartilhar</a>    </div>
+    <div id="item_6506" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                        
+        
+                                <div class="block" id="record_8776">
+            <h2>Plano de Bacia 2012-2015</h2>
+            <ul>
+                <li><label>Data do documento:</label> 19/03/2012<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/documents/8776/planodebaciacbhalpa.pdf" target="_blank">planodebaciacbhalpa.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8776" data-year="" data-url="http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_8776">Compartilhar</a>    </div>
+    <div id="item_8776" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhalpa/documentos#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-ALPA - Comitê da Bacia Hidrográfica do Alto Paranapanema</h2>
+                <li>
+					Av. São Sebastião, nº 125											 - Jd. Europa																 - Piraju																 - 18800-656																 - SP					                </li>
+                <li> Tel: (14) 3351-2599 | Fax:  | contato: cbhalpa@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        DIRETORIA DE RECURSOS HÍDRICOS (DRHi)      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Prédio 12 - 3º andar - Alto de Pinheiros - São Paulo - SP - CEP: 05459-900    <br />
+     Telefone: (11) 3133-4113 - E-mail: contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp/" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>

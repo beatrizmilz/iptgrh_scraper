@@ -1,0 +1,3259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsm/representantes" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsm/representantes" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027' >Processo Eleitoral - Sociedade Civil 2025-2027</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-PCJ</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhpcj/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhpcj/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhpcj/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhpcj/cobrancapaulista' >Cobrança PCJ Paulista</a></li>
+                                                                        <li><a href='/cbhpcj/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhpcj/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhpcj/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhpcj/estrutura' >Estrutura</a></li>
+                                                                                                    <li><a href='http://comitespcj.org.br/index.php' target="_blank">Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhpcj/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhpcj/ctas/apresentacao' >CT-AS</a></li>
+                                                            <li><a href='/cbhpcj/ctea/apresentacao' >CT-EA</a></li>
+                                                            <li><a href='/cbhpcj/ctid/apresentacao' >CT-ID</a></li>
+                                                            <li><a href='/cbhpcj/ctind/apresentacao' >CT-IND</a></li>
+                                                            <li><a href='/cbhpcj/ctmananciais/apresentacao' >CT-Mananciais</a></li>
+                                                            <li><a href='/cbhpcj/ctmh/apresentacao' >CT-MH</a></li>
+                                                            <li><a href='/cbhpcj/ctol/apresentacao' >CT-OL</a></li>
+                                                            <li><a href='/cbhpcj/ctpb/apresentacao' >CT-PB</a></li>
+                                                            <li><a href='/cbhpcj/ctpl/apresentacao' >CT-PL</a></li>
+                                                            <li><a href='/cbhpcj/ctrural/apresentacao' >CT-RURAL</a></li>
+                                                            <li><a href='/cbhpcj/ctsa/apresentacao' >CT-SA</a></li>
+                                                            <li class="last"><a href='/cbhpcj/ctsam/apresentacao' >CT-SAM</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="7" data-year="2025" data-unity="34" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="08" data-year="2025" data-unity="34" data-scope="global">Agosto/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="9" data-year="2025" data-unity="34" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td></tr><tr class="calendar-row"><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day calendar-event" title="<h2>Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA - CRH)  <br />  <b>Data do evento:</b> 05/08/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/18660'>Ver mais</a></div>">5</td><td class="calendar-day">6</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento (CTPLAN- CRH)  <br />  <b>Data do evento:</b> 07/08/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/340/events/18421'>Ver mais</a></div>">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td></tr><tr class="calendar-row"><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas (CTPA - CRH)  <br />  <b>Data do evento:</b> 12/08/2025  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma TEAMS  <br />  <a href='/pageitems/502/events/18415'>Ver mais</a></div><h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB - CRH)  <br />  <b>Data do evento:</b> 12/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/339/events/18432'>Ver mais</a></div>">12</td><td class="calendar-day">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td></tr><tr class="calendar-row"><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day">19</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM - CRH)  <br />  <b>Data do evento:</b> 20/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/341/events/18427'>Ver mais</a></div>">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td></tr><tr class="calendar-row"><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td></tr><tr class="calendar-row"><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="7" data-year="2025" data-unity="34" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="08" data-year="2025" data-unity="34" data-scope="scoped">Agosto/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="9" data-year="2025" data-unity="34" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td></tr><tr class="calendar-row"><td class="calendar-day">3</td><td class="calendar-day">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td></tr><tr class="calendar-row"><td class="calendar-day">10</td><td class="calendar-day">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião do GT-Empreendimento em 2025 (Por Videoconferência)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 14/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Por Videoconferência  <br />  <a href='/pageitems/315/events/18658'>Ver mais</a></div>">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td></tr><tr class="calendar-row"><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>4ª Reunião CTSUM</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 19/08/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18471'>Ver mais</a></div>">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td></tr><tr class="calendar-row"><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day">28</td><td class="calendar-day calendar-event" title="<h2>33ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL, CBH-PJ1)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí  <br />  <b>Data do evento:</b> 29/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Reunião por videoconferência.  <br />  <a href='/pageitems/313/events/18491'>Ver mais</a></div><h2>113ª Assembleia Pública Ordinária do CBH-RB</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Ribeira de Iguape e Litoral Sul  <br />  <b>Data do evento:</b> 29/08/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Reunião em formato híbrido. Presencial no Auditório do Escritório Regional de Governo e remoto pelo app Teams  <br />  <a href='/pageitems/312/events/18683'>Ver mais</a></div>">29</td><td class="calendar-day">30</td></tr><tr class="calendar-row"><td class="calendar-day">31</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027" class="banner">
+            <img src='/public/uploads/banners//17358440606794.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Atas</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+                                    <h3>Ano de 2024</h3>
+        <div>
+        
+                        <div class="block" id="record_30428">
+            <h2>Ata da 32ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/12/2024<br /></li>
+                <li><label>Postado em:</label> 29/07/2025</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/30428/ata_32-ord-comitespcj_10-12-24.pdf" target="_blank">ata_32-ord-comitespcj_10-12-24.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="30428" data-year="2024" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_30428">Compartilhar</a>    </div>
+    <div id="item_30428" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_30427">
+            <h2>Ata da 31ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/08/2024<br /></li>
+                <li><label>Postado em:</label> 29/07/2025</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/30427/ata_31-ext-comitespcj_30-08-24.pdf" target="_blank">ata_31-ext-comitespcj_30-08-24.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="30427" data-year="2024" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_30427">Compartilhar</a>    </div>
+    <div id="item_30427" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_30426">
+            <h2>Ata da 31ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/04/2024<br /></li>
+                <li><label>Postado em:</label> 29/07/2025</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/30426/ata_31-ord-comitespcj_05-04-24.pdf" target="_blank">ata_31-ord-comitespcj_05-04-24.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="30426" data-year="2024" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_30426">Compartilhar</a>    </div>
+    <div id="item_30426" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2023</h3>
+        <div>
+        
+                        <div class="block" id="record_27232">
+            <h2>Ata da 29ª Reunião Extraordinária dos Comitês PCJ  (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/09/2023<br /></li>
+                <li><label>Postado em:</label> 21/12/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/27232/ata_29-ext-comitespcj_13-09-23.pdf" target="_blank">ata_29-ext-comitespcj_13-09-23.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27232" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_27232">Compartilhar</a>    </div>
+    <div id="item_27232" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_27231">
+            <h2>Ata da 28ª Reunião Extraordinária dos Comitês PCJ  (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/06/2023<br /></li>
+                <li><label>Postado em:</label> 21/12/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/27231/ata_28-ext-comitespcj_29-06-23.pdf" target="_blank">ata_28-ext-comitespcj_29-06-23.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27231" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_27231">Compartilhar</a>    </div>
+    <div id="item_27231" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_24978">
+            <h2>Ata da 29ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2023<br /></li>
+                <li><label>Postado em:</label> 26/07/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/24978/ata_29-ord-comitespcj_30-03-23.pdf" target="_blank">ata_29-ord-comitespcj_30-03-23.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="24978" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_24978">Compartilhar</a>    </div>
+    <div id="item_24978" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2022</h3>
+        <div>
+        
+                        <div class="block" id="record_23767">
+            <h2>Ata da 28ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2022<br /></li>
+                <li><label>Postado em:</label> 27/04/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/23767/ata_28-reuniaoord-comitespcj_07-12-22.pdf" target="_blank">ata_28-reuniaoord-comitespcj_07-12-22.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23767" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_23767">Compartilhar</a>    </div>
+    <div id="item_23767" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23435">
+            <h2>Ata da 27ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/10/2022<br /></li>
+                <li><label>Postado em:</label> 19/12/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/23435/ata_27-extra-comitespcj_04-10-22.pdf" target="_blank">ata_27-extra-comitespcj_04-10-22.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23435" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_23435">Compartilhar</a>    </div>
+    <div id="item_23435" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23434">
+            <h2>Ata da 26ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/10/2022<br /></li>
+                <li><label>Postado em:</label> 19/12/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/23434/ata_26-extra-comitespcj_04-10-22.pdf" target="_blank">ata_26-extra-comitespcj_04-10-22.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23434" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_23434">Compartilhar</a>    </div>
+    <div id="item_23434" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23290">
+            <h2>Ata da 25ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/06/2022<br /></li>
+                <li><label>Postado em:</label> 25/10/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/23290/ata_25extra-comitspcj_29-06-22.pdf" target="_blank">ata_25extra-comitspcj_29-06-22.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23290" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_23290">Compartilhar</a>    </div>
+    <div id="item_23290" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23174">
+            <h2>Ata da 27ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2022<br /></li>
+                <li><label>Postado em:</label> 04/08/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/23174/ata_27-ord-comitespcj_31-03-22.pdf" target="_blank">ata_27-ord-comitespcj_31-03-22.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23174" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_23174">Compartilhar</a>    </div>
+    <div id="item_23174" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2021</h3>
+        <div>
+        
+                        <div class="block" id="record_21621">
+            <h2>Ata da 24ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/10/2021<br /></li>
+                <li><label>Postado em:</label> 30/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21621/ata_24-reuniao-extraordinaria-dos-comites-pcj_07-10-21.pdf" target="_blank">ata_24-reuniao-extraordinaria-dos-comites-pcj_07-10-21.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21621" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21621">Compartilhar</a>    </div>
+    <div id="item_21621" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21620">
+            <h2>Ata da 23ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/10/2021<br /></li>
+                <li><label>Postado em:</label> 30/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21620/ata_23-reuniao-extraordinaria-dos-comites-pcj_07-10-21.pdf" target="_blank">ata_23-reuniao-extraordinaria-dos-comites-pcj_07-10-21.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21620" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21620">Compartilhar</a>    </div>
+    <div id="item_21620" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21273">
+            <h2>Ata da 22ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/06/2021<br /></li>
+                <li><label>Postado em:</label> 29/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21273/ata_22-reuniao-extraordinaria-dos-comites-pcj_24-06-21.pdf" target="_blank">ata_22-reuniao-extraordinaria-dos-comites-pcj_24-06-21.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21273" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21273">Compartilhar</a>    </div>
+    <div id="item_21273" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21272">
+            <h2>Ata da 25ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2021<br /></li>
+                <li><label>Postado em:</label> 28/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21272/ata_25-reuniao-ordinaria-dos-comites-pcj_30-03-21.pdf" target="_blank">ata_25-reuniao-ordinaria-dos-comites-pcj_30-03-21.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21272" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21272">Compartilhar</a>    </div>
+    <div id="item_21272" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2020</h3>
+        <div>
+        
+                        <div class="block" id="record_21276">
+            <h2>Ata da 24ª Reunião Ordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2020<br /></li>
+                <li><label>Postado em:</label> 27/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21276/ata_24-reuniao-ordinaria-comites-pcj_11-12-20.pdf" target="_blank">ata_24-reuniao-ordinaria-comites-pcj_11-12-20.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21276" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21276">Compartilhar</a>    </div>
+    <div id="item_21276" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21275">
+            <h2>Ata da 21ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/10/2020<br /></li>
+                <li><label>Postado em:</label> 27/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21275/ata_21-reuniao-extraordinaria-dos-comites-pcj_13-10-20.pdf" target="_blank">ata_21-reuniao-extraordinaria-dos-comites-pcj_13-10-20.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21275" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21275">Compartilhar</a>    </div>
+    <div id="item_21275" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21274">
+            <h2>Ata da 20ª Reunião Extraordinária dos Comitês PCJ (CBH-PCJ, PCJ FEDERAL e PJ1)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/08/2020<br /></li>
+                <li><label>Postado em:</label> 27/10/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/21274/ata_20-reuniao-extraordinaria-dos-comites-pcj_31-08-20.pdf" target="_blank">ata_20-reuniao-extraordinaria-dos-comites-pcj_31-08-20.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21274" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_21274">Compartilhar</a>    </div>
+    <div id="item_21274" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19036">
+            <h2>Ata da 10ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/06/2020<br /></li>
+                <li><label>Postado em:</label> 04/09/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/19036/ata_10-ordconjcompcj_video_30_06_2020.pdf" target="_blank">ata_10-ordconjcompcj_video_30_06_2020.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19036" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_19036">Compartilhar</a>    </div>
+    <div id="item_19036" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2019</h3>
+        <div>
+        
+                        <div class="block" id="record_18996">
+            <h2>Ata da 9ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/12/2019<br /></li>
+                <li><label>Postado em:</label> 06/08/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/18996/9-ord-conjunta_13-12-19.pdf" target="_blank">9-ord-conjunta_13-12-19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18996" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_18996">Compartilhar</a>    </div>
+    <div id="item_18996" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18631">
+            <h2>Ata da 19ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/07/2019<br /></li>
+                <li><label>Postado em:</label> 17/12/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/18631/ata_19-extra-cmtspcj_saltinho_27-07-19.pdf" target="_blank">ata_19-extra-cmtspcj_saltinho_27-07-19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18631" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_18631">Compartilhar</a>    </div>
+    <div id="item_18631" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17409">
+            <h2>Ata da 23ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2019<br /></li>
+                <li><label>Postado em:</label> 31/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/17409/ata_23-ord-cmtspcj_piracicaba_28-06-19.pdf" target="_blank">ata_23-ord-cmtspcj_piracicaba_28-06-19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17409" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_17409">Compartilhar</a>    </div>
+    <div id="item_17409" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16320">
+            <h2>Ata da 18ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/04/2019<br /></li>
+                <li><label>Postado em:</label> 01/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/16320/18-extra-comitespcj_25-04-19.pdf" target="_blank">18-extra-comitespcj_25-04-19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16320" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_16320">Compartilhar</a>    </div>
+    <div id="item_16320" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_16230">
+            <h2>Ata da 17ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/03/2019<br /></li>
+                <li><label>Postado em:</label> 26/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/16230/ata_17-extra-cmtspcj_piracicaba_29-03-19.pdf" target="_blank">ata_17-extra-cmtspcj_piracicaba_29-03-19.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="16230" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_16230">Compartilhar</a>    </div>
+    <div id="item_16230" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2018</h3>
+        <div>
+        
+                        <div class="block" id="record_15139">
+            <h2>Ata da 22ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/12/2018<br /></li>
+                <li><label>Postado em:</label> 02/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/15139/ata_22-ord-cmtspcj_rio-das-pedras_14-12-18.pdf" target="_blank">ata_22-ord-cmtspcj_rio-das-pedras_14-12-18.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="15139" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_15139">Compartilhar</a>    </div>
+    <div id="item_15139" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_15138">
+            <h2>Ata da 16ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2018<br /></li>
+                <li><label>Postado em:</label> 02/04/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/15138/ata_16-extra-comitespcj_28-06-18.pdf" target="_blank">ata_16-extra-comitespcj_28-06-18.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="15138" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_15138">Compartilhar</a>    </div>
+    <div id="item_15138" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13852">
+            <h2>Ata da 21ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/04/2018<br /></li>
+                <li><label>Postado em:</label> 30/07/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/13852/21-ord_comitespcj_27-04-18.pdf" target="_blank">21-ord_comitespcj_27-04-18.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13852" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_13852">Compartilhar</a>    </div>
+    <div id="item_13852" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2017</h3>
+        <div>
+        
+                        <div class="block" id="record_13687">
+            <h2>Ata da 20ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2017<br /></li>
+                <li><label>Postado em:</label> 04/05/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/13687/20-ord_comitespcj_15-12-17.pdf" target="_blank">20-ord_comitespcj_15-12-17.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13687" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_13687">Compartilhar</a>    </div>
+    <div id="item_13687" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12477">
+            <h2>Ata da 15ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/08/2017<br /></li>
+                <li><label>Postado em:</label> 19/12/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/12477/ata_15-extra-cmtspcj_holambra_11-08-17.pdf" target="_blank">ata_15-extra-cmtspcj_holambra_11-08-17.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12477" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_12477">Compartilhar</a>    </div>
+    <div id="item_12477" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12272">
+            <h2>Ata da 19ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2017<br /></li>
+                <li><label>Postado em:</label> 31/08/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/12272/19-ord_comitespcj_31-03-17.pdf" target="_blank">19-ord_comitespcj_31-03-17.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12272" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_12272">Compartilhar</a>    </div>
+    <div id="item_12272" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2016</h3>
+        <div>
+        
+                        <div class="block" id="record_12109">
+            <h2>Ata da 18ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/12/2016<br /></li>
+                <li><label>Postado em:</label> 05/04/2017</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/12109/18-ord_comitespcj_16-12-16.pdf" target="_blank">18-ord_comitespcj_16-12-16.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12109" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_12109">Compartilhar</a>    </div>
+    <div id="item_12109" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_11908">
+            <h2>Ata da 17ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/06/2016<br /></li>
+                <li><label>Postado em:</label> 28/12/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/11908/ata_17-ord-cmtspcj_extrema_24-06-16.pdf" target="_blank">ata_17-ord-cmtspcj_extrema_24-06-16.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11908" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_11908">Compartilhar</a>    </div>
+    <div id="item_11908" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2015</h3>
+        <div>
+        
+                        <div class="block" id="record_10686">
+            <h2>Ata da 16ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/12/2015<br /></li>
+                <li><label>Postado em:</label> 28/06/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/10686/16-ord_comitespcj_04-12-15.pdf" target="_blank">16-ord_comitespcj_04-12-15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10686" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_10686">Compartilhar</a>    </div>
+    <div id="item_10686" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10514">
+            <h2>Ata da 14ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/10/2015<br /></li>
+                <li><label>Postado em:</label> 01/02/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/10514/14-ext_comitespcj_23-10-15.pdf" target="_blank">14-ext_comitespcj_23-10-15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10514" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_10514">Compartilhar</a>    </div>
+    <div id="item_10514" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10513">
+            <h2>Ata da 13ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/08/2015<br /></li>
+                <li><label>Postado em:</label> 01/02/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/10513/13-ext_comitespcj_12-08-15.pdf" target="_blank">13-ext_comitespcj_12-08-15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10513" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_10513">Compartilhar</a>    </div>
+    <div id="item_10513" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10512">
+            <h2>Ata da 15ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/03/2015<br /></li>
+                <li><label>Postado em:</label> 01/02/2016</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/10512/15-ord_comitespcj_27-03-15.pdf" target="_blank">15-ord_comitespcj_27-03-15.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10512" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_10512">Compartilhar</a>    </div>
+    <div id="item_10512" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2014</h3>
+        <div>
+        
+                        <div class="block" id="record_8728">
+            <h2>Ata da 14ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2014<br /></li>
+                <li><label>Postado em:</label> 06/04/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8728/ata-da-14-reuniao-ordinaria-dos-comites-pcj_-realizada-em-12_12_2014-corrigida.pdf" target="_blank">ata-da-14-reuniao-ordinaria-dos-comites-pcj_-realizada-em-12_12_2014-corrigida.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8728" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_8728">Compartilhar</a>    </div>
+    <div id="item_8728" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_8412">
+            <h2>Ata da 12ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/09/2014<br /></li>
+                <li><label>Postado em:</label> 20/02/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8412/12-ext_comitespcj_26-09-14-1.pdf" target="_blank">12-ext_comitespcj_26-09-14-1.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8412" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_8412">Compartilhar</a>    </div>
+    <div id="item_8412" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_8411">
+            <h2>Ata da 11ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/08/2014<br /></li>
+                <li><label>Postado em:</label> 20/02/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8411/11-ext_comitespcj_08-08-14.pdf" target="_blank">11-ext_comitespcj_08-08-14.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8411" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_8411">Compartilhar</a>    </div>
+    <div id="item_8411" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_8410">
+            <h2>Ata da 13ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/03/2014<br /></li>
+                <li><label>Postado em:</label> 20/02/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8410/13-ord_comitespcj_27-03-14.pdf" target="_blank">13-ord_comitespcj_27-03-14.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8410" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_8410">Compartilhar</a>    </div>
+    <div id="item_8410" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2013</h3>
+        <div>
+        
+                        <div class="block" id="record_2264">
+            <h2>Ata da 12ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/11/2013<br /></li>
+                <li><label>Postado em:</label> 25/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2264/ata_12rd-cmtspcj_campinas_07-11-13-corrigido.pdf" target="_blank">ata_12rd-cmtspcj_campinas_07-11-13-corrigido.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2264" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_2264">Compartilhar</a>    </div>
+    <div id="item_2264" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2263">
+            <h2>Ata da 11ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/03/2013<br /></li>
+                <li><label>Postado em:</label> 25/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/2263/11-ord_comitespcj_27-03-13.pdf" target="_blank">11-ord_comitespcj_27-03-13.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2263" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_2263">Compartilhar</a>    </div>
+    <div id="item_2263" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2012</h3>
+        <div>
+        
+                        <div class="block" id="record_2262">
+            <h2>Ata da 10ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/12/2012<br /></li>
+                <li><label>Postado em:</label> 25/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://comitespcj.org.br/images/Download/10-Ord_ComitesPCJ_14-12-12.pdf" ><span title="http://comitespcj.org.br/images/Download/10-Ord_ComitesPCJ_14-12-12.pdf">http://comitespcj.org.br/images/Download/10-Ord_ComitesPCJ_14-12-12.pdf</span></a></li>
+                                                                                        </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2262" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_2262">Compartilhar</a>    </div>
+    <div id="item_2262" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2261">
+            <h2>Ata da 10ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/12/2012<br /></li>
+                <li><label>Postado em:</label> 25/04/2014</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                                                        <li><a href="http://comitespcj.org.br/images/Download/10-Ext_ComitesPCJ_14-12-12.pdf" ><span title="http://comitespcj.org.br/images/Download/10-Ext_ComitesPCJ_14-12-12.pdf">http://comitespcj.org.br/images/Download/10-Ext_ComitesPCJ_14-12-12.pdf</span></a></li>
+                                                                                        </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2261" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_2261">Compartilhar</a>    </div>
+    <div id="item_2261" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2205">
+            <h2>Ata da 9ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/07/2012<br /></li>
+                <li><label>Postado em:</label> 22/08/2013</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/2205/9-ext_comitespcj_31-07-12.pdf" target="_blank">9-ext_comitespcj_31-07-12.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2205" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_2205">Compartilhar</a>    </div>
+    <div id="item_2205" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_2117">
+            <h2>Ata da 9ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2012<br /></li>
+                <li><label>Postado em:</label> 07/08/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/2117/9-ord_30_03_12.pdf" target="_blank">9-ord_30_03_12.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="2117" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_2117">Compartilhar</a>    </div>
+    <div id="item_2117" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2011</h3>
+        <div>
+        
+                        <div class="block" id="record_1591">
+            <h2>Ata da 8ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/12/2011<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1591/8-ord_comitespcj_16-12-11.pdf" target="_blank">8-ord_comitespcj_16-12-11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1591" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1591">Compartilhar</a>    </div>
+    <div id="item_1591" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1589">
+            <h2>Ata da 6ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/09/2011<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1589/6-ext_comitespcj_23-09-11.pdf" target="_blank">6-ext_comitespcj_23-09-11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1589" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1589">Compartilhar</a>    </div>
+    <div id="item_1589" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1590">
+            <h2>Ata da 7ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2011<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1590/7-ext_comitespcj_16-12-11.pdf" target="_blank">7-ext_comitespcj_16-12-11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1590" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1590">Compartilhar</a>    </div>
+    <div id="item_1590" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1588">
+            <h2>Ata da 5ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2011<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1588/5-ext_comitespcj_28-06-11.pdf" target="_blank">5-ext_comitespcj_28-06-11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1588" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1588">Compartilhar</a>    </div>
+    <div id="item_1588" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1592">
+            <h2>Ata da 7ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2011<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1592/7-ord_comitespcj_31-03-11.pdf" target="_blank">7-ord_comitespcj_31-03-11.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1592" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1592">Compartilhar</a>    </div>
+    <div id="item_1592" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2010</h3>
+        <div>
+        
+                        <div class="block" id="record_1594">
+            <h2>Ata da 6ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2010<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1594/6-ord_comitespcj_09-12-10.pdf" target="_blank">6-ord_comitespcj_09-12-10.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1594" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1594">Compartilhar</a>    </div>
+    <div id="item_1594" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1586">
+            <h2>Ata da 4ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/08/2010<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1586/4-ext_comitespcj_13-08-10.pdf" target="_blank">4-ext_comitespcj_13-08-10.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1586" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1586">Compartilhar</a>    </div>
+    <div id="item_1586" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1596">
+            <h2>Ata da 5ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/03/2010<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1596/5-ord_comitespcj_19-03-10.pdf" target="_blank">5-ord_comitespcj_19-03-10.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1596" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1596">Compartilhar</a>    </div>
+    <div id="item_1596" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2009</h3>
+        <div>
+        
+                        <div class="block" id="record_1595">
+            <h2>Ata da 4ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/2009<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1595/4-ord_comitespcj_11-12-09.pdf" target="_blank">4-ord_comitespcj_11-12-09.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1595" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1595">Compartilhar</a>    </div>
+    <div id="item_1595" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1585">
+            <h2>Ata da 3ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/08/2009<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1585/3-ext_comitespcj_28-08-09.pdf" target="_blank">3-ext_comitespcj_28-08-09.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1585" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1585">Compartilhar</a>    </div>
+    <div id="item_1585" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1584">
+            <h2>Ata da 2ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/05/2009<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1584/2-ext-comitespcj_21-05-09.pdf" target="_blank">2-ext-comitespcj_21-05-09.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1584" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1584">Compartilhar</a>    </div>
+    <div id="item_1584" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1593">
+            <h2>Ata da 3ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2009<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1593/3-ord-comitespcj_31-03-09.pdf" target="_blank">3-ord-comitespcj_31-03-09.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1593" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1593">Compartilhar</a>    </div>
+    <div id="item_1593" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2008</h3>
+        <div>
+        
+                        <div class="block" id="record_1587">
+            <h2>Ata da 2ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2008<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1587/2-ord-comitespcj_12-12-08.pdf" target="_blank">2-ord-comitespcj_12-12-08.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1587" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1587">Compartilhar</a>    </div>
+    <div id="item_1587" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19209">
+            <h2>Ata da 1ª Reunião Extraordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/09/2008<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/19209/1-ext-comitespcj_18-09-08.pdf" target="_blank">1-ext-comitespcj_18-09-08.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19209" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_19209">Compartilhar</a>    </div>
+    <div id="item_19209" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19212">
+            <h2>Ata da Reunião Extraordinária do CBH-PCJ, do PCJ FEDERAL e do CBH-PJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/06/2008<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/19212/ext_cbh-pcj_pcj-federal_cbh-pj_27-06-08.pdf" target="_blank">ext_cbh-pcj_pcj-federal_cbh-pj_27-06-08.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19212" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_19212">Compartilhar</a>    </div>
+    <div id="item_19212" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1583">
+            <h2>Ata da 1ª Reunião Ordinária dos Comitês PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/06/2008<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1583/1-ord_comitespcj_27-06-08.pdf" target="_blank">1-ord_comitespcj_27-06-08.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1583" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1583">Compartilhar</a>    </div>
+    <div id="item_1583" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19213">
+            <h2>Ata da 7ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/03/2008<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/19213/7-ext-conjunta_18-03-08.pdf" target="_blank">7-ext-conjunta_18-03-08.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19213" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_19213">Compartilhar</a>    </div>
+    <div id="item_19213" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2007</h3>
+        <div>
+        
+                        <div class="block" id="record_19214">
+            <h2>Ata da 6ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/12/2007<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/19214/6-ext-conjunta_20-12-07.pdf" target="_blank">6-ext-conjunta_20-12-07.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19214" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_19214">Compartilhar</a>    </div>
+    <div id="item_19214" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1577">
+            <h2>Ata da 8ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/10/2007<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1577/8-ord-conjunta_05-10-07.pdf" target="_blank">8-ord-conjunta_05-10-07.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1577" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1577">Compartilhar</a>    </div>
+    <div id="item_1577" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1576">
+            <h2>Ata da 5ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/08/2007<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1576/5-extra-conjunta_17-08-07.pdf" target="_blank">5-extra-conjunta_17-08-07.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1576" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1576">Compartilhar</a>    </div>
+    <div id="item_1576" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1579">
+            <h2>Ata da 7ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2007<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1579/7-ord-conjunta_30-03-07.pdf" target="_blank">7-ord-conjunta_30-03-07.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1579" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1579">Compartilhar</a>    </div>
+    <div id="item_1579" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2006</h3>
+        <div>
+        
+                        <div class="block" id="record_1581">
+            <h2>Ata da 6ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2006<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1581/6-ord-conjunta_12-12-06.pdf" target="_blank">6-ord-conjunta_12-12-06.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1581" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1581">Compartilhar</a>    </div>
+    <div id="item_1581" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1574">
+            <h2>Ata da 4ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/09/2006<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1574/4-extra-conjunta_28-09-06.pdf" target="_blank">4-extra-conjunta_28-09-06.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1574" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1574">Compartilhar</a>    </div>
+    <div id="item_1574" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1582">
+            <h2>Ata da 5ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/05/2006<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1582/5-ord-conjunta_05-05-06.pdf" target="_blank">5-ord-conjunta_05-05-06.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1582" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1582">Compartilhar</a>    </div>
+    <div id="item_1582" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2005</h3>
+        <div>
+        
+                        <div class="block" id="record_1580">
+            <h2>Ata da 4ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/2005<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1580/4-ord-conjunta_30-11-05.pdf" target="_blank">4-ord-conjunta_30-11-05.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1580" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1580">Compartilhar</a>    </div>
+    <div id="item_1580" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1573">
+            <h2>Ata da 3ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/10/2005<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1573/3-extra-conjunta_21-10-05.pdf" target="_blank">3-extra-conjunta_21-10-05.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1573" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1573">Compartilhar</a>    </div>
+    <div id="item_1573" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1578">
+            <h2>Ata da 3ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2005<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1578/3-ord-conjunta_31-03-05.pdf" target="_blank">3-ord-conjunta_31-03-05.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1578" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1578">Compartilhar</a>    </div>
+    <div id="item_1578" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2004</h3>
+        <div>
+        
+                        <div class="block" id="record_1575">
+            <h2>Ata da 2ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/11/2004<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1575/2-ord-conjunta_05-11-04.pdf" target="_blank">2-ord-conjunta_05-11-04.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1575" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1575">Compartilhar</a>    </div>
+    <div id="item_1575" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1571">
+            <h2>Ata da 2ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/07/2004<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1571/2-extra-conjunta_30-07-04.pdf" target="_blank">2-extra-conjunta_30-07-04.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1571" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1571">Compartilhar</a>    </div>
+    <div id="item_1571" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1572">
+            <h2>Ata da 1ª Reunião Ordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/06/2004<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1572/1-ord-conjunta_01-06-04.pdf" target="_blank">1-ord-conjunta_01-06-04.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1572" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1572">Compartilhar</a>    </div>
+    <div id="item_1572" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1570">
+            <h2>Ata da 1ª Reunião Extraordinária Conjunta dos Comitês PCJ (CBH-PCJ e PCJ FEDERAL)</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/04/2004<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1570/1-extra-conjunta_16-04-04.pdf" target="_blank">1-extra-conjunta_16-04-04.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1570" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1570">Compartilhar</a>    </div>
+    <div id="item_1570" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2003</h3>
+        <div>
+        
+                        <div class="block" id="record_1568">
+            <h2>Ata da 20ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/12/2003<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1568/20-ord-cbh-pcj_10-12-03.pdf" target="_blank">20-ord-cbh-pcj_10-12-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1568" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1568">Compartilhar</a>    </div>
+    <div id="item_1568" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1567">
+            <h2>Ata da 15ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/05/2003<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1567/15-extra-cbh-pcj_22-05-03.pdf" target="_blank">15-extra-cbh-pcj_22-05-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1567" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1567">Compartilhar</a>    </div>
+    <div id="item_1567" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1569">
+            <h2>Ata da 19ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2003<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1569/19-ord-cbh-pcj_31-03-03.pdf" target="_blank">19-ord-cbh-pcj_31-03-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1569" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1569">Compartilhar</a>    </div>
+    <div id="item_1569" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1566">
+            <h2>Ata da 14ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/01/2003<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1566/14-extra-cbh-pcj_20-01-03.pdf" target="_blank">14-extra-cbh-pcj_20-01-03.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1566" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1566">Compartilhar</a>    </div>
+    <div id="item_1566" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2002</h3>
+        <div>
+        
+                        <div class="block" id="record_1565">
+            <h2>Ata da 13ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/12/2002<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1565/13-extra-cbh-pcj_03-12-02.pdf" target="_blank">13-extra-cbh-pcj_03-12-02.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1565" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1565">Compartilhar</a>    </div>
+    <div id="item_1565" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1563">
+            <h2>Ata da 18ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/09/2002<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1563/18-ord-cbh-pcj_10-09-02.pdf" target="_blank">18-ord-cbh-pcj_10-09-02.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1563" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1563">Compartilhar</a>    </div>
+    <div id="item_1563" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1564">
+            <h2>Ata da 12ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/05/2002<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1564/12-extra-cbh-pcj_24-05-02.pdf" target="_blank">12-extra-cbh-pcj_24-05-02.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1564" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1564">Compartilhar</a>    </div>
+    <div id="item_1564" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1562">
+            <h2>Ata da 17ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/03/2002<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1562/17-ord-cbh-pcj_28-03-02.pdf" target="_blank">17-ord-cbh-pcj_28-03-02.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1562" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1562">Compartilhar</a>    </div>
+    <div id="item_1562" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2001</h3>
+        <div>
+        
+                        <div class="block" id="record_1561">
+            <h2>Ata da 11ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 29/11/2001<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1561/11-extra-cbh-pcj_29-11-01.pdf" target="_blank">11-extra-cbh-pcj_29-11-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1561" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1561">Compartilhar</a>    </div>
+    <div id="item_1561" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1560">
+            <h2>Ata da 16ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/10/2001<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1560/16-ord-cbh-pcj_03-10-01.pdf" target="_blank">16-ord-cbh-pcj_03-10-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1560" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1560">Compartilhar</a>    </div>
+    <div id="item_1560" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1559">
+            <h2>Ata da 10ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/05/2001<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1559/10-extra-cbh-pcj_18-05-01.pdf" target="_blank">10-extra-cbh-pcj_18-05-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1559" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1559">Compartilhar</a>    </div>
+    <div id="item_1559" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1558">
+            <h2>Ata da 15ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/2001<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1558/15-ord-cbh-pcj_30-03-01.pdf" target="_blank">15-ord-cbh-pcj_30-03-01.pdf</a></li>
+                                    <li><a href="/public/uploads/records//CBH-PCJ/1558/15-ord-cbh-pcj_30-03-01.pdf" target="_blank">15-ord-cbh-pcj_30-03-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1558" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1558">Compartilhar</a>    </div>
+    <div id="item_1558" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2000</h3>
+        <div>
+        
+                        <div class="block" id="record_1554">
+            <h2>Ata da 14ª Reunião Ordinária do Comitê de Bacias Hidrográficas dos rios Piracicaba, Capivari e Jundiaí</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/11/2000<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1554/14-ord-cbh-pcj_14-11-00.pdf" target="_blank">14-ord-cbh-pcj_14-11-00.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1554" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1554">Compartilhar</a>    </div>
+    <div id="item_1554" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1557">
+            <h2>Ata da 9ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/05/2000<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1557/9-extra-cbh-pcj_09-05-00.pdf" target="_blank">9-extra-cbh-pcj_09-05-00.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1557" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1557">Compartilhar</a>    </div>
+    <div id="item_1557" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1551">
+            <h2>Ata da 13ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/02/2000<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1551/13-ord-cbh-pcj_25-02-00.pdf" target="_blank">13-ord-cbh-pcj_25-02-00.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1551" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1551">Compartilhar</a>    </div>
+    <div id="item_1551" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1999</h3>
+        <div>
+        
+                        <div class="block" id="record_1549">
+            <h2>Ata da 12ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/1999<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1549/12-ord-cbh-pcj_30-11-99.pdf" target="_blank">12-ord-cbh-pcj_30-11-99.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1549" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1549">Compartilhar</a>    </div>
+    <div id="item_1549" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1556">
+            <h2>Ata da 8ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/07/1999<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1556/8-extra-cbh-pcj_02-07-99.pdf" target="_blank">8-extra-cbh-pcj_02-07-99.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1556" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1556">Compartilhar</a>    </div>
+    <div id="item_1556" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1555">
+            <h2>Ata da 7ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/05/1999<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1555/7-extra-cbh-pcj_05-05-99.pdf" target="_blank">7-extra-cbh-pcj_05-05-99.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1555" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1555">Compartilhar</a>    </div>
+    <div id="item_1555" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1548">
+            <h2>Ata da 11ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/03/1999<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1548/11-ord-cbh-pcj_30-03-99.pdf" target="_blank">11-ord-cbh-pcj_30-03-99.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1548" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1548">Compartilhar</a>    </div>
+    <div id="item_1548" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1553">
+            <h2>Ata da 6ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/02/1999<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1553/6-extra-cbh-pcj_11-02-99.pdf" target="_blank">6-extra-cbh-pcj_11-02-99.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1553" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1553">Compartilhar</a>    </div>
+    <div id="item_1553" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1998</h3>
+        <div>
+        
+                        <div class="block" id="record_1547">
+            <h2>Ata da 10ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/08/1998<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1547/10-ord-cbh-pcj_21-08-98.pdf" target="_blank">10-ord-cbh-pcj_21-08-98.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1547" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1547">Compartilhar</a>    </div>
+    <div id="item_1547" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1552">
+            <h2>Ata da 5ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/04/1998<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1552/5-extra-cbh-pcj_28-04-98.pdf" target="_blank">5-extra-cbh-pcj_28-04-98.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1552" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1552">Compartilhar</a>    </div>
+    <div id="item_1552" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1997</h3>
+        <div>
+        
+                        <div class="block" id="record_1545">
+            <h2>Ata da 9ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/09/1997<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1545/9-ord-cbh-pcj_19-09-97.pdf" target="_blank">9-ord-cbh-pcj_19-09-97.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1545" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1545">Compartilhar</a>    </div>
+    <div id="item_1545" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1550">
+            <h2>Ata da 4ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/04/1997<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1550/4-extra-cbh-pcj_28-04-97.pdf" target="_blank">4-extra-cbh-pcj_28-04-97.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1550" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1550">Compartilhar</a>    </div>
+    <div id="item_1550" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1544">
+            <h2>Ata da 8ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/03/1997<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1544/8-ord-cbh-pcj_25-03-97.pdf" target="_blank">8-ord-cbh-pcj_25-03-97.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1544" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1544">Compartilhar</a>    </div>
+    <div id="item_1544" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1996</h3>
+        <div>
+        
+                        <div class="block" id="record_1546">
+            <h2>Ata da 7ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/12/1996<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1546/7-ord-cbh-pcj_17-12-96.pdf" target="_blank">7-ord-cbh-pcj_17-12-96.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1546" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1546">Compartilhar</a>    </div>
+    <div id="item_1546" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1543">
+            <h2>Ata da 6ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/09/1996<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1543/6-ord-cbh-pcj_06-09-96.pdf" target="_blank">6-ord-cbh-pcj_06-09-96.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1543" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1543">Compartilhar</a>    </div>
+    <div id="item_1543" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1542">
+            <h2>Ata da 3ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/03/1996<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1542/3-extra-cbh-pcj_15-03-96.pdf" target="_blank">3-extra-cbh-pcj_15-03-96.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1542" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1542">Compartilhar</a>    </div>
+    <div id="item_1542" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1541">
+            <h2>Ata da 2ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/01/1996<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1541/2-extra-cbh-pcj_12-01-96.pdf" target="_blank">2-extra-cbh-pcj_12-01-96.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1541" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1541">Compartilhar</a>    </div>
+    <div id="item_1541" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1995</h3>
+        <div>
+        
+                        <div class="block" id="record_1540">
+            <h2>Ata da 5ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/11/1995<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1540/5-ord-cbh-pcj_10-11-95.pdf" target="_blank">5-ord-cbh-pcj_10-11-95.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1540" data-year="1995" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1540">Compartilhar</a>    </div>
+    <div id="item_1540" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1539">
+            <h2>Ata da 1ª Reunião Extraordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/07/1995<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1539/1-extra-cbh-pcj_31-07-95.pdf" target="_blank">1-extra-cbh-pcj_31-07-95.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1539" data-year="1995" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1539">Compartilhar</a>    </div>
+    <div id="item_1539" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1538">
+            <h2>Ata da 4ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/1995<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1538/4-ord-cbh-pcj_31-03-95.pdf" target="_blank">4-ord-cbh-pcj_31-03-95.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1538" data-year="1995" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1538">Compartilhar</a>    </div>
+    <div id="item_1538" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1994</h3>
+        <div>
+        
+                        <div class="block" id="record_1537">
+            <h2>Ata da 3ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/12/1994<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1537/3-ord-cbh-pcj_21-12-94.pdf" target="_blank">3-ord-cbh-pcj_21-12-94.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1537" data-year="1994" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1537">Compartilhar</a>    </div>
+    <div id="item_1537" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1536">
+            <h2>Ata da 2ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/04/1994<br /></li>
+                <li><label>Postado em:</label> 13/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1536/2-ord-cbh-pcj_15-04-94.pdf" target="_blank">2-ord-cbh-pcj_15-04-94.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1536" data-year="1994" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1536">Compartilhar</a>    </div>
+    <div id="item_1536" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1993</h3>
+        <div>
+        
+                        <div class="block" id="record_1533">
+            <h2>Ata da 1ª Reunião Ordinária do CBH-PCJ</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/11/1993<br /></li>
+                <li><label>Postado em:</label> 10/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-PCJ/1533/1-ord-cbh-pcj_18-11-93.pdf" target="_blank">1-ord-cbh-pcj_18-11-93.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1533" data-year="1993" data-url="http://sigrh.sp.gov.br:443/cbhpcj/atas#record_1533">Compartilhar</a>    </div>
+    <div id="item_1533" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhpcj/atas#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-PCJ - Comitê das Bacias Hidrográficas dos Rios Piracicaba,Capivari e Jundiaí</h2>
+                <li>
+					Rua Alfredo Guedes, 1949 - Sala 604											 - Alto																 - Piracicaba																 - 13416-901																 - SP					                </li>
+                <li> Tel: (19) 3437-2100 Opção 2 | Fax:  | contato: se.pcj@comites.baciaspcj.org.br</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        DIRETORIA DE RECURSOS HÍDRICOS (DRHi)      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Prédio 12 - 3º andar - Alto de Pinheiros - São Paulo - SP - CEP: 05459-900    <br />
+     Telefone: (11) 3133-4113 - E-mail: contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp/" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
