@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027' >Processo Eleitoral - Sociedade Civil 2025-2027</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-BPG</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhbpg/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhbpg/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhbpg/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhbpg/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhbpg/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhbpg/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhbpg/estrutura' >Estrutura</a></li>
+                                                                        <li><a href='/cbhbpg/noticias' >Notícias</a></li>
+                                                                        <li class="last"><a href='/cbhbpg/representantes' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhbpg/ctea/representantesctea' >CT-EA</a></li>
+                                                            <li><a href='/cbhbpg/ctplagrhi/estrutura' >CT-PLAGRHI</a></li>
+                                                            <li class="last"><a href='javascript:void(0);' >GT-OL</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="8" data-year="2025" data-unity="11" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="09" data-year="2025" data-unity="11" data-scope="global">Setembro/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="10" data-year="2025" data-unity="11" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day calendar-event" title="<h2>Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA - CRH)  <br />  <b>Data do evento:</b> 02/09/2025  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/18745'>Ver mais</a></div>">2</td><td class="calendar-day calendar-event" title="<h2>Reagendada_Reunião Conjunta CORHI_CTAJI_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI - CRH)  <br />  <b>Data do evento:</b> 03/09/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/338/events/18716'>Ver mais</a></div>">3</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento (CTPLAN- CRH)  <br />  <b>Data do evento:</b> 04/09/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/340/events/18422'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day calendar-event" title="<h2>Independência do Brasil </h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 07/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/17148'>Ver mais</a></div>">7</td><td class="calendar-day calendar-event" title="<h2>26º ENCOB_Encontro Nacional de Comitês de Bacias  Hidrográficas</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 08/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória e Vila Velha _Espirito Santo  <br />  <a href='/pageitems/451/events/18652'>Ver mais</a></div>">8</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas (CTPA - CRH)  <br />  <b>Data do evento:</b> 09/09/2025  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/502/events/18416'>Ver mais</a></div><h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB - CRH)  <br />  <b>Data do evento:</b> 09/09/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/339/events/18433'>Ver mais</a></div><h2>26º ENCOB_Encontro Nacional de Comitês de Bacias  Hidrográficas</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 09/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória e Vila Velha _Espirito Santo  <br />  <a href='/pageitems/451/events/18653'>Ver mais</a></div><h2>Prevista Reunião Conjunta CORHI_CTAJI_CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI - CRH)  <br />  <b>Data do evento:</b> 09/09/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/338/events/18743'>Ver mais</a></div>">9</td><td class="calendar-day calendar-event" title="<h2>26º ENCOB_Encontro Nacional de Comitês de Bacias  Hidrográficas</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 10/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória e Vila Velha _Espirito Santo  <br />  <a href='/pageitems/451/events/18654'>Ver mais</a></div>">10</td><td class="calendar-day calendar-event" title="<h2>26º ENCOB_Encontro Nacional de Comitês de Bacias  Hidrográficas</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 11/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória e Vila Velha _Espirito Santo  <br />  <a href='/pageitems/451/events/18655'>Ver mais</a></div>">11</td><td class="calendar-day calendar-event" title="<h2>26º ENCOB_Encontro Nacional de Comitês de Bacias  Hidrográficas</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 12/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória e Vila Velha _Espirito Santo  <br />  <a href='/pageitems/451/events/18656'>Ver mais</a></div>">12</td><td class="calendar-day calendar-event" title="<h2>26º ENCOB_Encontro Nacional de Comitês de Bacias  Hidrográficas</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 13/09/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória e Vila Velha _Espirito Santo  <br />  <a href='/pageitems/451/events/18657'>Ver mais</a></div>">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day">16</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM - CRH)  <br />  <b>Data do evento:</b> 17/09/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/341/events/18428'>Ver mais</a></div>">17</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 18/09/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/451/events/18459'>Ver mais</a></div>">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day">23</td><td class="calendar-day">24</td><td class="calendar-day calendar-event" title="<h2>Reagendada_Reunião CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 25/09/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Sala de Reuniões do CONSEMA   <br />  <a href='/pageitems/332/events/17235'>Ver mais</a></div>">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="8" data-year="2025" data-unity="11" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="09" data-year="2025" data-unity="11" data-scope="scoped">Setembro/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="10" data-year="2025" data-unity="11" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day calendar-event" title="<h2>1ª Reunião Extraordinária da CT-TE em 2025 (PRESENCIAL)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 04/09/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Fatec Lins  <br />  <a href='/pageitems/315/events/18718'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td></tr><tr class="calendar-row"><td class="calendar-day">7</td><td class="calendar-day">8</td><td class="calendar-day">9</td><td class="calendar-day calendar-event" title="<h2>4ª Reunião CTPG</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 10/09/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18689'>Ver mais</a></div>">10</td><td class="calendar-day calendar-event" title="<h2>3ª Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 11/09/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18697'>Ver mais</a></div>">11</td><td class="calendar-day">12</td><td class="calendar-day">13</td></tr><tr class="calendar-row"><td class="calendar-day">14</td><td class="calendar-day">15</td><td class="calendar-day calendar-event" title="<h2>5ª Reunião CTSUM</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 16/09/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18472'>Ver mais</a></div>">16</td><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>Reagendada_ Reunião Extraordinária  COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> Conselho de Orientação do Fundo Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 18/09/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/337/events/18715'>Ver mais</a></div>">18</td><td class="calendar-day">19</td><td class="calendar-day">20</td></tr><tr class="calendar-row"><td class="calendar-day">21</td><td class="calendar-day">22</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-PAI</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 23/09/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Online  <br />  <a href='/pageitems/330/events/18732'>Ver mais</a></div>">23</td><td class="calendar-day">24</td><td class="calendar-day">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td></tr><tr class="calendar-row"><td class="calendar-day">28</td><td class="calendar-day">29</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião Extraordinária COFEHIDRO</h2><div class='item'>  <b>Unidade:</b> Conselho de Orientação do Fundo Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 30/09/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/337/events/18744'>Ver mais</a></div>">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027" class="banner">
+            <img src='/public/uploads/banners//17358440606794.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Representantes</h1>
+
+
+
+
+  <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Mesa Diretora    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Viradouro</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Antônio Carlos Ribeiro de Souza              </b>
+                              <br />
+                PRESIDENTE                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Cooperativa Coopercolombia</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                César Renato Rotessi Salvi               </b>
+                              <br />
+                VICE-PRESIDENTE                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Departamento de Águas e Energia Elétrica</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Claudio Daher Garcia              </b>
+                              <br />
+                SECRETÁRIO EXECUTIVO                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luciana Alves da Cunha Ribeiro de Paula              </b>
+                              <br />
+                (SECRETÁRIO EXECUTIVO ADJUNTO)                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      União    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Instituto Federal de São Paulo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Katia Kayahara da Silva              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Conselho Regional de Engenharia e Agronomia do Estado de São Paulo - CREA/SP</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Estado    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria do Estado da Saúde - Grupo de Vigilancia Sanitária</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Maria Aparecida Neves              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Aymara Regina Alli              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Estado de Infraestrutura e  Meio Ambiente-SIMA/CFB</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Fabiano Botta Tonissi               </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Rosa Maria Tóro Tonissi              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Departamento de Águas e Energia Elétrica</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Claudio Daher Garcia              </b>
+                              <br />
+                Secretário Executivo                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Luciana A. C. Ribeiro de Paula              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Escritório de Desenvolvimento Rural - EDR (CATI)</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Rolando Salomão C. C. do Nascimento              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                João Amadeu Giacchetto              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">CETESB - Agência Ambiental de Barretos</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Davi Faleiros              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Letícia Franco Leonel              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Polícia Militar do Estado de São Paulo - Policia Ambiental</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Secretaria de Estado da Educação - Diretoria de Ensino de Barretos</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Departamento de Estradas e Rodagens - DER</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Herman Guidolin Reis              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Gilberto Vergilio              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Município    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Jaborandi</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                André Yooiti Muramoto              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Silvio Ademir Brunozzi              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Colina</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Diab Taha              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Jaci Salim Paro              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Colômbia</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Maria Inácia M. Freitas              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Barretos</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Murilo de Souza Ferreira               </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Guaraci</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Renato Azeda Ribeiro de Aguiar              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Claudio dos Santos              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Terra Roxa</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Altair</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Morro Agudo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Luís Fernando Cardoso              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Orlândia</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Bebedouro</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Aparecido Tadeu Pavani              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Icém</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Messias Paulo Ribeiro               </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Viradouro</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Antônio Carlos Ribeiro de Souza              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Prefeitura Municipal de Guaíra</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Estefane do Nascimento Leoncini Siqueira              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Usuários das Águas    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Centro das Indústrias do Estado de São Paulo - CIESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marcelo Regula Maçonetto                 </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                                          </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Federação das Indústrias do Estado de São Paulo - FIESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                                                  <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Alexandre Luis  Almeida Vilella              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associação Brasileira do Agronegócio da Região de Ribeirão Preto - ABAGRP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Mônica C. M. Bergamaschi              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                José Rodolfo Pizzo Lomas              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Sindicato Rural Vale do Rio Grande - SIRVARIG</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Osvaldo de Luca Filho              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Enio Melo Rodrigues                 </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Serviço Autônomo de Água e Esgoto de Bebedouro - SAAEB</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Leandro Torelli              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Vinícius Dantas              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Sindicato Rural de Bebedouro</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marco Aurélio Gonzalez              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                José Osvaldo Junqueira Franco              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associação Comercial, Industrial e Agrícola de Bebedouro - ACIAB</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Angela Maria Macuco do Prado Brunelli              </b>
+                              <br />
+                REPRESENTANTE TITULAR                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Telma Alves Magro              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">União da Agroindústria Canavieira do Estado de São Paulo - UNICA</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                André Christyan Bresqui              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                André Elia Neto              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Departamento de Esgoto e Água de Guaíra - DEAGUA</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Sindicato Rural de Morro Agudo</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Roberto Carmanhan de Figueiredo              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Lauriane de Castro Torres Costa              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Saneamento Ambiental de Viradouro - SAV</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Paulo Roberto Argeri Betin                </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Benedito Ricardo Guiselini                </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Serviço Autônomo de Água e Esgoto de Colina - SAAEC</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Ricardo Aparecido Casagrande               </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Fernando Luiz Basso                 </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Serviço Autônomo de Água e Esgoto de Barretos - SAAE</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Marcelo da Cunha Borges              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Rafaela Pereira Soares da Silva              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associação dos Plantadores de Cana do Oeste do Estado de São Paulo - CANAOESTE</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Titular                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>cbh.bpg@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              	<table style="font-size: 14px; text-align: left;">
+								<tr><th>E-mail:</th><td>cbh.bpg@gmail.com</td></tr>															</table>
+
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">SABESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Emerson Silva de Amorim              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Everton Veríssimo Ferreira                 </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Sindicato da Indústria da Fabricação do Álcool do Estado de São Paulo - SIFAESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                João Paulo Camargo Rocha                  </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Giuseppe Eduardo Zermo                </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Sindicato da Indústria da Fabricação de Açúcar no Estado de São Paulo - SIAESP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Gustavo Henrique Alves da Costa              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INDICAÇÃO              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+              <h2 class="heading small-dotted-border representation-header">
+    <b>
+      Sociedade Civil    </b>
+  </h2>
+
+                      <div class="block">
+    <h2 class="heading small-dotted-border">Ordem dos Advogados do Brasil - OAB</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Cicero Pequeno da Silva                </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Elvis Benevides              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Fórum de Desenvolvimento Bebedouro 2000</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Nair Vicenzi Antunesde Quadro              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Marcos Reinaldo de Freitas Vieira              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Centro Universitário da Fundação Educacional de Barretos - UNIFEB</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Claudinei da Cruz               </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Willians Luiz Bueno de Souza              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Patrulha Ecológica de Bebedouro</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                João Antonio dos Reis Gandra              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Ivair Bastos Cordeiro              </b>
+                              <br />
+                Representantes Suplentes                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">União Nacional da Bioenergia - UDOP</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Rafael Camponila Melo              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                SEM INFORMAÇÕES                </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Sind. dos Trabalhadores em Água, Esgoto e Meio Ambiente do Est. de São Paulo - SINTAEMA</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Carlos Roberto Aparecido Guilherme              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Paulo Cesar de Moraes              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Associação Barretense de Engenharia, Arquitetura e Agronomia - ABEAA</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                Kathiucy Tamara da Silva               </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Cristiana Lopes Vilarinho              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+                                <div class="block">
+    <h2 class="heading small-dotted-border">Cooperativa Coopercolômbia</h2>
+        
+    <div style="width: 48%; float: left;">
+                              <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Titular</h2>
+              <br />
+                                      <b>
+                César Renato Rotessi Salvi              </b>
+                              <br />
+                Representante Titular                            <br />
+              
+                      </div>
+                                      <div class="row">&nbsp;</div>
+          <div>
+                          <h2>Suplente</h2>
+              <br />
+                                      <b>
+                Milton Aparecido de Oliveira Figueiredo              </b>
+                              <br />
+                Representante Suplente                            <br />
+              
+                      </div>
+                                      </div>
+
+    <div style="width: 48%; float: right;">
+          </div>
+    <br clear="both" />
+  </div>
+            
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-BPG - Comitê da Bacia Hidrográfica do Baixo Pardo / Grande</h2>
+                <li>
+					Av. 43 n.º 0842 - Bairro Celina - CEP: 14.780-733 - Barretos/SP																				                </li>
+                <li> Tel: (17) 3325-3342 | Fax: (17) 3325-3342 | contato: cbh.bpg@gmail.com</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        DIRETORIA DE RECURSOS HÍDRICOS (DRHi)      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Prédio 12 - 3º andar - Alto de Pinheiros - São Paulo - SP - CEP: 05459-900    <br />
+     Telefone: (11) 3133-4113 - E-mail: contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp/" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
