@@ -1,0 +1,2867 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shorcut icon" href="/favicon.ico">
+        <title>SigRH</title>
+<meta name="description" content='Sistema Integrado de Gerenciamento de Recursos Hídricos do Estado de São Paulo'>
+<meta name="keywords" content='SigRH'>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42575150-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+        <meta charset="utf-8">
+
+        <script type='text/javascript' src='/public/js/jquery.js'></script>        <script type='text/javascript' src='/public/js/jquery.maskedinput.js'></script>        <script type='text/javascript' src='/public/js/jquery.ui.js'></script>        <script type='text/javascript' src='/public/js/jquery.ujs.js'></script>        <script type='text/javascript' src='/public/js/ckeditor/ckeditor.js'></script>        <script type='text/javascript' src='/public/js/ckfinder/ckfinder.js'></script>        <script type='text/javascript' src='/public/js/application.js'></script>        <script type='text/javascript' src='/public/js/calendar.js'></script>        <script type='text/javascript' src='/public/js/jquery.iframe-autoheight.js'></script>        <script type='text/javascript' src='/public/js/jquery.chosen.js'></script>        <script type='text/javascript' src='/public/js/jquery.lightbox.js'></script>
+        <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- collegiate -->
+
+        <!-- Facebook Configuration -->
+        <meta property="og:image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta property="og:title" content="Representantes" />
+        <meta property="og:description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <!-- Google Plus Configuration -->
+        <meta name="image" content="https://sigrh.sp.gov.br/public/images/logo.jpg" />
+        <meta name="title" content="Representantes" />
+        <meta name="description" content="http://sigrh.sp.gov.br:443/cbhsmg/membros" />
+
+        <link href='/public/css/all.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.ui.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.maskedinput.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/calendar.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.chosen.css' rel='stylesheet' type='text/css' media='' />        <link href='/public/css/jquery.lightbox.css' rel='stylesheet' type='text/css' media='' />
+        <!-- Select2 -->
+        <script type='text/javascript' src='/public/js/jquery.select2.js'></script>        <script type='text/javascript' src='/public/js/jquery.select2.pt-BR.js'></script>        <link href='/public/css/jquery.select2.css' rel='stylesheet' type='text/css' media='' />
+        <!-- ScrollUp -->
+        <script type='text/javascript' src='/public/js/jquery.scroll_up.js'></script>        <link href='/public/css/jquery.scroll_up.css' rel='stylesheet' type='text/css' media='' />
+        <!-- qTip -->
+        <script type='text/javascript' src='/public/js/jquery.qtip.js'></script>        <link href='/public/css/jquery.qtip.css' rel='stylesheet' type='text/css' media='' />
+        <!-- <script type="text/javascript" src="https://www.saopaulo.sp.gov.br/barrasp/js/include_full.js.php"></script> -->
+
+                
+    <div id="fb-root"></div>
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="https://connect.facebook.net/pt_BR/all.js#xfbml=1&appId=591548464261983"></script>
+
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js">
+        {
+            lang: "pt-BR", parsetags: 'explicit'}
+    </script>
+
+    <script type="text/javascript">
+        $R.urlBase = '';
+        $R.rewrite = true;
+    </script>
+</head>
+<body>
+    <div id="div-iframe" style="background: #E1E2E1; height: 60px; overflow: hidden; width: 100%;">
+  <iframe src="/public/governo/topo.html" frameborder="0" scrolling="no" style="border: none; width: 100%;"></iframe>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("iframe").on("load", function() {
+	        $("#div-iframe").css("height",$(this).contents().find("#header").height()+"px");
+	    });
+	});
+</script>
+
+    <div id="top_logo">
+        <div class="bk">
+            <div class="bk_left"></div>
+            <div class="bk_right"></div>
+        </div>
+        <div class="img">
+          <div class="link_wrapper">
+            <a href='/main' ></a>            <img src='/public/images//signature/logo-header-governo.png' class="logo-header-governo" />          </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="form_share_login">
+            <form name='procurar' action='/pesquisa/resultado' method='GET' id="form_share" >            <input name="palavra_chave" value="" placeholder="Palavra-chave" id="palavra_chave" maxlength="230" />            <input name='procurar' type='submit' value='Procurar' class="submit" id="procurar" />            <div class="index_link" style="padding-left:5px;">
+                <a href='/pesquisa/avancada' >[Busca Avançada]</a>            </div>
+            </form>            <div id="form_login">
+            <a href='/admin/sessions/new' class="button" style="float: right; margin-top: 18px;">Login</a>    </div>
+
+<script>
+    jQuery(function($) {
+        $('#select_collegiate_id').val("<br />
+<b>Notice</b>:  Undefined variable: current_collegiate_id in <b>C:\inetpub\wwwroot\app\views\layout\_login.php</b> on line <b>27</b><br />
+");
+        $('.chosen-select').chosen();
+        $('.select2-select').select2();
+    });
+</script>
+<div id="idiom_links">
+    </div>
+<script type="text/javascript">
+    $('.change_idiom').click(function(e) {
+        e.preventDefault();
+        $.get('/idioms/0/changecurrentidiom', {idiom: $(this).data('idiom')})
+                .done(function(result) {
+                    window.location.reload();
+                });
+    });
+</script>            <div class="clear"></div>
+        </div>
+        <div id="menu_top">
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >SigRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/apresentacaosigrh' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/divisaohidrografica' >Divisão Hidrográfica</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/reunioesdetrabalho' >Reuniões de Trabalho</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='#' >Comunicação</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/materialforummundialdaagua' >8º Fórum Mundial da Água (material)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correnteza' >Correnteza</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/correntezaexpress1' >Correnteza Express</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/logotipos' >Logotipos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/news?highlights=1' >Notícias</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/publicacoes' >Publicações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/subsidiosparafomentoasoperacoesreembolsaveis' >Subsídios para fomento às operações reembolsáveis</a> 
+        </li>        
+                                <li class="last">
+                    <a href='https://www.youtube.com/SigrhSP' >TV Água</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                                                   <a href='https://youtu.be/r2u8_yIAa4w' target="_blank">Breve histórico do Sistema paulista de Recursos Hídricos (Vídeo)</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/sitesrelacionados' >Sites Relacionados</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/agenciadebacia' >Agência de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/agenciadebacia' >O que é Agência de Bacia?</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/fabhat/apresentacao' >FABHAT - Fundação Agência da Bacia Hidrográfica do Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agenciapcj/apresentacao' >Agência PCJ - Agência das Bacias dos Rios Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/agevap/apresentacao' >AGEVAP - Associação Pró-Gestão das Águas da Bacia Hidrográfica do Rio Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/fabhsmt/apresentacao' >FABH-SMT - Fundação Agência da Bacia Hidrográfica do Rio Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Comitê de Bacia</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/tiete/apresentacao' >Comitês da Bacia do Rio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Comitês de Rios da União</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                                    <li class="border_bottom">
+                    <a href='http://www.grande.cbh.gov.br/' target="_blank">CBH - Rio Grande</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://paranapanema.org/' target="_blank">CBH - Paranapanema</a> 
+        </li>        
+                                                    <li class="border_bottom">
+                    <a href='http://www.ceivap.org.br/' target="_blank">CEIVAP - Rio Paraíba do Sul</a> 
+        </li>        
+                                                    <li class="last">
+                    <a href='https://www.comitespcj.org.br/' target="_blank">PCJ FEDERAL - Rios Piracicaba, Capivari e Jundiaí</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cbhalpa/apresentacao' >ALPA - Alto Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhap/apresentacao' >AP - Aguapeí e Peixe</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhat/apresentacao' >AT - Alto Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbpg/apresentacao' >BPG - Baixo Pardo/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbs/estrutura' >BS - Baixada Santista</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhbt/apresentacao' >BT - Baixo Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhln/apresentacao' >LN - Litoral Norte</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmogi/apresentacao' >MOGI - Mogi Guaçu</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhmp/apresentacao' >MP - Médio Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpardo/apresentacao' >PARDO - Pardo</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpcj/apresentacao' >PCJ - Piracicaba, Capivari e Jundiaí</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhpp/apresentacao' >PP - Pontal do Paranapanema</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhps/apresentacao' >PS - Paraíba do Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhrb/apresentacao' >RB - Ribeira de Iguape e Litoral Sul</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsjd/apresentacao' >SJD - São José dos Dourados</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsm/apresentacao' >SM - Serra da Mantiqueira</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmg/apresentacao' >SMG - Sapucaí-Mirim/Grande</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhsmt/apresentacao' >SMT - Sorocaba e Médio Tietê</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtb/apresentacao' >TB - Tietê-Batalha</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cbhtg/apresentacaoprincipal' >TG - Turvo Grande</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/cbhtj/apresentacao' >TJ - Tietê-Jacaré</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='/crh/apresentacao' >CRH</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/crh/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027' >Processo Eleitoral - Sociedade Civil 2025-2027</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/agenda' >Agenda</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/cadastropermanentedasociedadecivil' >Cadastro Permanente da Sociedade Civil</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='javascript:void(0);' >Câmaras Técnicas</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/crh/oquesaocamarastecnicas' >O que são Câmaras Técnicas?</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctaji/apresentacao' >Câmara Técnica de Assuntos Jurídicos e Institucionais (CTAJI)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctas/apresentacao' >Câmara Técnica de Águas Subterrâneas (CTAS)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctum/apresentacao' >Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctplan/apresentacao' >Câmara Técnica de Planejamento (CTPLAN)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctea/apresentacao' >Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA)</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/crh/ctcob/apresentacao' >Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB)</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/crh/ctpa/apresentacao' >Câmara Técnica de Proteção das Águas (CTPA)</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/crh/deliberacoes' >Deliberações</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/regimentointerno' >Regimento Interno</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/mocoes' >Moções</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/crh/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >CORHI</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/corhi/apresentacao' >Apresentação</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/documentos' >Documentos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/atas' >Atas</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='/corhi/representantes' >Representantes</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >FEHIDRO</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                                                   <a href='http://www.sigrh.sp.gov.br/cofehidro/sinfehidro' target="_blank">SinFEHIDRO</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/ofehidro' >O FEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agentetecnicoprivado' >Agente Técnico Privado</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/ofehidro' >Orientações Básicas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='https://sigrh.sp.gov.br/cofehidro/indicesdedistribuicaoaoscbhs' >Índices de Distribuição aos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/referenciasdeprecos' >Referências de Preços para financiamento do FEHIDRO</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/relatoriosanuaisdeatividades' >Relatórios Anuais de Atividades</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/cofehidro/roteirostecnicos' >Roteiros Técnicos</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/reestruturacaodofehidro' >Reestruturação do FEHIDRO</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/cofehidro/apresentacao' >COFEHIDRO</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/cofehidro/apresentacao' >Apresentação</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/agenda' >Agenda</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/atas' >Atas</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/deliberacoes' >Deliberações</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/documentos' >Documentos</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='/cofehidro/regimentointerno' >Regimento Interno</a> 
+        </li>        
+                                <li class="last">
+                    <a href='/cofehidro/representantes' >Representantes</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/cofehidro/despesadecusteiosecbhsefundacoess' >Despesa de Custeio SE CBHs e Fundações</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                <a href='https://sigrh.sp.gov.br/cofehidro/planodeaplicacaodacobranca' >Plano de Aplicação da Cobrança</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Instrumentos de Gestão</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/cobrancapelousodaagua' >Cobrança pelo uso da água</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/enquadramentodoscorposdagua' >Enquadramento dos Corpos D`água</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/enquadramentodoscorposdagua' >Apresentação </a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/diretrizes' >Diretrizes para Enquadramento</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/deliberacoesdecbhs' >Deliberações dos CBHs</a> 
+        </li>        
+                                <li class="border_bottom">
+                    <a href='http://www.sigrh.sp.gov.br/relatoriostecnicosugrhis' >Relatórios Técnicos - UGRHIs</a> 
+        </li>        
+                                <li class="last">
+                    <a href='http://www.sigrh.sp.gov.br/referenciastecnicas' >Referências Técnicas</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='/corhi/planoestadualderecursoshidricos' >Plano Estadual de Recursos Hídricos - PERH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/crh/planodebaciashidrograficas' >Plano de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/relatoriosituacaodosrecursoshidricos' >Relatório Situação dos Recursos Hídricos</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="last">
+                    <a href='/mapasinterativos' >Mapas Interativos</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li class="last">
+                                                <a href='/outorga' >Outorga</a>                
+                                                                </li>
+                                                                    </ul>
+                                                <ul class="submenu_top" style="left: 320px; z-index: 899 !important">
+                        </ul>            </li>
+</ul>
+
+
+
+
+ <ul class="item_menu_top">
+    <li>
+                    <a href='javascript:void(0);' >Base Documental</a>             
+<ul class="submenu_top" style="z-index: 999 !important">    
+    
+                                                                    <li>
+                                                <a href='/legislacaoderecursoshidricos' >Legislação de Recursos Hídricos</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='/sag' >Sistema Aquífero Guarani -  SAG</a>                
+                                                                    
+<ul class="last_menu_top" style="width: 300px;">
+                                <li class="border_bottom">
+                    <a href='/concursoaquiferoguarani' >Concurso Fotográfico </a> 
+        </li>        
+                                <li class="last">
+                    <a href='/resultadodo1concursodehistoriasfotograficasdoaquiferoguarani' >Resultado do Concurso Fotográfico</a> 
+        </li>        
+    </ul>                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/corhi/capacita' >Capacita SIGRH</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas' >Procomitês - Programa Nacional de Fortalecimento dos Comitês de Bacias Hidrográficas</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='http://www.sigrh.sp.gov.br/pdpaplanodedesenvolvimentoeprotecaoambiental' >PDPA - Plano de Proteção e Desenvolvimento Ambiental</a>                
+                                                                </li>
+                                                                                        <li>
+                                                <a href='https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas' >Progestão - Pacto Nacional pela Gestão das Águas </a>                
+                                                                </li>
+                                                                                        <li>
+                                                                                   <a href='http://www.hidrologia.daee.sp.gov.br/' target="_blank">Banco de Dados Hidrológicos</a>                
+                                                                </li>
+                                                                                        <li class="last">
+                                                                                   <a href='http://www.daee.sp.gov.br/site/hidrologia/' target="_blank">Regionalização Hidrológica</a>                
+                                                                </li>
+                        </ul>            </li>
+</ul>
+
+            <div class="clear"></div>
+        </div>
+            <div id="notice"></div>
+<script type="text/javascript">
+  </script>
+        <div class="col_left">
+            
+    <h1>CBH-MP</h1>
+
+<!--
+-->
+    <ul class="menu_left">
+                                                            <li><a href='/cbhmp/agenda' >Agenda</a></li>
+                                                                        <li><a href='/cbhmp/apresentacao' >Apresentação</a></li>
+                                                                        <li><a href='/cbhmp/atas' >Atas</a></li>
+                                                                        <li><a href='/cbhmp/cobranca' >Cobrança de Recursos Hídricos</a></li>
+                                                                        <li><a href='/cbhmp/deliberacoes' >Deliberações</a></li>
+                                                                        <li><a href='/cbhmp/documentos' >Documentos</a></li>
+                                                                        <li><a href='/cbhmp/estatuto' >Estatuto</a></li>
+                                                                        <li><a href='/cbhmp/mocoes' >Moções</a></li>
+                                                                        <li class="last"><a href='/cbhmp/representantes-plenario' >Representantes</a></li>
+                        </ul>
+
+    <h1>Sub-Unidades</h1>
+    <ul class="menu_left">
+                                                <li><a href='/cbhmp/ctem/apresentacao' >CTEM</a></li>
+                                                            <li><a href='/cbhmp/ctil/apresentacao' >CTIL</a></li>
+                                                            <li class="last"><a href='/cbhmp/ctpas/apresentacao' >CTPAS</a></li>
+                            </ul>
+            
+<div class="calendar">
+  <h1>
+    Agenda
+
+    <span class="scope_selector">
+      <a href="javascript:void(0);" class="global">Geral</a>
+      |
+      <a href="javascript:void(0);" class="scoped">Comitês</a>
+    </span>
+  </h1>
+
+  <div class="scoped_calendar">
+    <div class="scoped_calendar global">
+  <table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="10" data-year="2025" data-unity="26" data-scope="global">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="11" data-year="2025" data-unity="26" data-scope="global">Novembro/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="12" data-year="2025" data-unity="26" data-scope="global">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td></tr><tr class="calendar-row"><td class="calendar-day calendar-event" title="<h2>Finados</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 02/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/17149'>Ver mais</a></div>">2</td><td class="calendar-day">3</td><td class="calendar-day calendar-event" title="<h2>Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Educação Ambiental, capacitação, mobilização social e informação em Recursos Hídricos (CTEA - CRH)  <br />  <b>Data do evento:</b> 04/11/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/568/events/18747'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPLAN</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Planejamento (CTPLAN- CRH)  <br />  <b>Data do evento:</b> 06/11/2025  <br />  <b>Horário:</b> 10:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/340/events/18424'>Ver mais</a></div>">6</td><td class="calendar-day">7</td><td class="calendar-day">8</td></tr><tr class="calendar-row"><td class="calendar-day">9</td><td class="calendar-day">10</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTPA</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Proteção das Águas (CTPA - CRH)  <br />  <b>Data do evento:</b> 11/11/2025  <br />  <b>Horário:</b> 14:30  <br />  <b>Local:</b> Plataforma Teams  <br />  <a href='/pageitems/502/events/18418'>Ver mais</a></div><h2>Prevista_Reunião CTCOB</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Cobrança pelo Uso dos Recursos Hídricos (CTCOB - CRH)  <br />  <b>Data do evento:</b> 11/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/339/events/18435'>Ver mais</a></div>">11</td><td class="calendar-day">12</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião Extraordinária CRH</h2><div class='item'>  <b>Unidade:</b> Conselho Estadual de Recursos Hídricos  <br />  <b>Data do evento:</b> 13/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/332/events/18761'>Ver mais</a></div>">13</td><td class="calendar-day">14</td><td class="calendar-day calendar-event" title="<h2>Proclamação da República</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 15/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/17150'>Ver mais</a></div>">15</td></tr><tr class="calendar-row"><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day">18</td><td class="calendar-day calendar-event" title="<h2>Prevista_Reunião CTUM</h2><div class='item'>  <b>Unidade:</b> Câmara Técnica de Gestão de Usos Múltiplos de Recursos Hídricos (CTUM - CRH)  <br />  <b>Data do evento:</b> 19/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Teams  <br />  <a href='/pageitems/341/events/18430'>Ver mais</a></div>">19</td><td class="calendar-day calendar-event" title="<h2>Dia da Conscienciência Negra</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 20/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/17151'>Ver mais</a></div>">20</td><td class="calendar-day calendar-event" title="<h2>Dia da Conscienciência Negra_Facultativo</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 21/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> São Paulo  <br />  <a href='/pageitems/451/events/17152'>Ver mais</a></div>">21</td><td class="calendar-day">22</td></tr><tr class="calendar-row"><td class="calendar-day calendar-event" title="<h2>XXVI Simpósio Brasileiro de Recursos Hídricos </h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 23/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória, ES  <br />  <a href='/pageitems/451/events/17210'>Ver mais</a></div>">23</td><td class="calendar-day calendar-event" title="<h2>XXVI Simpósio Brasileiro de Recursos Hídricos</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 24/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória, ES  <br />  <a href='/pageitems/451/events/17211'>Ver mais</a></div>">24</td><td class="calendar-day calendar-event" title="<h2>XXVI Simpósio Brasileiro de Recursos Hídricos</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 25/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória, ES  <br />  <a href='/pageitems/451/events/17212'>Ver mais</a></div>">25</td><td class="calendar-day calendar-event" title="<h2>XXVI Simpósio Brasileiro de Recursos Hídricos</h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 26/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b>  Vitória, ES  <br />  <a href='/pageitems/451/events/17213'>Ver mais</a></div>">26</td><td class="calendar-day calendar-event" title="<h2>XXVI Simpósio Brasileiro de Recursos Hídricos </h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 27/11/2025  <br />  <b>Horário:</b> 08:00  <br />  <b>Local:</b> Vitória, ES  <br />  <a href='/pageitems/451/events/17214'>Ver mais</a></div>">27</td><td class="calendar-day calendar-event" title="<h2>XXVI Simpósio Brasileiro de Recursos Hídricos </h2><div class='item'>  <b>Unidade:</b> SigRH  <br />  <b>Data do evento:</b> 28/11/2025  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Vitória, ES  <br />  <a href='/pageitems/451/events/17215'>Ver mais</a></div>">28</td><td class="calendar-day">29</td></tr><tr class="calendar-row"><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+
+    <div class="scoped_calendar scoped">
+	<table cellpadding="0" cellspacing="4px" class="calendar"><thead><tr class="calendar-row"><th class="calendar-navigator"><a class="calendar-previous-month" data-url="/main/calendar" data-month="10" data-year="2025" data-unity="26" data-scope="scoped">&lt;</a></th><th class="calendar-navigator" colspan="5" title="<div class='item'>Clique para navegar até o mês atual.</div>"><a class="calendar-current-month" data-url="/main/calendar" data-month="11" data-year="2025" data-unity="26" data-scope="scoped">Novembro/2025</a></th><th class="calendar-navigator"><a class="calendar-next-month" data-url="/main/calendar" data-month="12" data-year="2025" data-unity="26" data-scope="scoped">&gt;</a></th></tr><tr class="calendar-row"><th class="calendar-day calendar-day-head">DOM</th><th class="calendar-day calendar-day-head">SEG</th><th class="calendar-day calendar-day-head">TER</th><th class="calendar-day calendar-day-head">QUA</th><th class="calendar-day calendar-day-head">QUI</th><th class="calendar-day calendar-day-head">SEX</th><th class="calendar-day calendar-day-head">SÁB</th></tr></thead><tbody><tr class="calendar-row"><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day calendar-day-np"></td><td class="calendar-day">1</td></tr><tr class="calendar-row"><td class="calendar-day">2</td><td class="calendar-day">3</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-PAI (Extraordinária)</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 04/11/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Virtual  <br />  <a href='/pageitems/330/events/18924'>Ver mais</a></div>">4</td><td class="calendar-day">5</td><td class="calendar-day">6</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-PL</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 07/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18805'>Ver mais</a></div><h2>3ª Reunião das Câmaras Técnicas do CBH/TB em 2025 (por videoconferência)</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica do Tietê - Batalha  <br />  <b>Data do evento:</b> 07/11/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Por Videoconferência  <br />  <a href='/pageitems/315/events/18907'>Ver mais</a></div>">7</td><td class="calendar-day">8</td></tr><tr class="calendar-row"><td class="calendar-day">9</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-COB</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 10/11/2025  <br />  <b>Horário:</b> 13:30  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18840'>Ver mais</a></div>">10</td><td class="calendar-day calendar-event" title="<h2>Reunião CT TEAM</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 11/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Virtual  <br />  <a href='/pageitems/330/events/18772'>Ver mais</a></div>">11</td><td class="calendar-day calendar-event" title="<h2>6ª Reunião CTPG</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 12/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18693'>Ver mais</a></div><h2>Reunião CT-REF</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 12/11/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18867'>Ver mais</a></div>">12</td><td class="calendar-day calendar-event" title="<h2>5ª Reunião CTEA</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 13/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18699'>Ver mais</a></div><h2>Reunião CT-SAN</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 13/11/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18849'>Ver mais</a></div>">13</td><td class="calendar-day">14</td><td class="calendar-day">15</td></tr><tr class="calendar-row"><td class="calendar-day">16</td><td class="calendar-day">17</td><td class="calendar-day calendar-event" title="<h2>7ª Reunião CTSUM</h2><div class='item'>  <b>Unidade:</b> Comitê da Bacia Hidrográfica da Baixada Santista  <br />  <b>Data do evento:</b> 18/11/2025  <br />  <b>Horário:</b> 14:00  <br />  <b>Local:</b> via online  <br />  <a href='/pageitems/310/events/18474'>Ver mais</a></div><h2>Reunião CT-COUA/CT-SAN</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 18/11/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Virtual  <br />  <a href='/pageitems/330/events/18923'>Ver mais</a></div>">18</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-AI</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 19/11/2025  <br />  <b>Horário:</b> 08:30  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18823'>Ver mais</a></div>">19</td><td class="calendar-day">20</td><td class="calendar-day">21</td><td class="calendar-day">22</td></tr><tr class="calendar-row"><td class="calendar-day">23</td><td class="calendar-day calendar-event" title="<h2>Reunião Diretoria + Coordenadores CT&#39;s</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 24/11/2025  <br />  <b>Horário:</b> 00:00  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18876'>Ver mais</a></div>">24</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-PAI</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas da Serra da Mantiqueira  <br />  <b>Data do evento:</b> 25/11/2025  <br />  <b>Horário:</b> 09:30  <br />  <b>Local:</b> Online  <br />  <a href='/pageitems/330/events/18734'>Ver mais</a></div>">25</td><td class="calendar-day">26</td><td class="calendar-day">27</td><td class="calendar-day calendar-event" title="<h2>Reunião CT-EAMS</h2><div class='item'>  <b>Unidade:</b> Comitê das Bacias Hidrográficas do Rio Paraiba do Sul  <br />  <b>Data do evento:</b> 28/11/2025  <br />  <b>Horário:</b> 09:00  <br />  <b>Local:</b> Atualizar  <br />  <a href='/pageitems/326/events/18858'>Ver mais</a></div>">28</td><td class="calendar-day">29</td></tr><tr class="calendar-row"><td class="calendar-day">30</td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td><td class="calendar-day calendar-day-np"> </td></tr></tbody></table></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(function($) {
+    $('.scope_selector a').click(function(event) {
+      var $scope = $(event.currentTarget);
+
+      $('.scope_selector a').removeClass('active');
+      $scope.addClass('active');
+
+      if ($scope.hasClass('global')) {
+        $('.scoped_calendar .global').show();
+        $('.scoped_calendar .scoped').hide();
+      } else if ($scope.hasClass('scoped')) {
+        $('.scoped_calendar .global').hide();
+        $('.scoped_calendar .scoped').show();
+      }
+    });
+
+    $('.scope_selector a.global').click();
+  });
+</script>
+            <a target="_blank" href="https://sigrh.sp.gov.br/crh/processoeleitoralsociedadecivil20252027" class="banner">
+            <img src='/public/uploads/banners//17358440606794.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/cobrancapelousodaagua" class="banner">
+            <img src='/public/uploads/banners//17067100972224.png'  />        </a>
+            <a target="_blank" href="http://www.sigrh.sp.gov.br/corhi/capacita" class="banner">
+            <img src='/public/uploads/banners//15396258626704.png'  />        </a>
+            <a target="_blank" href="https://sigrh.sp.gov.br/public/uploads/ckfinder/files/GUIA%20ONLINE(1).pdf" class="banner">
+            <img src='/public/uploads/banners//16481329854124.jpg'  />        </a>
+            <a target="_blank" href="https://www.sigrh.sp.gov.br/procomitesprogramanacionaldefortalecimentodoscomitesdebaciashidrograficas" class="banner">
+            <img src='/public/uploads/banners//16076850835034.png'  />        </a>
+            <a  href="https://sigrh.sp.gov.br/crh/progestaoprogramadeconsolidacaodopactonacionalpelagestaodasaguas" class="banner">
+            <img src='/public/uploads/banners//14248879569597.png'  />        </a>
+            <a target="_blank" href="https://sigam.ambiente.sp.gov.br/sigam3/ " class="banner">
+            <img src='/public/uploads/banners//14248879358997.png'  />        </a>
+            <a  href="https://www.sigrh.sp.gov.br/pageitems/600" class="banner">
+            <img src='/public/uploads/banners//17032587132209.png'  />        </a>
+            <a target="_blank" href="https://crhi-44479319.hubspotpagebuilder.com/correnteza-express" class="banner">
+            <img src='/public/uploads/banners//17032589586166.png'  />        </a>
+            <a target="_blank" href="https://youtube.com/sigrhsp" class="banner">
+            <img src='/public/uploads/banners//14419943379307.png'  />        </a>
+            </div>
+        <div class="col_right">
+<h1 id="toppage">Atas</h1>
+
+
+
+
+
+<div id="accordion_records">
+                    
+                                    <h3>Ano de 2024</h3>
+        <div>
+        
+                        <div class="block" id="record_29213">
+            <h2>Ata da 51ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2024<br /></li>
+                <li><label>Postado em:</label> 27/03/2025</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/29213/ata_51ord_12-12-24_mp_online.pdf" target="_blank">ata_51ord_12-12-24_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="29213" data-year="2024" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_29213">Compartilhar</a>    </div>
+    <div id="item_29213" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_27760">
+            <h2>Ata da 50ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/04/2024<br /></li>
+                <li><label>Postado em:</label> 04/09/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/27760/ata_50ord_28-08-24_mp_online.pdf" target="_blank">ata_50ord_28-08-24_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27760" data-year="2024" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_27760">Compartilhar</a>    </div>
+    <div id="item_27760" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_29299">
+            <h2>Ata da 49ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 16/04/2024<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/29299/ata_49ord_16-04-24_mp.pdf" target="_blank">ata_49ord_16-04-24_mp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="29299" data-year="2024" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_29299">Compartilhar</a>    </div>
+    <div id="item_29299" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2023</h3>
+        <div>
+        
+                        <div class="block" id="record_27444">
+            <h2>Ata da 48ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/12/2023<br /></li>
+                <li><label>Postado em:</label> 19/04/2024</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/27444/ata_48ord_01-12-23_mp_online.pdf" target="_blank">ata_48ord_01-12-23_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27444" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_27444">Compartilhar</a>    </div>
+    <div id="item_27444" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_27194">
+            <h2>Ata da 43ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/09/2023<br /></li>
+                <li><label>Postado em:</label> 06/12/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/27194/ata_43extra_12-09-23_mp_online.pdf" target="_blank">ata_43extra_12-09-23_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="27194" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_27194">Compartilhar</a>    </div>
+    <div id="item_27194" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_26036">
+            <h2>Ata da 42ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/07/2023<br /></li>
+                <li><label>Postado em:</label> 15/09/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/26036/ata_42extra_20-07-23_mp.pdf" target="_blank">ata_42extra_20-07-23_mp.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="26036" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_26036">Compartilhar</a>    </div>
+    <div id="item_26036" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_24958">
+            <h2>Ata da 47ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/03/2023<br /></li>
+                <li><label>Postado em:</label> 25/07/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/24958/ata_47ord_31-03-23_mp_online.pdf" target="_blank">ata_47ord_31-03-23_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="24958" data-year="2023" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_24958">Compartilhar</a>    </div>
+    <div id="item_24958" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2022</h3>
+        <div>
+        
+                        <div class="block" id="record_23689">
+            <h2>Ata da 46ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2022<br /></li>
+                <li><label>Postado em:</label> 10/04/2023</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/23689/ata_46ord_12-12-22_mp_online.pdf" target="_blank">ata_46ord_12-12-22_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23689" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_23689">Compartilhar</a>    </div>
+    <div id="item_23689" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23405">
+            <h2>Ata da 41ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/09/2022<br /></li>
+                <li><label>Postado em:</label> 14/12/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/23405/ata_41extra_05-09-22_mp_online.pdf" target="_blank">ata_41extra_05-09-22_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23405" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_23405">Compartilhar</a>    </div>
+    <div id="item_23405" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23201">
+            <h2>Ata da 45ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2022<br /></li>
+                <li><label>Postado em:</label> 12/09/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/23201/ata_45ord_28-06-22_mp_online.pdf" target="_blank">ata_45ord_28-06-22_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23201" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_23201">Compartilhar</a>    </div>
+    <div id="item_23201" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_23158">
+            <h2>Ata da 40ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/03/2022<br /></li>
+                <li><label>Postado em:</label> 30/06/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/23158/ata_40extra_11-03-22_mp_online.pdf" target="_blank">ata_40extra_11-03-22_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="23158" data-year="2022" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_23158">Compartilhar</a>    </div>
+    <div id="item_23158" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2021</h3>
+        <div>
+        
+                        <div class="block" id="record_21978">
+            <h2>Ata da 44ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/12/2021<br /></li>
+                <li><label>Postado em:</label> 15/03/2022</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/21978/ata_44ord_08-12-21_mp_online.pdf" target="_blank">ata_44ord_08-12-21_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21978" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_21978">Compartilhar</a>    </div>
+    <div id="item_21978" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_21340">
+            <h2>Ata da 39ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/06/2021<br /></li>
+                <li><label>Postado em:</label> 10/12/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/21340/ata_39extra_09-06-21_mp_online.pdf" target="_blank">ata_39extra_09-06-21_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="21340" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_21340">Compartilhar</a>    </div>
+    <div id="item_21340" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_20881">
+            <h2>Ata da 38ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/04/2021<br /></li>
+                <li><label>Postado em:</label> 10/06/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/20881/ata_38extra_23-04-21_mp_online.pdf" target="_blank">ata_38extra_23-04-21_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20881" data-year="2021" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_20881">Compartilhar</a>    </div>
+    <div id="item_20881" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2020</h3>
+        <div>
+        
+                        <div class="block" id="record_20796">
+            <h2>ATA DA 43ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 07/12/2020<br /></li>
+                <li><label>Postado em:</label> 04/05/2021</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/20796/ata_43_ord_07_dez_mp_online.pdf" target="_blank">ata_43_ord_07_dez_mp_online.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="20796" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_20796">Compartilhar</a>    </div>
+    <div id="item_20796" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_19508">
+            <h2>ATA DA 42ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/07/2020<br /></li>
+                <li><label>Postado em:</label> 10/12/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/19508/ata_42_ord_20_jul_mp_online-docx.pdf" target="_blank">ata_42_ord_20_jul_mp_online-docx.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="19508" data-year="2020" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_19508">Compartilhar</a>    </div>
+    <div id="item_19508" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2019</h3>
+        <div>
+        
+                        <div class="block" id="record_18970">
+            <h2>Ata da 41ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/11/2019<br /></li>
+                <li><label>Postado em:</label> 31/07/2020</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/18970/ata_41_ord_4_nov_mp_marilia.pdf" target="_blank">ata_41_ord_4_nov_mp_marilia.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18970" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_18970">Compartilhar</a>    </div>
+    <div id="item_18970" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_18571">
+            <h2>Ata da 36ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/09/2019<br /></li>
+                <li><label>Postado em:</label> 20/11/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/18571/ata_36_ext_13_set_mp_maracai.pdf" target="_blank">ata_36_ext_13_set_mp_maracai.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="18571" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_18571">Compartilhar</a>    </div>
+    <div id="item_18571" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17528">
+            <h2>Ata da 35ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/07/2019<br /></li>
+                <li><label>Postado em:</label> 24/09/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/17528/ata_35_ext_24_jul_mp_ourinhos.pdf" target="_blank">ata_35_ext_24_jul_mp_ourinhos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17528" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_17528">Compartilhar</a>    </div>
+    <div id="item_17528" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_17394">
+            <h2>Ata da 34ª Reunião Extraordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/02/2019<br /></li>
+                <li><label>Postado em:</label> 26/07/2019</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/17394/ata_34_ext_28_fev_mp_marilia.pdf" target="_blank">ata_34_ext_28_fev_mp_marilia.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17394" data-year="2019" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_17394">Compartilhar</a>    </div>
+    <div id="item_17394" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2018</h3>
+        <div>
+        
+                        <div class="block" id="record_17393">
+            <h2>Ata da 40ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/2018<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/17393/ata_40_ord_30_nov_mp_ourinhos.pdf" target="_blank">ata_40_ord_30_nov_mp_ourinhos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="17393" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_17393">Compartilhar</a>    </div>
+    <div id="item_17393" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13958">
+            <h2>ATA DA 39ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 01/08/2018<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/13958/ata_39_ord_1_ago_mp_paraguacupta.pdf" target="_blank">ata_39_ord_1_ago_mp_paraguacupta.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13958" data-year="2018" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_13958">Compartilhar</a>    </div>
+    <div id="item_13958" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2017</h3>
+        <div>
+        
+                        <div class="block" id="record_13865">
+            <h2>ATA DA 38ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/12/2017<br /></li>
+                <li><label>Postado em:</label> 09/08/2018</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/13865/ata_38_ord_5_dez_mp_maracai.pdf" target="_blank">ata_38_ord_5_dez_mp_maracai.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13865" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_13865">Compartilhar</a>    </div>
+    <div id="item_13865" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13705">
+            <h2>ATA DA 35ª REUNIÃO EXTRAORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/07/2017<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/13705/ata_35_ext_19_julho_mp_sao-pedro-turvo.pdf" target="_blank">ata_35_ext_19_julho_mp_sao-pedro-turvo.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13705" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_13705">Compartilhar</a>    </div>
+    <div id="item_13705" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_13706">
+            <h2>ATA DA 37ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/03/2017<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/13706/ata_37_ord_28_marco_mp_marilia.pdf" target="_blank">ata_37_ord_28_marco_mp_marilia.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13706" data-year="2017" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_13706">Compartilhar</a>    </div>
+    <div id="item_13706" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2016</h3>
+        <div>
+        
+                        <div class="block" id="record_13704">
+            <h2>ATA DA 36ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2016<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/13704/ata_36_ord-_15_dezembro_mp_marilia.pdf" target="_blank">ata_36_ord-_15_dezembro_mp_marilia.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="13704" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_13704">Compartilhar</a>    </div>
+    <div id="item_13704" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_11892">
+            <h2>ATA DA 35ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/07/2016<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/11892/ata_35_ord-_22_junho_mp_chavantes.pdf" target="_blank">ata_35_ord-_22_junho_mp_chavantes.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11892" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_11892">Compartilhar</a>    </div>
+    <div id="item_11892" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_11891">
+            <h2>ATA DA 34ª REUNIÃO EXTRAORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/02/2016<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/11891/atamp_34_ext_2fev16.pdf" target="_blank">atamp_34_ext_2fev16.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11891" data-year="2016" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_11891">Compartilhar</a>    </div>
+    <div id="item_11891" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2015</h3>
+        <div>
+        
+                        <div class="block" id="record_11890">
+            <h2>ATA DA 34ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/11/2015<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/11890/ata_30_novembro_mp_canitar.pdf" target="_blank">ata_30_novembro_mp_canitar.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="11890" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_11890">Compartilhar</a>    </div>
+    <div id="item_11890" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_10473">
+            <h2>ATA DA 33ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/06/2015<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records//CBH-MP/10473/ata_11_junho_mp_pedrinhas-paulista.pdf" target="_blank">ata_11_junho_mp_pedrinhas-paulista.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="10473" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_10473">Compartilhar</a>    </div>
+    <div id="item_10473" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9068">
+            <h2>32ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/03/2015<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9068/ata_26_marco_mp_maracai.pdf" target="_blank">ata_26_marco_mp_maracai.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9068" data-year="2015" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9068">Compartilhar</a>    </div>
+    <div id="item_9068" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2014</h3>
+        <div>
+        
+                        <div class="block" id="record_8713">
+            <h2>31ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2014<br /></li>
+                <li><label>Postado em:</label> 01/01/2015</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/8713/ata_15dezembro_mp_alvinlandia.pdf" target="_blank">ata_15dezembro_mp_alvinlandia.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="8713" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_8713">Compartilhar</a>    </div>
+    <div id="item_8713" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9067">
+            <h2>30ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 21/05/2014<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9067/ata_21maio_mp_ocaucu.pdf" target="_blank">ata_21maio_mp_ocaucu.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9067" data-year="2014" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9067">Compartilhar</a>    </div>
+    <div id="item_9067" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2013</h3>
+        <div>
+        
+                        <div class="block" id="record_9065">
+            <h2>29ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/12/2013<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9065/ata_05dezembro_mp_palmital.pdf" target="_blank">ata_05dezembro_mp_palmital.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9065" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9065">Compartilhar</a>    </div>
+    <div id="item_9065" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9064">
+            <h2>28ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/09/2013<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9064/ata-26-setembro-mp-avare.pdf" target="_blank">ata-26-setembro-mp-avare.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9064" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9064">Compartilhar</a>    </div>
+    <div id="item_9064" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9063">
+            <h2>33ª REUNIÃO EXTRAORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/07/2013<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9063/ata_2jul2013_mp_pratania.pdf" target="_blank">ata_2jul2013_mp_pratania.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9063" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9063">Compartilhar</a>    </div>
+    <div id="item_9063" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9062">
+            <h2>27ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/03/2013<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9062/ata-26-marco-mp-platina.pdf" target="_blank">ata-26-marco-mp-platina.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9062" data-year="2013" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9062">Compartilhar</a>    </div>
+    <div id="item_9062" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2012</h3>
+        <div>
+        
+                        <div class="block" id="record_9061">
+            <h2>26ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 13/12/2012<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9061/ata_13dezembro_mp_taruma.pdf" target="_blank">ata_13dezembro_mp_taruma.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9061" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9061">Compartilhar</a>    </div>
+    <div id="item_9061" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9060">
+            <h2>25ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 30/10/2012<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9060/ata_30out2012_mp_ourinhos.pdf" target="_blank">ata_30out2012_mp_ourinhos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9060" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9060">Compartilhar</a>    </div>
+    <div id="item_9060" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_9059">
+            <h2>24ª REUNIÃO ORDINÁRIA DO CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 31/05/2012<br /></li>
+                <li><label>Postado em:</label> </li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/9059/ata_31mai2012_mp_paraguacupaulista.pdf" target="_blank">ata_31mai2012_mp_paraguacupaulista.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="9059" data-year="2012" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_9059">Compartilhar</a>    </div>
+    <div id="item_9059" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2011</h3>
+        <div>
+        
+                        <div class="block" id="record_1466">
+            <h2>23ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/12/2011<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1466" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1466">Compartilhar</a>    </div>
+    <div id="item_1466" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1465">
+            <h2>22ª Reunião Ordinária do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/07/2011<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1465/ata_28jul2011_mp_candidomota.pdf" target="_blank">ata_28jul2011_mp_candidomota.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1465" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1465">Compartilhar</a>    </div>
+    <div id="item_1465" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1464">
+            <h2>21ª Reunião Ordinária de CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/03/2011<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1464/ata_24mar2011_mp_palmital.pdf" target="_blank">ata_24mar2011_mp_palmital.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1464" data-year="2011" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1464">Compartilhar</a>    </div>
+    <div id="item_1464" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2010</h3>
+        <div>
+        
+                        <div class="block" id="record_1463">
+            <h2>1ª Reunião Ordinária de 2010 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/05/2010<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1463/ata_26mai2010_mp_quata.pdf" target="_blank">ata_26mai2010_mp_quata.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1463" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1463">Compartilhar</a>    </div>
+    <div id="item_1463" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1486">
+            <h2>1ª Reunião Extraordinária de 2010 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/02/2010<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1486/ata_23fev2010_mp_platina.pdf" target="_blank">ata_23fev2010_mp_platina.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1486" data-year="2010" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1486">Compartilhar</a>    </div>
+    <div id="item_1486" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2009</h3>
+        <div>
+        
+                        <div class="block" id="record_1214">
+            <h2>2ª Reunião Extraordinária de 2009 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/12/2009<br /></li>
+                <li><label>Postado em:</label> 25/03/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1214/ata23dez2009mpmariliadaee.pdf" target="_blank">ata23dez2009mpmariliadaee.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1214" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1214">Compartilhar</a>    </div>
+    <div id="item_1214" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1215">
+            <h2>2ª Reunião Ordinária de 2009 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/08/2009<br /></li>
+                <li><label>Postado em:</label> 25/03/2010</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1215/ata_taruma_24ago2009.pdf" target="_blank">ata_taruma_24ago2009.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1215" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1215">Compartilhar</a>    </div>
+    <div id="item_1215" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1485">
+            <h2>1ª Reunião Extraordinária de 2009 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/06/2009<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1485/ata-itatinga-13-06-2009.pdf" target="_blank">ata-itatinga-13-06-2009.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1485" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1485">Compartilhar</a>    </div>
+    <div id="item_1485" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1462">
+            <h2>1ª Reunião Ordinária de 2009 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/03/2009<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1462/ata-reuniao-fernao.pdf" target="_blank">ata-reuniao-fernao.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1462" data-year="2009" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1462">Compartilhar</a>    </div>
+    <div id="item_1462" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2008</h3>
+        <div>
+        
+                        <div class="block" id="record_1461">
+            <h2>2ª Reunião Ordinária de 2008 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 19/12/2008<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1461/ata-reuniao-dez-08-paraguacu-pta.pdf" target="_blank">ata-reuniao-dez-08-paraguacu-pta.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1461" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1461">Compartilhar</a>    </div>
+    <div id="item_1461" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1460">
+            <h2>1ª Reunião Ordinária de 2008 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 25/03/2008<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1460/ata-reuniao-25-03-08-sta-cruz-do-rio-pardo.pdf" target="_blank">ata-reuniao-25-03-08-sta-cruz-do-rio-pardo.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1460" data-year="2008" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1460">Compartilhar</a>    </div>
+    <div id="item_1460" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2007</h3>
+        <div>
+        
+                        <div class="block" id="record_1484">
+            <h2>5ª Reunião Extraordinária de 2007 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/12/2007<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1484/ata-reuniao-14-12-07-palmital.pdf" target="_blank">ata-reuniao-14-12-07-palmital.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1484" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1484">Compartilhar</a>    </div>
+    <div id="item_1484" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1483">
+            <h2>4ª Reunião Extraordinária de 2007 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/11/2007<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1483/ata-reuniao-20-11-07-ocaucu.pdf" target="_blank">ata-reuniao-20-11-07-ocaucu.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1483" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1483">Compartilhar</a>    </div>
+    <div id="item_1483" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1482">
+            <h2>3ª Reunião Extraordinária de 2007 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/08/2007<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1482/ata-reuniao-14-08-07-ourinhos.pdf" target="_blank">ata-reuniao-14-08-07-ourinhos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1482" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1482">Compartilhar</a>    </div>
+    <div id="item_1482" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1481">
+            <h2>2ª Reunião Extraordinária de 2007 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 28/06/2007<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1481/ata-reuniao-28-06-07-echapora.pdf" target="_blank">ata-reuniao-28-06-07-echapora.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1481" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1481">Compartilhar</a>    </div>
+    <div id="item_1481" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1459">
+            <h2>1ª Reunião Ordinária de 2007 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 20/04/2007<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1459/ata-mp-salto-grande-2007.pdf" target="_blank">ata-mp-salto-grande-2007.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1459" data-year="2007" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1459">Compartilhar</a>    </div>
+    <div id="item_1459" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2006</h3>
+        <div>
+        
+                        <div class="block" id="record_878">
+            <h2>1ª Reunião Extraordinária de 2006 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 27/03/2006<br /></li>
+                <li><label>Postado em:</label> 14/05/2007</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/878/ata-cbh-mp-002-2006-1a-reuniao-extraordinaria.doc" target="_blank">ata-cbh-mp-002-2006-1a-reuniao-extraordinaria.doc</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="878" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_878">Compartilhar</a>    </div>
+    <div id="item_878" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1458">
+            <h2>1ª Reunião Ordinária de 2006 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/01/2006<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1458/ata-reuniao-12-01-06-assis.pdf" target="_blank">ata-reuniao-12-01-06-assis.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1458" data-year="2006" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1458">Compartilhar</a>    </div>
+    <div id="item_1458" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2005</h3>
+        <div>
+        
+                        <div class="block" id="record_1457">
+            <h2>2ª Reunião Ordinária de 2005 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/06/2005<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1457/ata-reuniao-14-06-05-ord-ibirarema.pdf" target="_blank">ata-reuniao-14-06-05-ord-ibirarema.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1457" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1457">Compartilhar</a>    </div>
+    <div id="item_1457" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1480">
+            <h2>2ª Reunião Extraordinária de 2005 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/06/2005<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1480" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1480">Compartilhar</a>    </div>
+    <div id="item_1480" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1456">
+            <h2>1ª Reunião Ordinária de 2005 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/03/2005<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1456/ata-cbh-mp-024-05-reuniao-eleicao-2005.pdf" target="_blank">ata-cbh-mp-024-05-reuniao-eleicao-2005.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1456" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1456">Compartilhar</a>    </div>
+    <div id="item_1456" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1479">
+            <h2>1ª Reunião Extraordinária de 2005 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 18/03/2005<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1479" data-year="2005" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1479">Compartilhar</a>    </div>
+    <div id="item_1479" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2004</h3>
+        <div>
+        
+                        <div class="block" id="record_1455">
+            <h2>1ª Reunião Ordinária de 2004 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2004<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1455/ata-reuniao-15-12-04-pratania.pdf" target="_blank">ata-reuniao-15-12-04-pratania.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1455" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1455">Compartilhar</a>    </div>
+    <div id="item_1455" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1478">
+            <h2>2ª Reunião Extraordinária de 2004 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 08/07/2004<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1478/ata-reuniao-08-07-04-salto-grande.pdf" target="_blank">ata-reuniao-08-07-04-salto-grande.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1478" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1478">Compartilhar</a>    </div>
+    <div id="item_1478" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1477">
+            <h2>1ª Reunião Extraordinária de 2004 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/03/2004<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1477/ata-reuniao-05-03-04-chavantes.pdf" target="_blank">ata-reuniao-05-03-04-chavantes.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1477" data-year="2004" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1477">Compartilhar</a>    </div>
+    <div id="item_1477" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2003</h3>
+        <div>
+        
+                        <div class="block" id="record_1454">
+            <h2>2ª Reunião Ordinária de 2003 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/2003<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1454/ata-reuniao-09-12-03-alvinlandia.pdf" target="_blank">ata-reuniao-09-12-03-alvinlandia.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1454" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1454">Compartilhar</a>    </div>
+    <div id="item_1454" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1476">
+            <h2>3ª Reunião Extraordinária de 2003 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/05/2003<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1476" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1476">Compartilhar</a>    </div>
+    <div id="item_1476" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1475">
+            <h2>2ª Reunião Extraordinária de 2003 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/05/2003<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1475" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1475">Compartilhar</a>    </div>
+    <div id="item_1475" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1453">
+            <h2>1ª Reunião Ordinária de 2003 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/04/2003<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1453/ata-reuniao-15-04-03-pratania-eleicao.pdf" target="_blank">ata-reuniao-15-04-03-pratania-eleicao.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1453" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1453">Compartilhar</a>    </div>
+    <div id="item_1453" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1474">
+            <h2>1ª Reunião Extraordinária de 2003 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/04/2003<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1474/ata-reuniao-15-04-03-eleicao.pdf" target="_blank">ata-reuniao-15-04-03-eleicao.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1474" data-year="2003" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1474">Compartilhar</a>    </div>
+    <div id="item_1474" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2002</h3>
+        <div>
+        
+                        <div class="block" id="record_1473">
+            <h2>2ª Reunião Extraordinária de 2002 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/05/2002<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1473/ata-reuniao-14-05-02-avare.pdf" target="_blank">ata-reuniao-14-05-02-avare.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1473" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1473">Compartilhar</a>    </div>
+    <div id="item_1473" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1472">
+            <h2>1ª Reunião Extraordinária de 2002 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 26/03/2002<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1472/ata-reuniao-26-03-02-pedrinhas-paulista.pdf" target="_blank">ata-reuniao-26-03-02-pedrinhas-paulista.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1472" data-year="2002" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1472">Compartilhar</a>    </div>
+    <div id="item_1472" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2001</h3>
+        <div>
+        
+                        <div class="block" id="record_1452">
+            <h2>2ª Reunião Ordinária de 2001 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/10/2001<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1452/ata-2001-reuniao-ord-2a-mp-09-10-01.pdf" target="_blank">ata-2001-reuniao-ord-2a-mp-09-10-01.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1452" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1452">Compartilhar</a>    </div>
+    <div id="item_1452" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_188">
+            <h2>3ª Reunião Extraordinária de 2001 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 12/07/2001<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/188/ata-3a-reuniao-a.htm" target="_blank">ata-3a-reuniao-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="188" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_188">Compartilhar</a>    </div>
+    <div id="item_188" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_181">
+            <h2>2ª Reunião Extraordinária de 2001 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 05/06/2001<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/181/ata-2a-reuniao-cbh-mp-003-01-a.htm" target="_blank">ata-2a-reuniao-cbh-mp-003-01-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="181" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_181">Compartilhar</a>    </div>
+    <div id="item_181" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1451">
+            <h2>1ª Reunião Ordinária de 2001 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/04/2001<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1451/ata-reuniao-10-04-01-assis.pdf" target="_blank">ata-reuniao-10-04-01-assis.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1451" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1451">Compartilhar</a>    </div>
+    <div id="item_1451" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_284">
+            <h2>1ª Reunião Extraordinária de 2001 do CBH-MP </h2>
+            <ul>
+                <li><label>Data da reunião:</label> 10/04/2001<br /></li>
+                <li><label>Postado em:</label> 17/02/2003</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/284/ata-reuniao-eleicao-a.htm" target="_blank">ata-reuniao-eleicao-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="284" data-year="2001" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_284">Compartilhar</a>    </div>
+    <div id="item_284" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 2000</h3>
+        <div>
+        
+                        <div class="block" id="record_1471">
+            <h2>3ª Reunião Extraordinária de 2000 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2000<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1471/ata-cbh-mp-15-12-00-b.pdf" target="_blank">ata-cbh-mp-15-12-00-b.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1471" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1471">Compartilhar</a>    </div>
+    <div id="item_1471" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_35">
+            <h2>2ª Reunião Ordinária de 2000 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 15/12/2000<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/35/3-ata-cbh-mp-14-15-00-a.htm" target="_blank">3-ata-cbh-mp-14-15-00-a.htm</a></li>
+                                    <li><a href="/public/uploads/records/35/ata-cbh-mp-15-12-00-b.pdf" target="_blank">ata-cbh-mp-15-12-00-b.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="35" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_35">Compartilhar</a>    </div>
+    <div id="item_35" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_12">
+            <h2>2ª Reunião Extraordinária de 2000 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/04/2000<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/12/2-ata-cbh-mp-13-00-a.htm" target="_blank">2-ata-cbh-mp-13-00-a.htm</a></li>
+                                    <li><a href="/public/uploads/records/12/ata-cbh-mp-17-04-00-b.pdf" target="_blank">ata-cbh-mp-17-04-00-b.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="12" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_12">Compartilhar</a>    </div>
+    <div id="item_12" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1">
+            <h2>1ª Reunião Extraordinária de 2000 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/03/2000<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/1/1-ata-cbh-mp-12-00-a.htm" target="_blank">1-ata-cbh-mp-12-00-a.htm</a></li>
+                                    <li><a href="/public/uploads/records/1/ata-cbh-mp-23-03-00-b.pdf" target="_blank">ata-cbh-mp-23-03-00-b.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1">Compartilhar</a>    </div>
+    <div id="item_1" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_204">
+            <h2>1ª Reunião Ordinária de 2000 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/02/2000<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/204/ata-cbh-mp-011-00-04-02-00-a.htm" target="_blank">ata-cbh-mp-011-00-04-02-00-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="204" data-year="2000" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_204">Compartilhar</a>    </div>
+    <div id="item_204" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1999</h3>
+        <div>
+        
+                        <div class="block" id="record_203">
+            <h2>2ª Reunião Extraordinária de 1999 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 03/11/1999<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/203/ata-cbh-mp-010-99-03-11-99-a.htm" target="_blank">ata-cbh-mp-010-99-03-11-99-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="203" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_203">Compartilhar</a>    </div>
+    <div id="item_203" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_209">
+            <h2>1ª Reunião Extraordinária de 1999 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 24/06/1999<br /></li>
+                <li><label>Postado em:</label> 13/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/209/ata-cbh-mp-24-06-99.htm" target="_blank">ata-cbh-mp-24-06-99.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="209" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_209">Compartilhar</a>    </div>
+    <div id="item_209" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_201">
+            <h2>1ª Reunião Ordinária de 1999 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 06/04/1999<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/201/ata-cbh-mp-008-98-06-04-1999-a.htm" target="_blank">ata-cbh-mp-008-98-06-04-1999-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="201" data-year="1999" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_201">Compartilhar</a>    </div>
+    <div id="item_201" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1998</h3>
+        <div>
+        
+                        <div class="block" id="record_208">
+            <h2>2ª Reunião Extraordinária de 1998 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 17/12/1998<br /></li>
+                <li><label>Postado em:</label> 13/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/208/ata-cbh-mp-17-12-98.htm" target="_blank">ata-cbh-mp-17-12-98.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="208" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_208">Compartilhar</a>    </div>
+    <div id="item_208" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_1470">
+            <h2>1ª Reunião Extraordinária de 1998 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 22/04/1998<br /></li>
+                <li><label>Postado em:</label> 03/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1470" data-year="1998" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1470">Compartilhar</a>    </div>
+    <div id="item_1470" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1997</h3>
+        <div>
+        
+                        <div class="block" id="record_200">
+            <h2>3ª Reunião Extraordinária de 1997 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 09/12/1997<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/200/ata-cbh-mp-004-97-09-12-97-a.htm" target="_blank">ata-cbh-mp-004-97-09-12-97-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="200" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_200">Compartilhar</a>    </div>
+    <div id="item_200" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_199">
+            <h2>2ª Reunião Extraordinária de 1997 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 23/09/1997<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/199/ata-cbh-mp-003-97-23-09-97-a.htm" target="_blank">ata-cbh-mp-003-97-23-09-97-a.htm</a></li>
+                                    <li><a href="/public/uploads/records/199/ata-reuniao-23-09-97-ourinhos.pdf" target="_blank">ata-reuniao-23-09-97-ourinhos.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="199" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_199">Compartilhar</a>    </div>
+    <div id="item_199" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_198">
+            <h2>1ª Reunião Extraordinária de 1997 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/08/1997<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/198/ata-cbh-mp-002-97-11-08-97-a.htm" target="_blank">ata-cbh-mp-002-97-11-08-97-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="198" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_198">Compartilhar</a>    </div>
+    <div id="item_198" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_207">
+            <h2>1ª Reunião Ordinária de 1997 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 14/03/1997<br /></li>
+                <li><label>Postado em:</label> 13/09/2000</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/207/ata-cbh-mp-14-03-97.htm" target="_blank">ata-cbh-mp-14-03-97.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="207" data-year="1997" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_207">Compartilhar</a>    </div>
+    <div id="item_207" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1996</h3>
+        <div>
+        
+                        <div class="block" id="record_1446">
+            <h2>1ª Reunião Ordinária de 1996 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 11/12/1996<br /></li>
+                <li><label>Postado em:</label> 02/04/2012</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="1446" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_1446">Compartilhar</a>    </div>
+    <div id="item_1446" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+        
+                        <div class="block" id="record_206">
+            <h2>1ª Reunião Extraordinária de 1996 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 04/06/1996<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/206/ata-cbh-mp-04-06-96-a.htm" target="_blank">ata-cbh-mp-04-06-96-a.htm</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="206" data-year="1996" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_206">Compartilhar</a>    </div>
+    <div id="item_206" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                        
+                                </div>
+                        <h3>Ano de 1994</h3>
+        <div>
+        
+                        <div class="block" id="record_205">
+            <h2>Reunião de 1994 do CBH-MP</h2>
+            <ul>
+                <li><label>Data da reunião:</label> 02/12/1994<br /></li>
+                <li><label>Postado em:</label> 19/08/2002</li>
+            </ul>
+            <h2>Arquivos</h2>
+            <ul>
+                                                    <li><a href="/public/uploads/records/205/ata-cbh-mp-02-12-94-instalacao-a.htm" target="_blank">ata-cbh-mp-02-12-94-instalacao-a.htm</a></li>
+                                    <li><a href="/public/uploads/records/205/ata-cbh-mp-02-12-94-instalacao.pdf" target="_blank">ata-cbh-mp-02-12-94-instalacao.pdf</a></li>
+                            </ul>
+
+            <div style="width: 572px;">
+    <div class="float-right">
+        <a href='#' style="color: #FFFFFF; float: right; width: 78px; text-align: center;" class="share_link button" data-id="205" data-year="1994" data-url="http://sigrh.sp.gov.br:443/cbhmp/atas#record_205">Compartilhar</a>    </div>
+    <div id="item_205" class="float-right" style="position: absolute;"></div>
+</div>
+<br clear="all"/>
+
+        </div>
+                </div>
+    </div>
+
+<br />
+
+
+<style type="text/css">
+    .social:after {
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-right: 10px solid #525252;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        content: " ";
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function set_position_selected_record(){
+        var id_anchor_element = window.location.hash;
+        var id_accordion_to_open = $(id_anchor_element).parent().prev('.ui-accordion-header').attr('id');
+
+        window.location.hash = "";
+        $('#' + id_accordion_to_open).click();
+        setTimeout(function() {
+            window.location.hash = id_anchor_element;
+        }, 1000)
+    }
+
+    $(document).ready(function() {
+        $("#accordion_records").accordion({
+            heightStyle: "content"
+        });
+
+        $(document).on('click', function(e){
+            if($(e.target).attr('class') != 'social' && $(e.target).attr('class') != 'links_send_email'){
+                $(".social").hide();
+            }
+        });
+
+        set_position_selected_record();
+
+        $(".share_link").on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).data('url');
+            var id = $(this).data('id');
+            var year = $(this).data('year');
+            var div = '';
+
+            var url_to_share = "http://sigrh.sp.gov.br:443/cbhmp/atas#record_" + id;
+            var url_to_publication = "/sharepublications?publication_id=" + id;
+            var link_share_via_email = "<a id='link_send_email' class='links_send_email' href='/sharelinkemails?url_to_share=https://sigrh.sp.gov.br" + url_to_publication + "'>Enviar</a>";
+
+            div += "<div class='social' style='width: 494px; height: 35px; background-color: #E0E0E0; margin-left: -16px;'>";
+            div += "<div style='float: left; margin: 8px 0 0 4px;'><div class='g-plus' data-action='share' data-annotation='bubble' data-href='" + url_to_publication + "'></div></div>";
+            div += "<div style='float: left; margin-top: 8px;'><a href='https://twitter.com/share' class='twitter-share-button' data-url='https://sigrh.sp.gov.br" + url_to_publication + "' lang='pt'>Tweet</a></div>";
+            div += "<div style='float: left; margin-top: 8px;'><div class='fb-share-button' style='max-width:200px;' data-href='" + url_to_publication + "' data-type='button_count'></div></div>"
+            div += "<div style='float: left; margin-top: 8px;'>" + link_share_via_email + "</div>";
+            div += '</div>';
+
+            $("#item_" + id).html(div).show();
+            $(this).prev().show();
+
+            twttr.widgets.load();
+            gapi.plus.go();
+            FB.XFBML.parse();
+
+            return false;
+        });
+
+        /*$(".fb-share-button").live("mouseover", function(){
+            var title = $(this).parent().parent().parent().parent().parent().find('h2').first()[0].innerHTML;
+            var link_to_share = $(this).data('href');
+            $('meta[property="og:title"]').attr('content', title);
+            $('meta[property="og:description"]').attr('content', link_to_share);
+        });*/
+    });
+</script>
+        </div>
+        <div class="clear"></div>
+        <div id='collegiate_info'>
+<br/>
+<br/>
+    <ul class="committee_structure">
+        <ul>
+            <div class="block">
+                <h2>CBH-MP - Comitê da Bacia Hidrográfica do Médio Paranapanema</h2>
+                <li>
+					Rua Benedito Mendes Faria 40a											 - Hípica Paulista																 - Marília																 - 17520-520																 - São Paulo					                </li>
+                <li> Tel: 14 3417-1017 | Fax: 14 3417-1662 | contato: secretaria@cbhmp.org</li>
+            </div>
+        </ul>
+    </ul>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="collegiate_footer">
+  <div class="general">
+    <h2>
+      <b>
+        DIRETORIA DE RECURSOS HÍDRICOS (DRHi)      </b>
+    </h2>
+    <br />
+    Av. Professor Frederico Hermann Júnior, 345 - Prédio 12 - 3º andar - Alto de Pinheiros - São Paulo - SP - CEP: 05459-900    <br />
+     Telefone: (11) 3133-4113 - E-mail: contato.sigrh@sp.gov.br  </div>
+
+  <div class="copyright">
+      </div>
+</div>
+            <div id="social_links">
+        <div>
+            <span class="wrapper">
+                <h3><b>FIQUE ANTENADO!</b></h3>
+                <br />
+                                    <a href="https://www.facebook.com/sigrhsp/" target="_blank">
+                        <img src='/public/uploads/sociallinktype/1/facebook.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/1/facebook_hover.png'  class="image2" />                    </a>
+                                    <a href="https://www.youtube.com/c/tvagua" target="_blank">
+                        <img src='/public/uploads/sociallinktype/5/youtube.png'  class="image1" />                        <img src='/public/uploads/sociallinktype/5/youtube_hover.png'  class="image2" />                    </a>
+                            </span>
+        </div>
+    </div>
+
+<script>
+    $('.wrapper a .image2').hide();
+    $('.wrapper a .image1').mouseenter(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image2').show();
+    });
+
+    $('.wrapper a .image2').mouseout(function() {
+        $this = $(this);
+        $this.hide();
+        $this.parent('a').find('.image1').show();
+    });
+
+
+</script>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function() {
+        $.scrollUp({
+            scrollText: '<span>Voltar<br/>ao topo</span>',
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            activeOverlay: false // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+</script>
