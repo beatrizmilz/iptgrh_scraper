@@ -1,0 +1,38 @@
+exception 'DatabaseException' with message 'SQL: WITH structure AS (
+                SELECT
+                  0 AS level,
+                  CAST(collegiates.slug AS NVARCHAR) AS structured_slug,
+                  *
+                FROM
+                  collegiates
+
+                UNION ALL
+
+                SELECT
+                  level + 1,
+                  CAST((structure.structured_slug + '/' + collegiates.slug) AS NVARCHAR) AS structured_slug,
+                  collegiates.*
+                FROM
+                  collegiates
+                INNER JOIN
+                  structure ON
+                    collegiates.collegiate_id = structure.id
+              )
+
+              SELECT
+                structure.*
+              FROM
+                structure
+              WHERE
+                structure.structured_slug = 'cbhmogi/atas'<br />error: [Microsoft][SQL Server Native Client 11.0][SQL Server]The statement terminated. The maximum recursion 100 has been exhausted before statement completion.<br />' in C:\inetpub\wwwroot\lib\drivers\mssql_driver.php:51
+Stack trace:
+#0 C:\inetpub\wwwroot\lib\connection.php(39): MssqlDriver->query('WITH structure ...')
+#1 C:\inetpub\wwwroot\lib\model.php(177): Connection->query('WITH structure ...')
+#2 C:\inetpub\wwwroot\lib\model.php(168): Model->executa_sql('WITH structure ...', true)
+#3 C:\inetpub\wwwroot\app\models\collegiate.php(454): Model->objQuery('WITH structure ...')
+#4 C:\inetpub\wwwroot\lib\routes.php(229): Collegiate::find_by_structured_slug('cbhmogi/atas')
+#5 C:\inetpub\wwwroot\lib\routes.php(220): Routes->builderCollegiates(Array)
+#6 C:\inetpub\wwwroot\lib\routes.php(53): Routes->builderRoute(Array)
+#7 C:\inetpub\wwwroot\lib\routes.php(168): Routes->__construct(NULL, true)
+#8 C:\inetpub\wwwroot\index.php(102): Routes::readSlug()
+#9 {main}
